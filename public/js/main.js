@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loadingTextExtended.style.display = "block"; // Show "Loading..." text
 
         setTimeout(() => {
-            window.location.href = "../pages/roadmap.html";
+            window.location.href = "/roadmap";
         }, 5000);
     });
 });

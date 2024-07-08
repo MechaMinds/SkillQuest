@@ -6,7 +6,7 @@
     <title>Pintar Path ⸺ Solusi Belajar IT</title>
     <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico')}}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
   </head>
   <body class="mt-3 bg-white dark:bg-gray-900">
@@ -510,7 +510,7 @@
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
             <a href="https://flowbite.com/" class="flex items-center">
-              <img src="src/images/logo.png" class="h-8 me-3" alt="FlowBite Logo" />
+              <img src="{{asset('/images/logo.png')}}" class="h-8 me-3" alt="FlowBite Logo" />
               <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Pintar Path</span>
             </a>
           </div>
