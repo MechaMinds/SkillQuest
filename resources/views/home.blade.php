@@ -306,7 +306,7 @@
       <div class="wrapper">
         <div class="itemLeft item1">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/javascript.png" alt="Laravel logo" width="65" height="65" />
+            <img src="{{ asset('/images/javascript.png') }}" alt="Laravel logo" width="65" height="65" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Javascript</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -315,7 +315,7 @@
         </div>
         <div class="itemLeft item2">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/nextjs.png" alt="Laravel logo" width="65" height="65" />
+            <img src="{{ asset('/images/nextjs.png') }}" alt="Laravel logo" width="65" height="65" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Next Js</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -324,7 +324,7 @@
         </div>
         <div class="itemLeft item3">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/react.png" alt="Laravel logo" width="75" height="75" />
+            <img src="{{ asset('/images/react.png') }}" alt="Laravel logo" width="75" height="75" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">React Js</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -333,7 +333,7 @@
         </div>
         <div class="itemLeft item4">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/tensorflow.png" alt="Laravel logo" width="60" height="60" />
+            <img src="{{ asset('/images/tensorflow.png') }}" alt="Laravel logo" width="60" height="60" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Tensorflow</h3>
               <p class="text-sm text-[--muted-foreground]">Back-End</p>
@@ -342,7 +342,7 @@
         </div>
         <div class="itemLeft item5">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/typescript.png" alt="Laravel logo" width="65" height="65" />
+            <img src="{{ asset('/images/typescript.png') }}" alt="Laravel logo" width="65" height="65" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Typescript</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -351,7 +351,7 @@
         </div>
         <div class="itemLeft item6">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/laravel.png" alt="Laravel logo" width="70" height="70" />
+            <img src="{{ asset('/images/laravel.png') }}" alt="Laravel logo" width="70" height="70" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Laravel</h3>
               <p class="text-sm text-[--muted-foreground]">Back-End</p>
@@ -360,7 +360,7 @@
         </div>
         <div class="itemLeft item7">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/angular.png" alt="Laravel logo" width="70" height="70" />
+            <img src="{{ asset('/images/angular.png') }}" alt="Laravel logo" width="70" height="70" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Angular</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -369,7 +369,7 @@
         </div>
         <div class="itemLeft item8">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/python.png" alt="Laravel logo" width="75" height="75" />
+            <img src="{{ asset('/images/python.png') }}" alt="Laravel logo" width="75" height="75" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Python</h3>
               <p class="text-sm text-[--muted-foreground]">Data Science</p>
@@ -380,7 +380,7 @@
       <div class="wrapper">
         <div class="itemRight item1">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/javascript.png" alt="Laravel logo" width="65" height="65" />
+            <img src="{{ asset('/images/javascript.png') }}" alt="Laravel logo" width="65" height="65" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Javascript</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -389,7 +389,7 @@
         </div>
         <div class="itemRight item2">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/nextjs.png" alt="Laravel logo" width="65" height="65" />
+            <img src="{{ asset('/images/nextjs.png') }}" alt="Laravel logo" width="65" height="65" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Next Js</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -398,7 +398,7 @@
         </div>
         <div class="itemRight item3">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/react.png" alt="Laravel logo" width="75" height="75" />
+            <img src="{{ asset('/images/react.png') }}" alt="Laravel logo" width="75" height="75" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">React Js</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -407,7 +407,7 @@
         </div>
         <div class="itemRight item4">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/tensorflow.png" alt="Laravel logo" width="60" height="60" />
+            <img src="{{ asset('/images/tensorflow.png') }}" alt="Laravel logo" width="60" height="60" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Tensorflow</h3>
               <p class="text-sm text-[--muted-foreground]">Back-End</p>
@@ -416,7 +416,7 @@
         </div>
         <div class="itemRight item5">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/typescript.png" alt="Laravel logo" width="65" height="65" />
+            <img src="{{ asset('/images/typescript.png') }}" alt="Laravel logo" width="65" height="65" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Typescript</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -425,7 +425,7 @@
         </div>
         <div class="itemRight item6">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/laravel.png" alt="Laravel logo" width="70" height="70" />
+            <img src="{{ asset('/images/laravel.png') }}" alt="Laravel logo" width="70" height="70" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Laravel</h3>
               <p class="text-sm text-[--muted-foreground]">Back-End</p>
@@ -434,7 +434,7 @@
         </div>
         <div class="itemRight item7">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/angular.png" alt="Laravel logo" width="70" height="70" />
+            <img src="{{ asset('/images/angular.png') }}" alt="Laravel logo" width="70" height="70" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Angular</h3>
               <p class="text-sm text-[--muted-foreground]">Front-End</p>
@@ -443,7 +443,7 @@
         </div>
         <div class="itemRight item8">
           <div class="bg-[--card] p-4 flex items-center space-x-4">
-            <img src="src/images/logo/python.png" alt="Laravel logo" width="75" height="75" />
+            <img src="{{ asset('/images/python.png') }}" alt="Laravel logo" width="75" height="75" />
             <div>
               <h3 class="text-lg font-semibold text-[--card-foreground]">Python</h3>
               <p class="text-sm text-[--muted-foreground]">Data Science</p>
@@ -451,7 +451,6 @@
           </div>
         </div>
       </div>
-    </section>
     <!-- Marquee Selesai -->
 
     <!-- FAQ Section Start -->
