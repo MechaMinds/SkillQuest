@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/roadmap', function(){
     return view('roadmap');
 });
+Route::get('roadmap/backend', function(){
+    return view('pages.roadmap.backend');
+});
