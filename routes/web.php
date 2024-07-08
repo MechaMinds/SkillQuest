@@ -22,3 +22,6 @@ Route::get('/roadmap', function(){
 Route::get('roadmap/backend', function(){
     return view('pages.roadmap.backend');
 });
+Route::get('course/javascript', function(){
+    return view('pages.course.javascript');
+});

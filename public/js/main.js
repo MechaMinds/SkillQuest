@@ -142,3 +142,31 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => console.error("Error loading navbar:", error));
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".nav-button");
+    const sections = document.querySelectorAll(".content-section > div");
+
+    // Function to switch content
+    function switchContent(target) {
+        sections.forEach((section) => {
+            section.classList.remove("active");
+            section.classList.add("hidden");
+        });
+
+        const targetSection = document.getElementById(target);
+        targetSection.classList.remove("hidden");
+        setTimeout(() => {
+            targetSection.classList.add("active");
+        }, 10); // Timeout to allow transition to apply
+    }
+
+    // Set the "aboutContent" as the default active section
+    switchContent("aboutContent");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+            const target = this.id.replace("Btn", "Content");
+            switchContent(target);
+        });
+    });
+});

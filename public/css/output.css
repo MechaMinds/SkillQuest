@@ -726,3 +726,25 @@ video {
     z-index: 50; /* Z-index agar tetap di atas konten lain */
     padding: 5px;
 }
+.hidden {
+    display: none;
+}
+/* Add smooth transition for opacity */
+.content-section > div {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Show the active section */
+.content-section > div.active {
+    opacity: 1;
+}
+
+/* Hide the non-active sections */
+.content-section > div.hidden {
+    display: none;
+}
+
+.text-own {
+    color: #146ffe;
+}
