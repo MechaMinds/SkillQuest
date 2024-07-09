@@ -169,13 +169,13 @@
     <section class="bg-white-50 dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
       <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid gap-8 lg:gap-8">
         <div id="item1" class="max-w-sm flex flex-col justify-center">
-          <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Rekomendasi Kelas.</p>
-          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-4xl dark:text-white">Rekomendasi Kelas untuk Kamu !</h1>
+          <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Kategori</p>
+          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-4xl dark:text-white">Kategori Kelas</h1>
         </div>
         <div class="grid lg:grid-cols-3 gap-5 md:grid-cols-4">
           <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <img src="{{ asset('images/react.png')}}" class="w-12 mb-5" />
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Belajar React Js <br />Sampai Mahir !</h5>
+            <img src="{{ asset('images/UIUX.svg')}}" class="mb-5" width="120px" />
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">UI/UX Design </h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
             <a
               href="#"
@@ -188,8 +188,8 @@
             </a>
           </div>
           <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <img src="{{ asset('images/figma.png')}}" class="w-7 mb-5" />
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bikin assets figma cuan $10.000 per bulan</h5>
+            <img src="{{ asset('images/Web-Developer.svg')}}" class="mb-5" width="120px" />
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Web Developer</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
             <a
               href="#"
@@ -202,8 +202,8 @@
             </a>
           </div>
           <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <img src="{{ asset('images/tensorflow.png')}}" class="w-10 mb-5" />
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Belajar TensorFlow Sampai Direkrut Microsoft</h5>
+            <img src="{{ asset('images/Mobile-Developer.svg')}}" class="mb-5" width="120px"/>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mobile Developer</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
             <a
               href="#"
@@ -216,8 +216,8 @@
             </a>
           </div>
           <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <img src="{{ asset('images/nextjs.png')}}" class="w-12 mb-5" />
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Belajar Next Js <br />Sampai Mahir !</h5>
+            <img src="{{ asset('images/iOS-Developer.svg')}}" class="mb-5" width="120px" />
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">iOS Developer</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
             <a
               href=""
@@ -230,8 +230,8 @@
             </a>
           </div>
           <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <img src="{{ asset('images/javascript.png')}}" class="w-11 mb-5" />
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Belajar Javascript <br />Sampai Mahir !</h5>
+            <img src="{{ asset('images/AI-Developer.svg')}}" class="mb-5" width="120px" />
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">AI Developer</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
             <a
               href="/course/javascript"
@@ -244,8 +244,8 @@
             </a>
           </div>
           <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <img src="{{ asset('images/typescript.png')}}" class="w-10 mb-5" />
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Belajar Typescript <br />Sampai Mahir !</h5>
+            <img src="{{ asset('images/Data-Scientist.svg')}}" class="mb-5" width="120px" />
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Data Scientist</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
             <a
               href="#"
