@@ -774,7 +774,6 @@ video {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding-left: 10px;
     padding-top: 10px;
     gap: 10px; /* Ruang antar tombol */
     padding-bottom: 10px; /* Ruang bawah untuk keselarasan */
@@ -792,4 +791,27 @@ video {
     font-size: 16px;
     white-space: nowrap; /* Pastikan teks tetap satu baris */
     flex-shrink: 0; /* Hindari tombol menyusut */
+}
+.desktop-nih {
+    display: none;
+}
+@media (min-width: 1025px) {
+    .bottom-bar {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+        z-index: 999;
+    }
+
+    .bottom-bar .text-lg {
+        margin-left: 1rem;
+    }
+
+    .bottom-bar button {
+        margin-right: 1rem;
+    }
 }

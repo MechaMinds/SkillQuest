@@ -110,35 +110,36 @@
               <div class="aspect-w-20 aspect-h-12">
                 <img width="2100px" height="2100px" style="border-radius:20px" src="{{asset('/images/thumbnail.jpg')}}" alt="Course Thumbnail">
               </div>
-            </div>     
+            </div>              
             <!-- Lessons Section -->
-            <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 w-full lg:w-1/2 h-full" style="border-radius: 20px;">
+            <div class="lg:block hidden bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 w-full lg:w-1/2 h-full mt-16" style="border-radius: 20px; position: relative;">
+              <!-- Mode Desktop -->
               <div class="p-6">
-                <h3 class="text-black dark:text-white text-lg font-semibold">15 Modul (120 mins)</h3>
-              <ul class="mt-4 space-y-2">
-                <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                  <span class="text-black dark:text-white">Intoduction to Javascript</span>
-                  <span class="text-black dark:text-white">3 mins</span>
-                </li>
-                <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                  <span class="text-black dark:text-white">Belajar Variabel</span>
-                  <span class="text-black dark:text-white">3 mins</span>
-                </li>
-                <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                  <span class="text-black dark:text-white">Belajar Tipe Data</span>
-                  <span class="text-black dark:text-white">3 mins</span>
-                </li>
-                <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                  <span class="text-black dark:text-white">Belajar Struktur Data</span>
-                  <span class="text-black dark:text-white">3 mins</span>
-                </li>
-                <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                  <span class="text-black dark:text-white">15 modul lainnya</span>
-                </li>
-              </ul>
+                  <h3 class="text-black dark:text-white text-lg font-semibold">15 Modul (120 mins)</h3>
+                  <ul class="mt-4 space-y-2">
+                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                          <span class="text-black dark:text-white">Intoduction to Javascript</span>
+                          <span class="text-black dark:text-white">3 mins</span>
+                      </li>
+                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                          <span class="text-black dark:text-white">Belajar Variabel</span>
+                          <span class="text-black dark:text-white">3 mins</span>
+                      </li>
+                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                          <span class="text-black dark:text-white">Belajar Tipe Data</span>
+                          <span class="text-black dark:text-white">3 mins</span>
+                      </li>
+                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                          <span class="text-black dark:text-white">Belajar Struktur Data</span>
+                          <span class="text-black dark:text-white">3 mins</span>
+                      </li>
+                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                          <span class="text-black dark:text-white">15 modul lainnya</span>
+                      </li>
+                  </ul>
               </div>
-              <button class="w-full mt-6 px-4 py-6 font-medium text-large text-white " style="background: #146FFE; border-radius: 0px 0px 20px 20px;">Gabung Sekarang</button>
-            </div>
+              <button class="w-full mt-6 px-4 py-6 font-medium text-large text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px;">Gabung Sekarang</button>
+            </div>          
           </div>
         </div>
         <!-- Course Details -->
@@ -751,7 +752,14 @@
           </div>
         </div>
       </footer>
-      <div data-dial-init class="fixed bottom-6 start-6 group">
+      <!-- Mode Mobile -->
+      <div class="z-50 fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 bottom-bar">
+        <div class="flex items-center justify-between px-4 py-3">
+            <span class="text-lg font-bold text-black dark:text-white ml-4">Rp. 0</span>
+            <button class="px-4 py-2 font-medium text-lg text-white bg-blue-700 rounded mr-4" style="border-radius:50px; flex-shrink: 0;">Gabung Sekarang</button>
+        </div>
+      </div>
+      <div data-dial-init class="z-50 fixed start-6 group" style="bottom: 100px">
         <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 sm:mr-5">
           <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
           <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
