@@ -781,10 +781,6 @@ video {
     -ms-overflow-style: none; /* Sembunyikan scrollbar di IE/Edge */
 }
 
-.button-container::-webkit-scrollbar {
-    display: none; /* Sembunyikan scrollbar di Chrome/Safari */
-}
-
 .nav-button {
     padding: 10px 20px;
     border-radius: 50px;

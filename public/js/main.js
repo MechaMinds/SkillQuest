@@ -170,12 +170,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-const swiper = new Swiper(".button-container", {
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    grabCursor: true,
-    scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: true,
-    },
+
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("buttonContainer");
+
+    container.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        container.scrollLeft += evt.deltaY;
+    });
 });
