@@ -764,12 +764,6 @@ video {
     align-items: center;
     margin-right: 10px;
 }
-
-.checklist-text {
-    font-size: 20px; /* Ukuran teks checklist */
-    line-height: 1.5; /* Jarak antara baris teks */
-    font-weight: 600;
-}
 .button-container {
     display: flex;
     flex-wrap: nowrap;
@@ -809,5 +803,18 @@ video {
 
     .bottom-bar button {
         margin-right: 1rem;
+    }
+    .checklist-text {
+        font-size: 30px; /* Ukuran teks checklist */
+        line-height: 1.5; /* Jarak antara baris teks */
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 1025px) {
+    .checklist-text {
+        font-size: 17px; /* Ukuran teks checklist */
+        line-height: 1.5; /* Jarak antara baris teks */
+        font-weight: 600;
     }
 }

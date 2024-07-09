@@ -95,12 +95,10 @@
     <!-- Jumbotron 1 Mulai-->
     <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
       <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative" style="margin-top:50px">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Belajar Javascript 
-            Untuk Pemula</h1>   
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white sm:text-md">Belajar Javascript Untuk Pemula</h1>   
       </div>
     </section>
-    <!-- Jumbotron 1 Selesai-->
-
+    <!-- Jumbotron 1 Selesai-->   
     <!-- Jumbotron 2 Mulai -->
       <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] py-8 lg:py-16">
         <div class="px-4 mx-auto max-w-screen-xl text-left z-10 relative">
@@ -138,7 +136,7 @@
                       </li>
                   </ul>
               </div>
-              <button class="w-full mt-6 px-4 py-6 font-medium text-large text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px;">Gabung Sekarang</button>
+              <button class="w-full mt-6 py-6 font-medium text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px; font-size:25px">Gabung Sekarang</button>
             </div>          
           </div>
         </div>
@@ -147,7 +145,7 @@
           <div class="flex flex-col lg:flex-row gap-6 p-6">
             <div class="">
               <!-- Navigation Buttons -->
-              <div class="button-container mb-6">
+              <div class="button-container mb-10">
                 <button id="aboutBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-white bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius:50px; flex-shrink: 0;">Tentang Course</button>
                 <button id="lessonsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Materi</button>
                 <button id="toolsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Tools</button>
@@ -156,7 +154,7 @@
               <!-- Course Description -->
               <div id="content" class="content-section">
                 <div id="aboutContent" class="active">
-                  <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
+                  <h2 class="text-black dark:text-white text-xl font-bold mb-3 lg:marg-lg sm:marg-sm" style="font-size: 25px;">Develop Your Skills</h2>
                   <p class="mt-2 text-black dark:text-white">
                     Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
                   </p>
@@ -164,7 +162,7 @@
                     Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
                   </p>
                   <!-- Key Points -->
-                  <h2 class="text-black dark:text-white text-xl font-bold mb-7 mt-10" style="font-size: 25px;">Tujuan Course Ini</h2>
+                  <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg mt-10" style="font-size: 25px;">Tujuan Course Ini</h2>
                   <div class="grid grid-cols-2 gap-6">
                     <!-- Kiri -->
                     <div>
@@ -182,7 +180,7 @@
                             </defs>
                           </svg>                            
                         </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500">Memperlajari Struktur Data</span>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Struktur Data</span>
                       </li>
                       <li class="checklist-item">
                         <div class="checklist-circle">
@@ -198,7 +196,7 @@
                             </defs>
                           </svg>                            
                         </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500">Memahami Konsep Javascript</span>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Konsep Javascript</span>
                       </li>
                     </div>
                     <!-- Kanan -->
@@ -217,7 +215,7 @@
                             </defs>
                           </svg>                            
                         </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500">Memperlajari Array</span>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Array</span>
                       </li>
                       <li class="checklist-item">
                         <div class="checklist-circle">
@@ -233,19 +231,13 @@
                             </defs>
                           </svg>                            
                         </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500">Memahami Struktur Tipe Data</span>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Struktur Tipe Data</span>
                       </li>
                     </div>
                   </div>
                 </div>
                 <div id="lessonsContent" class="hidden">
-                  <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
-                  <p class="mt-2 text-black dark:text-white">
-                    Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
-                  </p>
-                  <p class="mt-6 text-black dark:text-white">
-                    Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
-                  </p>
+                  <p class="text-white">INI MATERI</p>
                 </div>
                 <div id="toolsContent" class="hidden">
                   <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Tools yang dibutuhkan</h2>
@@ -288,22 +280,15 @@
                   </div>                    
                 </div>
                 <div id="testimonialsContent" class="hidden">
-                  <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
-                  <p class="mt-2 text-black dark:text-white">
-                    Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
-                  </p>
-                  <p class="mt-6 text-black dark:text-white">
-                    Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
-                  </p>
+                  <p class="text-white">INI TESTIMONI</p>
                 </div>
               </div>
               <!-- Rundown -->
               <div class="mt-10">
-                <h2 class="text-black dark:text-white text-xl font-bold mb-7 mt-10" style="font-size: 25px;">Rundown Materi Belajar Javascript Untuk Pemula</h2>
-
+                <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg sm:marg-sm" style="font-size: 25px;">Rundown Materi Belajar Javascript Untuk Pemula</h2>
                 <!-- Sesi 1-->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden rounded-lg">
+                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
                     <div class="p-6">
                       <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 1</h2>
                       <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
@@ -418,7 +403,7 @@
                   </div>
 
                   <!-- Sesi 2-->
-                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden rounded-lg">
+                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
                     <div class="p-6">
                       <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 2</h2>
                       <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
@@ -533,7 +518,7 @@
                   <!-- Sesi 2 -->
 
                   <!-- Sesi 3 -->
-                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden rounded-lg">
+                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden"  style="border-radius: 20px">
                     <div class="p-6">
                       <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 3</h2>
                       <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
