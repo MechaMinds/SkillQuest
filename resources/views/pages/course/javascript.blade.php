@@ -75,14 +75,6 @@
                 <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                 </svg>
-                <a href="/roadmap" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Road Map</a>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                </svg>
                 <a href="/course" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Course</a>
               </div>
             </li>
@@ -110,113 +102,15 @@
     <!-- Jumbotron 1 Selesai-->
 
     <!-- Jumbotron 2 Mulai -->
-      <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:py-16 z-10 relative">
+      <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] py-8 lg:py-16">
+        <div class="px-4 mx-auto max-w-screen-xl text-left z-10 relative">
           <div class="flex flex-col lg:flex-row gap-6 p-6">
             <!-- Image and Description Section -->
             <div class="lg:w-1/2">
-              <div class="aspect-w-16 aspect-h-9">
-                <img class="h-full" style="border-radius:20px" src="{{asset('/images/thumbnail.jpg')}}" alt="Course Thumbnail">
+              <div class="aspect-w-20 aspect-h-12">
+                <img width="2100px" height="2100px" style="border-radius:20px" src="{{asset('/images/thumbnail.jpg')}}" alt="Course Thumbnail">
               </div>
-              <div class="mt-10">
-                <!-- Navigation Buttons -->
-                <div class="flex space-x-4 mb-6">
-                  <button id="aboutBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-white bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius:50px">Tentang Course</button>
-                  <button id="lessonsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px">Materi</button>
-                  <button id="toolsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px">Tools</button>
-                  <button id="testimonialsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px">Testimoni</button>
-                </div>
-                <!-- Course Description -->
-                <div id="content" class="content-section">
-                  <div id="aboutContent" class="active">
-                    <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
-                    <p class="mt-2 text-black dark:text-white">
-                      Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
-                    </p>
-                    <p class="mt-6 text-black dark:text-white">
-                      Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
-                    </p>
-                    <!-- Key Points -->
-                    <div class="mt-6">
-                      <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Tujuan Course Ini</h2>
-                      <ul class="list-disc list-inside mt-2 text-black dark:text-white">
-                        <li>Cara membuat prototype dengan mudah</li>
-                        <li>Cara membuat projek baru</li>
-                        <li>Cara membuat animasi pada UI design</li>
-                        <li>Cara download dan install Framer</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div id="lessonsContent" class="hidden">
-                    <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
-                    <p class="mt-2 text-black dark:text-white">
-                      Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
-                    </p>
-                    <p class="mt-6 text-black dark:text-white">
-                      Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
-                    </p>
-                  </div>
-                  <div id="toolsContent" class="hidden">
-                    <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
-                    <p class="mt-2 text-black dark:text-white">
-                      Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
-                    </p>
-                    <p class="mt-6 text-black dark:text-white">
-                      Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
-                    </p>
-                  </div>
-                  <div id="testimonialsContent" class="hidden">
-                    <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
-                    <p class="mt-2 text-black dark:text-white">
-                      Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
-                    </p>
-                    <p class="mt-6 text-black dark:text-white">
-                      Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
-                    </p>
-                  </div>
-                </div>
-                <!-- Rundown -->
-                <div class="mt-10">
-                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
-                    <div class="p-6">
-                      <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Rundown Materi</h2>
-                      <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
-                        <li class="flex items-center mb-2">
-                          <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                          </svg>
-                          <span class="semibold font-medium" style="font-size:17px">Cara membuat prototype dengan mudah</span>
-                        </li>
-                        <li class="flex items-center mb-2">
-                          <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                          </svg>
-                          <span class="semibold font-medium" style="font-size:17px">Cara membuat projek baru</span>
-                        </li>
-                        <li class="flex items-center mb-2">
-                          <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                          </svg>
-                          <span class="semibold font-medium" style="font-size:17px">Cara membuat animasi pada UI design</span>
-                        </li>
-                        <li class="flex items-center mb-2">
-                          <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                          </svg>
-                          <span class="semibold font-medium" style="font-size:17px">Cara download dan install Framer</span>
-                        </li>
-                        <li class="flex items-center mb-2">
-                          <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                          </svg>
-                          <span class="semibold font-medium" style="font-size:17px">Penerapan Interaction Design pada aplikasi buatan</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>                
-              </div>
-            </div>                       
+            </div>     
             <!-- Lessons Section -->
             <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 w-full lg:w-1/2 h-full" style="border-radius: 20px;">
               <div class="p-6">
@@ -245,6 +139,134 @@
               </div>
               <button class="w-full mt-6 px-4 py-6 font-medium text-large text-white " style="background: #146FFE; border-radius: 0px 0px 20px 20px;">Gabung Sekarang</button>
             </div>
+          </div>
+        </div>
+        <!-- Course Details -->
+        <div class="px-4 mx-auto max-w-screen-xl text-left z-10 relative">
+          <div class="flex flex-col lg:flex-row gap-6 p-6">
+            <div class="">
+              <!-- Navigation Buttons -->
+              <div class="flex space-x-4 mb-6">
+                <button id="aboutBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-white bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius:50px">Tentang Course</button>
+                <button id="lessonsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px">Materi</button>
+                <button id="toolsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px">Tools</button>
+                <button id="testimonialsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px">Testimoni</button>
+              </div>
+              <!-- Course Description -->
+              <div id="content" class="content-section">
+                <div id="aboutContent" class="active" style="padding-right: 430px">
+                  <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
+                  <p class="mt-2 text-black dark:text-white">
+                    Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
+                  </p>
+                  <p class="mt-6 text-black dark:text-white">
+                    Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
+                  </p>
+                  <!-- Key Points -->
+                  <div class="mt-6">
+                    <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Tujuan Course Ini</h2>
+                    <ul class="list-disc list-inside mt-2 text-black dark:text-white">
+                      <li>Cara membuat prototype dengan mudah</li>
+                      <li>Cara membuat projek baru</li>
+                      <li>Cara membuat animasi pada UI design</li>
+                      <li>Cara download dan install Framer</li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="lessonsContent" class="hidden" style="padding-right: 430px">
+                  <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
+                  <p class="mt-2 text-black dark:text-white">
+                    Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
+                  </p>
+                  <p class="mt-6 text-black dark:text-white">
+                    Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
+                  </p>
+                </div>
+                <div id="toolsContent" class="hidden" style="padding-right: 430px">
+                  <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Tools yang dibutuhkan</h2>
+                  <p class="mt-2 text-black dark:text-white ">
+                    Penting untuk memastikan bahwa semua tools yang diperlukan sudah terinstal pada device kalian sebelum memulai kelas. Persiapan ini sangat penting agar kalian dapat mengikuti materi dengan lancar tanpa gangguan teknis, Oleh karena itu, sebelum memulai kelas, pastikan semua tools yang akan digunakan sudah terpasang dan berfungsi dengan baik di perangkat kalian agar kalian tidak terhambat proses belajar.
+                  </p>
+                  <p class="mt-6 text-black dark:text-white">
+                    Dengan begitu, kalian akan siap untuk mengikuti setiap sesi kelas dengan efektif dan tanpa hambatan teknis. Persiapan yang baik adalah kunci untuk pengalaman belajar yang sukses dan menyenangkan.
+                  </p>
+                  <!-- Card Tools -->
+                  <div class="mt-10">
+                    <div class="w-25 overflow-hidden">
+                      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
+                          <img src="{{asset('/images/chorme.png')}}" alt="Web Browser logo" class="mb-4" width="70px" height="70px" />
+                          <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Chorme Web Browser</h2>
+                          <p class="text-black dark:text-white mb-4">Software Gratis</p>
+                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">Download Disini</button>
+                        </div>
+                        <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
+                          <img src="{{asset('/images/front-end.png')}}" alt="Visual Studio Code logo" class="mb-4" width="70px" height="70px" />
+                          <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Visual Studio Code</h2>
+                          <p class="text-black dark:text-white mb-4">Software Gratis</p>
+                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">Download Disini</button>
+                        </div>
+                        <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
+                          <img src="{{asset('/images/javascript.png')}}" alt="Javascript logo" class="mb-4" width="70px" height="70px" />
+                          <h2 class="text-lg text-black dark:text-white mb-2 font-bold">JavaScript</h2>
+                          <p class="text-black dark:text-white mb-4">Software Gratis</p>
+                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">Download Disini</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                    
+                </div>
+                <div id="testimonialsContent" class="hidden" style="padding-right: 430px">
+                  <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
+                  <p class="mt-2 text-black dark:text-white">
+                    Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
+                  </p>
+                  <p class="mt-6 text-black dark:text-white">
+                    Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
+                  </p>
+                </div>
+              </div>
+              <!-- Rundown -->
+              <div class="mt-10">
+                <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
+                  <div class="p-6">
+                    <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Rundown Materi</h2>
+                    <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
+                      <li class="flex items-center mb-2">
+                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
+                        </svg>
+                        <span class="semibold font-medium" style="font-size:17px">Cara membuat prototype dengan mudah</span>
+                      </li>
+                      <li class="flex items-center mb-2">
+                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
+                        </svg>
+                        <span class="semibold font-medium" style="font-size:17px">Cara membuat projek baru</span>
+                      </li>
+                      <li class="flex items-center mb-2">
+                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
+                        </svg>
+                        <span class="semibold font-medium" style="font-size:17px">Cara membuat animasi pada UI design</span>
+                      </li>
+                      <li class="flex items-center mb-2">
+                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
+                        </svg>
+                        <span class="semibold font-medium" style="font-size:17px">Cara download dan install Framer</span>
+                      </li>
+                      <li class="flex items-center mb-2">
+                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
+                        </svg>
+                        <span class="semibold font-medium" style="font-size:17px">Penerapan Interaction Design pada aplikasi buatan</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>                
+            </div> 	
           </div>
         </div>
       </section>
