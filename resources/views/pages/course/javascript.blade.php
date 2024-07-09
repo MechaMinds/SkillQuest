@@ -198,19 +198,25 @@
                           <img src="{{asset('/images/chorme.png')}}" alt="Web Browser logo" class="mb-4" width="70px" height="70px" />
                           <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Chorme Web Browser</h2>
                           <p class="text-black dark:text-white mb-4">Software Gratis</p>
-                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">Download Disini</button>
+                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
+                            <a href="https://chromeenterprise.google/download/" target="_blank">Download Disini</a>
+                          </button>
                         </div>
                         <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
                           <img src="{{asset('/images/front-end.png')}}" alt="Visual Studio Code logo" class="mb-4" width="70px" height="70px" />
                           <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Visual Studio Code</h2>
                           <p class="text-black dark:text-white mb-4">Software Gratis</p>
-                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">Download Disini</button>
+                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
+                            <a href="https://code.visualstudio.com" target="_blank">Download Disini</a>
+                          </button>
                         </div>
                         <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
                           <img src="{{asset('/images/javascript.png')}}" alt="Javascript logo" class="mb-4" width="70px" height="70px" />
                           <h2 class="text-lg text-black dark:text-white mb-2 font-bold">JavaScript</h2>
-                          <p class="text-black dark:text-white mb-4">Software Gratis</p>
-                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">Download Disini</button>
+                          <p class="text-black dark:text-white mb-4">Bahasa Pemrograman</p>
+                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
+                            <a href="https://www.javascript.com" target="_blank">DoKumentasi Disini</a>
+                          </button>
                         </div>
                       </div>
                     </div>
