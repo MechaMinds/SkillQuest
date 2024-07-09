@@ -96,7 +96,7 @@
     <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
       <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative" style="margin-top:50px">
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Belajar Javascript 
-            Pemula</h1>   
+            Untuk Pemula</h1>   
       </div>
     </section>
     <!-- Jumbotron 1 Selesai-->
@@ -121,7 +121,7 @@
                   <span class="text-black dark:text-white">3 mins</span>
                 </li>
                 <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                  <span class="text-black dark:text-white">Belajar VariablesI</span>
+                  <span class="text-black dark:text-white">Belajar Variabel</span>
                   <span class="text-black dark:text-white">3 mins</span>
                 </li>
                 <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
@@ -146,15 +146,15 @@
           <div class="flex flex-col lg:flex-row gap-6 p-6">
             <div class="">
               <!-- Navigation Buttons -->
-              <div class="flex space-x-4 mb-6">
-                <button id="aboutBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-white bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius:50px">Tentang Course</button>
-                <button id="lessonsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px">Materi</button>
-                <button id="toolsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px">Tools</button>
-                <button id="testimonialsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px">Testimoni</button>
-              </div>
+              <div class="button-container mb-6">
+                <button id="aboutBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-white bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius:50px; flex-shrink: 0;">Tentang Course</button>
+                <button id="lessonsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Materi</button>
+                <button id="toolsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Tools</button>
+                <button id="testimonialsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Testimoni</button>
+              </div>                          
               <!-- Course Description -->
               <div id="content" class="content-section">
-                <div id="aboutContent" class="active" style="padding-right: 430px">
+                <div id="aboutContent" class="active">
                   <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
                   <p class="mt-2 text-black dark:text-white">
                     Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
@@ -163,17 +163,81 @@
                     Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
                   </p>
                   <!-- Key Points -->
-                  <div class="mt-6">
-                    <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Tujuan Course Ini</h2>
-                    <ul class="list-disc list-inside mt-2 text-black dark:text-white">
-                      <li>Cara membuat prototype dengan mudah</li>
-                      <li>Cara membuat projek baru</li>
-                      <li>Cara membuat animasi pada UI design</li>
-                      <li>Cara download dan install Framer</li>
-                    </ul>
+                  <h2 class="text-black dark:text-white text-xl font-bold mb-7 mt-10" style="font-size: 25px;">Tujuan Course Ini</h2>
+                  <div class="grid grid-cols-2 gap-6">
+                    <!-- Kiri -->
+                    <div>
+                      <li class="checklist-item">
+                        <div class="checklist-circle">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_981_529)">
+                            <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                            <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_981_529">
+                            <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                            </defs>
+                          </svg>                            
+                        </div>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500">Memperlajari Struktur Data</span>
+                      </li>
+                      <li class="checklist-item">
+                        <div class="checklist-circle">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_981_529)">
+                            <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                            <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_981_529">
+                            <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                            </defs>
+                          </svg>                            
+                        </div>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500">Memahami Konsep Javascript</span>
+                      </li>
+                    </div>
+                    <!-- Kanan -->
+                    <div>
+                      <li class="checklist-item">
+                        <div class="checklist-circle">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_981_529)">
+                            <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                            <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_981_529">
+                            <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                            </defs>
+                          </svg>                            
+                        </div>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500">Memperlajari Array</span>
+                      </li>
+                      <li class="checklist-item">
+                        <div class="checklist-circle">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_981_529)">
+                            <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                            <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_981_529">
+                            <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                            </defs>
+                          </svg>                            
+                        </div>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500">Memahami Struktur Tipe Data</span>
+                      </li>
+                    </div>
                   </div>
                 </div>
-                <div id="lessonsContent" class="hidden" style="padding-right: 430px">
+                <div id="lessonsContent" class="hidden">
                   <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
                   <p class="mt-2 text-black dark:text-white">
                     Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
@@ -182,7 +246,7 @@
                     Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
                   </p>
                 </div>
-                <div id="toolsContent" class="hidden" style="padding-right: 430px">
+                <div id="toolsContent" class="hidden">
                   <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Tools yang dibutuhkan</h2>
                   <p class="mt-2 text-black dark:text-white ">
                     Penting untuk memastikan bahwa semua tools yang diperlukan sudah terinstal pada device kalian sebelum memulai kelas. Persiapan ini sangat penting agar kalian dapat mengikuti materi dengan lancar tanpa gangguan teknis, Oleh karena itu, sebelum memulai kelas, pastikan semua tools yang akan digunakan sudah terpasang dan berfungsi dengan baik di perangkat kalian agar kalian tidak terhambat proses belajar.
@@ -222,7 +286,7 @@
                     </div>
                   </div>                    
                 </div>
-                <div id="testimonialsContent" class="hidden" style="padding-right: 430px">
+                <div id="testimonialsContent" class="hidden">
                   <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Develop Your Skills</h2>
                   <p class="mt-2 text-black dark:text-white">
                     Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
@@ -234,50 +298,360 @@
               </div>
               <!-- Rundown -->
               <div class="mt-10">
-                <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
-                  <div class="p-6">
-                    <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Rundown Materi</h2>
-                    <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
-                      <li class="flex items-center mb-2">
-                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                        </svg>
-                        <span class="semibold font-medium" style="font-size:17px">Cara membuat prototype dengan mudah</span>
-                      </li>
-                      <li class="flex items-center mb-2">
-                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                        </svg>
-                        <span class="semibold font-medium" style="font-size:17px">Cara membuat projek baru</span>
-                      </li>
-                      <li class="flex items-center mb-2">
-                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                        </svg>
-                        <span class="semibold font-medium" style="font-size:17px">Cara membuat animasi pada UI design</span>
-                      </li>
-                      <li class="flex items-center mb-2">
-                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                        </svg>
-                        <span class="semibold font-medium" style="font-size:17px">Cara download dan install Framer</span>
-                      </li>
-                      <li class="flex items-center mb-2">
-                        <svg class="h-5 w-5 inline mr-2 text-own" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                          <path fill="currentColor" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/>
-                        </svg>
-                        <span class="semibold font-medium" style="font-size:17px">Penerapan Interaction Design pada aplikasi buatan</span>
-                      </li>
-                    </ul>
+                <h2 class="text-black dark:text-white text-xl font-bold mb-7 mt-10" style="font-size: 25px;">Rundown Materi Belajar Javascript Untuk Pemula</h2>
+
+                <!-- Sesi 1-->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden rounded-lg">
+                    <div class="p-6">
+                      <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 1</h2>
+                      <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Introduction to Javascript</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Variabel</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Tipe Data</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Struktur Data</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Operator</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <!-- Add other items as needed -->
+                      </ul>
+                    </div>
                   </div>
+
+                  <!-- Sesi 2-->
+                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden rounded-lg">
+                    <div class="p-6">
+                      <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 2</h2>
+                      <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Type Casting</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Equality Comparisons</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Equality Comparisons</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Control Flow</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Functions</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- Sesi 2 -->
+
+                  <!-- Sesi 3 -->
+                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden rounded-lg">
+                    <div class="p-6">
+                      <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 3</h2>
+                      <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Type Casting</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Equality Comparisons</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Equality Comparisons</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Control Flow</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                        <li class="flex items-center justify-between mb-2">
+                          <div class="flex items-center">
+                            <div class="checklist-circle">
+                              <div class="checklist-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_981_529)">
+                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_981_529">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>                            
+                              </div>
+                            </div>
+                            <span class="semibold font-medium" style="font-size:17px">Functions</span>
+                          </div>
+                          <span class="text-gray-500 text-sm">3 mins</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- Sesi 3 -->
                 </div>
-              </div>                
+              </div>
             </div> 	
           </div>
         </div>
       </section>
-    
-    <!-- Jumbotron 2 Selesai -->
+      <!-- Jumbotron 2 Selesai -->
 
     <!-- Footer Mulai -->
     <footer class="bg-white dark:bg-gray-900 mt-10">

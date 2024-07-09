@@ -170,3 +170,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+const swiper = new Swiper(".button-container", {
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    grabCursor: true,
+    scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+    },
+});

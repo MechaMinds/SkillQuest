@@ -748,3 +748,48 @@ video {
 .text-own {
     color: #146ffe;
 }
+.checklist-item {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin-bottom: 0.5rem;
+}
+
+.checklist-circle {
+    width: 2rem; /* Ukuran lingkaran */
+    height: 2rem; /* Ukuran lingkaran */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.checklist-text {
+    font-size: 20px; /* Ukuran teks checklist */
+    line-height: 1.5; /* Jarak antara baris teks */
+    font-weight: 600;
+}
+.button-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-left: 10px;
+    padding-top: 10px;
+    gap: 10px; /* Ruang antar tombol */
+    padding-bottom: 10px; /* Ruang bawah untuk keselarasan */
+    scrollbar-width: none; /* Sembunyikan scrollbar di browser */
+    -ms-overflow-style: none; /* Sembunyikan scrollbar di IE/Edge */
+}
+
+.button-container::-webkit-scrollbar {
+    display: none; /* Sembunyikan scrollbar di Chrome/Safari */
+}
+
+.nav-button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    white-space: nowrap; /* Pastikan teks tetap satu baris */
+    flex-shrink: 0; /* Hindari tombol menyusut */
+}
