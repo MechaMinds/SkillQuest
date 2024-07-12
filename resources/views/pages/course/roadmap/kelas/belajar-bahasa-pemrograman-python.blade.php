@@ -75,7 +75,7 @@
                 <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                 </svg>
-                <a href="/course" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Course</a>
+                <a href="/kelas" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Kelas</a>
               </div>
             </li>
             <li>
@@ -83,7 +83,15 @@
                 <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                 </svg>
-                <a href="" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Javascript</a>
+                <a href="/course/machine-learning" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Machine Learning</a>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center">
+                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                </svg>
+                <a href="" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Python</a>
               </div>
             </li>
           </ol>
@@ -95,7 +103,7 @@
     <!-- Jumbotron 1 Mulai-->
     <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
       <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative" style="margin-top:50px">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white sm:text-md">Belajar Javascript Untuk Pemula</h1>   
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white sm:text-md">Belajar Bahasa Pemrograman Python</h1>   
       </div>
     </section>
     <!-- Jumbotron 1 Selesai-->   
@@ -116,19 +124,19 @@
                   <h3 class="text-black dark:text-white text-lg font-semibold">15 Modul (120 mins)</h3>
                   <ul class="mt-4 space-y-2">
                       <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                          <span class="text-black dark:text-white">Intoduction to Javascript</span>
+                          <span class="text-black dark:text-white">Intoduction to Python</span>
                           <span class="text-black dark:text-white">3 mins</span>
                       </li>
                       <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                          <span class="text-black dark:text-white">Belajar Variabel</span>
+                          <span class="text-black dark:text-white">Belajar Data Variabel</span>
                           <span class="text-black dark:text-white">3 mins</span>
                       </li>
                       <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                          <span class="text-black dark:text-white">Belajar Tipe Data</span>
+                          <span class="text-black dark:text-white">Belajar Operator Perbandingan</span>
                           <span class="text-black dark:text-white">3 mins</span>
                       </li>
                       <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                          <span class="text-black dark:text-white">Belajar Struktur Data</span>
+                          <span class="text-black dark:text-white">Memahami Logical Operator</span>
                           <span class="text-black dark:text-white">3 mins</span>
                       </li>
                       <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
@@ -180,7 +188,7 @@
                             </defs>
                           </svg>                            
                         </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Struktur Data</span>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Logical Operator</span>
                       </li>
                       <li class="checklist-item">
                         <div class="checklist-circle">
@@ -196,7 +204,7 @@
                             </defs>
                           </svg>                            
                         </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Konsep Javascript</span>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Operator Aritmatika</span>
                       </li>
                     </div>
                     <!-- Kanan -->
@@ -215,7 +223,7 @@
                             </defs>
                           </svg>                            
                         </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Array</span>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Looping Data List</span>
                       </li>
                       <li class="checklist-item">
                         <div class="checklist-circle">
@@ -231,7 +239,7 @@
                             </defs>
                           </svg>                            
                         </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Struktur Tipe Data</span>
+                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Operator Perbandingan</span>
                       </li>
                     </div>
                   </div>
@@ -268,11 +276,11 @@
                           </button>
                         </div>
                         <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
-                          <img src="{{asset('/images/javascript.png')}}" alt="Javascript logo" class="mb-4" width="70px" height="70px" />
-                          <h2 class="text-lg text-black dark:text-white mb-2 font-bold">JavaScript</h2>
+                          <img src="{{asset('/images/python.png')}}" alt="Python logo" class="mb-4" width="85px" height="85px" />
+                          <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Python</h2>
                           <p class="text-black dark:text-white mb-4">Bahasa Pemrograman</p>
                           <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
-                            <a href="https://www.javascript.com" target="_blank">DoKumentasi Disini</a>
+                            <a href="https://www.javascript.org" target="_blank">Download Disini</a>
                           </button>
                         </div>
                       </div>
@@ -309,7 +317,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Introduction to Javascript</span>
+                            <span class="semibold font-medium" style="font-size:17px">Introduction to Python</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -330,7 +338,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Variabel</span>
+                            <span class="semibold font-medium" style="font-size:17px">Memahami Tipe Data Dasar</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -351,7 +359,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Tipe Data</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Operator Perbandingan</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -372,7 +380,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Struktur Data</span>
+                            <span class="semibold font-medium" style="font-size:17px">Memahami Logical Operator</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -393,7 +401,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Operator</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Data Variabel</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -424,7 +432,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Type Casting</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Operator Aritmatika</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -445,7 +453,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Equality Comparisons</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Assignment Operator</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -466,7 +474,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Equality Comparisons</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Panjang Item List</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -487,7 +495,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Control Flow</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Menambah Data</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -508,7 +516,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Functions</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Merge Data List</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -539,7 +547,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Type Casting</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Count dan Sort</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -560,7 +568,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Equality Comparisons</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Variant Data</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
@@ -581,49 +589,7 @@
                                 </svg>                            
                               </div>
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Equality Comparisons</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Control Flow</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Functions</span>
+                            <span class="semibold font-medium" style="font-size:17px">Belajar Looping Data List</span>
                           </div>
                           <span class="text-gray-500 text-sm">3 mins</span>
                         </li>
