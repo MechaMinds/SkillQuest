@@ -818,3 +818,11 @@ video {
         font-weight: 600;
     }
 }
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
