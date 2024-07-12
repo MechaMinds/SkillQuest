@@ -22,6 +22,9 @@ Route::get('/roadmap', function(){
 Route::get('roadmap/backend', function(){
     return view('pages.roadmap.backend');
 });
-Route::get('course/javascript', function(){
-    return view('pages.course.javascript');
+Route::get('course/materi/javascript', function(){
+    return view('pages.course.materi.javascript');
+});
+Route::get('roadmap/web-developer', function(){
+    return view('pages.roadmap.web-developer');
 });
