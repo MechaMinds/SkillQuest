@@ -853,14 +853,14 @@ video {
         transform: translateX(-10px);
     }
 }
-
+/* 
 .content-section {
     display: none;
 }
 
 .content-section.active {
     display: block;
-}
+} */
 .avatar {
     width: 55px;
     height: 55px;
@@ -895,4 +895,34 @@ video {
 
 .avatar-group .avatar:hover:not(:last-of-type) {
     transform: translateX(-10px);
+}
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Sesuaikan dengan tinggi yang diinginkan */
+}
+
+.carousel-item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes scrollDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.item {
+    animation: scrollDown 3s ease-out infinite;
 }

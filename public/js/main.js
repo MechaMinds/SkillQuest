@@ -172,39 +172,42 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".btnRoad");
-    const sections = document.querySelectorAll(".content-section > div");
-
-    // Function to switch content
-    function switchContent(target) {
-        sections.forEach((section) => {
-            section.classList.remove("active");
-            section.classList.add("hidden");
-        });
-
-        const targetSection = document.getElementById(target);
-        targetSection.classList.remove("hidden");
-        setTimeout(() => {
-            targetSection.classList.add("active");
-        }, 10); // Timeout to allow transition to apply
-    }
-
-    // Set the "aboutContent" as the default active section
-    switchContent("frontEnd");
-
-    buttons.forEach((button) => {
-        button.addEventListener("click", function () {
-            const target = this.id.replace("Btn", "Content");
-            switchContent(target);
-        });
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("buttonContainer");
 
     container.addEventListener("wheel", (evt) => {
         evt.preventDefault();
         container.scrollLeft += evt.deltaY;
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card");
+    const maxVisible = 2; // Jumlah maksimal kartu yang ditampilkan pada satu waktu
+    let currentIndex = 0; // Indeks awal untuk tampilan
+
+    showCards();
+
+    function showCards() {
+        // Sembunyikan semua kartu
+        cards.forEach((card) => {
+            card.style.display = "none";
+        });
+
+        // Tampilkan kartu-kartu yang sesuai
+        for (let i = currentIndex; i < currentIndex + maxVisible; i++) {
+            if (cards[i]) {
+                cards[i].style.display = "block";
+            }
+        }
+    }
+
+    // Contoh: Berpindah ke kartu-kartu berikutnya setiap klik
+    const nextButton = document.getElementById("nextButton");
+    nextButton.addEventListener("click", function () {
+        currentIndex += maxVisible;
+        if (currentIndex >= cards.length) {
+            currentIndex = 0;
+        }
+        showCards();
     });
 });

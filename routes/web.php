@@ -19,12 +19,9 @@ Route::get('/', function () {
 Route::get('/roadmap', function(){
     return view('roadmap');
 });
-Route::get('roadmap/backend', function(){
-    return view('pages.roadmap.backend');
-});
 Route::get('course/materi/javascript', function(){
     return view('pages.course.materi.javascript');
 });
-Route::get('roadmap/web-developer', function(){
-    return view('pages.roadmap.web-developer');
+Route::get('roadmap/machine-learning', function(){
+    return view('pages.roadmap.machine-learning');
 });

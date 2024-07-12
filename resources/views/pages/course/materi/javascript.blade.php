@@ -762,5 +762,35 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script> 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".nav-button");
+      const sections = document.querySelectorAll(".content-section > div");
+
+      // Function to switch content
+      function switchContent(target) {
+          sections.forEach((section) => {
+              section.classList.remove("active");
+              section.classList.add("hidden");
+          });
+
+          const targetSection = document.getElementById(target);
+          targetSection.classList.remove("hidden");
+          setTimeout(() => {
+              targetSection.classList.add("active");
+          }, 10); // Timeout to allow transition to apply
+      }
+
+      // Set the "aboutContent" as the default active section
+      switchContent("aboutContent");
+
+      buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+              const target = this.id.replace("Btn", "Content");
+              switchContent(target);
+          });
+      });
+  });
+    </script>
   </body>
 </html>
