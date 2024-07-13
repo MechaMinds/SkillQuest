@@ -34,87 +34,63 @@
               <a href="#" class="block py-2 px-3 text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</a>
             </li>
             <li>
-              <button id="mega-menu-dropdown-button" data-dropdown-toggle="mega-menu-dropdown" class="flex items-center justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-                Company 
+              <button id="kelas-button" data-dropdown-toggle="kelas-dropdown" class="flex items-center justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                Kelas 
                 <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
               </button>
-              <div id="mega-menu-dropdown" class="absolute z-10 flex hidden w-auto flex-cols-2 text-sm bg-white border border-gray-100 shadow-md dark:border-gray-700 md:flex-cols-4 dark:bg-gray-700" style="border-radius: 20px">
-                <div class="bg-gray-900 dark:bg-white text-center justify-center" style="padding: 70px 30px 70px 30px; border-radius:20px 0px 0px 20px">
-                  <p class="text-sm text-accent">Trusted by 900K+ Students</p>
-                  <h2 class="text-2xl font-bold mt-2">Build Your Future Career</h2>
-                  <p class="mt-2 text-muted-foreground">Explore kelas gratis dan berbayar bersama mentor expert</p>
-                  <button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 mt-4 py-2 px-4 rounded-lg">All Courses</button>
+              <div id="kelas-dropdown" class="absolute z-10 flex hidden w-auto flex-cols-2 text-sm md:flex-cols-4 bg-white" style="border-radius: 20px">
+                <div class="navBg text-center text-white justify-center" style="padding: 60px 40px 50px 40px; border-radius:20px 0px 0px 20px">
+                  <p class="text-sm text-accent text-green-500 dark:text-green-400">90 Ribu Pelajar Mempercayai Kami</p>
+                  <h2 class="text-2xl font-bold mt-2">Wujudkan Karir <br> Impian Anda</h2>
+                  <p class="mt-2 text-white-200">Akses kelas gratis dan berbayar dengan <br> mentor ahli</p>
+                  <button type="button" style="margin-top: 40px" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-end">Semua Kelas</button>
                 </div>
-                <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
-                  <ul class="space-y-4" aria-labelledby="mega-menu-dropdown-button">
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
+                <div class="p-6 text-gray-900 dark:text-white" style="margin-top:40px">
+                  <ul aria-labelledby="kelas-button">
+                    <li class="mb-7">
+                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                        UI/UX Design
                       </a>
                     </li>
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
+                    <li class="mb-7">
+                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                        Web Developer
                       </a>
                     </li>
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
+                    <li class="mb-7">
+                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                        Android Developer
                       </a>
                     </li>
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
+                    <li class="mb-7">
+                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                        Machine Learning
                       </a>
                     </li>
                   </ul>
                 </div>
-                <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
-                  <ul class="space-y-4">
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
+                <div class="p-6 text-gray-900 dark:text-white" style="margin-top:40px">
+                  <ul>
+                    <li class="mb-7">
+                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                        Data Scientist
                       </a>
                     </li>
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
+                    <li class="mb-7">
+                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                        iOS Developer
                       </a>
                     </li>
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
+                    <li class="mb-7">
+                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                        DevOps Engineer
                       </a>
                     </li>
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="p-4">
-                  <ul class="space-y-4">
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
-                        About Us
+                    <li class="mb-7">
+                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                        Cloud Computing
                       </a>
                     </li>
                   </ul>
@@ -122,7 +98,60 @@
               </div>                  
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Team</a>
+              <button id="roadMap-button" data-dropdown-toggle="roadMap-dropdown" class="flex items-center justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                Road Map 
+                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </button>
+              <div id="roadMap-dropdown" class="absolute z-10 flex hidden w-auto flex-cols-2 text-sm md:flex-cols-4 bg-white" style="border-radius: 20px">
+                <div class="navBg text-center text-white justify-center" style="padding: 80px 50px 0px 50px; border-radius:20px 0px 0px 20px">
+                  <p class="text-sm text-accent text-green-500 dark:text-green-400">90 Ribu Pelajar Mempercayai Kami</p>
+                  <h2 class="text-2xl font-bold mt-2">Wujudkan Karir <br> Impian Anda</h2>
+                  <p class="mt-2 text-white-200">Akses kelas gratis dan berbayar dengan <br> mentor ahli</p>
+                  <button type="button" style="margin-top: 40px" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-end">Semua Kelas</button>
+                </div>
+                <div class="text-gray-900 dark:text-white" style="padding: 25px 40px 30px 20px; margin-top:25px">
+                  <ul aria-labelledby="roadMap-button">
+                    <li class="mb-7">
+                      <a href="#" class="flex flex-row items-center justify-center text-black dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg text-center">
+                        <img width="60px" height="60px" src="{{asset('./images/UIUX.svg')}}" alt="">
+                        <div class="flex flex-col items-left">
+                          <span class="text-black font-bold text-left ">UI/UX Designer</span>
+                          <span class="text-sm text-black text-left">Rekomendasi dari beberapa mentor expert</span>
+                        </div>
+                      </a>
+                    </li>                        
+                    <li class="mb-7">
+                      <a href="#" class="flex flex-row items-center justify-center text-black dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg text-center">
+                        <img width="60px" height="60px" src="{{asset('./images/Web-Developer.svg')}}" alt="">
+                        <div class="flex flex-col items-left">
+                          <span class="text-black font-bold text-left ">Web Developer</span>
+                          <span class="text-sm text-black text-left">Rekomendasi dari beberapa mentor expert</span>
+                        </div>
+                      </a>
+                    </li>                                      
+                    <li class="mb-7">
+                      <a href="#" class="flex flex-row items-center justify-center text-black dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg text-center">
+                        <img width="60px" height="60px" src="{{asset('./images/Mobile-Developer.svg')}}" alt="">
+                        <div class="flex flex-col items-left">
+                          <span class="text-black font-bold text-left ">Mobile Developer</span>
+                          <span class="text-sm text-black text-left">Rekomendasi dari beberapa mentor expert</span>
+                        </div>
+                      </a>
+                    </li>                     
+                    <li class="mb-7">
+                      <a href="#" class="flex flex-row items-center justify-center text-black dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg text-center">
+                        <img width="60px" height="60px" src="{{asset('./images/Data-Scientist.svg')}}" alt="">
+                        <div class="flex flex-col items-left">
+                          <span class="text-black font-bold text-left ">Machine Learning Developer</span>
+                          <span class="text-sm text-black text-left">Rekomendasi dari beberapa mentor expert</span>
+                        </div>
+                      </a>
+                    </li>                    
+                  </ul>
+                </div>
+              </div>                  
             </li>
             <li>
               <a href="#" class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
@@ -143,24 +172,24 @@
               Kami berfokus pada teknologi, inovasi, dan pembelajaran dapat membuka nilai jangka panjang dan mendorong pertumbuhan ekonomi melalui kursus IT online.
             </p>
             <div class="section-title flex flex-col items-left lg:items-start gap-6 lg:flex-row mt-8">
-              <button type="button" class="flex items-center justify-center font-medium disabled:opacity-80 gap-2 text-white disabled:bg-mono-200 disabled:text-mono-600 disabled:cursor-not-allowed bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 px-3 py-3 mt-1" style="width: 200px; font-size:18px; border-radius:10px;">
+              <button type="button" class="flex items-center justify-center font-medium disabled:opacity-80 gap-2 text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 px-3 py-3 mt-1" style="width: 150px; font-size:18px; border-radius:10px;">
                 <a href="/roadmap">
-                  Road Map Kamu
+                  Road Map
                 </a>
               </button>              
-              <div class="hidden lg:block" style="height:65px; border-right: 2px solid rgb(17 24 39)"></div>
+              <div class="hidden lg:block border-r dark:border-white border-gray-900  " style="height:65px;"></div>
               <div class="grid text-center lg:text-left">
                 <div class="flex flex-col items-left lg:items-start">
                   <div class="flex justify-left lg:justify-start">
                     <ul class="testi">
-                      <li class="testimoni"></li>
-                      <li class="testimoni"></li>
-                      <li class="testimoni"></li>
-                      <li class="testimoni"></li>
+                      <li class="testimoni border dark:border-white border-gray-900"></li>
+                      <li class="testimoni border dark:border-white border-gray-900"></li>
+                      <li class="testimoni border dark:border-white border-gray-900"></li>
+                      <li class="testimoni border dark:border-white border-gray-900"></li>
                     </ul>
                   </div>
                 </div>
-                <p class="font-medium text-gray-900 dark:text-white text-left">Lebih dari <span class="font-extrabold dark:text-white text-gray-900">90 Ribu+</span> Orang belajar di Skilvul</p>
+                <p class="font-medium text-gray-900 dark:text-white text-left">Bergabunglah dengan<span class="font-extrabold dark:text-white text-gray-900"> 90 Ribu+</span> Pelajar di Pintar Path</p>
               </div>
             </div>                
           </div>
@@ -213,7 +242,7 @@
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Machine Learning</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
             <a
-              href="course/roadmap/machine-learning"
+              href="kelas/machine-learning"
               class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Belajar Sekarang

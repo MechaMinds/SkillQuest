@@ -937,7 +937,6 @@ video {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 1px solid white;
     display: inline-block;
     position: relative;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
@@ -962,4 +961,10 @@ video {
 }
 .testimoni:nth-child(n + 2) {
     margin-left: -20px;
+}
+.navBg {
+    background-image: url("/images/background.png");
+    background-size: cover; /* Menyesuaikan ukuran gambar */
+    background-position: center; /* Posisikan gambar di tengah */
+    background-repeat: no-repeat; /* Jangan ulangi gambar */
 }
