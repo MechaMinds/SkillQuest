@@ -22,7 +22,7 @@ Route::get('/roadmap', function(){
 Route::get('/kelas/belajar-bahasa-pemrograman-python', function(){
     return view('pages.course.roadmap.kelas.belajar-bahasa-pemrograman-python');
 });
-Route::get('kelas/machine-learning', function(){
+Route::get('    ', function(){
     return view('pages.course.roadmap.machine-learning');
 });
 Route::get('/kelas', function(){

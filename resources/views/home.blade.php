@@ -65,7 +65,7 @@
                       </a>
                     </li>
                     <li class="mb-7">
-                      <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                      <a href="kelas/machine-learning" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
                         Machine Learning
                       </a>
                     </li>
@@ -109,7 +109,7 @@
                   <p class="text-sm text-accent text-green-500 dark:text-green-400">90 Ribu Pelajar Mempercayai Kami</p>
                   <h2 class="text-2xl font-bold mt-2">Wujudkan Karir <br> Impian Anda</h2>
                   <p class="mt-2 text-white-200">Akses kelas gratis dan berbayar dengan <br> mentor ahli</p>
-                  <button type="button" style="margin-top: 40px" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-end">Semua Kelas</button>
+                  <button type="button" style="margin-top: 40px" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-end">Semua Road Map</button>
                 </div>
                 <div class="text-gray-900 dark:text-white" style="padding: 25px 40px 30px 20px; margin-top:25px">
                   <ul aria-labelledby="roadMap-button">
@@ -135,7 +135,7 @@
                       <a href="#" class="flex flex-row items-center justify-center text-black dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg text-center">
                         <img width="60px" height="60px" src="{{asset('./images/Mobile-Developer.svg')}}" alt="">
                         <div class="flex flex-col items-left">
-                          <span class="text-black font-bold text-left ">Mobile Developer</span>
+                          <span class="text-black font-bold text-left">Mobile Developer</span>
                           <span class="text-sm text-black text-left">Rekomendasi dari beberapa mentor expert</span>
                         </div>
                       </a>
@@ -154,7 +154,32 @@
               </div>                  
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+              <button id="komunitas-button" data-dropdown-toggle="komunitas-dropdown" class="flex items-center justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                Komunitas 
+                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </button>
+              <div id="komunitas-dropdown" class="absolute z-10 flex hidden w-auto flex-cols-2 text-sm md:flex-cols-4 bg-white" style="border-radius:10px">
+                <div class="bg-white text-card-foreground p-4 w-64" style="height: 145px;border-radius: 10px" aria-labelledby="komunitas-button">
+                  <div class="flex items-center space-x-3 mb-5 hover:text-blue-600 dark:hover:text-blue-500">
+                    <div class="bg-gray-200 py-3 px-3 rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mt-1">
+                        <path fill="#146ffe" d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z"/>
+                      </svg>
+                    </div>
+                    <span class="text-black font-bold text-left text-lg">Forum</span>
+                  </div>
+                  <div class="flex items-center space-x-3 mb-4 hover:text-blue-600 dark:hover:text-blue-500">
+                    <div class="bg-gray-200 py-3 px-3 rounded-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
+                        <path fill="#146ffe" d="M96 96c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H80c-44.2 0-80-35.8-80-80V128c0-17.7 14.3-32 32-32s32 14.3 32 32V400c0 8.8 7.2 16 16 16s16-7.2 16-16V96zm64 24v80c0 13.3 10.7 24 24 24H296c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24H184c-13.3 0-24 10.7-24 24zm208-8c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zM160 304c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16z"/>
+                      </svg>
+                    </div>
+                    <span class="text-black font-bold text-left text-lg">Blog Berita</span>
+                  </div>
+                </div>
+              </div>                  
             </li>
           </ul>
         </div>  
