@@ -83,7 +83,7 @@
                 <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                 </svg>
-                <a href="/course/machine-learning" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Machine Learning</a>
+                <a href="/kelas/machine-learning" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Machine Learning</a>
               </div>
             </li>
             <li>
@@ -276,7 +276,7 @@
                           </button>
                         </div>
                         <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
-                          <img src="{{asset('/images/python.png')}}" alt="Python logo" class="mb-4" width="85px" height="85px" />
+                          <img src="{{asset('/images/python.png')}}" alt="Python logo" class="mb-4" width="85 px" height="85 px" />
                           <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Python</h2>
                           <p class="text-black dark:text-white mb-4">Bahasa Pemrograman</p>
                           <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">

@@ -6716,6 +6716,9 @@ input:checked + .toggle-bg {
     .sm\:items-center {
         align-items: center;
     }
+    .sm\:items-left {
+        align-items: left;
+    }
     .sm\:justify-center {
         justify-content: center;
     }
