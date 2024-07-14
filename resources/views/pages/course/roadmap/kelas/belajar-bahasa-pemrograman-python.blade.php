@@ -331,9 +331,109 @@
                 </div>                    
               </div>
             </div>
+            <!-- Mentor -->
+            <h2 class="text-black dark:text-white text-xl font-bold lg:marg-lg sm:marg-sm mt-10 mb-7" style="font-size: 25px;">Mentor</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden"  style="border-radius: 20px">
+                <div class="p-6">
+                  <div class="mb-6">
+                    <div class="flex items-center mb-2">
+                      <h2 class="text-lg font-semibold text-black dark:text-white">Mentor</h2>
+                      <span class="ml-2 text-black dark:text-white text-sm font-medium px-2.5 py-0.5 rounded dark:bg-gray-900 bg-white">2</span>
+                    </div>
+                    <p class="text-muted-foreground mb-4 text-black dark:text-white">Mentor hebat yang membangun kelas ini :</p>
+                    <div class="space-y-4">
+                      <div class="flex items-center space-x-4">
+                        <img src="{{{asset('./images/mentor/mentor1.png')}}}" alt="Rizky Pratama" class="w-10 h-10 rounded-full object-cover" />
+                        <div>
+                          <p class="font-semibold text-black dark:text-white">Rizky Pratama</p>
+                          <p class="text-sm text-muted-foreground text-black dark:text-white">Python Automation Specialist</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center space-x-4">
+                        <img src="{{{asset('./images/mentor/mentor2.png')}}}" alt="Agus Kurniawan" class="w-10 h-10 rounded-full object-cover" />
+                        <div>
+                          <p class="font-semibold text-black dark:text-white">Agus Kurniawan</p>
+                          <p class="text-sm text-muted-foreground text-black dark:text-white">Python Software Engineer</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>              
+                  <div>
+                    <div class="flex items-center mb-2">
+                      <h2 class="text-lg font-semibold text-black dark:text-white">Reviewer</h2>
+                      <span class="ml-2 text-black dark:text-white text-sm font-medium px-2.5 py-0.5 rounded dark:bg-gray-900 bg-white">3</span>
+                    </div>
+                    <p class="text-muted-foreground mb-4 text-black dark:text-white">Reviewer yang akan menilai hasil project akhir kamu :</p>
+                    <div class="flex space-x-4">
+                      <img src="{{{asset('./images/mentor/mentor1.png')}}}" alt="Reviewer 1" class="w-10 h-10 rounded-full object-cover" data-tooltip-target="Rizky Pratama" />
+                      <img src="{{{asset('./images/mentor/mentor2.png')}}}" alt="Reviewer 2" class="w-10 h-10 rounded-full object-cover" data-tooltip-target="Agus Kurniawan"/>
+                      <img src="{{{asset('./images/mentor/mentor3.png')}}}" alt="Reviewer 3" class="w-10 h-10 rounded-full object-cover" data-tooltip-target="Andi Wijaya"/>
+                    </div>
+                    <!-- Tooltips -->
+                    <div id="Rizky Pratama" role="tooltip" class="duration-300 absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                      Rizky Pratama
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    <div id="Agus Kurniawan" role="tooltip" class="duration-300 absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                      Agus Kurniawan
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    <div id="Andi Wijaya" role="tooltip" class="duration-300 absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                      Andi Wijaya
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    <!-- Tooltips Selesai -->
+                  </div>              
+                </div>
+              </div>
+              <div class="w-full hidden bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden mt-10"  style="border-radius: 20px">
+                <div class="p-6">
+                  <div class="mb-6">
+                    <div class="flex items-center mb-2">
+                      <h2 class="text-lg font-semibold">Kontributor</h2>
+                      <span class="ml-2 bg-zinc-200 text-zinc-800 text-sm font-medium px-2.5 py-0.5 rounded">3</span>
+                    </div>
+                    <p class="text-muted-foreground mb-4">Curriculum Developer yang membangun kelas ini:</p>
+                    <div class="space-y-4">
+                      <div class="flex items-center space-x-4">
+                        <img src="https://placehold.co/40x40" alt="Raka Adi Nugroho" class="w-10 h-10 rounded-full" />
+                        <div>
+                          <p class="font-semibold">Raka Adi Nugroho</p>
+                          <p class="text-sm text-muted-foreground">Lead Software Engineer - Mobile at Kitalulus.com</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center space-x-4">
+                        <img src="https://placehold.co/40x40" alt="Dimas Maulana Dwi Saputra" class="w-10 h-10 rounded-full" />
+                        <div>
+                          <p class="font-semibold">Dimas Maulana Dwi Saputra</p>
+                          <p class="text-sm text-muted-foreground">Curriculum Developer at Dicoding Indonesia</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>              
+                  <div>
+                    <div class="flex items-center mb-2">
+                      <h2 class="text-lg font-semibold">Reviewer</h2>
+                      <span class="ml-2 bg-zinc-200 text-zinc-800 text-sm font-medium px-2.5 py-0.5 rounded">3</span>
+                    </div>
+                    <p class="text-muted-foreground mb-4">Code Reviewer yang akan me-review tugas dan kode Anda:</p>
+                    <div class="flex space-x-4">
+                      <img src="https://placehold.co/40x40" alt="Reviewer 1" class="w-10 h-10 rounded-full" />
+                      <img src="https://placehold.co/40x40" alt="Reviewer 2" class="w-10 h-10 rounded-full" />
+                      <img src="https://placehold.co/40x40" alt="Reviewer 3" class="w-10 h-10 rounded-full" />
+                    </div>
+                  </div>              
+                  <div class="mt-6">
+                    <a href="#" class="text-primary hover:underline">Lihat semua kontributor dan reviewer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Mentor Selesai -->
             <!-- Rundown -->
             <div id="lessonsSection" class="mt-10">
-              <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg sm:marg-sm" style="font-size: 25px;">Rundown Materi Belajar Bahasa Pemrograman Python</h2>
+              <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg sm:marg-sm" style="font-size: 25px;">Syllabus Belajar Bahasa Pemrograman Python</h2>
               <!-- Sesi 1-->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
