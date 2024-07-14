@@ -211,3 +211,9 @@ document.addEventListener("DOMContentLoaded", function () {
         showCards();
     });
 });
+
+document.getElementById("lessonsBtn").addEventListener("click", function () {
+    docuemnt
+        .getElementById("lessonsSection")
+        .scrollIntoView({ behavior: "smooth" });
+});

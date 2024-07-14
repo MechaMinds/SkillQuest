@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +23,11 @@ Route::get('/roadmap', function(){
 Route::get('/kelas/belajar-bahasa-pemrograman-python', function(){
     return view('pages.course.roadmap.kelas.belajar-bahasa-pemrograman-python');
 });
-Route::get('    ', function(){
+Route::get('/kelas/machine-learning', function(){
     return view('pages.course.roadmap.machine-learning');
 });
 Route::get('/kelas', function(){
     return view('kelas');
 });
+
+

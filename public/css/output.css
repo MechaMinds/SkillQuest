@@ -809,6 +809,11 @@ video {
         line-height: 1.5; /* Jarak antara baris teks */
         font-weight: 600;
     }
+    .jumbs1 {
+        margin-top: 200px;
+        margin-bottom: 100px;
+        font-size: 50px;
+    }
 }
 
 @media (max-width: 1025px) {
@@ -854,6 +859,11 @@ video {
     }
     .testiRoad {
         align-items: left !important;
+    }
+    .jumbs1 {
+        margin-top: 130px;
+        margin-bottom: 50px;
+        font-size: 30px;
     }
 }
 /* 

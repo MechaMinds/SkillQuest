@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pintar Path ⸺ Solusi Belajar IT</title>
-        <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
-        <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
-        <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
-      </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pintar Path ⸺ Solusi Belajar IT</title>
+    <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
+  </head>
   <body class="mt-3 bg-white dark:bg-gray-900">
     <div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-[-1]"></div>
     <!-- Navbar Mulai-->
@@ -54,556 +54,596 @@
       </div>
     </nav>
     <!-- Navbar Selesai -->
-
-    <!-- Breadcumb Mulai -->
-    <section class="relative" style="margin-top: 100px">
-      <div class="mx-auto max-w-screen-xl grid lg:grid-cols-2 gap-8 lg:gap-16" style="padding-top: 2rem; padding-bottom: 1rem; padding-left: 1rem">
-        <nav class="flex" aria-label="Breadcrumb">
-          <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <li class="inline-flex items-center">
-              <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
-                <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
-                  />
-                </svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                </svg>
-                <a href="/kelas" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Kelas</a>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                </svg>
-                <a href="/kelas/machine-learning" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Machine Learning</a>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                </svg>
-                <a href="" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Python</a>
-              </div>
-            </li>
-          </ol>
-        </nav>
-      </div>
-    </section>
-    <!-- Breadcumb Mulai -->
-
-    <!-- Jumbotron 1 Mulai-->
-    <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative" style="margin-top:50px">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white sm:text-md">Belajar Bahasa Pemrograman Python</h1>   
-      </div>
-    </section>
-    <!-- Jumbotron 1 Selesai-->   
-    <!-- Jumbotron 2 Mulai -->
-      <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] py-8 lg:py-16">
-        <div class="px-4 mx-auto max-w-screen-xl text-left z-10 relative">
-          <div class="flex flex-col lg:flex-row gap-6 p-6">
-            <!-- Image and Description Section -->
-            <div class="lg:w-1/2">
-              <div class="aspect-w-20 aspect-h-12">
-                <img width="2100px" height="2100px" style="border-radius:20px" src="{{asset('/images/thumbnail.jpg')}}" alt="Course Thumbnail">
-              </div>
-            </div>              
-            <!-- Lessons Section -->
-            <div class="lg:block hidden bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 w-full lg:w-1/2 h-full mt-16" style="border-radius: 20px; position: relative;">
-              <!-- Mode Desktop -->
-              <div class="p-6">
-                  <h3 class="text-black dark:text-white text-lg font-semibold">15 Modul (120 mins)</h3>
-                  <ul class="mt-4 space-y-2">
-                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                          <span class="text-black dark:text-white">Intoduction to Python</span>
-                          <span class="text-black dark:text-white">3 mins</span>
-                      </li>
-                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                          <span class="text-black dark:text-white">Belajar Data Variabel</span>
-                          <span class="text-black dark:text-white">3 mins</span>
-                      </li>
-                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                          <span class="text-black dark:text-white">Belajar Operator Perbandingan</span>
-                          <span class="text-black dark:text-white">3 mins</span>
-                      </li>
-                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                          <span class="text-black dark:text-white">Memahami Logical Operator</span>
-                          <span class="text-black dark:text-white">3 mins</span>
-                      </li>
-                      <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
-                          <span class="text-black dark:text-white">15 modul lainnya</span>
-                      </li>
-                  </ul>
-              </div>
-              <button class="w-full mt-6 py-6 font-medium text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px; font-size:25px">Gabung Sekarang</button>
-            </div>          
-          </div>
+    <!-- Jumbotron 1 Mulai -->
+    <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] py-8 lg:py-16">
+      <div class="px-4 mx-auto max-w-screen-xl text-left z-10 relative">
+        <h1 class="font-extrabold tracking-tight leading-none text-gray-900 dark:text-white justify-center text-center jumbs1">Belajar Bahasa Pemrograman Python</h1>   
+        <div class="flex flex-col lg:flex-row gap-6 p-6">
+          <!-- Image and Description Section -->
+          <div class="lg:w-1/2">
+            <div class="aspect-w-20 aspect-h-12">
+              <img width="2100px" height="2100px" style="border-radius:20px" src="{{asset('/images/thumbnail.jpg')}}" alt="Course Thumbnail">
+            </div>
+          </div>              
+          <!-- Lessons Section -->
+          <div class="lg:block hidden bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 w-full lg:w-1/2 h-full mt-16" style="border-radius: 20px; position: relative;">
+            <!-- Mode Desktop -->
+            <div class="p-6">
+                <h3 class="text-black dark:text-white text-lg font-semibold">13 Modul (39 mins)</h3>
+                <ul class="mt-4 space-y-2">
+                    <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                        <span class="text-black dark:text-white">Intoduction to Python</span>
+                        <span class="text-black dark:text-white">3 mins</span>
+                    </li>
+                    <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                        <span class="text-black dark:text-white">Belajar Data Variabel</span>
+                        <span class="text-black dark:text-white">3 mins</span>
+                    </li>
+                    <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                        <span class="text-black dark:text-white">Belajar Operator Perbandingan</span>
+                        <span class="text-black dark:text-white">3 mins</span>
+                    </li>
+                    <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                        <span class="text-black dark:text-white">Memahami Logical Operator</span>
+                        <span class="text-black dark:text-white">3 mins</span>
+                    </li>
+                    <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
+                        <span class="text-black dark:text-white">15 modul lainnya</span>
+                    </li>
+                </ul>
+            </div>
+            <button type="submit" class="w-full mt-6 py-6 font-medium text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px; font-size:25px">Gabung Sekarang</button>
+          </div>          
         </div>
-        <!-- Course Details -->
-        <div class="px-4 mx-auto max-w-screen-xl text-left z-10 relative">
-          <div class="flex flex-col lg:flex-row gap-6 p-6">
-            <div class="">
-              <!-- Navigation Buttons -->
-              <div class="button-container mb-10">
-                <button id="aboutBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-white bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius:50px; flex-shrink: 0;">Tentang Course</button>
-                <button id="lessonsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Materi</button>
-                <button id="toolsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Tools</button>
-                <button id="testimonialsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Testimoni</button>
-              </div>                          
-              <!-- Course Description -->
-              <div id="content" class="content-section">
-                <div id="aboutContent" class="active">
-                  <h2 class="text-black dark:text-white text-xl font-bold mb-3 lg:marg-lg sm:marg-sm" style="font-size: 25px;">Develop Your Skills</h2>
-                  <p class="mt-2 text-black dark:text-white">
-                    Demi meningkatkan kemudahan pengguna dalam menggunakan aplikasi buatan kita sebagai designer, maka peran Interaction Design sangatlah dibutuhkan pada setiap design yang kita buat. Jika saat ini kamu sedang mencari tombol Download namun tidak ada reaksi apapun dari aplikasi tersebut, pasti kamu akan bingung dan harus ngapain kan? maka dari itu kita perlu membuat Interaction Design.
-                  </p>
-                  <p class="mt-6 text-black dark:text-white">
-                    Pada kelas Framer: Basic of User Interaction Design kita akan belajar membuat design Getting Started sederhana yang dapat memberikan informasi kepada pengguna sebelum mereka memutuskan untuk mendaftar akun baru.
-                  </p>
-                  <!-- Key Points -->
-                  <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg mt-10" style="font-size: 25px;">Tujuan Course Ini</h2>
-                  <div class="grid grid-cols-2 gap-6">
-                    <!-- Kiri -->
-                    <div>
-                      <li class="checklist-item">
-                        <div class="checklist-circle">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_981_529)">
-                            <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                            <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_981_529">
-                            <rect width="24" height="24" fill="white"/>
-                            </clipPath>
-                            </defs>
-                          </svg>                            
-                        </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Logical Operator</span>
-                      </li>
-                      <li class="checklist-item">
-                        <div class="checklist-circle">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_981_529)">
-                            <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                            <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_981_529">
-                            <rect width="24" height="24" fill="white"/>
-                            </clipPath>
-                            </defs>
-                          </svg>                            
-                        </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Operator Aritmatika</span>
-                      </li>
-                    </div>
-                    <!-- Kanan -->
-                    <div>
-                      <li class="checklist-item">
-                        <div class="checklist-circle">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_981_529)">
-                            <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                            <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_981_529">
-                            <rect width="24" height="24" fill="white"/>
-                            </clipPath>
-                            </defs>
-                          </svg>                            
-                        </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Looping Data List</span>
-                      </li>
-                      <li class="checklist-item">
-                        <div class="checklist-circle">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_981_529)">
-                            <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                            <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_981_529">
-                            <rect width="24" height="24" fill="white"/>
-                            </clipPath>
-                            </defs>
-                          </svg>                            
-                        </div>
-                        <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Operator Perbandingan</span>
-                      </li>
-                    </div>
+      </div>
+      <!-- Course Details -->
+      <div class="px-4 mx-auto max-w-screen-xl text-left z-10 relative">
+        <div class="flex flex-col lg:flex-row gap-6 p-6">
+          <div class="">
+            <!-- Navigation Buttons -->
+            <div class="button-container mb-10">
+              <button id="aboutBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-white bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius:50px; flex-shrink: 0;">Tentang Course</button>
+              <button id="teachBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Metode Pembelajaran</button>
+              <button id="toolsBtn" type="button" class="nav-button px-5 py-3 text-base font-medium text-center text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" style="border-radius:50px; flex-shrink: 0;">Tools</button>
+            </div>                          
+            <!-- Course Description -->
+            <div id="content" class="content-section">
+              <div id="aboutContent" class="active">
+                <h2 class="text-black dark:text-white text-xl font-bold mb-3 lg:marg-lg sm:marg-sm" style="font-size: 25px;">Develop Your Skills</h2>
+                <p class="mt-2 text-black dark:text-white">
+                  Kami sangat senang menyambut Anda dalam perjalanan menarik untuk mempelajari salah satu bahasa pemrograman paling populer di dunia. Python dikenal karena kesederhanaan dan kekuatannya, menjadikannya pilihan yang tepat bagi pemula yang baru memulai petualangan mereka di dunia pemrograman.
+                </p>
+                <p class="mt-6 text-black dark:text-white">
+                  Pada kursus ini, Anda akan dibimbing langkah demi langkah dalam memahami konsep dasar Python, dan kami yakin bahwa dengan dedikasi dan latihan, Anda akan mampu menguasai dasar-dasar pemrograman Python dengan baik.
+                </p>
+                <!-- Key Points -->
+                <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg mt-10" style="font-size: 25px;">Tujuan Course Ini</h2>
+                <div class="grid grid-cols-2 gap-6">
+                  <!-- Kiri -->
+                  <div>
+                    <li class="checklist-item">
+                      <div class="checklist-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_981_529)">
+                          <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                          <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_981_529">
+                          <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>                            
+                      </div>
+                      <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Logical Operator</span>
+                    </li>
+                    <li class="checklist-item">
+                      <div class="checklist-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_981_529)">
+                          <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                          <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_981_529">
+                          <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>                            
+                      </div>
+                      <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Memahami Operator Aritmatika</span>
+                    </li>
+                  </div>
+                  <!-- Kanan -->
+                  <div>
+                    <li class="checklist-item">
+                      <div class="checklist-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_981_529)">
+                          <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                          <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_981_529">
+                          <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>                            
+                      </div>
+                      <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Looping Data List</span>
+                    </li>
+                    <li class="checklist-item">
+                      <div class="checklist-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_981_529)">
+                          <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                          <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_981_529">
+                          <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>                            
+                      </div>
+                      <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Mempelajari Operator Perbandingan</span>
+                    </li>
                   </div>
                 </div>
-                <div id="lessonsContent" class="hidden">
-                  <p class="text-white">INI MATERI</p>
+              </div>
+              <div id="teachContent" class="hidden">
+                <h2 class="text-black dark:text-white text-xl font-bold lg:marg-lg sm:marg-sm" style="font-size: 25px;">Metode Pembelajaran</h2>
+                <p class="mt-2 text-black dark:text-white">
+                  Kami sangat senang menyambut Anda dalam perjalanan menarik untuk mempelajari salah satu bahasa pemrograman paling populer di dunia. Dalam kursus ini, Anda akan diperkenalkan pada Python melalui pendekatan yang terstruktur dan interaktif. Kami percaya bahwa metode pembelajaran yang tepat akan membantu Anda menguasai konsep dasar dengan lebih mudah dan menyenangkan.
+                </p>
+                <!-- Key Points -->
+                <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg mt-5" style="font-size: 25px;">Online - Self Learning</h2>
+                <div class="grid grid-cols-2 gap-6">
+                  <!-- Kiri -->
+                  <div>
+                    <li class="checklist-item">
+                      <div class="checklist-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_981_529)">
+                          <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                          <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_981_529">
+                          <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>                            
+                      </div>
+                      <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Total jam belajar : 39 menit </span>
+                    </li>
+                  </div>
                 </div>
-                <div id="toolsContent" class="hidden">
-                  <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Tools yang dibutuhkan</h2>
-                  <p class="mt-2 text-black dark:text-white ">
-                    Penting untuk memastikan bahwa semua tools yang diperlukan sudah terinstal pada device kalian sebelum memulai kelas. Persiapan ini sangat penting agar kalian dapat mengikuti materi dengan lancar tanpa gangguan teknis, Oleh karena itu, sebelum memulai kelas, pastikan semua tools yang akan digunakan sudah terpasang dan berfungsi dengan baik di perangkat kalian agar kalian tidak terhambat proses belajar.
-                  </p>
-                  <p class="mt-6 text-black dark:text-white">
-                    Dengan begitu, kalian akan siap untuk mengikuti setiap sesi kelas dengan efektif dan tanpa hambatan teknis. Persiapan yang baik adalah kunci untuk pengalaman belajar yang sukses dan menyenangkan.
-                  </p>
-                  <!-- Card Tools -->
-                  <div class="mt-10">
-                    <div class="w-25 overflow-hidden">
-                      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
-                          <img src="{{asset('/images/chorme.png')}}" alt="Web Browser logo" class="mb-4" width="70px" height="70px" />
-                          <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Chorme Web Browser</h2>
-                          <p class="text-black dark:text-white mb-4">Software Gratis</p>
-                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
-                            <a href="https://chromeenterprise.google/download/" target="_blank">Download Disini</a>
-                          </button>
-                        </div>
-                        <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
-                          <img src="{{asset('/images/front-end.png')}}" alt="Visual Studio Code logo" class="mb-4" width="70px" height="70px" />
-                          <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Visual Studio Code</h2>
-                          <p class="text-black dark:text-white mb-4">Software Gratis</p>
-                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
-                            <a href="https://code.visualstudio.com" target="_blank">Download Disini</a>
-                          </button>
-                        </div>
-                        <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
-                          <img src="{{asset('/images/python.png')}}" alt="Python logo" class="mb-4" width="85 px" height="85 px" />
-                          <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Python</h2>
-                          <p class="text-black dark:text-white mb-4">Bahasa Pemrograman</p>
-                          <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
-                            <a href="https://www.javascript.org" target="_blank">Download Disini</a>
-                          </button>
-                        </div>
+                <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg mt-5" style="font-size: 25px;">Fasilitas Pembelajaran</h2>
+                <div class="">
+                  <!-- Kiri -->
+                  <div>
+                    <li class="checklist-item">
+                      <div class="checklist-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_981_529)">
+                          <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                          <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_981_529">
+                          <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>                            
+                      </div>
+                      <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Modul bacaan elektronik : Materi akan berbentuk teks dan bacaan </span>
+                    </li>
+                    <li class="checklist-item">
+                      <div class="checklist-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_981_529)">
+                          <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                          <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_981_529">
+                          <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>                            
+                      </div>
+                      <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Forum Diskusi : Setiap kelas akan ada forum sendiri untuk bertanya dan berdiskusi</span>
+                    </li>
+                    <li class="checklist-item">
+                      <div class="checklist-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_981_529)">
+                          <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                          <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_981_529">
+                          <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>                            
+                      </div>
+                      <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Project Akhir : Ujian akhir kelas akan diberi mini project sebagai evaluasi pembelajaran</span>
+                    </li>
+                    <li class="checklist-item">
+                      <div class="checklist-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_981_529)">
+                          <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                          <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_981_529">
+                          <rect width="24" height="24" fill="white"/>
+                          </clipPath>
+                          </defs>
+                        </svg>                            
+                      </div>
+                      <span class="checklist-text dark:text-gray-300 text-gray-500 sm:text-sm">Sertifikat Kompetensi</span>
+                    </li>
+                  </div>
+                </div>
+              </div>
+              <div id="toolsContent" class="hidden">
+                <h2 class="text-black dark:text-white text-xl font-bold mb-3" style="font-size: 25px;">Tools yang dibutuhkan</h2>
+                <p class="mt-2 text-black dark:text-white ">
+                  Penting untuk memastikan bahwa semua tools yang diperlukan sudah terinstal pada device kalian sebelum memulai kelas. Persiapan ini sangat penting agar kalian dapat mengikuti materi dengan lancar tanpa gangguan teknis, Oleh karena itu, sebelum memulai kelas, pastikan semua tools yang akan digunakan sudah terpasang dan berfungsi dengan baik di perangkat kalian agar kalian tidak terhambat proses belajar.
+                </p>
+                <p class="mt-6 text-black dark:text-white">
+                  Dengan begitu, kalian akan siap untuk mengikuti setiap sesi kelas dengan efektif dan tanpa hambatan teknis. Persiapan yang baik adalah kunci untuk pengalaman belajar yang sukses dan menyenangkan.
+                </p>
+                <!-- Card Tools -->
+                <div class="mt-10">
+                  <div class="w-25 overflow-hidden">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
+                        <img src="{{asset('/images/chorme.png')}}" alt="Web Browser logo" class="mb-4" width="70px" height="70px" />
+                        <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Chorme Web Browser</h2>
+                        <p class="text-black dark:text-white mb-4">Software Gratis</p>
+                        <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
+                          <a href="https://chromeenterprise.google/download/" target="_blank">Download Disini</a>
+                        </button>
+                      </div>
+                      <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
+                        <img src="{{asset('/images/front-end.png')}}" alt="Visual Studio Code logo" class="mb-4" width="70px" height="70px" />
+                        <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Visual Studio Code</h2>
+                        <p class="text-black dark:text-white mb-4">Software Gratis</p>
+                        <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
+                          <a href="https://code.visualstudio.com" target="_blank">Download Disini</a>
+                        </button>
+                      </div>
+                      <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col items-start" style="border-radius: 15px">
+                        <img src="{{asset('/images/python.png')}}" alt="Python logo" class="mb-4" width="85 px" height="85 px" />
+                        <h2 class="text-lg text-black dark:text-white mb-2 font-bold">Python</h2>
+                        <p class="text-black dark:text-white mb-4">Bahasa Pemrograman</p>
+                        <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="border-radius: 12px">
+                          <a href="https://www.python.org" target="_blank">Download Disini</a>
+                        </button>
                       </div>
                     </div>
-                  </div>                    
-                </div>
-                <div id="testimonialsContent" class="hidden">
-                  <p class="text-white">INI TESTIMONI</p>
-                </div>
+                  </div>
+                </div>                    
               </div>
-              <!-- Rundown -->
-              <div class="mt-10">
-                <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg sm:marg-sm" style="font-size: 25px;">Rundown Materi Belajar Javascript Untuk Pemula</h2>
-                <!-- Sesi 1-->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
-                    <div class="p-6">
-                      <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 1</h2>
-                      <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
+            </div>
+            <!-- Rundown -->
+            <div id="lessonsSection" class="mt-10">
+              <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg sm:marg-sm" style="font-size: 25px;">Rundown Materi Belajar Bahasa Pemrograman Python</h2>
+              <!-- Sesi 1-->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
+                  <div class="p-6">
+                    <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 1</h2>
+                    <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
                             <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Introduction to Python</span>
                           </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
+                          <span class="semibold font-medium" style="font-size:17px">Introduction to Python</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
                             <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Memahami Tipe Data Dasar</span>
                           </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
+                          <span class="semibold font-medium" style="font-size:17px">Memahami Tipe Data Dasar</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
                             <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Operator Perbandingan</span>
                           </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Operator Perbandingan</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
                             <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Memahami Logical Operator</span>
                           </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
+                          <span class="semibold font-medium" style="font-size:17px">Memahami Logical Operator</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
                             <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
                             </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Data Variabel</span>
                           </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <!-- Add other items as needed -->
-                      </ul>
-                    </div>
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Data Variabel</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <!-- Add other items as needed -->
+                    </ul>
                   </div>
-
-                  <!-- Sesi 2-->
-                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
-                    <div class="p-6">
-                      <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 2</h2>
-                      <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Operator Aritmatika</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Assignment Operator</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Panjang Item List</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Menambah Data</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Merge Data List</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- Sesi 2 -->
-
-                  <!-- Sesi 3 -->
-                  <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden"  style="border-radius: 20px">
-                    <div class="p-6">
-                      <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 3</h2>
-                      <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Count dan Sort</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Variant Data</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                        <li class="flex items-center justify-between mb-2">
-                          <div class="flex items-center">
-                            <div class="checklist-circle">
-                              <div class="checklist-circle">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <g clip-path="url(#clip0_981_529)">
-                                  <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
-                                  <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </g>
-                                  <defs>
-                                  <clipPath id="clip0_981_529">
-                                  <rect width="24" height="24" fill="white"/>
-                                  </clipPath>
-                                  </defs>
-                                </svg>                            
-                              </div>
-                            </div>
-                            <span class="semibold font-medium" style="font-size:17px">Belajar Looping Data List</span>
-                          </div>
-                          <span class="text-gray-500 text-sm">3 mins</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- Sesi 3 -->
                 </div>
+
+                <!-- Sesi 2-->
+                <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden" style="border-radius: 20px">
+                  <div class="p-6">
+                    <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 2</h2>
+                    <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
+                            <div class="checklist-circle">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
+                            </div>
+                          </div>
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Operator Aritmatika</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
+                            <div class="checklist-circle">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
+                            </div>
+                          </div>
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Assignment Operator</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
+                            <div class="checklist-circle">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
+                            </div>
+                          </div>
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Panjang Item List</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
+                            <div class="checklist-circle">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
+                            </div>
+                          </div>
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Menambah Data</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
+                            <div class="checklist-circle">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
+                            </div>
+                          </div>
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Merge Data List</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Sesi 2 -->
+
+                <!-- Sesi 3 -->
+                <div class="w-full bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden"  style="border-radius: 20px">
+                  <div class="p-6">
+                    <h2 class="text-black dark:text-white text-xl font-bold mb-8" style="font-size: 25px;">Sesi 3</h2>
+                    <ul class="list-none list-inside text-base text-gray-900 dark:text-gray-300">
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
+                            <div class="checklist-circle">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
+                            </div>
+                          </div>
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Count dan Sort</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
+                            <div class="checklist-circle">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
+                            </div>
+                          </div>
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Variant Data</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                      <li class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class="checklist-circle">
+                            <div class="checklist-circle">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_981_529)">
+                                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#E8EFFF"/>
+                                <path d="M7 12L10.1579 15L17 9" stroke="#146FFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_981_529">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                              </svg>                            
+                            </div>
+                          </div>
+                          <span class="semibold font-medium" style="font-size:17px">Belajar Looping Data List</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 mins</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Sesi 3 -->
               </div>
-            </div> 	
-          </div>
+            </div>
+          </div> 	
         </div>
-      </section>
-      <!-- Jumbotron 2 Selesai -->
+      </div>
+    </section>
+    <!-- Jumbotron 1 Selesai -->
 
     <!-- Footer Mulai -->
     <footer class="bg-white dark:bg-gray-900 mt-10">
