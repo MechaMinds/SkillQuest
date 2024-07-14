@@ -217,3 +217,58 @@ document.getElementById("lessonsBtn").addEventListener("click", function () {
         .getElementById("lessonsSection")
         .scrollIntoView({ behavior: "smooth" });
 });
+
+let isDragging = false;
+let startPosition = 0;
+let currentIndex = 0;
+const testimonials = document.querySelectorAll(".testimonial-card");
+const container = document.querySelector(".slider-container");
+
+container.addEventListener("mousedown", startDrag);
+container.addEventListener("touchstart", startDrag);
+
+container.addEventListener("mouseup", endDrag);
+container.addEventListener("touchend", endDrag);
+
+container.addEventListener("mousemove", drag);
+container.addEventListener("touchmove", drag);
+
+function startDrag(event) {
+    isDragging = true;
+    startPosition = getPositionX(event);
+}
+
+function endDrag() {
+    isDragging = false;
+}
+
+function drag(event) {
+    if (!isDragging) return;
+
+    const currentPosition = getPositionX(event);
+    const diff = currentPosition - startPosition;
+
+    // Sensitivity threshold for swipe
+    if (Math.abs(diff) < 50) return;
+
+    if (diff > 0) {
+        currentIndex = currentIndex === 0 ? 0 : currentIndex - 1;
+    } else {
+        currentIndex =
+            currentIndex === testimonials.length - 1
+                ? testimonials.length - 1
+                : currentIndex + 1;
+    }
+
+    const slideWidth = testimonials[0].offsetWidth + 20; // Adjust with your card width and margin/padding
+    const offset = -currentIndex * slideWidth;
+    container.style.transform = `translateX(${offset}px)`;
+
+    isDragging = false;
+}
+
+function getPositionX(event) {
+    return event.type.includes("mouse")
+        ? event.pageX
+        : event.touches[0].clientX;
+}
