@@ -814,6 +814,9 @@ video {
         margin-bottom: 100px;
         font-size: 50px;
     }
+    .faqw {
+        width: 600px !important;
+    }
 }
 
 @media (max-width: 1025px) {
@@ -864,6 +867,9 @@ video {
         margin-top: 130px;
         margin-bottom: 50px;
         font-size: 30px;
+    }
+    .faqw {
+        width: 400px !important;
     }
 }
 /* 
