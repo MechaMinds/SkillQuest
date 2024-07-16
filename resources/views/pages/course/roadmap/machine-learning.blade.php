@@ -123,10 +123,10 @@
             </div>
           <!-- Natural Language Processing Section -->
           <div id="natural-processing-btn" class="grid lg:grid-cols-3 gap-1 md:grid-cols-2 sm:grid-cols-1 mt-2">
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10" data-tags="machinelearning">
               <img class="rounded-t-lg" src="{{ asset('./images/thumbnail/thumbnail1.png') }}" alt="" />
               <div class="p-5">
-                <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 1 <span class="text-blue-500">#machinelearning</span></p>
+                <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 1</p>
                 <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Pengenalan Dasar Natural Language Processing</h5>
                 <div class="mb-4 flex flex-wrap gap-4">
                   <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
@@ -176,10 +176,10 @@
                 </div> 
               </div>
             </div>                          
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10" data-tags="machinelearning">
               <img class="rounded-t-lg" src="{{asset('./images/thumbnail/thumbnail1.png')}}" alt="" />
               <div class="p-5">
-                <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 2 <span class="text-blue-500">#machinelearning</span></p>
+                <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 2</p>
                   <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Belajar Bahasa Pemrograman Python</h5>
                   <div class="mb-4 flex flex-wrap gap-4">
                       <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
@@ -229,10 +229,10 @@
                   </div>                                                  
               </div>
             </div>                    
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10" data-tags="machinelearning">
               <img class="rounded-t-lg" src="{{asset('./images/thumbnail/thumbnail1.png')}}" alt="" />
               <div class="p-5">
-                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 3 <span class="text-blue-500">#machinelearning</span></p>
+                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 3</p>
                   <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Belajar Menganalisis Sentimen Dasar</h5>
                   <div class="mb-4 flex flex-wrap gap-4">
                       <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
@@ -282,10 +282,10 @@
                   </div>                             
               </div>
             </div>                    
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10" data-tags="machinelearning">
               <img class="rounded-t-lg" src="{{asset('./images/thumbnail/thumbnail1.png')}}" alt="" />
               <div class="p-5">
-                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 4 <span class="text-blue-500">#machinelearning</span></p>
+                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 4</p>
                   <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Belajar Teknik Machine Learning untuk NLP</h5>
                   <div class="mb-4 flex flex-wrap gap-4">
                       <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
@@ -335,10 +335,10 @@
                   </div>                          
               </div>
             </div>                    
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10" data-tags="machinelearning">
               <img class="rounded-t-lg" src="{{asset('./images/thumbnail/thumbnail1.png')}}" alt="" />
               <div class="p-5">
-                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 5 <span class="text-blue-500">#machinelearning</span></p>
+                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 5</p>
                   <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Memahami Lebih Dalam Tentang Parsing</h5>
                   <div class="mb-4 flex flex-wrap gap-4">
                       <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
@@ -388,10 +388,10 @@
                   </div>                          
               </div>
             </div>                    
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10" data-tags="machinelearning">
               <img class="rounded-t-lg" src="{{asset('./images/thumbnail/thumbnail1.png')}}" alt="" />
               <div class="p-5">
-                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 6 <span class="text-blue-500">#machinelearning</span></p>
+                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 6</p>
                   <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Belajar Pemodelan Bahasa Neural Networks</h5>
                   <div class="mb-4 flex flex-wrap gap-4">
                       <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
@@ -441,10 +441,10 @@
                   </div>                          
               </div>
             </div>                    
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10" data-tags="machinelearning">
               <img class="rounded-t-lg" src="{{asset('./images/thumbnail/thumbnail1.png')}}" alt="" />
               <div class="p-5">
-                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 7 <span class="text-blue-500">#machinelearning</span></p>
+                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 7</p>
                   <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Memahami Generasi Teks dan Penerjemah Mesin</h5>
                   <div class="mb-4 flex flex-wrap gap-4">
                       <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
@@ -494,10 +494,10 @@
                   </div>                          
               </div>
             </div>                    
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10" data-tags="machinelearning">
               <img class="rounded-t-lg" src="{{asset('./images/thumbnail/thumbnail1.png')}}" alt="" />
               <div class="p-5">
-                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 8 <span class="text-blue-500">#machinelearning</span></p>
+                  <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Langkah 8</p>
                   <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Pengoptimalan model NLP dan Strategi Peningkatan Kinerja</h5>
                   <div class="mb-4 flex flex-wrap gap-4">
                       <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
