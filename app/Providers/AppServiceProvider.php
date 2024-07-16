@@ -22,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
             $view->with('navbar', 'components.navbar');
             $view->with('footer', 'components.footer');
             $view->with('kelas', 'components.kelas');
+            $view->with('trending', 'components.trending');
+            $view->with('terbaru', 'components.terbaru');
+            $view->with('benefit', 'components.benefit');
         });
     }
 }

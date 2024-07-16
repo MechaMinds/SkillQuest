@@ -20,11 +20,11 @@ Route::get('/', function () {
 Route::get('/roadmap', function(){
     return view('roadmap');
 });
-Route::get('/kelas/belajar-bahasa-pemrograman-python', function(){
-    return view('pages.course.roadmap.kelas.belajar-bahasa-pemrograman-python');
+Route::get('/course/belajar-bahasa-pemrograman-python', function(){
+    return view('pages.course.belajar-bahasa-pemrograman-python');
 });
 Route::get('/roadmap/machine-learning', function(){
-    return view('pages.course.roadmap.machine-learning');
+    return view('pages.roadmap.machine-learning');
 });
 Route::get('/kelas', function(){
     return view('kelas');

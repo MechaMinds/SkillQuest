@@ -60,7 +60,7 @@
                     </a>
                   </li>
                   <li class="mb-7">
-                    <a href="/roadmap/machine-learning" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                    <a href="/kelas/machine-learning" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
                       Machine Learning
                     </a>
                   </li>
