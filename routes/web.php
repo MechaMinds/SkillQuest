@@ -29,6 +29,9 @@ Route::get('/roadmap/machine-learning', function(){
 Route::get('/kelas', function(){
     return view('kelas');
 });
+Route::get('/kelas/machine-learning', function(){
+    return view('pages.kelas.machine-learning');
+});
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 
