@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +29,7 @@ Route::get('/roadmap/machine-learning', function(){
 Route::get('/kelas', function(){
     return view('kelas');
 });
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+
 
 
