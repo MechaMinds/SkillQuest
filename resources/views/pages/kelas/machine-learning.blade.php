@@ -194,7 +194,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="/kelas/belajar-bahasa-pemrograman-python" class="text-md">Gabung Kelas</a>
+                                            <a href="/course/belajar-bahasa-pemrograman-python" class="text-md">Gabung Kelas</a>
                                         </button>
                                         </div>
                                     </div>                                                  
@@ -308,7 +308,6 @@
                             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="margin-bottom: 20px" data-tags="Semua Menengah">
                                 <img class="rounded-t-lg" src="{{asset('./images/thumbnail/thumbnail1.png')}}" alt="" />
                                 <div class="p-5">
-    
                                     <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Memahami Lebih Dalam Tentang Parsing</h5>
                                     <div class="mb-4 flex flex-wrap gap-4">
                                         <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
@@ -519,7 +518,7 @@
         <!-- Jumbotron 2 Selesai-->
         <!-- Filter Mode Mobile -->
         <div id="backgroundOpacity" class="fixed inset-0 hidden items-end justify-end" style="z-index: 90; height: 500px;background: rgb(0, 0, 0, 0.7)"></div>
-        <div id="background" class="fixed inset-0 bg-white dark:bg-gray-800 hidden items-end justify-end" style="z-index: 100; height: 800px; margin-top:250px; border-radius: 30px 30px 0px 0px">
+        <div id="background" class="fixed inset-0 bg-white dark:bg-gray-800 hidden items-end justify-end" style="z-index: 100; height: 800px; margin-top:90px; border-radius: 30px 30px 0px 0px">
             <div class="py-6 px-6 relative">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 absolute right-6 top-6 close-icon" id="closeIcon">
                     <path fill="#fff" d="M18.3 5.71a1 1 0 0 0-1.42 0L12 10.59 7.11 5.7a1 1 0 0 0-1.42 1.42L10.59 12l-4.9 4.88a1 1 0 1 0 1.42 1.42L12 13.41l4.88 4.9a1 1 0 0 0 1.42-1.42L13.41 12l4.9-4.88a1 1 0 0 0 0-1.41z"/>
