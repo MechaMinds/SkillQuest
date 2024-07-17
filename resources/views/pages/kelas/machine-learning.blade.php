@@ -33,7 +33,7 @@
         <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]" style="margin-top: 65px">
             <div class="py-8 px-4 mx-auto max-w-screen-xl gap-3">
                 <div class="flex">
-                    <div class="sidebar section-title bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 py-5 px-5 sm:hidden lg:block hidden" style="width: 300px; height: 700px;">
+                    <div class="sticky top-4 overflow-y-auto sidebar section-title bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 py-5 px-5 sm:hidden lg:block hidden" style="width: 300px; height: 700px;">
                         <div class="urutkan">
                             <div class="title dark:text-white text-grey-900 font-semibold text-1xl mb-5">Urutkan</div>
                             <div class="flex items-center mb-4">
