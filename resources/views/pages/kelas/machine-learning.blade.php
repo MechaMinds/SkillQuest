@@ -30,7 +30,7 @@
         </section>        
         <!-- Jumbotron 1 Selesai-->
         <!-- Jumbotron 2 Mulai-->
-        <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]" style="margin-top: 65px">
+        <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
             <div class="py-8 px-4 mx-auto max-w-screen-xl gap-3">
                 <div class="flex">
                     <div class="sticky top-4 overflow-y-auto sidebar section-title bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 py-5 px-5 sm:hidden lg:block hidden" style="width: 300px; height: 700px;">
@@ -200,7 +200,7 @@
                                     </div>                                                  
                                 </div>
                             </div>                    
-                            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="margin-bottom: 20px" data-tags="Semua Dasar">
+                            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="margin-bottom: 20px" data-tags="Semua Pemula">
                                 <img class="rounded-t-lg" src="{{asset('./images/thumbnail/thumbnail1.png')}}" alt="" />
                                 <div class="p-5">
                                     <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">Belajar Menganalisis Sentimen Dasar</h5>
@@ -218,8 +218,8 @@
                                             4,5
                                         </p>
                                         <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
-                                            <img src="{{asset('./images/dasar.svg')}}" class="w-5 h-5" alt="" /> 
-                                            Dasar
+                                            <img src="{{asset('./images/pemula.svg')}}" class="w-5 h-5" alt="" /> 
+                                            Pemula
                                         </p>
                                     </div>
                                     <div class="mb-7 flex flex-wrap gap-4 text-gray-500">
@@ -246,7 +246,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="/kelas/belajar-bahasa-pemrograman-python" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
                                         </button>
                                         </div>
                                     </div>                             
@@ -299,7 +299,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="/kelas/belajar-bahasa-pemrograman-python" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
                                         </button>
                                         </div>
                                     </div>                          
@@ -352,7 +352,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="/kelas/belajar-bahasa-pemrograman-python" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
                                         </button>
                                         </div>
                                     </div>                          
@@ -405,7 +405,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="/kelas/belajar-bahasa-pemrograman-python" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
                                         </button>
                                         </div>
                                     </div>                          
@@ -457,7 +457,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="/kelas/belajar-bahasa-pemrograman-python" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
                                         </button>
                                         </div>
                                     </div>                                                                                                                            
@@ -505,7 +505,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="/kelas/belajar-bahasa-pemrograman-python" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
                                         </button>
                                         </div>
                                     </div>                          
@@ -517,6 +517,14 @@
             </div>
         </section>
         <!-- Jumbotron 2 Selesai-->
+        <!-- Filter Mode Mobile -->
+        <button class="items-center justify-center font-medium disabled:opacity-80 gap-2 h-12 min-w-[theme(spacing.36)] px-5 rounded-full disabled:bg-mono-200 disabled:text-mono-600 disabled:cursor-not-allowed bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white fixed bottom-5   left-1/2 z-10 flex -translate-x-1/2 lg:hidden" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4">
+                <path fill="#fff" d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"/>
+            </svg>
+            Filter Kelas
+        </button>
+        <!-- Filter Mode Mobile Selesai -->
         <!-- Footer Mulai-->
         <div id="app">
             <x-footer />

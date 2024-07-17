@@ -218,8 +218,8 @@
                           4,5
                       </p>
                       <p class="flex flex-wrap gap-2 text-gray-900 dark:text-white">
-                        <img src="{{asset('./images/dasar.svg')}}" class="w-5 h-5" alt="" /> 
-                          Dasar
+                        <img src="{{asset('./images/pemula.svg')}}" class="w-5 h-5" alt="" /> 
+                          Pemula
                       </p>
                   </div>
                   <div class="mb-7 flex flex-wrap gap-4 text-gray-500">
