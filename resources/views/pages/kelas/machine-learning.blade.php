@@ -518,12 +518,79 @@
         </section>
         <!-- Jumbotron 2 Selesai-->
         <!-- Filter Mode Mobile -->
-        <button class="items-center justify-center font-medium disabled:opacity-80 gap-2 h-12 min-w-[theme(spacing.36)] px-5 rounded-full disabled:bg-mono-200 disabled:text-mono-600 disabled:cursor-not-allowed bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white fixed bottom-5   left-1/2 z-10 flex -translate-x-1/2 lg:hidden" type="button">
+        <div id="backgroundOpacity" class="fixed inset-0 hidden items-end justify-end" style="z-index: 90; height: 500px;background: rgb(0, 0, 0, 0.7)"></div>
+        <div id="background" class="fixed inset-0 bg-white dark:bg-gray-800 hidden items-end justify-end" style="z-index: 100; height: 800px; margin-top:250px; border-radius: 30px 30px 0px 0px">
+            <div class="py-6 px-6 relative">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 absolute right-6 top-6 close-icon" id="closeIcon">
+                    <path fill="#fff" d="M18.3 5.71a1 1 0 0 0-1.42 0L12 10.59 7.11 5.7a1 1 0 0 0-1.42 1.42L10.59 12l-4.9 4.88a1 1 0 1 0 1.42 1.42L12 13.41l4.88 4.9a1 1 0 0 0 1.42-1.42L13.41 12l4.9-4.88a1 1 0 0 0 0-1.41z"/>
+                </svg>
+                <div class="urutkan">
+                    <div class="title dark:text-white text-grey-900 font-semibold text-1xl mb-5">Urutkan</div>
+                    <div class="flex items-center mb-4">
+                        <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Baru Rilis</label>
+                    </div>  
+                    <div class="flex items-center mb-4">
+                        <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Paling Populer</label>
+                    </div> 
+                    <div class="flex items-center mb-4">
+                        <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sedang Promo</label>
+                    </div> 
+                </div>
+                <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"> 
+                <div class="tingkatan">
+                    <div class="title dark:text-white text-grey-900 font-semibold text-1xl mb-5">Tingkatan</div>
+                    <div class="flex items-center mb-4 checkbox-item">
+                        <input checked id="checked-checkbox" type="checkbox" value="Semua" class="tingkatan-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Semua Tingkatan</label>
+                    </div>
+                    <div class="flex items-center mb-4 checkbox-item">
+                        <input id="dasar-checkbox" type="checkbox" value="Dasar" class="tingkatan-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="dasar-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Dasar</label>
+                    </div>
+                    <div class="flex items-center mb-4 checkbox-item">
+                        <input id="pemula-checkbox" type="checkbox" value="Pemula" class="tingkatan-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="pemula-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pemula</label>
+                    </div>
+                    <div class="flex items-center mb-4 checkbox-item">
+                        <input id="menengah-checkbox" type="checkbox" value="Menengah" class="tingkatan-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="menengah-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Menengah</label>
+                    </div>
+                    <div class="flex items-center mb-4 checkbox-item">
+                        <input id="jago-checkbox" type="checkbox" value="Jago" class="tingkatan-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="jago-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Jago</label>
+                    </div>
+                    <div class="flex items-center mb-4 checkbox-item">
+                        <input id="profesional-checkbox" type="checkbox" value="Profesional" class="tingkatan-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="profesional-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Profesional</label>
+                    </div>
+                </div>
+                <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"> 
+                <div class="harga">
+                    <div class="title dark:text-white text-grey-900 font-semibold text-1xl mb-5">Harga</div>
+                    <div class="flex items-center mb-4">
+                        <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Semua Harga</label>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gratis</label>
+                    </div> 
+                    <div class="flex items-center mb-4">
+                        <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Premium</label>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <button class="items-center justify-center font-medium disabled:opacity-80 gap-2 h-12 min-w-[theme(spacing.36)] px-5 rounded-full disabled:bg-mono-200 disabled:text-mono-600 disabled:cursor-not-allowed bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white fixed bottom-5 left-1/2 z-10 flex -translate-x-1/2 lg:hidden" type="button" id="filterButton">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4">
                 <path fill="#fff" d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"/>
             </svg>
             Filter Kelas
-        </button>
+        </button>   
         <!-- Filter Mode Mobile Selesai -->
         <!-- Footer Mulai-->
         <div id="app">
@@ -535,6 +602,28 @@
         <script src="{{ asset('js/main.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
+        <script>
+            document.getElementById('filterButton').addEventListener('click', function() {
+                var background = document.getElementById('background');
+                if (background.classList.contains('hidden')) {
+                    background.classList.remove('hidden');
+                } else {
+                    background.classList.add('hidden');
+                }
+            });
+            document.getElementById('filterButton').addEventListener('click', function() {
+                var backgroundOpacity = document.getElementById('backgroundOpacity');
+                if (backgroundOpacity.classList.contains('hidden')) {
+                    backgroundOpacity.classList.remove('hidden');
+                } else {
+                    backgroundOpacity.classList.add('hidden');
+                }
+            });
+            document.getElementById('closeIcon').addEventListener('click', function() {
+                document.getElementById('background').classList.add('hidden');
+                document.getElementById('backgroundOpacity').classList.add('hidden');
+            });
+        </script>        
         <script>
             document.addEventListener('DOMContentLoaded', function () {
             const checkboxes = document.querySelectorAll('.tingkatan-checkbox');
