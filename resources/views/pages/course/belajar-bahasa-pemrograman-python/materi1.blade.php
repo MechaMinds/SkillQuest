@@ -11,7 +11,7 @@
     </head>
 <body>
     <div class="min-h-screen bg-background text-foreground flex flex-col">
-        <header class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white py-6 px-6 flex items-center justify-between">
+        <header class="bg-white dark:bg-black text-gray-900 dark:text-white py-6 px-6 flex items-center justify-between" style="border-bottom: 1px solid rgb(107, 114, 128)">
             <div class="title flex flex-row gap-2 items-center justify-center py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4">
                     <path class="dark:fill-white" fill="rgb(55 65 81)" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
@@ -34,7 +34,7 @@
                         <path class="dark:fill-white" fill="rgb(55 65 81)" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
                     </svg>
                 </button>
-                <button id="userButton" data-dropdown-toggle="userMenu" class="flex items-center text-sm pe-1 font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-white md:me-0 dark:text-gray-500" type="button">
+                <button id="userButton" data-dropdown-toggle="userMenu" class="flex items-center text-sm pe-1 font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-white md:me-0 dark:text-gray-400" type="button">
                     <span class="sr-only">Open user menu</span>
                     <p class="mr-5 text-lg">Riovaldo Alifyan Fahmi Rahman</p>
                     <img class="w-8 h-8 rounded-full mr-2 object-cover" src="{{asset('./images/user/profile.jpg')}}" alt="user photo">
@@ -65,110 +65,146 @@
                 </div>
             </div>
         </header>
-        <div class="flex flex-1">
-            {{-- <aside class="w-16 bg-white dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-4 space-y-4">
-                <button class="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80">💬</button>
-                <button class="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80">📋</button>
-                <button class="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80">⚙️</button>
-            </aside> --}}
-            <main class="flex-1 p-8">
-                <h1 class="text-3xl font-bold mb-4">Forum Diskusi</h1>
-                <section class="mb-8">
-                <h2 class="text-2xl font-semibold mb-2">Ekspektasi</h2>
-                <p class="mb-4">
-                    Dengan banyaknya jumlah siswa Dicoding Academy, kami tidak mengharapkan siswa untuk membaca semua diskusi atau komentar pada forum diskusi. Sebaliknya, bacalah hal-hal yang menurut Anda
-                    menarik dan dapat membantu Anda dalam menyelesaikan kelas. Lebih baik lagi, jika Anda dapat membantu siswa lainnya dengan memberikan jawaban di bidang yang Anda pahami. Berbagi dalam forum
-                    diskusi ini dapat pula membantu meningkatkan retensi ilmu Anda.
-                </p>
-                <p class="mb-4">
-                    Peraturan paling penting adalah bersikap sopan dan memperlakukan semua siswa lain dan instruktur, dengan hormat. Pelanggaran etika ini dapat berakibat pada dikeluarkannya Anda dari kelas.
-                </p>
-                <p>
-                    Anda akan memiliki akses ke forum diskusi kelas selama Anda aktif terdaftar ke kelas ini. Saat masa belajar Anda sudah habis, maka forum diskusi tidak akan dapat diakses. Namun, jika Anda
-                    sukses menyelesaikan kelas (lulus dan sampai mendapatkan sertifikat kompetensi dari Dicoding), maka Anda tetap dapat mengakses forum diskusi kelas ini walau masa belajar Anda untuk kelas ini
-                    telah habis.
-                </p>
-                </section>
-                <section>
-                <h2 class="text-2xl font-semibold mb-2">Sebelum Mulai Bertanya</h2>
-                <ol class="list-decimal pl-6">
-                    <li class="mb-2">
-                    Sebelum membuat diskusi baru, gunakan fitur pencarian untuk cek diskusi lama terlebih dahulu. Problem Anda mungkin pernah dibahas dan dijawab solusinya, dalam forum. Dengan begitu, Anda
-                    pun tidak perlu menghabiskan waktu untuk bertanya dan untuk menunggu jawaban kembali.
-                    </li>
-                </ol>
-                </section>
-            </main>
-        
-            <aside class="w-80 bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-4">
-                <div class="flex items-center justify-between mb-4">
-                <button class="p-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/80">➡️</button>
-                <h2 class="text-xl font-semibold">Daftar Modul</h2>
+        <div class="flex flex-1 h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
+            <aside class="w-80 bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white sticky top-0 h-screen overflow-y-auto" style="border-right: 1px solid rgb(107, 114, 128);">
+                <div class="flex items-center justify-between py-5 px-4">
+                    <h2 class="text-xl font-semibold">Daftar Modul</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
+                        <path class="dark:fill-white" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+                    </svg>
                 </div>
-                <div class="mb-4">
-                <div class="h-2 bg-muted rounded-full overflow-hidden">
-                    <div class="w-1/50 bg-primary h-full"></div>
+                <div class="dark:bg-gray-700 bg-gray-200 py-4 px-4">
+                    <span class="font-semibold text-lg">2% Progress</span>
+                    <div class="bar mt-2">
+                        <div class="w-full bg-gray-400 rounded-full h-1.5 dark:bg-gray-800">
+                            <div class="bg-blue-600 h-1.5 rounded-full" style="width: 2%"></div>
+                        </div>
+                    </div>
                 </div>
-                <span class="text-muted-foreground">2% Selesai</span>
+                <div class="space-y-4 py-4 px-4">
+                    <div id="persiapanBelajar">
+                        <button id="dropdownbuttonDefault" class="flex justify-between w-full text-left text-foreground">
+                            <div class="title flex flex-row justify-center items-center gap-2">
+                                <svg id="dropdowniconDefault" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3 transition-transform">
+                                    <path class="dark:fill-white" fill="rgb(55 65 81)" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                                </svg>
+                                <span class="text-lg font-semibold">Persiapan Belajar</span>
+                            </div>
+                            <span class="text-muted-foreground">0/3</span>
+                        </button>
+                        <ul id="dropdownmenuDefault" class="mt-2 space-y-2 hidden" style="padding-left: 18px">
+                            <li class="flex items-center text-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3">
+                                    <path fill="#146ffe" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+                                </svg>
+                                <span class="ml-2">Pengenalan Kelas</span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3">
+                                    <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                                </svg>
+                                <span class="ml-2">Mekanisme Belajar</span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3">
+                                    <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                                </svg>
+                                <span class="ml-2">Forum Diskusi</span>
+                            </li>
+                            <hr class="my-8 bg-gray-200 border-0 dark:bg-gray-700 h-px"> 
+                        </ul>
+                    </div>
+                    <div id="persiapanBelajar">
+                        <button id="dropdownButton" class="flex justify-between w-full text-left text-foreground">
+                            <div class="title flex flex-row justify-center items-center gap-2">
+                                <svg id="dropdownIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3 transition-transform">
+                                    <path class="dark:fill-white" fill="rgb(55 65 81)" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                                </svg>
+                                <span class="text-lg font-semibold">Persiapan Belajar</span>
+                            </div>
+                            <span class="text-muted-foreground">0/6</span>
+                        </button>
+                        <ul id="dropdownMenu" class="mt-2 space-y-2 hidden" style="padding-left: 18px">
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Persetujuan Hak Cipta <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Pengenalan Kelas <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Mekanisme Belajar <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Forum Diskusi <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Mekanisme Belajar <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Forum Diskusi <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <hr class="my-8 bg-gray-200 border-0 dark:bg-gray-700 h-px">
+                        </ul>
+                    </div>                    
                 </div>
-                <ul class="space-y-2">
-                <li>
-                    <h3 class="text-lg font-semibold">Persiapan Belajar</h3>
-                    <ul class="pl-4 space-y-1">
-                    <li class="flex justify-between">
-                        <span>Persetujuan Hak Cipta</span>
-                        <span class="text-muted-foreground">(Gratis)</span>
-                    </li>
-                    <li class="flex justify-between">
-                        <span>Pengenalan Kelas</span>
-                        <span class="text-muted-foreground">(Gratis)</span>
-                    </li>
-                    <li class="flex justify-between">
-                        <span>Mekanisme Belajar</span>
-                        <span class="text-muted-foreground">(Gratis)</span>
-                    </li>
-                    <li class="flex justify-between">
-                        <span>Forum Diskusi</span>
-                        <span class="text-muted-foreground">(Gratis)</span>
-                    </li>
-                    <li class="flex justify-between">
-                        <span>Glosarium</span>
-                        <span class="text-muted-foreground">(Gratis)</span>
-                    </li>
-                    <li class="flex justify-between">
-                        <span>Daftar Referensi</span>
-                        <span class="text-muted-foreground">(Gratis)</span>
-                    </li>
-                    </ul>
-                </li>
-                <li>
-                    <h3 class="text-lg font-semibold">Pengenalan JavaScript</h3>
-                    <span class="text-muted-foreground">0/5</span>
-                </li>
-                <li>
-                    <h3 class="text-lg font-semibold">Fundamental JavaScript</h3>
-                    <span class="text-muted-foreground">0/13</span>
-                </li>
-                <li>
-                    <h3 class="text-lg font-semibold">Struktur Data</h3>
-                    <span class="text-muted-foreground">0/15</span>
-                </li>
-                <li>
-                    <h3 class="text-lg font-semibold">Function</h3>
-                    <span class="text-muted-foreground">0/9</span>
-                </li>
-                <li>
-                    <h3 class="text-lg font-semibold">Object-Oriented Programming (OOP)</h3>
-                    <span class="text-muted-foreground">0/11</span>
-                </li>
-                <li>
-                    <h3 class="text-lg font-semibold">Functional Programming</h3>
-                    <span class="text-muted-foreground">0/7</span>
-                </li>
-                </ul>
             </aside>
+            <div class="content flex-1 p-8 overflow-y-auto h-screen">
+                <div id="pengenalanKelas">
+                    <h1 class="text-3xl font-bold mb-6">Pengenalan Kelas Belajar Bahasa Pemrograman Python</h1>
+                    <section class="mb-8">
+                        <p class="mb-4 font-small text-1xl">
+                            Selamat datang di kursus belajar bahasa pemrograman Python! Kursus ini dirancang untuk memberikan pemahaman yang mendalam dan komprehensif tentang Python, salah satu bahasa pemrograman yang paling populer dan serbaguna di dunia saat ini. Apakah Anda seorang pemula yang baru memulai perjalanan pemrograman Anda atau seorang profesional yang ingin memperdalam pengetahuan Anda, kursus ini adalah tempat yang tepat untuk Anda.
+                        </p>
+                    </section>
+                    <h1 class="text-3xl font-bold mb-6">Mengapa Belajar Python ?</h1>
+                    <section class="mb-8">
+                        <p class="mb-4 font-small text-1xl">
+                            Python dikenal karena sintaksnya yang sederhana dan mudah dipahami, yang membuatnya menjadi pilihan ideal bagi pemula. Namun, kekuatan dan fleksibilitasnya juga menjadikannya bahasa yang sangat dihargai di kalangan profesional. Berikut adalah beberapa alasan mengapa Anda harus belajar Python :
+                        </p>
+                        <p class="mb-4 font-small text-1xl pl-5">
+                            1. Kemudahan dalam Pembelajaran: Python memiliki sintaks yang bersih dan mudah dipahami, mirip dengan bahasa Inggris. Ini memudahkan Anda untuk fokus pada logika pemrograman daripada terjebak dalam kerumitan bahasa.
+                            <br>
+                            <br>
+                            2. Popularitas dan Dukungan Komunitas: Dengan komunitas yang besar dan aktif, Anda akan menemukan banyak sumber daya, tutorial, dan forum untuk membantu Anda dalam perjalanan belajar Anda.
+                            <br>
+                            <br>
+                            3. Versatilitas: Python digunakan dalam berbagai bidang seperti pengembangan web, analisis data, kecerdasan buatan, pembelajaran mesin, automasi, dan banyak lagi.
+                            <br>
+                            <br>
+                            4. Library dan Framework yang Kuat: Python dilengkapi dengan berbagai library dan framework yang mempercepat pengembangan aplikasi, seperti Django untuk pengembangan web, NumPy dan pandas untuk analisis data, dan TensorFlow untuk pembelajaran mesin.
+                            <br>
+                            <br>
+                        </p>
+                    </section>
+                    <h1 class="text-3xl font-bold mb-6">Apa yang Akan Anda Pelajari ?</h1>
+                    <section class="mb-8">
+                        <p class="mb-4 font-small text-1xl">
+                            Python dikenal karena sintaksnya yang sederhana dan mudah dipahami, yang membuatnya menjadi pilihan ideal bagi pemula. Namun, kekuatan dan fleksibilitasnya juga menjadikannya bahasa yang sangat dihargai di kalangan profesional. Berikut adalah beberapa alasan mengapa Anda harus belajar Python :
+                        </p>
+                        <p class="mb-4 font-small text-1xl pl-5">
+                            1. Kemudahan dalam Pembelajaran: Python memiliki sintaks yang bersih dan mudah dipahami, mirip dengan bahasa Inggris. Ini memudahkan Anda untuk fokus pada logika pemrograman daripada terjebak dalam kerumitan bahasa.
+                            <br>
+                            <br>
+                            2. Popularitas dan Dukungan Komunitas: Dengan komunitas yang besar dan aktif, Anda akan menemukan banyak sumber daya, tutorial, dan forum untuk membantu Anda dalam perjalanan belajar Anda.
+                            <br>
+                            <br>
+                            3. Versatilitas: Python digunakan dalam berbagai bidang seperti pengembangan web, analisis data, kecerdasan buatan, pembelajaran mesin, automasi, dan banyak lagi.
+                            <br>
+                            <br>
+                            4. Library dan Framework yang Kuat: Python dilengkapi dengan berbagai library dan framework yang mempercepat pengembangan aplikasi, seperti Django untuk pengembangan web, NumPy dan pandas untuk analisis data, dan TensorFlow untuk pembelajaran mesin.
+                            <br>
+                            <br>
+                        </p>
+                    </section>
+                </div>
             </div>
-        </div>
+        </div>           
     </div>
     <div id="search-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)]">
         <div class="relative p-4 w-full max-w-2xl">
@@ -196,10 +232,59 @@
             </div>
         </div>
     </div>
+    <div class="fixed bottom-0 left-0 z-50 grid w-full h-20 grid-cols-1 px-8 bg-white dark:bg-black text-gray-900 dark:text-white border-t border-gray-200 md:grid-cols-3 dark:border-gray-600">
+        <div class="items-center justify-center hidden text-gray-500 dark:text-gray-400 me-auto md:flex gap-2">
+            {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-5">
+                <path class="dark:fill-white" fill="rgb(55 65 81)" d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM215 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L392 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-214.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L103 273c-9.4-9.4-9.4-24.6 0-33.9L215 127z"/>
+            </svg>
+            <a href="/course/belajar-bahasa-pemrograman-python" class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Belajar Bahasa Pemrograman Python </a> --}}
+        </div>
+        <div class="flex items-center justify-center mx-auto">
+            <a href="/course/belajar-bahasa-pemrograman-python" class="dark:text-white text-gray-900 font-semibold text-lg">Pengenalan Kelas</a>
+        </div>
+        <div class="items-center justify-center ms-auto md:flex gap-2">
+            <a href="/course/belajar-bahasa-pemrograman-python" class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Mekanisme Belajar</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4">
+                <path class="dark:fill-white" fill="rgb(55 65 81)" d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM297 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L120 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l214.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L409 239c9.4 9.4 9.4 24.6 0 33.9L297 385z"/>
+            </svg>    
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script> 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const dropdownmenuDefault = document.getElementById('dropdownmenuDefault');
+        const dropdowniconDefault = document.getElementById('dropdowniconDefault');
+        
+        // Ensure the menu is visible
+        dropdownmenuDefault.classList.remove('hidden');
+        
+        // Ensure the icon is rotated to indicate the menu is open
+        dropdowniconDefault.classList.add('rotate-180');
+    });
+    document.getElementById('dropdownbuttonDefault').addEventListener('click', function() {
+        const dropdownmenuDefault = document.getElementById('dropdownmenuDefault');
+        const dropdowniconDefault = document.getElementById('dropdowniconDefault');
+        
+        // Toggle visibility of the dropdown menu
+        dropdownmenuDefault.classList.toggle('hidden');
+        
+        // Rotate the icon
+        dropdowniconDefault.classList.toggle('rotate-180');
+    });
+    document.getElementById('dropdownButton').addEventListener('click', function() {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const dropdownIcon = document.getElementById('dropdownIcon');
+        
+        // Toggle visibility of the dropdown menu
+        dropdownMenu.classList.toggle('hidden');
+        
+        // Rotate the icon
+        dropdownIcon.classList.toggle('rotate-180');
+    });
+    </script>
 </body>
 </html>
