@@ -23,6 +23,9 @@ Route::get('/roadmap', function(){
 Route::get('/course/belajar-bahasa-pemrograman-python', function(){
     return view('pages.course.belajar-bahasa-pemrograman-python');
 });
+Route::get('/course/belajar-bahasa-pemrograman-python/materi1', function(){
+    return view('pages.course.belajar-bahasa-pemrograman-python/materi1');
+});
 Route::get('/roadmap/machine-learning', function(){
     return view('pages.roadmap.machine-learning');
 });
