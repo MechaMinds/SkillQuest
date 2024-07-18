@@ -11,7 +11,7 @@
     </head>
 <body>
     <div class="min-h-screen bg-background text-foreground flex flex-col">
-        <header class="bg-white dark:bg-black text-gray-900 dark:text-white py-6 px-6 flex items-center justify-between" style="border-bottom: 1px solid rgb(107, 114, 128)">
+        <header class="bg-white dark:bg-black text-gray-900 dark:text-white py-6 px-6 flex items-center justify-between border-b border-gray-200 dark:border-gray-600">
             <div class="title flex flex-row gap-2 items-center justify-center py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4">
                     <path class="dark:fill-white" fill="rgb(55 65 81)" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
@@ -66,11 +66,11 @@
             </div>
         </header>
         <div class="flex flex-1 h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
-            <aside class="w-80 bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white sticky top-0 h-screen overflow-y-auto" style="border-right: 1px solid rgb(107, 114, 128);">
+            <aside id="sidebar" class="w-80 border-r border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white sticky top-0 h-screen z-20 overflow-y-auto">
                 <div class="flex items-center justify-between py-5 px-4">
                     <h2 class="text-xl font-semibold">Daftar Modul</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
-                        <path class="dark:fill-white" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+                    <svg id="asideButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-9 h-9 cursor-pointer px-2 py-2">
+                        <path class="dark:fill-white" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
                     </svg>
                 </div>
                 <div class="dark:bg-gray-700 bg-gray-200 py-4 px-4">
@@ -94,19 +94,19 @@
                         </button>
                         <ul id="dropdownmenuDefault" class="mt-2 space-y-2 hidden" style="padding-left: 18px">
                             <li class="flex items-center text-foreground">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="sudah">
                                     <path fill="#146ffe" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
                                 </svg>
                                 <span class="ml-2">Pengenalan Kelas</span>
                             </li>
                             <li class="flex items-center text-foreground">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="belum">
                                     <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
                                 </svg>
                                 <span class="ml-2">Mekanisme Belajar</span>
                             </li>
                             <li class="flex items-center text-foreground">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="belum">
                                     <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
                                 </svg>
                                 <span class="ml-2">Forum Diskusi</span>
@@ -154,52 +154,74 @@
                     </div>                    
                 </div>
             </aside>
-            <div class="content flex-1 p-8 overflow-y-auto h-screen">
+            <button id="showSidebarButton" class="fixed top-10 left-4 bg-gray-100 dark:bg-gray-700 p-4" style="margin-top:55px; border-radius: 0px 50px 50px 0px">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-6 h-6">
+                    <path class="dark:fill-white" fill="rgb(55 65 81)" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+                </svg>
+            </button>
+            <div class="content flex-1 overflow-y-auto" style="padding: 30px 120px 50px 120px">
                 <div id="pengenalanKelas">
-                    <h1 class="text-3xl font-bold mb-6">Pengenalan Kelas Belajar Bahasa Pemrograman Python</h1>
+                    <h1 class="text-4xl font-bold mb-6">Pengenalan Kelas Belajar Bahasa Pemrograman Python</h1>
                     <section class="mb-8">
                         <p class="mb-4 font-small text-1xl">
                             Selamat datang di kursus belajar bahasa pemrograman Python! Kursus ini dirancang untuk memberikan pemahaman yang mendalam dan komprehensif tentang Python, salah satu bahasa pemrograman yang paling populer dan serbaguna di dunia saat ini. Apakah Anda seorang pemula yang baru memulai perjalanan pemrograman Anda atau seorang profesional yang ingin memperdalam pengetahuan Anda, kursus ini adalah tempat yang tepat untuk Anda.
                         </p>
                     </section>
-                    <h1 class="text-3xl font-bold mb-6">Mengapa Belajar Python ?</h1>
+                    <h1 class="text-2xl font-bold mb-6">Mengapa Belajar Python?</h1>
                     <section class="mb-8">
                         <p class="mb-4 font-small text-1xl">
-                            Python dikenal karena sintaksnya yang sederhana dan mudah dipahami, yang membuatnya menjadi pilihan ideal bagi pemula. Namun, kekuatan dan fleksibilitasnya juga menjadikannya bahasa yang sangat dihargai di kalangan profesional. Berikut adalah beberapa alasan mengapa Anda harus belajar Python :
+                            Python dikenal karena sintaksnya yang sederhana dan mudah dipahami, yang membuatnya menjadi pilihan ideal bagi pemula. Namun, kekuatan dan fleksibilitasnya juga menjadikannya bahasa yang sangat dihargai di kalangan profesional. Berikut adalah beberapa alasan mengapa Anda harus belajar Python:
                         </p>
                         <p class="mb-4 font-small text-1xl pl-5">
                             1. Kemudahan dalam Pembelajaran: Python memiliki sintaks yang bersih dan mudah dipahami, mirip dengan bahasa Inggris. Ini memudahkan Anda untuk fokus pada logika pemrograman daripada terjebak dalam kerumitan bahasa.
-                            <br>
-                            <br>
+                            <br><br>
                             2. Popularitas dan Dukungan Komunitas: Dengan komunitas yang besar dan aktif, Anda akan menemukan banyak sumber daya, tutorial, dan forum untuk membantu Anda dalam perjalanan belajar Anda.
-                            <br>
-                            <br>
+                            <br><br>
                             3. Versatilitas: Python digunakan dalam berbagai bidang seperti pengembangan web, analisis data, kecerdasan buatan, pembelajaran mesin, automasi, dan banyak lagi.
-                            <br>
-                            <br>
+                            <br><br>
                             4. Library dan Framework yang Kuat: Python dilengkapi dengan berbagai library dan framework yang mempercepat pengembangan aplikasi, seperti Django untuk pengembangan web, NumPy dan pandas untuk analisis data, dan TensorFlow untuk pembelajaran mesin.
-                            <br>
-                            <br>
                         </p>
                     </section>
-                    <h1 class="text-3xl font-bold mb-6">Apa yang Akan Anda Pelajari ?</h1>
+                    <h1 class="text-2xl font-bold mb-6">Apa yang Akan Anda Pelajari?</h1>
                     <section class="mb-8">
                         <p class="mb-4 font-small text-1xl">
-                            Python dikenal karena sintaksnya yang sederhana dan mudah dipahami, yang membuatnya menjadi pilihan ideal bagi pemula. Namun, kekuatan dan fleksibilitasnya juga menjadikannya bahasa yang sangat dihargai di kalangan profesional. Berikut adalah beberapa alasan mengapa Anda harus belajar Python :
+                            Dalam kursus ini, Anda akan mempelajari dasar-dasar Python hingga konsep-konsep yang lebih lanjut, termasuk:
                         </p>
                         <p class="mb-4 font-small text-1xl pl-5">
-                            1. Kemudahan dalam Pembelajaran: Python memiliki sintaks yang bersih dan mudah dipahami, mirip dengan bahasa Inggris. Ini memudahkan Anda untuk fokus pada logika pemrograman daripada terjebak dalam kerumitan bahasa.
-                            <br>
-                            <br>
-                            2. Popularitas dan Dukungan Komunitas: Dengan komunitas yang besar dan aktif, Anda akan menemukan banyak sumber daya, tutorial, dan forum untuk membantu Anda dalam perjalanan belajar Anda.
-                            <br>
-                            <br>
-                            3. Versatilitas: Python digunakan dalam berbagai bidang seperti pengembangan web, analisis data, kecerdasan buatan, pembelajaran mesin, automasi, dan banyak lagi.
-                            <br>
-                            <br>
-                            4. Library dan Framework yang Kuat: Python dilengkapi dengan berbagai library dan framework yang mempercepat pengembangan aplikasi, seperti Django untuk pengembangan web, NumPy dan pandas untuk analisis data, dan TensorFlow untuk pembelajaran mesin.
-                            <br>
-                            <br>
+                            1. Pengantar Python dan Instalasi<br>
+                            2. Struktur Dasar Python (Variabel, Tipe Data, Operator)<br>
+                            3. Kontrol Alur (If, For, While, dll.)<br>
+                            4. Fungsi dan Modul<br>
+                            5. Pengolahan File<br>
+                            6. Penggunaan Library dan Framework Populer<br>
+                        </p>
+                    </section>
+                </div>
+                <div id="mekanismeBelajar" class="hidden">
+                    <h1 class="text-4xl font-bold mb-6">Mekanisme Belajar</h1>
+                    <section class="mb-8">
+                        <p class="mb-4 font-small text-1xl">
+                            Kursus ini akan disampaikan melalui kombinasi video tutorial, bacaan, dan latihan praktis. Anda akan mendapatkan:
+                        </p>
+                        <p class="mb-4 font-small text-1xl pl-5">
+                            1. Video Tutorial: Penjelasan mendetail dari setiap konsep dengan contoh-contoh nyata.<br>
+                            2. Bacaan Tambahan: Artikel dan e-book untuk memperdalam pemahaman.<br>
+                            3. Latihan Praktis: Soal-soal dan proyek kecil untuk menguji pemahaman Anda.<br>
+                            4. Forum Diskusi: Tempat untuk bertanya dan berdiskusi dengan instruktur dan sesama peserta kursus.<br>
+                        </p>
+                    </section>
+                </div>
+                <div id="forumDiskusi" class="hidden">
+                    <h1 class="text-4xl font-bold mb-6">Forum Diskusi</h1>
+                    <section class="mb-8">
+                        <p class="mb-4 font-small text-1xl">
+                            Kursus ini akan disampaikan melalui kombinasi video tutorial, bacaan, dan latihan praktis. Anda akan mendapatkan:
+                        </p>
+                        <p class="mb-4 font-small text-1xl pl-5">
+                            1. Video Tutorial: Penjelasan mendetail dari setiap konsep dengan contoh-contoh nyata.<br>
+                            2. Bacaan Tambahan: Artikel dan e-book untuk memperdalam pemahaman.<br>
+                            3. Latihan Praktis: Soal-soal dan proyek kecil untuk menguji pemahaman Anda.<br>
+                            4. Forum Diskusi: Tempat untuk bertanya dan berdiskusi dengan instruktur dan sesama peserta kursus.<br>
                         </p>
                     </section>
                 </div>
@@ -233,27 +255,86 @@
         </div>
     </div>
     <div class="fixed bottom-0 left-0 z-50 grid w-full h-20 grid-cols-1 px-8 bg-white dark:bg-black text-gray-900 dark:text-white border-t border-gray-200 md:grid-cols-3 dark:border-gray-600">
-        <div class="items-center justify-center hidden text-gray-500 dark:text-gray-400 me-auto md:flex gap-2">
-            {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-5">
+        <div class="items-center justify-center hidden text-gray-500 dark:text-gray-400 me-auto md:flex gap-2" style="cursor: pointer" onclick="previousMateri()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-5">
                 <path class="dark:fill-white" fill="rgb(55 65 81)" d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM215 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L392 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-214.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L103 273c-9.4-9.4-9.4-24.6 0-33.9L215 127z"/>
             </svg>
-            <a href="/course/belajar-bahasa-pemrograman-python" class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Belajar Bahasa Pemrograman Python </a> --}}
+            <p class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Sebelum</p>
         </div>
         <div class="flex items-center justify-center mx-auto">
-            <a href="/course/belajar-bahasa-pemrograman-python" class="dark:text-white text-gray-900 font-semibold text-lg">Pengenalan Kelas</a>
+            <p class="dark:text-white text-gray-900 font-semibold text-lg">Materi</p>
         </div>
-        <div class="items-center justify-center ms-auto md:flex gap-2">
-            <a href="/course/belajar-bahasa-pemrograman-python" class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Mekanisme Belajar</a>
+        <div class="items-center justify-center ms-auto md:flex gap-2" style="cursor: pointer"  onclick="nextMateri()">
+            <p class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Selanjutnya</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4">
-                <path class="dark:fill-white" fill="rgb(55 65 81)" d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM297 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L120 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l214.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L409 239c9.4 9.4 9.4 24.6 0 33.9L297 385z"/>
-            </svg>    
+                <path class="dark:fill-white" fill="rgb(55 65 81)" d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM297 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L164 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l214.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L409 239c9.4 9.4 9.4 24.6 0 33.9L297 385z"/>
+            </svg>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const materi = ["pengenalanKelas", "mekanismeBelajar", "forumDiskusi"];
+            let currentIndex = 0;
+
+            function updateMateri() {
+                materi.forEach((id, index) => {
+                    document.getElementById(id).style.display = index === currentIndex ? "block" : "none";
+                });
+            }
+
+            function nextMateri() {
+                if (currentIndex < materi.length - 1) {
+                    currentIndex++;
+                    updateMateri();
+                } else {
+                    alert("Ini adalah materi terakhir.");
+                }
+            }
+
+            function previousMateri() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateMateri();
+                } else {
+                    alert("Ini adalah materi pertama.");
+                }
+            }
+
+            // Initial update
+            updateMateri();
+
+            // Expose functions to global scope
+            window.nextMateri = nextMateri;
+            window.previousMateri = previousMateri;
+        });
+    </script>
+    <script>
+        document.getElementById('asideButton').addEventListener('click', function() {
+        var aside = document.querySelector('aside');
+        if (aside.classList.contains('slide-in') || !aside.classList.contains('slide-out')) {
+            aside.classList.remove('slide-in');
+            aside.classList.add('slide-out');
+            setTimeout(function() {
+                aside.classList.add('hidden');
+            }, 300); // Sesuaikan dengan durasi animasi
+        } else {
+            aside.classList.remove('hidden');
+            aside.classList.remove('slide-out');
+            aside.classList.add('slide-in');
+        }
+    });
+    document.getElementById('showSidebarButton').addEventListener('click', function() {
+        var aside = document.querySelector('aside');
+        aside.classList.remove('hidden');
+        aside.classList.remove('slide-out');
+        aside.classList.add('slide-in');
+    });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
         const dropdownmenuDefault = document.getElementById('dropdownmenuDefault');
