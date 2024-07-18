@@ -820,6 +820,9 @@ video {
     .natr {
         padding-left: 20px;
     }
+    .contentSection {
+        padding: 30px 120px 50px 120px;
+    }
 }
 
 @media (max-width: 1025px) {
@@ -873,6 +876,12 @@ video {
     }
     .faqw {
         width: 400px !important;
+    }
+    .contentSection {
+        padding: 30px 10px 50px 70px;
+    }
+    .acide {
+        display: none;
     }
 }
 /* 
@@ -1014,4 +1023,9 @@ video {
 }
 .hidden {
     display: none;
+}
+#daftarModuleMobile {
+    z-index: 999;
+    height: 800px;
+    margin-top: 95px;
 }

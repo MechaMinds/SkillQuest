@@ -15,11 +15,11 @@ if (
 var themeToggleBtn = document.getElementById("theme-toggle");
 
 themeToggleBtn.addEventListener("click", function () {
-    // toggle icons inside button
+    // Toggle icons inside button
     themeToggleDarkIcon.classList.toggle("hidden");
     themeToggleLightIcon.classList.toggle("hidden");
 
-    // if set via local storage previously
+    // If set via local storage previously
     if (localStorage.getItem("color-theme")) {
         if (localStorage.getItem("color-theme") === "light") {
             document.documentElement.classList.add("dark");
@@ -28,8 +28,6 @@ themeToggleBtn.addEventListener("click", function () {
             document.documentElement.classList.remove("dark");
             localStorage.setItem("color-theme", "light");
         }
-
-        // if NOT set via local storage previously
     } else {
         if (document.documentElement.classList.contains("dark")) {
             document.documentElement.classList.remove("dark");
@@ -121,9 +119,7 @@ var delta = 5; // Besarnya jarak scroll sebelum menentukan arah scroll
 window.addEventListener("scroll", function () {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (Math.abs(lastScrollTop - scrollTop) <= delta)
-        // Tidak ada scroll yang signifikan
-        return;
+    if (Math.abs(lastScrollTop - scrollTop) <= delta) return; // Tidak ada scroll yang signifikan
 
     if (scrollTop > lastScrollTop) {
         navbar.style.top = "-100px"; // Scroll ke bawah, sembunyikan navbar
@@ -142,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => console.error("Error loading navbar:", error));
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".nav-button");
     const sections = document.querySelectorAll(".content-section > div");
@@ -213,9 +210,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("lessonsBtn").addEventListener("click", function () {
-    docuemnt
-        .getElementById("lessonsSection")
-        .scrollIntoView({ behavior: "smooth" });
+    document.getElementById("lessonsSection").scrollIntoView({
+        behavior: "smooth",
+    });
 });
 
 let isDragging = false;
@@ -272,3 +269,57 @@ function getPositionX(event) {
         ? event.pageX
         : event.touches[0].clientX;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const materi = ["pengenalanKelas", "mekanismeBelajar", "forumDiskusi"];
+    let currentIndex = 0;
+
+    function updateMateri() {
+        materi.forEach((id, index) => {
+            document.getElementById(id).style.display =
+                index === currentIndex ? "block" : "none";
+        });
+    }
+
+    function nextMateri() {
+        if (currentIndex < materi.length - 1) {
+            currentIndex++;
+            updateMateri();
+        }
+    }
+
+    function prevMateri() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateMateri();
+        }
+    }
+
+    document.getElementById("nextButton").addEventListener("click", nextMateri);
+    document.getElementById("prevButton").addEventListener("click", prevMateri);
+
+    updateMateri(); // Initial update
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const texts = document.querySelectorAll(".text-container p");
+    let currentIndex = 0;
+
+    function updateTexts() {
+        texts.forEach((text, index) => {
+            text.style.display = index === currentIndex ? "block" : "none";
+        });
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % texts.length;
+        updateTexts();
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + texts.length) % texts.length;
+        updateTexts();
+    });
+
+    updateTexts(); // Initial update
+});
