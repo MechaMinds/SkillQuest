@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\OrderController;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,10 @@ Route::get('/kelas/machine-learning', function(){
     return view('pages.kelas.machine-learning');
 });
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::post('/order', [OrderController::class, 'createOrder']);
+Route::get('/products', function (Request $request) {
+    return Product::all();
+});
 
 
 

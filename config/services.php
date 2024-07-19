@@ -31,11 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'midtrans' => [
-        'server_key' => env('SB-Mid-server-ohTt56iZPwCKDdhnavHXYve4'),
-        'client_key' => env('SB-Mid-client-XFRfqvTOMmYZa4mu'),
-        'is_production' => false, // Ubah ke true jika sudah di production
-        'is_sanitized' => true,
-        'is_3ds' => true,
+        'server_key' => env('MIDTRANS_SERVER_KEY'),
+        'client_key' => env('MIDTRANS_CLIENT_KEY'),
+        'is_production' => env('MIDTRANS_IS_PRODUCTION', false),
+        'is_sanitized' => env('MIDTRANS_IS_SANITIZED', true),
+        'is_3ds' => env('MIDTRANS_IS_3DS', true),
     ],
-    
 ];

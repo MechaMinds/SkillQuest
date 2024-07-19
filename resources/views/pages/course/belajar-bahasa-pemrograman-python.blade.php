@@ -70,9 +70,9 @@
             </div>
           </div>              
           <!-- Lessons Section -->
-          <div class="lg:block hidden bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 w-full lg:w-1/2 h-full mt-16" style="border-radius: 20px; position: relative;">
+          <div id="product-list" class="lg:block hidden bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 w-full lg:w-1/2 h-full mt-16" style="border-radius: 20px; position: relative;">
             <!-- Mode Desktop -->
-            <div class="p-6">
+            <div id="product" class="p-6">
                 <h3 class="text-black dark:text-white text-lg font-semibold">13 Modul (39 mins)</h3>
                 <ul class="mt-4 space-y-2">
                     <li class="flex justify-between items-center bg-white dark:bg-gray-600 p-4 shadow" style="border-radius: 10px">
@@ -96,9 +96,12 @@
                     </li>
                 </ul>
             </div>
-            <button type="submit" class="w-full mt-6 py-6 font-medium text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px; font-size:22px">
-              <a href="/course/belajar-bahasa-pemrograman-python/materi1">Gabung Sekarang</a>
+            <button id="checkout-button" type="submit" class="w-full mt-6 py-6 font-medium text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px; font-size:22px">
+              Gabung Kelas
             </button>
+            <button id="success-link" type="button" class="w-full mt-6 py-6 font-medium text-white bg-green-500 rounded hidden" style="border-radius: 0px 0px 20px 20px; font-size:22px">
+              Lanjut Kelas
+            </button> 
           </div>          
         </div>
       </div>
@@ -917,6 +920,50 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const checkoutButton = document.getElementById('checkout-button');
+          const successLink = document.getElementById('success-link');
+
+          // Periksa status pembayaran saat halaman dimuat
+          const paymentStatus = localStorage.getItem('paymentStatus');
+          if (paymentStatus === 'success') {
+              checkoutButton.classList.add('hidden');
+              successLink.classList.remove('hidden');
+              successLink.addEventListener('click', function () {
+                  window.location.href = '/course/belajar-bahasa-pemrograman-python/materi1'; // Ganti dengan URL yang sesuai
+              });
+          }
+
+          checkoutButton.addEventListener('click', function () {
+              axios.post('/order', {
+                  product_id: 1
+              })
+              .then(response => {
+                  const snapToken = response.data.snap_token;
+                  window.snap.pay(snapToken, {
+                      onSuccess: function(result) {
+                          console.log(result);
+                          // Simpan status pembayaran dan ubah tombol
+                          localStorage.setItem('paymentStatus', 'success');
+                          checkoutButton.classList.add('hidden');
+                          successLink.classList.remove('hidden');
+                          successLink.addEventListener('click', function () {
+                              window.location.href = '/course/belajar-bahasa-pemrograman-python/materi1'; // Ganti dengan URL yang sesuai
+                          });
+                      },
+                      onPending: function(result) { console.log(result); },
+                      onError: function(result) { console.log(result); }
+                  });
+              })
+              .catch(error => {
+                  console.error('Error creating order:', error);
+              });
+          });
+      });
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
       const buttons = document.querySelectorAll(".nav-button");
