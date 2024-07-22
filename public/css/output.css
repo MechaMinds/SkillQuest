@@ -1029,3 +1029,9 @@ video {
     height: 800px;
     margin-top: 95px;
 }
+.chat-ai {
+    border-radius: 0px 15px 15px 15px !important;
+}
+.chat-you {
+    border-radius: 15px 0px 15px 15px !important;
+}

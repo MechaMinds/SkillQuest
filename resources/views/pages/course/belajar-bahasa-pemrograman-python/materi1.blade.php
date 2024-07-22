@@ -269,7 +269,7 @@
         </div>
     </div>    
     <div id="chat-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-w-md max-h-full">
+        <div class="relative p-4 w-full max-w-lg max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <!-- Modal header -->
@@ -299,26 +299,24 @@
                 <div class="p-4 md:p-5">
                     <div class="mb-4">
                         <!-- Chat messages -->
-                        <div class="flex flex-col space-y-4 h-64 overflow-y-auto">
-                            <!-- Chat from us -->
-                            <div class="flex justify-end">
-                                <div class="bg-blue-600 text-white p-2 rounded-lg max-w-xs">
-                                    <p>Pesan dari kita</p>
+                        <div id="chat-box" class="flex flex-col space-y-4 h-64 overflow-y-auto">
+                            <!-- Chat Sambutan -->
+                            <div class="flex flex-col items-start">
+                                <p class="text-gray-900 dark:text-white self-end mt-1 mb-2 font-semibold text-md">Silva</p>
+                                <div class="bg-gray-50 dark:bg-gray-600 text-gray-900 dark:text-white px-3 py-3 max-w-xs chat-ai">
+                                    <p>Halo Selamat Datang di Silvia</p>
                                 </div>
                             </div>
-                            <!-- Chat from others -->
-                            <div class="flex justify-start">
-                                <div class="bg-gray-300 text-gray-900 p-2 rounded-lg max-w-xs">
-                                    <p>Pesan dari orang yang kita chat</p>
-                                </div>
-                            </div>
-                            <!-- Repeat chat bubbles as necessary -->
                         </div>
                     </div>
-                    <form>
+                    <form id="chat-form">
                         <div class="flex items-center space-x-2">
-                            <input type="text" name="chat" id="chat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type your message here" required>
-                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Kirim</button>
+                            <input type="text" name="chat" id="chat-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type your message here" required>
+                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
+                                    <path fill="#fff" d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376l0 103.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"/>
+                                </svg>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -328,7 +326,8 @@
     <!-- Footer Mobile Selesai  -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('./js/main.js') }}"></script>
+    <script src="{{ asset('./js/chat.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
     <script>
