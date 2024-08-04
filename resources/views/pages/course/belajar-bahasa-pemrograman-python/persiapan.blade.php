@@ -94,20 +94,20 @@
                             <span class="text-muted-foreground">1/3</span>
                         </button>
                         <ul id="dropdownmenuDefault" class="mt-2 space-y-2 hidden" style="padding-left: 18px">
-                            <li class="flex items-center text-foreground">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="sudah">
-                                    <path fill="#146ffe" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+                            <li class="flex items-center text-foreground" id="item1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="status1">
+                                    <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
                                 </svg>
                                 <span class="ml-2">Pengenalan Kelas</span>
                             </li>
-                            <li class="flex items-center text-foreground">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="belum">
+                            <li class="flex items-center text-foreground" id="item2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="status2">
                                     <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
                                 </svg>
                                 <span class="ml-2">Mekanisme Belajar</span>
                             </li>
-                            <li class="flex items-center text-foreground">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="belum">
+                            <li class="flex items-center text-foreground" id="item3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="status3">
                                     <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
                                 </svg>
                                 <span class="ml-2">Forum Diskusi</span>
@@ -432,7 +432,7 @@
 
             function getProgress() {
                 let progress = localStorage.getItem("progress");
-                return progress ? parseInt(progress) : 5; // Default to 5% if not set
+                return progress ? parseInt(progress) : 0; // Default to 5% if not set
             }
 
             function updateProgressDisplay() {
@@ -445,20 +445,49 @@
                 localStorage.setItem("progress", progress);
             }
 
+            function getVisitedMateri() {
+                let visited = localStorage.getItem("visitedMateri");
+                return visited ? JSON.parse(visited) : [];
+            }
+
+            function setVisitedMateri(visited) {
+                localStorage.setItem("visitedMateri", JSON.stringify(visited));
+            }
+
             function updateMateri() {
                 materi.forEach((id, index) => {
                     document.getElementById(id).style.display = 
                         index === currentIndex ? "block" : "none";
                 });
+
+                let visitedMateri = getVisitedMateri();
+                if (!visitedMateri.includes(currentIndex)) {
+                    visitedMateri.push(currentIndex);
+                    setVisitedMateri(visitedMateri);
+                    // Only update progress if the new material was not visited before
+                    let newProgress = getProgress() + 5;
+                    setProgress(Math.min(newProgress, 100)); // Cap progress at 100%
+                }
+
                 updateProgressDisplay();
+                updateStatusIcons();
+            }
+
+            function updateStatusIcons() {
+                let visitedMateri = getVisitedMateri();
+                materi.forEach((id, index) => {
+                    const statusIcon = document.getElementById(`status${index + 1}`);
+                    if (visitedMateri.includes(index)) {
+                        statusIcon.innerHTML = `<path fill="#146ffe" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>`;
+                    } else {
+                        statusIcon.innerHTML = `<path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>`;
+                    }
+                });
             }
 
             function nextMateri() {
                 if (currentIndex < materi.length - 1) {
                     currentIndex++;
-                    // Increase progress only when moving to the next item
-                    let newProgress = getProgress() + 5;
-                    setProgress(Math.min(newProgress, 100)); // Cap progress at 100%
                     updateMateri();
                 }
             }
