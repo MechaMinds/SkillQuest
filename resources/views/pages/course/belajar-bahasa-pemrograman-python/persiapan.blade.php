@@ -66,8 +66,8 @@
             </div>
         </header>
         <div class="flex flex-1 h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
-            <!-- Desktop Sidebar -->
-            <aside id="sidebar" class="w-80 border-r border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white sticky top-0 h-screen z-20 overflow-y-auto acide">
+            <!-- Sidebar -->
+            <aside id="sidebar" class="border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white acide">
                 <div class="flex items-center justify-between py-5 px-4">
                     <h2 class="text-xl font-semibold">Daftar Modul</h2>
                     <svg id="asideButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-9 h-9 cursor-pointer px-2 py-2">
@@ -160,12 +160,7 @@
                     <path class="dark:fill-white" fill="rgb(55 65 81)" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
                 </svg>
             </button>
-            <!-- Desktop Sidebar Selesai -->
-            <!-- Mobile Sidebar -->
-            <div id="app">
-                <x-SidebarMateriMobile/>
-            </div>
-            <!-- Mobile Sidebar Selesai -->
+            <!-- Sidebar Selesai -->
             <div class="contentSection flex-1 overflow-y-auto">
                 <div id="pengenalanKelas">
                     <h1 class="text-4xl font-bold mb-6">Pengenalan Kelas Belajar Bahasa Pemrograman Python</h1>

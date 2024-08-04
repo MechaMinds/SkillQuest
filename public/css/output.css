@@ -823,6 +823,15 @@ video {
     .contentSection {
         padding: 30px 120px 50px 120px;
     }
+    #sidebar {
+        width: 20rem;
+        border-right: 1px;
+        position: sticky;
+        top: 0px;
+        height: 100vh;
+        z-index: 20;
+        overflow-y: auto;
+    }
 }
 
 @media (max-width: 1025px) {
@@ -880,8 +889,13 @@ video {
     .contentSection {
         padding: 30px 10px 50px 70px;
     }
-    .acide {
-        display: none;
+    #sidebar {
+        position: fixed;
+        inset: 0px;
+        overflow-y: auto;
+        z-index: 30;
+        height: auto;
+        margin-top: 97px;
     }
 }
 /* 
