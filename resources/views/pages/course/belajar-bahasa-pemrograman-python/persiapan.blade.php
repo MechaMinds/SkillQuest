@@ -67,9 +67,99 @@
         </header>
         <div class="flex flex-1 h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
             <!-- Desktop Sidebar -->
-            <div id="app">
-                <x-SidebarMateri/>
-            </div>
+            <aside id="sidebar" class="w-80 border-r border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white sticky top-0 h-screen z-20 overflow-y-auto acide">
+                <div class="flex items-center justify-between py-5 px-4">
+                    <h2 class="text-xl font-semibold">Daftar Modul</h2>
+                    <svg id="asideButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-9 h-9 cursor-pointer px-2 py-2">
+                        <path class="dark:fill-white" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                    </svg>
+                </div>
+                <div class="dark:bg-gray-700 bg-gray-200 py-4 px-4">
+                    <span id="progressText" class="font-semibold text-lg">5% Progress</span>
+                    <div class="bar mt-2">
+                        <div class="w-full bg-gray-400 rounded-full h-1.5 dark:bg-gray-800">
+                            <div id="progressBar" class="bg-blue-600 h-1.5 rounded-full" style="width: 5%"></div>
+                        </div>
+                    </div>                 
+                </div>
+                <div class="space-y-4 py-4 px-4">
+                    <div id="persiapanBelajar">
+                        <button id="dropdownbuttonDefault" class="flex justify-between w-full text-left text-foreground">
+                            <div class="title flex flex-row justify-center items-center gap-2">
+                                <svg id="dropdowniconDefault" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3 transition-transform">
+                                    <path class="dark:fill-white" fill="rgb(55 65 81)" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                                </svg>
+                                <span class="text-lg font-semibold">Persiapan Belajar</span>
+                            </div>
+                            <span class="text-muted-foreground">1/3</span>
+                        </button>
+                        <ul id="dropdownmenuDefault" class="mt-2 space-y-2 hidden" style="padding-left: 18px">
+                            <li class="flex items-center text-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="sudah">
+                                    <path fill="#146ffe" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+                                </svg>
+                                <span class="ml-2">Pengenalan Kelas</span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="belum">
+                                    <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                                </svg>
+                                <span class="ml-2">Mekanisme Belajar</span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="belum">
+                                    <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                                </svg>
+                                <span class="ml-2">Forum Diskusi</span>
+                            </li>
+                            <hr class="my-8 bg-gray-200 border-0 dark:bg-gray-700 h-px"> 
+                        </ul>
+                    </div>
+                    <div id="sesi1">
+                        <button id="dropdownButton" class="flex justify-between w-full text-left text-foreground">
+                            <div class="title flex flex-row justify-center items-center gap-2">
+                                <svg id="dropdownIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3 transition-transform">
+                                    <path class="dark:fill-white" fill="rgb(55 65 81)" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                                </svg>
+                                <span class="text-lg font-semibold">Sesi 1</span>
+                            </div>
+                            <span class="text-muted-foreground">0/6</span>
+                        </button>
+                        <ul id="dropdownMenu" class="mt-2 space-y-2 hidden" style="padding-left: 18px">
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Persetujuan Hak Cipta <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Pengenalan Kelas <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Mekanisme Belajar <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Forum Diskusi <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Mekanisme Belajar <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <li class="flex items-center text-foreground">
+                                <span class="text-blue-500">⭘</span>
+                                <span class="ml-2">Forum Diskusi <span class="text-muted-foreground">(Gratis)</span></span>
+                            </li>
+                            <hr class="my-8 bg-gray-200 border-0 dark:bg-gray-700 h-px">
+                        </ul>
+                    </div>                    
+                </div>
+            </aside>
+            <button id="showSidebarButton" class="fixed top-10 left-4 bg-gray-100 dark:bg-gray-700 p-4 sm:hidden lg:block" style="margin-top:55px; border-radius: 0px 50px 50px 0px">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-6 h-6">
+                    <path class="dark:fill-white" fill="rgb(55 65 81)" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+                </svg>
+            </button>
             <!-- Desktop Sidebar Selesai -->
             <!-- Mobile Sidebar -->
             <div id="app">
@@ -173,7 +263,7 @@
     </div>
     <!-- Footer -->
     <div class="fixed bottom-0 left-0 z-50 grid w-full h-20 grid-cols-1 px-8 bg-white dark:bg-black text-gray-900 dark:text-white border-t border-gray-200 md:grid-cols-3 dark:border-gray-600 sm:hidden lg:grid hidden">
-        <div class="items-center justify-center hidden text-gray-500 dark:text-gray-400 me-auto md:flex gap-2" onclick="previousMateri()" style="cursor:pointer">
+        <div class="items-center justify-center hidden text-gray-500 dark:text-gray-400 me-auto md:flex gap-2" onclick="prevMateri()" id="prevMateri" style="cursor:pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-5">
                 <path class="dark:fill-white" fill="rgb(55 65 81)" d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM215 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L392 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-214.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L103 273c-9.4-9.4-9.4-24.6 0-33.9L215 127z"/>
             </svg>
@@ -211,7 +301,7 @@
                 <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
         </div>
-        <div class="items-center justify-center ms-auto md:flex gap-2"  onclick="nextMateri()" style="cursor: pointer;"> 
+        <div class="items-center justify-center ms-auto md:flex gap-2" onclick="nextMateri()" id="nextMateri" style="cursor: pointer;">
             <p class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Selanjutnya</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4">
                 <path class="dark:fill-white" fill="rgb(55 65 81)" d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM297 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L164 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l214.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L409 239c9.4 9.4 9.4 24.6 0 33.9L297 385z"/>
@@ -222,7 +312,7 @@
     <!-- Footer Mobile -->
     <div class="fixed bottom-0 left-0 z-50 w-full h-20 bg-white dark:bg-black text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-600 lg:hidden">
         <div class="flex justify-between items-center h-full px-4 md:px-8">
-            <div class="flex items-center text-gray-500 dark:text-gray-400 cursor-pointer gap-2" onclick="previousMateri()">
+            <div class="flex items-center text-gray-500 dark:text-gray-400 cursor-pointer gap-2" onclick="previousMateri()" id="prevMateri">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
                     <path class="dark:fill-white" fill="rgb(55 65 81)" d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM215 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L392 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-214.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L103 273c-9.4-9.4-9.4-24.6 0-33.9L215 127z"/>
                 </svg>
@@ -260,7 +350,7 @@
                     <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
             </div>
-            <div class="flex items-center text-gray-500 dark:text-gray-400 cursor-pointer gap-2" onclick="nextMateri()">
+            <div class="flex items-center text-gray-500 dark:text-gray-400 cursor-pointer gap-2" onclick="nextMateri()" id="nextMateri">
                 <p class="dark:text-white text-gray-900 font-semibold hidden sm:block">Selanjutnya</p>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
                     <path class="dark:fill-white" fill="rgb(55 65 81)" d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM297 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L164 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l214.1 0-71-71c-9.4-9.4 9.4-24.6 0-33.9s24.6-9.4 33.9 0L409 239c9.4 9.4 9.4 24.6 0 33.9L297 385z"/>
@@ -336,40 +426,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const materi = ["pengenalanKelas", "mekanismeBelajar", "forumDiskusi"];
             let currentIndex = 0;
 
+            function getProgress() {
+                let progress = localStorage.getItem("progress");
+                return progress ? parseInt(progress) : 5; // Default to 5% if not set
+            }
+
+            function updateProgressDisplay() {
+                const progress = getProgress();
+                document.getElementById("progressText").innerText = `${progress}% Progress`;
+                document.getElementById("progressBar").style.width = `${progress}%`;
+            }
+
+            function setProgress(progress) {
+                localStorage.setItem("progress", progress);
+            }
+
             function updateMateri() {
                 materi.forEach((id, index) => {
-                    document.getElementById(id).style.display = index === currentIndex ? "block" : "none";
+                    document.getElementById(id).style.display = 
+                        index === currentIndex ? "block" : "none";
                 });
+                updateProgressDisplay();
             }
 
             function nextMateri() {
                 if (currentIndex < materi.length - 1) {
                     currentIndex++;
+                    // Increase progress only when moving to the next item
+                    let newProgress = getProgress() + 5;
+                    setProgress(Math.min(newProgress, 100)); // Cap progress at 100%
                     updateMateri();
-                } else {
-                    alert("Ini adalah materi terakhir.");
                 }
             }
 
-            function previousMateri() {
+            function prevMateri() {
                 if (currentIndex > 0) {
                     currentIndex--;
                     updateMateri();
-                } else {
-                    alert("Ini adalah materi pertama.");
                 }
             }
 
-            // Initial update
-            updateMateri();
+            document.getElementById("nextMateri").addEventListener("click", nextMateri);
+            document.getElementById("prevMateri").addEventListener("click", prevMateri);
 
-            // Expose functions to global scope
-            window.nextMateri = nextMateri;
-            window.previousMateri = previousMateri;
+            updateMateri(); // Initial update
         });
     </script>
     <script>
