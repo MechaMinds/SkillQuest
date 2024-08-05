@@ -24,9 +24,13 @@
                 <div class="flex justify-left mb-6">
                     <img src="{{asset('images/logo.png')}}" alt="Tailwind UI Logo" class="h-16" />
                 </div>
-                <h2 class="text-3xl font-bold text-gray-900 text-left mb-2">Selamat Datang Kembali</h2>
-                <h2 class="text-1xl font-regular text-gray-400 text-left mb-10">Belum punya akun ? <a href="/daftar" class="text-blue-700 text-1xl font-medium ">Daftar Sekarang</a></h2>
+                <h2 class="text-3xl font-bold text-gray-900 text-left mb-2">Bergabung dan Kembangkan Potensi Anda</h2>
+                <h2 class="text-1xl font-regular text-gray-400 text-left mb-10">Sudah punya akun ? <a href="/login" class="text-blue-700 text-1xl font-medium ">Masuk Sekarang</a></h2>
                 <form>
+                    <div class="mb-4">
+                        <label for="text" class="block text-gray-900 font-medium mb-2">Nama Lengkap</label>
+                        <input type="text" id="text" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                    </div>
                     <div class="mb-4">
                         <label for="email" class="block text-gray-900 font-medium mb-2">Email</label>
                         <input type="email" id="email" class="border border-gray-300 rounded-lg p-2 w-full" required />
@@ -36,13 +40,12 @@
                         <input type="password" id="password" class="border border-gray-300 rounded-lg p-2 w-full" required />
                     </div>
                     <div class="flex items-center mb-6 mt-6">
-                        <div class="flex items-center w-full">
-                            <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                            <label for="default-checkbox" class="ml-2 text-sm font-regular text-gray-900 dark:text-gray-300">Ingat Saya</label>
-                            <a href="#" class="ml-auto text-blue-700 font-medium">Lupa Kata Sandi ? </a>
+                        <div class="flex w-full">
+                            <input id="default-checkbox" type="checkbox" value="" class="mt-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required>
+                            <label for="default-checkbox" class="ml-2 text-sm font-regular text-gray-900 dark:text-gray-300" style="padding-right: 120px">Dengan mendaftar, Anda akan membuat akun di PintarPath dan menyetujui <span class="text-blue-700 font-bold underline">Syarat Penggunaan</span> dan <span class="text-blue-700 font-bold underline">Kebijakan Privasi</span> PintarPath.</label>
                         </div>
                     </div>                    
-                    <button type="submit" class="bg-blue-700 text-white font-medium hover:bg-blue-800 w-full py-3 rounded-lg">Masuk Sekarang</button>
+                    <button type="submit" class="bg-blue-700 text-white font-medium hover:bg-blue-800 w-full py-3 rounded-lg">Daftar Sekarang</button>
                     <div class="relative flex items-center justify-center mt-14">
                         <hr class="w-full h-px bg-gray-300 border-0 dark:bg-gray-700">
                         <span class="absolute px-2 bg-white font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">Atau</span>
