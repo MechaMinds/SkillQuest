@@ -42,6 +42,9 @@ Route::post('/order', [OrderController::class, 'createOrder']);
 Route::get('/products', function (Request $request) {
     return Product::all();
 });
+Route::get('/login', function(){
+    return view('login');
+});
 
 
 

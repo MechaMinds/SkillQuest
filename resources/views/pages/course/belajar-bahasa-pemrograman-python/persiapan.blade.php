@@ -91,7 +91,7 @@
                                 </svg>
                                 <span class="text-lg font-semibold">Persiapan Belajar</span>
                             </div>
-                            <span class="text-muted-foreground">1/3</span>
+                            <span id="progressCount" class="text-muted-foreground">1/3</span>
                         </button>
                         <ul id="dropdownmenuDefault" class="mt-2 space-y-2 hidden" style="padding-left: 18px">
                             <li class="flex items-center text-foreground" id="item1">
@@ -432,6 +432,16 @@
                 return progress ? parseInt(progress) : 0; // Default to 0% if not set
             }
 
+            function getTotalMateri(){
+                let totalProgress = localStorage.getItem("totalProgress");
+                return totalProgress ? parseInt(totalProgress) : 0; 
+            }
+
+            function updateTotalMateri(){
+                const totalProg = getTotalMateri();
+                document.getElementById('progressCount').innerText = `${totalProg}/3`;
+            }
+
             function updateProgressDisplay() {
                 const progress = getProgress();
                 document.getElementById("progressText").innerText = `${progress}% Progress`;
@@ -465,6 +475,7 @@
                     setProgress(Math.min(newProgress, 100)); // Cap progress at 100%
                 }
 
+                updateTotalMateri();
                 updateProgressDisplay();
                 updateStatusIcons();
             }

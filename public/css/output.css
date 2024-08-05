@@ -843,6 +843,14 @@ video {
         padding-left: 2rem;
         padding-right: 2rem;
     }
+    div .loginCard {
+        width: 700px;
+        padding: 120px;
+    }
+    .backgroundLogin {
+        width: 1070px;
+        height: 990px;
+    }
 }
 
 @media (max-width: 1025px) {

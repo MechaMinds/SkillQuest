@@ -951,7 +951,7 @@
                           checkoutButton.classList.add('hidden');
                           successLink.classList.remove('hidden');
                           successLink.addEventListener('click', function () {
-                              window.location.href = '/course/belajar-bahasa-pemrograman-python/materi1'; // Ganti dengan URL yang sesuai
+                              window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // Ganti dengan URL yang sesuai
                           });
                       },
                       onPending: function(result) { console.log(result); },
