@@ -42,7 +42,7 @@
                     <div class="flex items-center mb-6 mt-6">
                         <div class="flex w-full">
                             <input id="default-checkbox" type="checkbox" value="" class="mt-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required>
-                            <label for="default-checkbox" class="ml-2 text-sm font-regular text-gray-900 dark:text-gray-300" style="padding-right: 120px">Dengan mendaftar, Anda akan membuat akun di PintarPath dan menyetujui <span class="text-blue-700 font-bold underline">Syarat Penggunaan</span> dan <span class="text-blue-700 font-bold underline">Kebijakan Privasi</span> PintarPath.</label>
+                            <label for="default-checkbox" class="ml-2 text-sm font-regular text-gray-900 dark:text-gray-300" style="padding-right: 120px">Dengan mendaftar, Anda akan membuat akun di PintarPath dan menyetujui <a href="" class="text-blue-700 font-bold underline">Syarat Penggunaan</a> dan <a href class="text-blue-700 font-bold underline">Kebijakan Privasi</a> PintarPath.</label>
                         </div>
                     </div>                    
                     <button type="submit" class="bg-blue-700 text-white font-medium hover:bg-blue-800 w-full py-3 rounded-lg">Daftar Sekarang</button>
