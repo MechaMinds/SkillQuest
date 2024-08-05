@@ -18,8 +18,13 @@ class RegisterController extends Controller
         ]);
 
         if ($validator->fails()) {
+            // Debugging log
+            \Log::error('Validation failed:', $validator->errors()->toArray());
             return redirect()->back()->withErrors($validator)->withInput();
         }
+
+        // Log email and user creation
+        \Log::info('Creating user:', ['email' => $request->email]);
 
         $user = User::create([
             'name' => $request->name,
@@ -27,8 +32,11 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        \Log::info('User created:', ['id' => $user->id]);
+
         return redirect()->route('daftar')->with('success', 'Pendaftaran Berhasil!');
     }
+
 }
 
 

@@ -51,6 +51,7 @@ Route::get('/daftar', function () {
 })->name('daftar');
 
 Route::post('/daftar', [RegisterController::class, 'daftar'])->name('daftar');
+Route::get('/verify-email/{token}', [RegisterController::class, 'verifyEmail']);
 
 
 
