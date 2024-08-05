@@ -897,9 +897,12 @@
     <!-- Mode Mobile -->
     <div class="z-50 fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 bottom-bar" style="height: 80px">
       <div class="flex items-center justify-between px-4 py-3 mt-2">
-          <span class="text-lg font-bold text-black dark:text-white ml-4">Rp. 0</span>
-          <button class="px-4 py-2 font-semibold text-md text-white bg-blue-700 rounded mr-4" style="border-radius:50px; flex-shrink: 0;">
-            <a href="/course/belajar-bahasa-pemrograman-python/materi1">Gabung Sekarang</a>
+          <span class="text-lg font-bold text-black dark:text-white ml-4">Rp. 150.000</span>
+          <button id="checkout-button" class="px-4 py-2 font-semibold text-md text-white bg-blue-700 rounded mr-4" style="border-radius:50px; flex-shrink: 0;">
+            Gabung Kelas
+          </button>
+          <button id="success-link" class="px-4 py-2 font-semibold text-md text-white bg-green-500 rounded mr-4 hidden" style="border-radius:50px; flex-shrink: 0;">
+            Lanjut Kelas
           </button>
       </div>
     </div>
