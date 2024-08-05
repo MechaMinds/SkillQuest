@@ -20,21 +20,21 @@
                 <h2 class="text-1xl font-regular text-gray-400 text-left mb-10">Belum punya akun ? <a href="/daftar" class="text-blue-700 text-1xl font-medium ">Daftar Sekarang</a></h2>
                 <form>
                     <div class="mb-4">
-                        <label for="email" class="block text-gray-900 font-medium mb-2">Email address</label>
+                        <label for="email" class="block text-gray-900 font-medium mb-2">Email</label>
                         <input type="email" id="email" class="border border-gray-300 rounded-lg p-2 w-full" required />
                     </div>
                     <div class="mb-4">
-                        <label for="password" class="block text-gray-900 font-medium mb-2">Password</label>
+                        <label for="password" class="block text-gray-900 font-medium mb-2">Kata Sandi</label>
                         <input type="password" id="password" class="border border-gray-300 rounded-lg p-2 w-full" required />
                     </div>
                     <div class="flex items-center mb-6 mt-6">
                         <div class="flex items-center w-full">
                             <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                            <label for="default-checkbox" class="ml-2 text-sm font-regular text-gray-900 dark:text-gray-300">Default checkbox</label>
-                            <a href="#" class="ml-auto text-blue-700 font-medium">Forgot password?</a>
+                            <label for="default-checkbox" class="ml-2 text-sm font-regular text-gray-900 dark:text-gray-300">Ingat Saya</label>
+                            <a href="#" class="ml-auto text-blue-700 font-medium">Lupa Kata Sandi ? </a>
                         </div>
                     </div>                    
-                    <button type="submit" class="bg-blue-700 text-white font-medium hover:bg-blue-800 w-full py-3 rounded-lg">Login Sekarang</button>
+                    <button type="submit" class="bg-blue-700 text-white font-medium hover:bg-blue-800 w-full py-3 rounded-lg">Masuk Sekarang</button>
                     <div class="relative flex items-center justify-center mt-14">
                         <hr class="w-full h-px bg-gray-300 border-0 dark:bg-gray-700">
                         <span class="absolute px-2 bg-white font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">Atau</span>
