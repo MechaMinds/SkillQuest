@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./Login - Tailwind UI_files/app-e1f9efeb.css" />
         <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
     </head>
-    <body>
+    <body style="background-image: url('{{ asset('images/loginBackground.png') }}');">
         <div class="flex h-screen place-items-center">
             <div class="bg-white rounded-lg flex flex-col justify-center loginCard "> 
                 <a href="/">
@@ -65,9 +65,6 @@
                         </button>        
                     </div>    
                 </form>                
-            </div>
-            <div class="hidden lg:block lg:w-1/2 bg-cover bg-center sm:hidden">
-                <img src="{{asset('images/loginBackground.png')}}" alt="Tailwind UI Login Background" class="backgroundLogin" />
             </div>
         </div>
     </body>
