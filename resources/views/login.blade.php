@@ -25,14 +25,21 @@
                 </div>
                 <h2 class="text-3xl font-bold text-gray-900 text-left mb-2">Selamat Datang Kembali</h2>
                 <h2 class="text-1xl font-regular text-gray-400 text-left mb-10">Belum punya akun ? <a href="/daftar" class="text-blue-700 text-1xl font-medium ">Daftar Sekarang</a></h2>
-                <form>
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
                     <div class="mb-4">
                         <label for="email" class="block text-gray-900 font-medium mb-2">Email</label>
-                        <input type="email" id="email" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                        <input type="email" id="email" name="email" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                        @error('email')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mb-4">
                         <label for="password" class="block text-gray-900 font-medium mb-2">Kata Sandi</label>
-                        <input type="password" id="password" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                        <input type="password" id="password" name="password" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                        @error('password')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="flex items-center mb-6 mt-6">
                         <div class="flex items-center w-full">
@@ -63,7 +70,20 @@
                             Github
                         </button>        
                     </div>    
-                </form>                
+                    @if (session('success'))
+                        <div id="notif-berhasil" class="fixed flex items-center w-62 p-4 space-x-4 text-white bg-green-500 divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow top-5 right-5 dark:text-gray-400 dark:divide-gray-700 dark:bg-gray-800" role="alert">
+                            <div class="text-md font-medium">{{ session('success') }}</div>
+                        </div>
+                    @endif
+
+                    @if (session('error'))
+                        <div id="notif-gagal" class="fixed flex items-center w-62 p-4 space-x-4 text-white bg-red-500 divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow top-5 right-5 dark:text-gray-400 dark:divide-gray-700 dark:bg-gray-800" role="alert">
+                            <div class="text-md font-medium">
+                                {{ session('error') }}
+                            </div>
+                        </div>
+                    @endif    
+                </form>                             
             </div>
         </div>
     </body>

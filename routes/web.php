@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Models\Product;
 
 /*
@@ -43,9 +44,13 @@ Route::post('/order', [OrderController::class, 'createOrder']);
 Route::get('/products', function (Request $request) {
     return Product::all();
 });
-Route::get('/login', function(){
+
+Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
+
+Route::post('login', [LoginController::class, 'login']);
+
 Route::get('/daftar', function () {
     return view('daftar');
 })->name('daftar');
