@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class="flex h-screen place-items-center">
-            <div class="bg-white rounded-lg shadow-lg flex flex-col justify-center loginCard"> 
+            <div class="bg-white rounded-lg flex flex-col justify-center loginCard "> 
                 <a href="/">
                     <button type="button" class="text-gray-900 w-32 flex items-center justify-center bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-md gap-2 px-5 py-2.5 me-2 mb-10 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 18px; height:18px;">
@@ -66,7 +66,7 @@
                     </div>    
                 </form>                
             </div>
-            <div class="hidden lg:block lg:w-1/2 bg-cover bg-center">
+            <div class="hidden lg:block lg:w-1/2 bg-cover bg-center sm:hidden">
                 <img src="{{asset('images/loginBackground.png')}}" alt="Tailwind UI Login Background" class="backgroundLogin" />
             </div>
         </div>
