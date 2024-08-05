@@ -7,7 +7,6 @@
         <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
         <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
         <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
-        <link rel="stylesheet" href="./Login - Tailwind UI_files/app-e1f9efeb.css" />
         <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
     </head>
     <body style="background-image: url('{{ asset('images/loginBackground.png') }}');">

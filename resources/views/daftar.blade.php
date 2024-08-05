@@ -7,7 +7,6 @@
         <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
         <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
         <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
-        <link rel="stylesheet" href="./Login - Tailwind UI_files/app-e1f9efeb.css" />
         <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
     </head>
     <body style="background-image: url('{{ asset('images/loginBackground.png') }}');">
@@ -26,18 +25,19 @@
                 </div>
                 <h2 class="text-3xl font-bold text-gray-900 text-left mb-2">Bergabung dan Kembangkan Potensi Anda</h2>
                 <h2 class="text-1xl font-regular text-gray-400 text-left mb-10">Sudah punya akun ? <a href="/login" class="text-blue-700 text-1xl font-medium ">Masuk Sekarang</a></h2>
-                <form>
+                <form method="POST" action="{{ route('daftar') }}">
+                    @csrf
                     <div class="mb-4">
-                        <label for="text" class="block text-gray-900 font-medium mb-2">Nama Lengkap</label>
-                        <input type="text" id="text" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                        <label for="name" class="block text-gray-900 font-medium mb-2">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" class="border border-gray-300 rounded-lg p-2 w-full" required />
                     </div>
                     <div class="mb-4">
                         <label for="email" class="block text-gray-900 font-medium mb-2">Email</label>
-                        <input type="email" id="email" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                        <input type="email" id="email" name="email" class="border border-gray-300 rounded-lg p-2 w-full" required />
                     </div>
                     <div class="mb-4">
                         <label for="password" class="block text-gray-900 font-medium mb-2">Kata Sandi</label>
-                        <input type="password" id="password" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                        <input type="password" id="password" name="password" class="border border-gray-300 rounded-lg p-2 w-full" required />
                     </div>
                     <div class="flex items-center mb-6 mt-6">
                         <div class="flex w-full">
@@ -66,9 +66,38 @@
                             </svg>
                             Github
                         </button>        
-                    </div>    
-                </form>                
+                    </div> 
+                    @if ($errors->any())
+                        <div id="notif-gagal" class="fixed flex items-center w-62 p-4 space-x-4 text-white bg-red-500 divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow top-5 right-5 dark:text-gray-400 dark:divide-gray-700 dark:bg-gray-800" role="alert">
+                            <div class="text-md font-medium">Email Sudah Digunakan !</div>
+                        </div>
+                    @endif  
+                    @if (session('success'))
+                        <div id="notif-berhasil" class="fixed flex items-center w-62 p-4 space-x-4 text-white bg-green-500 divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow top-5 right-5 dark:text-gray-400 dark:divide-gray-700 dark:bg-gray-800" role="alert">
+                            <div class="text-md font-medium">Pendaftaran Berhasil !</div>
+                        </div>
+                    @endif
+                </form>                             
             </div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Menampilkan notifikasi berhasil
+                if (document.getElementById('notif-berhasil')) {
+                    document.getElementById('notif-berhasil').style.display = 'flex';
+                    setTimeout(() => {
+                        document.getElementById('notif-berhasil').style.display = 'none';
+                    }, 3000);
+                }
+    
+                // Menampilkan notifikasi gagal
+                if (document.getElementById('notif-gagal')) {
+                    document.getElementById('notif-gagal').style.display = 'flex';
+                    setTimeout(() => {
+                        document.getElementById('notif-gagal').style.display = 'none';
+                    }, 3000);
+                }
+            });
+        </script>
     </body>
 </html>
