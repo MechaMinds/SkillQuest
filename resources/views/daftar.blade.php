@@ -9,9 +9,9 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
         <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
     </head>
-    <body style="background-image: url('{{ asset('images/loginBackground.png') }}');">
+    <body class="bg-logdaf">
         <div class="flex h-screen place-items-center">
-            <div class="bg-white rounded-lg flex flex-col justify-center loginCard "> 
+            <div class="bg-white rounded-lg flex flex-col justify-center daftarCard "> 
                 <a href="/">
                     <button type="button" class="text-gray-900 w-32 flex items-center justify-center bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-md gap-2 px-5 py-2.5 me-2 mb-10 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 18px; height:18px;">
@@ -50,7 +50,7 @@
                         <hr class="w-full h-px bg-gray-300 border-0 dark:bg-gray-700">
                         <span class="absolute px-2 bg-white font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">Atau</span>
                     </div>                
-                    <div class="flex mt-7">
+                    <div class="flex mt-7 mb-10">
                         <button type="button" class="text-gray-900 w-full flex items-center justify-center bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-md gap-2 px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262" id="google">
                                 <path fill="#4285F4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>

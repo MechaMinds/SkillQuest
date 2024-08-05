@@ -9,7 +9,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
         <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
     </head>
-    <body style="background-image: url('{{ asset('images/loginBackground.png') }}');">
+    <body class="bg-logdaf">
         <div class="flex h-screen place-items-center">
             <div class="bg-white rounded-lg flex flex-col justify-center loginCard "> 
                 <a href="/">
