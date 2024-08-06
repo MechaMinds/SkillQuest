@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends BaseController
 {
@@ -43,6 +44,25 @@ class ProfileController extends BaseController
                 'message' => 'Terjadi kesalahan saat mengunggah foto: ' . $e->getMessage(),
             ], 500);
         }
+    }
+    public function updateProfilePhoto(Request $request)
+    {
+        $request->validate([
+            'profile_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $user = Auth::user();
+        if ($user->profile_photo) {
+            Storage::delete('public/photoProfileUser/' . $user->profile_photo);
+        }
+
+        $filename = $user->id . '_profile_' . time() . '.' . $request->profile_photo->getClientOriginalExtension();
+        $path = $request->file('profile_photo')->storeAs('public/photoProfileUser', $filename);
+
+        $user->profile_photo = $filename;
+        $user->save();
+
+        return response()->json(['profile_photo_url' => asset('storage/photoProfileUser/' . $filename)]);
     }
 }
 

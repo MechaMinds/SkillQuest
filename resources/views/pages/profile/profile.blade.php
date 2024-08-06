@@ -7,6 +7,7 @@
     <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
+    <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
     <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
   </head>
   <body class="mt-3 bg-white dark:bg-gray-900">
@@ -71,8 +72,15 @@
                       <img id="profileImage" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}" alt="Profile" class="rounded-md w-24 h-24 mb-4">
                       <form id="profilePhotoForm" method="POST" enctype="multipart/form-data" class="flex flex-col">
                           @csrf
-                          <input type="file" name="profile_photo" id="profilePhotoInput" class="mb-2">
-                          <button type="submit" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium">Ganti Foto Profile</button>
+                          <label for="profilePhotoInput" class="custom-file-upload bg-blue-700 px-4 py-3 rounded-md text-white font-medium cursor-pointer">
+                            Ganti Foto Profil
+                          </label>
+                          <input type="file" name="profile_photo" id="profilePhotoInput">
+                          {{-- <button type="submit" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium">Ganti Foto Profile</button> --}}
+                          <div id="photoActionButtons" class="hidden flex gap-4 mt-4">
+                            <button type="submit" id="applyButton" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Apply</button>
+                            <button type="button" id="cancelButton" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Batal</button>
+                          </div>
                       </form>
                     </div>            
                   </div>
@@ -91,8 +99,29 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{asset('js/crop.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
+    <script>
+      document.getElementById('profilePhotoInput').addEventListener('change', function() {
+        const file = this.files[0];
+            const reader = new FileReader();
+
+            if (file) {
+                reader.onload = function(e) {
+                    document.getElementById('profileImage').src = e.target.result;
+                    document.getElementById('photoActionButtons').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('cancelButton').addEventListener('click', function() {
+            document.getElementById('profilePhotoInput').value = '';
+            document.getElementById('profileImage').src = '{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}';
+            document.getElementById('photoActionButtons').classList.add('hidden');
+        }); 
+    </script>
     <script>
       gsap.registerPlugin(ScrollTrigger);
 

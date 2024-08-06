@@ -79,7 +79,7 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('/profile/upload', [ProfileController::class, 'uploadPhoto'])->name('profile.upload');
 });
-
+Route::post('/profile/uploadPhoto', [ProfileController::class, 'uploadPhoto'])->name('profile.uploadPhoto');
 
 
 
