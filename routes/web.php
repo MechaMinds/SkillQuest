@@ -5,6 +5,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\ProfileController;
 use App\Models\Product;
 
 /*
@@ -56,7 +57,8 @@ Route::get('/daftar', function () {
 })->name('daftar');
 
 Route::post('/daftar', [RegisterController::class, 'daftar'])->name('daftar');
-Route::get('/verify-email/{token}', [RegisterController::class, 'verifyEmail']);
+Route::get('/verify-email/{token}', [RegisterController::class, 'verifyEmail'])->name('verify.email');
+Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 
 
 
