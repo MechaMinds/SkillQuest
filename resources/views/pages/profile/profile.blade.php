@@ -22,8 +22,23 @@
           <div class="flex">
               <div class="sticky top-4 overflow-y-auto sidebar section-title py-5 px-5 sm:hidden lg:block hidden z-20" style="width: 300px; height: 700px;">
                   <div class="title dark:text-white text-grey-900 font-semibold text-4xl mb-10">Pengaturan</div>
-                  <div class="profileSaya title dark:text-white text-grey-900 font-medium text-2xl border-gray-900 dark:border-white py-2 px-5 mb-10">
+                  <div class="profileSaya title dark:text-white hover:text-gray-900 text-gray-900 font-medium text-xl border-gray-900 dark:border-white hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-white py-4 px-5">
                       <a href="/profile">Profile</a>
+                  </div> 
+                  <div class="courseSaya title dark:text-white hover:text-gray-900 text-gray-900 font-medium text-xl border-gray-900 dark:border-white hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-white py-4 px-5">
+                      <a href="/course-saya">Data Pribadi</a>
+                  </div> 
+                  <div class="courseSaya title dark:text-white hover:text-gray-900 text-gray-900 font-medium text-xl border-gray-900 dark:border-white hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-white py-4 px-5">
+                      <a href="/course-saya">Course Saya</a>
+                  </div> 
+                  <div class="courseSaya title dark:text-white hover:text-gray-900 text-gray-900 font-medium text-xl border-gray-900 dark:border-white hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-white py-4 px-5">
+                      <a href="/course-saya">Riwayat Transaksi</a>
+                  </div> 
+                  <div class="courseSaya title dark:text-white hover:text-gray-900 text-gray-900 font-medium text-xl border-gray-900 dark:border-white hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-white py-4 px-5">
+                      <a href="/course-saya">Pengaturan</a>
+                  </div> 
+                  <div class="courseSaya title text-red-500 font-medium text-xl py-3 px-5 hover:bg-gray-200 dark:hover:bg-gray-500">
+                      <a href="/course-saya">Keluar</a>
                   </div> 
               </div>
           </div>
