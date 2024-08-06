@@ -852,9 +852,16 @@ video {
     .guestProfile {
         padding: 100px;
     }
+    .crop {
+        width: 500px;
+        height: auto;
+    }
 }
 
 @media (max-width: 1025px) {
+    .buttonPhoto {
+        font-size: 12px;
+    }
     .desktop {
         display: none;
     }
@@ -991,6 +998,10 @@ video {
     .bg-logdaf {
         background-color: white;
     }
+    .crop {
+        width: 300px;
+        height: auto;
+    }
 }
 /* 
 .content-section {
@@ -1008,6 +1019,16 @@ video {
     position: relative;
     background-color: #2c303a;
     border: 2px solid #2c303a;
+}
+#cropperModal {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparan hitam */
+}
+
+#cropperModal .modal-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .avatar img {
