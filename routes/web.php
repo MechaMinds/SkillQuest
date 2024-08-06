@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ProfileController;
+use App\Http\Controllers\ProfileController as UserProfileController;
 use App\Models\Product;
 
 /*
@@ -76,5 +77,7 @@ Route::middleware(['auth'])->group(function () {
         return redirect('/');
     })->name('logout');
 });
+
+Route::post('/profile/upload', [UserProfileController::class, 'uploadProfilePhoto'])->name('profile.upload');
 
 

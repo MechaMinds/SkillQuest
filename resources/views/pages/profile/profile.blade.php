@@ -68,9 +68,13 @@
                   <div class="photoProfile">
                     <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Foto Profile </h1>
                     <div class="detail flex gap-3">
-                      <img src="{{ asset('images/avatarDefault.png') }}" alt="Profile" class="rounded-md w-24 h-24 mb-4">
-                      <a href="" class="bg-blue-700 px-4 py-3 h-full rounded-md text-white font-medium">Ganti Foto Profile</a>
-                    </div>
+                      <img id="profileImage" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}" alt="Profile" class="rounded-md w-24 h-24 mb-4">
+                      <form id="profilePhotoForm" method="POST" enctype="multipart/form-data" class="flex flex-col">
+                          @csrf
+                          <input type="file" name="profile_photo" id="profilePhotoInput" class="mb-2">
+                          <button type="submit" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium">Ganti Foto Profile</button>
+                      </form>
+                    </div>            
                   </div>
               </div>
           </div>
@@ -147,6 +151,32 @@
           toggleActions: "play none none none",
           once: true, // animasi hanya terjadi sekali
         },
+      });
+    </script>
+    <script>
+      document.getElementById('profilePhotoForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        const formData = new FormData(this);
+        fetch("{{ route('profile.upload') }}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('profileImage').src = data.imageUrl + '?' + new Date().getTime(); // Add a timestamp to avoid cache issues
+                document.getElementById('profilePhotoInput').value = ''; // Clear the file input
+            } else {
+                alert('Terjadi kesalahan: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
       });
     </script>
   </body>
