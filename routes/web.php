@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -60,5 +61,20 @@ Route::post('/daftar', [RegisterController::class, 'daftar'])->name('daftar');
 Route::get('/verify-email/{token}', [RegisterController::class, 'verifyEmail'])->name('verify.email');
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 
+Route::get('/profile', function () {
+    return view('pages.profile.profile');
+});
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', function () {
+        return view('pages.profile.profile');
+    })->name('profile');
+
+    Route::get('/logout', function () {
+        Auth::logout();
+        return redirect('/');
+    })->name('logout');
+});
 
 

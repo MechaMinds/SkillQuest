@@ -39,7 +39,7 @@
               </div>
               <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
                 <li>
-                  <a href="#" class="block font-medium px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile Saya</a>
+                  <a href="/profile" class="block font-medium px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile Saya</a>
                 </li>
                 <li>
                   <a href="#" class="block font-medium px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Course Saya</a>
@@ -49,7 +49,14 @@
                 </li>
               </ul>
               <div class="py-1">
-                <a href="#" class="block font-medium px-4 py-2 text-sm text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600  dark:text-red-500">Keluar</a>
+                <form method="GET" action="{{ route('logout') }}">
+                    @csrf
+                    <a type="submit" class="block font-medium px-4 py-2 text-sm text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-red-500">
+                        <button>
+                          Keluar
+                        </button>
+                    </a>
+                </form>
               </div>
           </div>
         @endauth

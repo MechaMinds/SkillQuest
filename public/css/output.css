@@ -843,6 +843,12 @@ video {
     .bg-logdaf {
         background-image: url("/images/loginBackground.png");
     }
+    .profileSaya {
+        border-left: 3px solid;
+    }
+    .guestProfile {
+        padding: 100px;
+    }
 }
 
 @media (max-width: 1025px) {
