@@ -81,7 +81,7 @@
                 </div>   
                 <p class="mt-5 dark:text-gray-100 text-gray-900 font-medium text-sm sm:block lg:hidden block">Kami menyarankan menggunakan foto yang memiliki rasio 1:1</p>         
               </div>
-              <div class="dataDiri sm:mt-5 lg:mt-10 lg:grid lg:grid-cols-2 sm:flex gap-4">
+              <div class="dataDiri sm:mt-6 mt-10 lg:mt-10 lg:grid lg:grid-cols-2 sm:flex gap-4">
                 <div class="namaLengkap">
                   <label for="helper-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap <span class="text-red-500">*</span></label>
                   <input type="text" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="{{Auth::user()->name}}">
@@ -100,10 +100,11 @@
                   </div>               
                 </div>
               </div>
-              <div class="mb-6">
-                <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tentang</label>
-                <textarea id="large-input" rows="4" class="resize-textarea block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
-              </div>  
+              <div class="lg:mt-6 sm:mt-6 mt-6">  
+                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tentang Saya</label>
+                <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+              </div>
+              <button type="button" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 lg:mt-5 mt-5 sm:mt-5">Simpan Perubahan</button>  
             </div>
           </div>
         </div>
