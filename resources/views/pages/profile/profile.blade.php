@@ -89,12 +89,15 @@
                     <div class="email lg:mt-0 mt-5 sm:mt-5">
                       <label for="helper-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email <span class="text-red-500">*</span></label>
                       <input type="email" id="disabled-input" aria-label="disabled input" class="-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{Auth::user()->email}}" disabled>
-                      <div class="information"> 
-                        <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                          Email Terverifikasi, Kamu bisa mengganti alamat email pada menu 
-                          <a href="/pengaturan" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Pengaturan</a>.
+                      <div class="information flex gap-2 mt-2.5"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
+                            <path fill="#1a56db" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+                        </svg>
+                        <p id="helper-text-explanation" class="text-sm text-gray-500 dark:text-gray-400">
+                            Email Terverifikasi, Kamu bisa mengganti alamat email pada menu 
+                            <a href="/pengaturan" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Pengaturan</a>.
                         </p>
-                      </div>  
+                      </div>                    
                     </div>
                   </div>
               </div>
