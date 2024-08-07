@@ -7,7 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ProfileController;
-use App\Http\Controllers\AvatarListController;
+use App\Http\Controllers\AvatarController;
 use App\Models\Product;
 
 /*
@@ -78,9 +78,9 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::middleware('auth')->group(function () {
     Route::post('/profile/updatePhoto', [ProfileController::class, 'updateProfilePhoto'])->name('profile.updatePhoto');
-    Route::post('/profile/update-avatar', [ProfileController::class, 'updateAvatar'])->name('profile.updateAvatar');
-    Route::post('/save-avatar', [AvatarListController::class, 'saveAvatar'])->name('saveAvatar');
-    Route::get('/avatars', [AvatarListController::class, 'getAvatars'])->name('getAvatars');
 });
+Route::post('/update-avatar', [AvatarController::class, 'update'])->name('profile.updateAvatar');
+
+
 
 
