@@ -245,8 +245,28 @@
                 alert('Please select an avatar');
             }
         });
-
-
     </script>    
+    <script>
+        document.getElementById('filterButton').addEventListener('click', function() {
+            var background = document.getElementById('background');
+            if (background.classList.contains('hidden')) {
+                background.classList.remove('hidden');
+            } else {
+                background.classList.add('hidden');
+            }
+        });
+        document.getElementById('filterButton').addEventListener('click', function() {
+            var backgroundOpacity = document.getElementById('backgroundOpacity');
+            if (backgroundOpacity.classList.contains('hidden')) {
+                backgroundOpacity.classList.remove('hidden');
+            } else {
+                backgroundOpacity.classList.add('hidden');
+            }
+        });
+        document.getElementById('closeIcon').addEventListener('click', function() {
+            document.getElementById('background').classList.add('hidden');
+            document.getElementById('backgroundOpacity').classList.add('hidden');
+        });
+    </script>       
 </body>
 </html>
