@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
     <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
   </head>
   <body class="mt-3 bg-white dark:bg-gray-900">
     <div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-10"></div>
@@ -72,8 +71,9 @@
                       <img id="profileImage" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}"  alt="Profile" class="rounded-md w-24 h-24 mb-4">
                       <form id="profilePhotoForm" action="{{ route('profile.updatePhoto') }}" method="POST" enctype="multipart/form-data" style="margin-top: 12px">
                         @csrf
-                        <label for="profilePhotoInput" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium cursor-pointer custom-file-upload">Ganti Foto Profile</label>
+                        <label for="profilePhotoInput" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium cursor-pointer custom-file-upload text-sm">Ganti Foto Profile</label>
                         <input type="file" name="profile_photo" id="profilePhotoInput" class="hidden" required>
+                        <p class="mt-5 dark:text-gray-100 text-gray-900 font-medium text-sm" style="padding-right:550px">Kami menyarankan foto yang memiliki rasio 1:1</p>
                       </form>
                     </div>            
                   </div>
@@ -85,11 +85,12 @@
     <!-- Profile Selesai-->
     <form id="profilePhotoForm" action="{{ route('profile.updatePhoto') }}" method="POST" enctype="multipart/form-data" class="flex flex-col">
       @csrf
-      <div id="cropperModal" class="fixed inset-0 hidden flex items-center justify-center z-50 bg-black bg-opacity-50">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-lg font-medium mb-4">Atur Foto Profile</h2>
+      <div id="cropperModal" class="fixed hidden inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 cardPhoto">
+            <h2 class="text-lg font-medium dark:text-white text-gray-900">Sesuaikan Foto Profile</h2>
+            <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"> 
             <div class="w-full h-64">
-                <img id="cropperImage" src="" alt="Cropper Image" class="w-full h-full">
+                <img id="cropperImage" src="{{asset('images/avatarDefault.png')}}" alt="Cropper Image" class="w-full h-full">
             </div>
             <div class="mt-4 flex justify-end">
                 <button id="cancelCrop" class="bg-gray-500 px-4 py-2 rounded-md text-white mr-2">Batal</button>

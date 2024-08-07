@@ -26,8 +26,17 @@
                 cropperModal.style.display = "flex";
 
                 const cropper = new Cropper(cropperImage, {
-                    aspectRatio: 1,
-                    viewMode: 2
+                    aspectRatio: 1, // Aspect ratio 1:1 untuk lingkaran
+                    viewMode: 1,
+                    responsive: true,
+                    autoCropArea: 1,
+                    ready() {
+                        // Mengatur dimensi cropper sesuai kebutuhan
+                        cropper.setCropBoxData({
+                            width: 300,
+                            height: 300
+                        });
+                    },
                 });
 
                 document.getElementById("applyCrop").addEventListener("click", function () {
@@ -35,6 +44,7 @@
                         width: 300,
                         height: 300
                     });
+                    canvas.style.borderRadius = "100%";
 
                     canvas.toBlob(function (blob) {
                         const formData = new FormData();
@@ -67,8 +77,6 @@
 
                 document.getElementById("cancelCrop").addEventListener("click", function () {
                     cropperModal.classList.add("hidden");
-                    cropperModal.style.display = "none";
-                    cropper.destroy();
                 });
             };
 
