@@ -17,9 +17,9 @@
     </div>  
     <!-- Navbar Selesai -->
     <!-- Profile -->
-    <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]" style="margin-top: 150px">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl gap-3 flex">
-        <div class="sticky top-4 overflow-y-auto sidebar section-title py-5 px-5 sm:hidden lg:block hidden z-20" style="width: 300px; height: 700px;">
+    <section class="secPrim bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+      <div class="parnt mx-auto max-w-screen-xl gap-3 flex">
+        <div class="sticky top-4 overflow-y-auto sidebar section-title py-5 px-5 sm:hidden lg:block hidden z-20" style="width: 400px">
           <div class="title dark:text-white text-grey-900 font-semibold text-3xl mb-8">Pengaturan</div>
           <div class="borderProfile1 items-center title gap-4 flex dark:text-white hover:text-gray-900 text-gray-900 font-medium text-xl border-gray-900 dark:border-white hover:bg-gray-200 dark:hover:bg-gray-500 dark:hover:text-white py-4 px-5">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6">
@@ -80,6 +80,22 @@
                       </form>
                     </div>   
                     <p class="mt-5 dark:text-gray-100 text-gray-900 font-medium text-sm sm:block lg:hidden block">Kami menyarankan menggunakan foto yang memiliki rasio 1:1</p>         
+                  </div>
+                  <div class="dataDiri sm:mt-5 lg:mt-10 lg:grid lg:grid-cols-2 sm:flex gap-4">
+                    <div class="namaLengkap">
+                      <label for="helper-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap <span class="text-red-500">*</span></label>
+                      <input type="text" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="{{Auth::user()->name}}">
+                    </div>
+                    <div class="email lg:mt-0 mt-5 sm:mt-5">
+                      <label for="helper-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email <span class="text-red-500">*</span></label>
+                      <input type="email" id="disabled-input" aria-label="disabled input" class="-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{Auth::user()->email}}" disabled>
+                      <div class="information"> 
+                        <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                          Email Terverifikasi, Kamu bisa mengganti alamat email pada menu 
+                          <a href="/pengaturan" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Pengaturan</a>.
+                        </p>
+                      </div>  
+                    </div>
                   </div>
               </div>
           </div>

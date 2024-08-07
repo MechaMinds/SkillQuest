@@ -867,6 +867,19 @@ video {
     .formProf {
         margin-top: 12px;
     }
+    .secPrim {
+        margin-top: 150px;
+    }
+    .coverProf {
+        width: 400px;
+        height: 700px;
+    }
+    .parnt {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 @media (max-width: 1025px) {
@@ -1017,11 +1030,13 @@ video {
         display: flex;
         flex-direction: column;
     }
-    .btnProfile {
-        width: 170px;
-    }
+    .btnProfile,
     .btnAvatar {
-        width: 170px;
+        width: 180px;
+    }
+
+    .secPrim {
+        margin-top: 100px;
     }
 }
 /* 
