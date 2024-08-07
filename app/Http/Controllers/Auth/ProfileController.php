@@ -52,17 +52,32 @@ class ProfileController extends BaseController
         ]);
 
         $user = Auth::user();
+
+        // Log path dan nama file
+        \Log::info('Old profile photo:', ['photo' => $user->profile_photo]);
+
+        // Hapus foto profil lama jika ada
         if ($user->profile_photo) {
-            Storage::delete('public/photoProfileUser/' . $user->profile_photo);
+            $oldPhotoPath = public_path('images/photoProfileUser/' . $user->profile_photo);
+            if (file_exists($oldPhotoPath)) {
+                unlink($oldPhotoPath);
+            }
         }
 
+        // Simpan foto profil baru
         $filename = $user->id . '_profile_' . time() . '.' . $request->profile_photo->getClientOriginalExtension();
-        $path = $request->file('profile_photo')->storeAs('public/photoProfileUser', $filename);
+        $path = $request->file('profile_photo')->move(public_path('images/photoProfileUser'), $filename);
 
         $user->profile_photo = $filename;
         $user->save();
 
-        return response()->json(['profile_photo_url' => asset('storage/photoProfileUser/' . $filename)]);
+        // Log URL gambar
+        \Log::info('New profile photo saved:', ['filename' => $filename]);
+
+        return response()->json([
+            'success' => true,
+            'profile_photo_url' => asset('images/photoProfileUser/' . $filename),
+        ]);
     }
 }
 

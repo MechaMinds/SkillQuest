@@ -41,7 +41,6 @@ Route::get('/kelas', function(){
 Route::get('/kelas/machine-learning', function(){
     return view('pages.kelas.machine-learning');
 });
-Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::post('/order', [OrderController::class, 'createOrder']);
 Route::get('/products', function (Request $request) {
     return Product::all();
@@ -55,7 +54,7 @@ Route::post('login', [LoginController::class, 'login']);
 
 Route::get('/daftar', function () {
     return view('daftar');
-})->name('daftar');
+})->name('daftar.page');
 
 Route::post('/daftar', [RegisterController::class, 'daftar'])->name('daftar');
 Route::get('/verify-email/{token}', [RegisterController::class, 'verifyEmail'])->name('verify.email');
@@ -77,10 +76,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('logout');
 });
 Route::middleware('auth')->group(function () {
-    Route::post('/profile/upload', [ProfileController::class, 'uploadPhoto'])->name('profile.upload');
+    Route::post('/profile/updatePhoto', [ProfileController::class, 'updateProfilePhoto'])->name('profile.updatePhoto');
 });
-Route::post('/profile/uploadPhoto', [ProfileController::class, 'uploadPhoto'])->name('profile.uploadPhoto');
-
-
 
 

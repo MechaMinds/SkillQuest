@@ -69,18 +69,11 @@
                   <div class="photoProfile">
                     <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Foto Profile </h1>
                     <div class="detail flex gap-3">
-                      <img id="profileImage" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}" alt="Profile" class="rounded-md w-24 h-24 mb-4">
-                      <form id="profilePhotoForm" method="POST" enctype="multipart/form-data" class="flex flex-col">
-                          @csrf
-                          <label for="profilePhotoInput" class="custom-file-upload bg-blue-700 px-4 py-3 rounded-md text-white font-medium cursor-pointer">
-                            Ganti Foto Profil
-                          </label>
-                          <input type="file" name="profile_photo" id="profilePhotoInput">
-                          {{-- <button type="submit" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium">Ganti Foto Profile</button> --}}
-                          <div id="photoActionButtons" class="hidden flex gap-4 mt-4">
-                            <button type="submit" id="applyButton" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Apply</button>
-                            <button type="button" id="cancelButton" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Batal</button>
-                          </div>
+                      <img id="profileImage" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}"  alt="Profile" class="rounded-md w-24 h-24 mb-4">
+                      <form id="profilePhotoForm" action="{{ route('profile.updatePhoto') }}" method="POST" enctype="multipart/form-data" style="margin-top: 12px">
+                        @csrf
+                        <label for="profilePhotoInput" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium cursor-pointer custom-file-upload">Ganti Foto Profile</label>
+                        <input type="file" name="profile_photo" id="profilePhotoInput" class="hidden" required>
                       </form>
                     </div>            
                   </div>
@@ -90,123 +83,30 @@
       </div>
     </section>  
     <!-- Profile Selesai-->
-
+    <form id="profilePhotoForm" action="{{ route('profile.updatePhoto') }}" method="POST" enctype="multipart/form-data" class="flex flex-col">
+      @csrf
+      <div id="cropperModal" class="fixed inset-0 hidden flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-lg font-medium mb-4">Atur Foto Profile</h2>
+            <div class="w-full h-64">
+                <img id="cropperImage" src="" alt="Cropper Image" class="w-full h-full">
+            </div>
+            <div class="mt-4 flex justify-end">
+                <button id="cancelCrop" class="bg-gray-500 px-4 py-2 rounded-md text-white mr-2">Batal</button>
+                <button id="applyCrop" class="bg-blue-700 px-4 py-2 rounded-md text-white">Terapkan</button>
+            </div>
+        </div>
+      </div>
+    </form>
     <!-- Footer Mulai -->
     <div id="app">
       <x-footer />
     </div>
+    @component('components.source.javascript')
+    @endcomponent
     <!-- Footer Selesai -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{asset('js/crop.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
-    <script>
-      document.getElementById('profilePhotoInput').addEventListener('change', function() {
-        const file = this.files[0];
-            const reader = new FileReader();
-
-            if (file) {
-                reader.onload = function(e) {
-                    document.getElementById('profileImage').src = e.target.result;
-                    document.getElementById('photoActionButtons').classList.remove('hidden');
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        document.getElementById('cancelButton').addEventListener('click', function() {
-            document.getElementById('profilePhotoInput').value = '';
-            document.getElementById('profileImage').src = '{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}';
-            document.getElementById('photoActionButtons').classList.add('hidden');
-        }); 
-    </script>
-    <script>
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.utils.toArray(".max-w-sm").forEach((item, index) => {
-        gsap.from(item, {
-          opacity: 0,
-          y: 50,
-          duration: 1,
-          scrollTrigger: {
-            trigger: item,
-            start: "top 80%",
-            toggleActions: "play none none none", // ubah toggleActions agar tidak ada reverse
-            once: true, // animasi hanya terjadi sekali
-            onEnter: () => {
-              gsap.to(item, { opacity: 1, y: 0, duration: 1 });
-            },
-          },
-        });
-      });
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Animasi untuk judul
-      gsap.from(".section-title", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".section-title",
-          start: "top 80%",
-          toggleActions: "play none none none",
-          once: true, // animasi hanya terjadi sekali
-        },
-      });
-
-      // Animasi untuk paragraf
-      gsap.from(".section-content", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".section-content",
-          start: "top 80%",
-          toggleActions: "play none none none",
-          once: true, // animasi hanya terjadi sekali
-        },
-      });
-
-      // Animasi untuk gambar
-      gsap.from(".section-image", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: ".section-image",
-          start: "top 80%",
-          toggleActions: "play none none none",
-          once: true, // animasi hanya terjadi sekali
-        },
-      });
-    </script>
-    <script>
-      document.getElementById('profilePhotoForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from submitting normally
-
-        const formData = new FormData(this);
-        fetch("{{ route('profile.upload') }}", {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                document.getElementById('profileImage').src = data.imageUrl + '?' + new Date().getTime(); // Add a timestamp to avoid cache issues
-                document.getElementById('profilePhotoInput').value = ''; // Clear the file input
-            } else {
-                alert('Terjadi kesalahan: ' + data.message);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-      });
-    </script>
+    <script src="{{ asset('js/main.js') }}"></script>   
   </body>
 </html>
