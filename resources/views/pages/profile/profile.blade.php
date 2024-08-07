@@ -69,14 +69,17 @@
                     <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Foto Profile </h1>
                     <div class="detail flex gap-3">
                       <img id="profileImageAvatar" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}" alt="Profile" class="w-24 h-24 rounded-full">
-                      <form id="profilePhotoForm" action="{{ route('profile.updatePhoto') }}" method="POST" enctype="multipart/form-data" style="margin-top: 12px">
+                      <form id="profilePhotoForm" action="{{ route('profile.updatePhoto') }}" method="POST" enctype="multipart/form-data" class="formProf">
                         @csrf
-                        <label for="profilePhotoInput" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium cursor-pointer custom-file-upload text-sm">Ganti Foto Profile</label>
-                        <button id="showAvatarPopup" type="button" class="rounded-md cursor-pointer custom-file-upload text-sm text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" style="padding: 11.5px 16px 11.5px 16px">Gunakan karakter Avatar</button>
+                        <div class="buttonAvProf">
+                          <label for="profilePhotoInput" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium cursor-pointer custom-file-upload text-sm mb-2 md:mb-0 btnProfile text-center">Ganti Foto Profile</label>
+                          <button id="showAvatarPopup" type="button" class="rounded-md cursor-pointer custom-file-upload text-sm text-gray-900 bg-white border border-gray-300 btnAvatar focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" style="padding: 11.5px 16px">Gunakan Avatar</button>
+                      </div>
                         <input type="file" name="profile_photo" id="profilePhotoInput" class="hidden" required>
-                        <p class="mt-2 dark:text-gray-100 text-gray-900 font-medium text-sm" style="padding-right:550px">Kami menyarankan menggunakan foto yang memiliki rasio 1:1</p>
+                        <p class="mt-2 dark:text-gray-100 text-gray-900 font-medium text-sm sm:hidden lg:block hidden" style="padding-right:450px">Kami menyarankan menggunakan foto yang memiliki rasio 1:1</p>
                       </form>
-                    </div>            
+                    </div>   
+                    <p class="mt-5 dark:text-gray-100 text-gray-900 font-medium text-sm sm:block lg:hidden block">Kami menyarankan menggunakan foto yang memiliki rasio 1:1</p>         
                   </div>
               </div>
           </div>

@@ -860,6 +860,13 @@ video {
         width: 30%;
         height: 100%h;
     }
+    .buttonAvProf {
+        display: flex;
+        gap: 10px;
+    }
+    .formProf {
+        margin-top: 12px;
+    }
 }
 
 @media (max-width: 1025px) {
@@ -1005,6 +1012,16 @@ video {
     .crop {
         width: 300px;
         height: auto;
+    }
+    .buttonAvProf {
+        display: flex;
+        flex-direction: column;
+    }
+    .btnProfile {
+        width: 170px;
+    }
+    .btnAvatar {
+        width: 170px;
     }
 }
 /* 
