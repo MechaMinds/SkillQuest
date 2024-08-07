@@ -7,7 +7,7 @@
     },
     "devDependencies": {
         "autoprefixer": "^10.4.19",
-        "axios": "^1.6.4",
+        "axios": "^1.7.3",
         "flowbite": "^2.4.1",
         "laravel-vite-plugin": "^1.0.0",
         "postcss": "^8.4.39",
@@ -17,6 +17,7 @@
     "dependencies": {
         "flowbite-typography": "^1.0.3",
         "swip": "^0.1.0",
-        "swiper": "^11.1.4"
+        "swiper": "^11.1.4",
+        "uuid": "^10.0.0"
     }
 }

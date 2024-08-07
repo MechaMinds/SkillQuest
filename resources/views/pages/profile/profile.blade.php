@@ -68,12 +68,13 @@
                   <div class="photoProfile">
                     <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Foto Profile </h1>
                     <div class="detail flex gap-3">
-                      <img id="profileImage" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}"  alt="Profile" class="rounded-md w-24 h-24 mb-4">
+                      <img id="profileImage" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}"  alt="Profile" class="rounded-full w-24 h-24 mb-4">
                       <form id="profilePhotoForm" action="{{ route('profile.updatePhoto') }}" method="POST" enctype="multipart/form-data" style="margin-top: 12px">
                         @csrf
                         <label for="profilePhotoInput" class="bg-blue-700 px-4 py-3 rounded-md text-white font-medium cursor-pointer custom-file-upload text-sm">Ganti Foto Profile</label>
+                        <button id="showAvatarPopup" type="button" class="rounded-md cursor-pointer custom-file-upload text-sm text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" style="padding: 11.5px 16px 11.5px 16px">Gunakan karakter Avatar</button>
                         <input type="file" name="profile_photo" id="profilePhotoInput" class="hidden" required>
-                        <p class="mt-5 dark:text-gray-100 text-gray-900 font-medium text-sm" style="padding-right:550px">Kami menyarankan foto yang memiliki rasio 1:1</p>
+                        <p class="mt-2 dark:text-gray-100 text-gray-900 font-medium text-sm" style="padding-right:550px">Kami menyarankan menggunakan foto yang memiliki rasio 1:1</p>
                       </form>
                     </div>            
                   </div>
@@ -83,6 +84,7 @@
       </div>
     </section>  
     <!-- Profile Selesai-->
+    <!-- Crop Photo Profile -->
     <form id="profilePhotoForm" action="{{ route('profile.updatePhoto') }}" method="POST" enctype="multipart/form-data" class="flex flex-col">
       @csrf
       <div id="cropperModal" class="fixed hidden inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
@@ -92,6 +94,7 @@
             <div class="w-full h-64">
                 <img id="cropperImage" src="{{asset('images/avatarDefault.png')}}" alt="Cropper Image" class="w-full h-full">
             </div>
+            <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700 grid grid-cols-4"> 
             <div class="mt-4 flex justify-end">
                 <button id="cancelCrop" class="bg-gray-500 px-4 py-2 rounded-md text-white mr-2">Batal</button>
                 <button id="applyCrop" class="bg-blue-700 px-4 py-2 rounded-md text-white">Terapkan</button>
@@ -99,6 +102,25 @@
         </div>
       </div>
     </form>
+    <!-- Crop Photo Profile Selesai -->
+    <!-- Random Popup Avatar -->
+    <div id="avatarPopup" class="fixed inset-0 hidden flex items-center justify-center z-50">
+      <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 cardPhoto">
+          <h2 class="text-lg font-medium dark:text-white text-gray-900">Pilih Karakter Avatar Kamu</h2>
+          <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+          <img id="profileImageAvatar" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}" alt="Profile" class="w-24 h-24 rounded-full">
+          <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+          <div class="grid grid-cols-4 gap-2" id="avatarContainerAdditional">
+            <!-- Avatar lainnya akan ditambahkan di sini oleh JavaScript -->
+          </div>
+          <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+          <div class="mt-4 flex justify-end">
+              <button id="closeAvatarPopup" class="bg-gray-500 px-4 py-2 rounded-md text-white mr-2">Batal</button>
+              <button id="applyAvatar" class="bg-blue-700 px-4 py-2 rounded-md text-white">Terapkan</button>
+          </div>
+      </div>
+    </div>
+    <!-- Random Popup Avatar Selesai -->
     <!-- Footer Mulai -->
     <div id="app">
       <x-footer />

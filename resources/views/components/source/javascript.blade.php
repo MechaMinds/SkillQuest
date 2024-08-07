@@ -169,5 +169,59 @@
             });
             });
     </script>
+    <script>
+        document.getElementById('showAvatarPopup').addEventListener('click', function () {
+            // Tampilkan popup
+            document.getElementById('avatarPopup').classList.remove('hidden');
+            const avatarContainer = document.getElementById('avatarContainerAdditional');
+    
+            // Hapus gambar yang sudah ada di dalam kontainer
+            avatarContainer.innerHTML = '';
+    
+            // Daftar nama file gambar (misalnya diambil dari API atau data lain)
+            const avatarFileNames = [
+                'avatarDefault(1).png',
+                'avatarDefault(2).png',
+                'avatarDefault(3).png',
+                'avatarDefault(4).png',
+                'avatarDefault(5).png',
+                'avatarDefault(6).png',
+                'avatarDefault(7).png',
+                'avatarDefault(8).png'
+            ];
+    
+            avatarFileNames.forEach(fileName => {
+                // Membuat elemen gambar
+                const img = document.createElement('img');
+                img.src = `images/listAvatar/${fileName}`; // URL gambar
+                img.alt = 'Avatar';
+                img.className = 'w-24 h-24 rounded-full cursor-pointer'; // Tambahkan kelas sesuai kebutuhan
+    
+                // Membuat elemen pembungkus untuk gambar
+                const div = document.createElement('div');
+                div.className = 'p-2'; // Tambahkan kelas sesuai kebutuhan
+                div.appendChild(img);
+    
+                // Menambahkan event listener untuk gambar
+                img.addEventListener('click', function () {
+                    // Hapus border merah dari semua gambar
+                    document.querySelectorAll('#avatarContainerAdditional img').forEach(image => {
+                        image.style.border = ''; // Menghapus border inline
+                    });
+    
+                    // Tambahkan border merah ke gambar yang diklik
+                    img.style.border = '4px solid #1a56db'; // Tambahkan border inline
+                });
+    
+                // Menambahkan elemen gambar ke dalam container
+                avatarContainer.appendChild(div);
+            });
+        });
+    
+        document.getElementById('closeAvatarPopup').addEventListener('click', function () {
+            // Sembunyikan popup
+            document.getElementById('avatarPopup').classList.add('hidden');
+        });
+    </script>
 </body>
 </html>
