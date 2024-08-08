@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\AvatarController;
+use App\Http\Controllers\ProfileUpdateController;
 use App\Models\Product;
 
 /*
@@ -78,9 +79,9 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::middleware('auth')->group(function () {
     Route::post('/profile/updatePhoto', [ProfileController::class, 'updateProfilePhoto'])->name('profile.updatePhoto');
+    Route::post('/profile/update-name', [ProfileUpdateController::class, 'updateName'])->name('profile.updateName');
 });
 Route::post('/update-avatar', [AvatarController::class, 'update'])->name('profile.updateAvatar');
-
 
 
 

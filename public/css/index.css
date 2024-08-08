@@ -3537,6 +3537,9 @@ input:checked + .toggle-bg {
 .fill-green-500 {
     fill: #0e9f6e;
 }
+.fill-green-400 {
+    fill: rgb(49 196 141);
+}
 .fill-pink-600 {
     fill: #d61f69;
 }
@@ -5863,6 +5866,12 @@ input:checked + .toggle-bg {
 }
 :is(.dark .dark\:fill-white) {
     fill: #fff;
+}
+:is(.dark .dark\:fill-green-400) {
+    fill: #31c48d;
+}
+:is(.dark .dark\:fill-red-400) {
+    fill: #f98080;
 }
 :is(.dark .dark\:\!text-blue-500) {
     --tw-text-opacity: 1 !important;

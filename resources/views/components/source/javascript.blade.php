@@ -86,64 +86,85 @@
     </script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray(".max-w-sm").forEach((item, index) => {
-            gsap.from(item, {
+    
+        let animationsEnabled = true; // Variabel untuk mengaktifkan/mematikan animasi
+    
+        // Fungsi untuk menonaktifkan animasi
+        function disableAnimations() {
+            animationsEnabled = false;
+            // Hapus semua ScrollTrigger instance
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        }
+    
+        // Check for the save button click event
+        document.getElementById('saveChangesButton').addEventListener('click', disableAnimations);
+    
+        // Animasi untuk elemen dengan kelas .max-w-sm
+        if (animationsEnabled) {
+            gsap.utils.toArray(".max-w-sm").forEach((item) => {
+                gsap.from(item, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "top 80%",
+                        toggleActions: "play none none none",
+                        once: true,
+                        onEnter: () => {
+                            gsap.to(item, { opacity: 1, y: 0, duration: 1 });
+                        },
+                    },
+                });
+            });
+        }
+    
+        // Animasi untuk judul
+        if (animationsEnabled) {
+            gsap.from(".section-title", {
                 opacity: 0,
                 y: 50,
                 duration: 1,
                 scrollTrigger: {
-                trigger: item,
-                start: "top 80%",
-                toggleActions: "play none none none", // ubah toggleActions agar tidak ada reverse
-                once: true, // animasi hanya terjadi sekali
-                onEnter: () => {
-                    gsap.to(item, { opacity: 1, y: 0, duration: 1 });
-                },
+                    trigger: ".section-title",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                    once: true,
                 },
             });
-            });
-            gsap.registerPlugin(ScrollTrigger);
+        }
     
-            // Animasi untuk judul
-            gsap.from(".section-title", {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            scrollTrigger: {
-                trigger: ".section-title",
-                start: "top 80%",
-                toggleActions: "play none none none",
-                once: true, // animasi hanya terjadi sekali
-            },
-            });
-    
-            // Animasi untuk paragraf
+        // Animasi untuk paragraf
+        if (animationsEnabled) {
             gsap.from(".section-content", {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            scrollTrigger: {
-                trigger: ".section-content",
-                start: "top 80%",
-                toggleActions: "play none none none",
-                once: true, // animasi hanya terjadi sekali
-            },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".section-content",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                    once: true,
+                },
             });
+        }
     
-            // Animasi untuk gambar
+        // Animasi untuk gambar
+        if (animationsEnabled) {
             gsap.from(".section-image", {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            scrollTrigger: {
-                trigger: ".section-image",
-                start: "top 80%",
-                toggleActions: "play none none none",
-                once: true, // animasi hanya terjadi sekali
-            },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".section-image",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                    once: true,
+                },
             });
-        </script>
-        <script>
+        }
+    </script>    
+    <script>
             document.getElementById('profilePhotoForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form from submitting normally
     
@@ -267,6 +288,37 @@
             document.getElementById('background').classList.add('hidden');
             document.getElementById('backgroundOpacity').classList.add('hidden');
         });
-    </script>       
+    </script>  
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var inputField = document.getElementById('nama-lengkap');
+            var user = @json(Auth::user());
+            if (user && user.name) {
+                inputField.placeholder = user.name;
+            }
+        });
+    </script>    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const alert = document.getElementById('successAlert');
+            
+            if (alert) {
+                // Tambahkan kelas untuk animasi muncul
+                alert.classList.add('alert-enter-active');
+                
+                // Setelah 2 detik, tambahkan kelas untuk animasi hilang
+                setTimeout(() => {
+                    alert.classList.remove('alert-enter-active');
+                    alert.classList.add('alert-exit');
+                    alert.classList.add('alert-exit-active');
+                    
+                    // Hapus elemen setelah animasi selesai
+                    setTimeout(() => {
+                        alert.remove();
+                    }, 500); // Durasi animasi keluar
+                }, 2000); // 2 detik
+            }
+        });
+    </script>
 </body>
 </html>

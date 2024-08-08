@@ -880,6 +880,46 @@ video {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    .alertAnimationSuccess {
+        width: 335px;
+        position: fixed;
+        top: 92%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .alertAnimationFail {
+        width: 285px;
+        position: fixed;
+        top: 92%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .alert-enter {
+        opacity: 0;
+        transform: translateY(20px); /* Mulai dengan offset dari bawah */
+    }
+
+    .alert-enter-active {
+        opacity: 1;
+        transform: translateY(0); /* Akhir animasi di posisi normal */
+    }
+
+    .alert-exit {
+        opacity: 1;
+        transform: translateY(0); /* Mulai dengan posisi normal */
+    }
+
+    .alert-exit-active {
+        opacity: 0;
+        transform: translateY(20px); /* Akhir animasi dengan offset ke bawah */
+    }
 }
 
 @media (max-width: 1025px) {
@@ -1037,6 +1077,9 @@ video {
 
     .secPrim {
         margin-top: 100px;
+    }
+    .alertSuccess {
+        display: none;
     }
 }
 /* 
