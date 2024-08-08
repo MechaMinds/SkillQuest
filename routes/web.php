@@ -44,6 +44,8 @@ Route::get('/kelas/machine-learning', function(){
     return view('pages.kelas.machine-learning');
 });
 Route::post('/order', [OrderController::class, 'createOrder']);
+Route::post('/order/update-status', [OrderController::class, 'updateOrderStatus']);
+Route::get('/order/status', [OrderController::class, 'getOrderStatus']);
 Route::get('/products', function (Request $request) {
     return Product::all();
 });

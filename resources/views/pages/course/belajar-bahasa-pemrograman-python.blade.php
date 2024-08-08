@@ -96,12 +96,15 @@
                     </li>
                 </ul>
             </div>
+            <!-- Tombol Gabung Kelas -->
             <button id="checkout-button" type="submit" class="w-full mt-6 py-6 font-medium text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px; font-size:22px">
               Gabung Kelas
             </button>
+
+            <!-- Tombol Lanjut Kelas -->
             <button id="success-link" type="button" class="w-full mt-6 py-6 font-medium text-white bg-green-500 rounded hidden" style="border-radius: 0px 0px 20px 20px; font-size:22px">
               Lanjut Kelas
-            </button> 
+            </button>
           </div>          
         </div>
       </div>
@@ -930,15 +933,21 @@
           const checkoutButton = document.getElementById('checkout-button');
           const successLink = document.getElementById('success-link');
 
-          // Periksa status pembayaran saat halaman dimuat
-          const paymentStatus = localStorage.getItem('paymentStatus');
-          if (paymentStatus === 'success') {
-              checkoutButton.classList.add('hidden');
-              successLink.classList.remove('hidden');
-              successLink.addEventListener('click', function () {
-                  window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // Ganti dengan URL yang sesuai
+          // Periksa status pembayaran dari database
+          axios.get('/order/status') // Endpoint API untuk memeriksa status pembayaran
+              .then(response => {
+                  const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
+                  if (paymentStatus === 'success') {
+                      checkoutButton.classList.add('hidden');
+                      successLink.classList.remove('hidden');
+                      successLink.addEventListener('click', function () {
+                          window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
+                      });
+                  }
+              })
+              .catch(error => {
+                  console.error('Error fetching payment status:', error);
               });
-          }
 
           checkoutButton.addEventListener('click', function () {
               axios.post('/order', {
@@ -950,11 +959,19 @@
                       onSuccess: function(result) {
                           console.log(result);
                           // Simpan status pembayaran dan ubah tombol
-                          localStorage.setItem('paymentStatus', 'success');
-                          checkoutButton.classList.add('hidden');
-                          successLink.classList.remove('hidden');
-                          successLink.addEventListener('click', function () {
-                              window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // Ganti dengan URL yang sesuai
+                          axios.post('/order/update-status', {
+                              order_id: response.data.order_id,
+                              status: 'success'
+                          })
+                          .then(() => {
+                              checkoutButton.classList.add('hidden');
+                              successLink.classList.remove('hidden');
+                              successLink.addEventListener('click', function () {
+                                  window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
+                              });
+                          })
+                          .catch(error => {
+                              console.error('Error updating order status:', error);
                           });
                       },
                       onPending: function(result) { console.log(result); },

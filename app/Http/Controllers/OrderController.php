@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Midtrans\Config;
 use Midtrans\Snap;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
     public function createOrder(Request $request)
     {
-        // Data produk tunggal
         $product = [
             'id' => 1,
             'name' => 'Course - Belajar Bahasa Pemrograman Python',
@@ -22,9 +23,12 @@ class OrderController extends Controller
         Config::$isSanitized = config('services.midtrans.is_sanitized');
         Config::$is3ds = config('services.midtrans.is_3ds');
 
+        $orderId = uniqid();
+        $user = Auth::user();
+
         $params = [
             'transaction_details' => [
-                'order_id' => uniqid(),
+                'order_id' => $orderId,
                 'gross_amount' => $product['price'],
             ],
             'item_details' => [
@@ -36,21 +40,56 @@ class OrderController extends Controller
                 ],
             ],
             'customer_details' => [
-                'first_name' => 'Riovaldo Alfiyan Fahmi',
-                'last_name' => 'Rahman',
-                'email' => 'rriovld@gmail.com',
-                'phone' => '081234567890',
+                'first_name' => $user->name,
+                'last_name' => '',
+                'email' => $user->email,
+                'phone' => $user->phone, // Pastikan kolom phone ada di tabel users
             ],
         ];
 
         try {
             $snapToken = Snap::getSnapToken($params);
-            return response()->json(['snap_token' => $snapToken]);
+
+            // Simpan data pembelian ke database
+            Order::create([
+                'order_id' => $orderId,
+                'product_name' => $product['name'],
+                'price' => $product['price'],
+                'customer_name' => $user->name,
+                'customer_email' => $user->email,
+                'status' => 'pending', // Status awal
+                'customer_id' => $user->id, // Menyimpan ID pengguna yang sedang login
+            ]);
+
+            return response()->json(['success' => true, 'snap_token' => $snapToken, 'order_id' => $orderId]);
         } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
         }
     }
+
+    public function getOrderStatus()
+    {
+        $userId = Auth::id();
+        $order = Order::where('customer_id', $userId)->latest()->first(); // Ambil pesanan terakhir
+
+        if ($order) {
+            return response()->json(['status' => $order->status]);
+        }
+
+        return response()->json(['status' => 'pending']); // Default jika tidak ada pesanan
+    }
+
+    public function updateOrderStatus(Request $request)
+    {
+        $orderId = $request->input('order_id');
+        $status = $request->input('status'); // Misalnya, 'success' atau 'failed'
+
+        $order = Order::where('order_id', $orderId)->first();
+        if ($order) {
+            $order->status = $status;
+            $order->save();
+        }
+
+        return response()->json(['message' => 'Order status updated']);
+    }
 }
-
-
-
