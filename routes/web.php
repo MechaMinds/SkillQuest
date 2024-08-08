@@ -79,8 +79,8 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::middleware('auth')->group(function () {
     Route::post('/profile/updatePhoto', [ProfileController::class, 'updateProfilePhoto'])->name('profile.updatePhoto');
-    Route::post('/profile/update-name', [ProfileUpdateController::class, 'updateName'])->name('profile.updateName');
 });
+Route::middleware('auth')->post('/profile/update', [ProfileUpdateController::class, 'updateProfile'])->name('profile.update');
 Route::post('/update-avatar', [AvatarController::class, 'update'])->name('profile.updateAvatar');
 
 

@@ -81,35 +81,35 @@
                 </div>   
                 <p class="mt-5 dark:text-gray-100 text-gray-900 font-medium text-sm sm:block lg:hidden block">Kami menyarankan menggunakan foto yang memiliki rasio 1:1</p>         
               </div>
-              <form action="{{ route('profile.updateName') }}" method="POST">
+              <form action="{{ route('profile.update') }}" method="POST">
                 @csrf
                 <div class="dataDiri sm:mt-6 mt-10 lg:mt-10 lg:grid lg:grid-cols-2 sm:flex gap-4">
                     <div class="namaLengkap">
-                      <label for="nama-lengkap" 
-                        class="block mb-2 text-sm font-medium 
-                        @error('name') text-red-700 dark:text-red-500 
-                        @elseif(session('success')) text-green-700 dark:text-green-500 
-                        @else text-gray-900 dark:text-white @enderror">
-                        Nama Lengkap <span class="text-red-500">*</span>
-                      </label>
-                      <input 
-                          type="text" 
-                          name="name" 
-                          id="nama-lengkap" 
-                          aria-describedby="helper-text-explanation" 
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium dark:focus:ring-blue-500 dark:focus:border-blue-500 
-                          @error('name') bg-red-50 border-red-500 text-red-900 placeholder-red-700 dark:border-red-500 dark:placeholder-red-500 dark:text-red-500 focus:ring-red-500 focus:border-red-500 
-                          @elseif(session('success')) bg-green-50 border-green-500 text-green-900 placeholder-green-700 dark:border-green-500 dark:placeholder-green-500 dark:text-green-500 focus:ring-green-500 focus:border-green-500 
-                          @enderror"
-                          placeholder="{{ Auth::user()->name }}" 
-                          value="{{ old('name', Auth::user()->name) }}"
-                      >
-                      @error('name')
-                          <p class="mt-2 text-sm font-medium text-red-600 dark:text-red-500"><span class="font-bold">Gagal !</span> {{ $message }}</p>
-                      @enderror
-                      @if (session('success'))
-                          <p class="mt-2 text-sm font-medium text-green-600 dark:text-green-500"><span class="font-bold">Berhasil ! </span> {{ session('success') }}</p>
-                      @endif
+                        <label for="nama-lengkap" 
+                            class="block mb-2 text-sm font-medium 
+                            @error('name') text-red-700 dark:text-red-500 
+                            @elseif(session('success')) text-green-700 dark:text-green-500 
+                            @else text-gray-900 dark:text-white @enderror">
+                            Nama Lengkap <span class="text-red-500">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            name="name" 
+                            id="nama-lengkap" 
+                            aria-describedby="helper-text-explanation" 
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium dark:focus:ring-blue-500 dark:focus:border-blue-500 
+                            @error('name') bg-red-50 border-red-500 text-red-900 placeholder-red-700 dark:border-red-500 dark:placeholder-red-500 dark:text-red-500 focus:ring-red-500 focus:border-red-500 
+                            @elseif(session('successName')) bg-green-50 border-green-500 text-green-900 placeholder-green-700 dark:border-green-500 dark:placeholder-green-500 dark:text-white font-medium focus:ring-green-500 focus:border-green-500 
+                            @enderror"
+                            placeholder="{{ Auth::user()->name }}" 
+                            value="{{ old('name', Auth::user()->name) }}"
+                        >
+                        @error('name')
+                            <p class="mt-2 text-sm font-medium text-red-600 dark:text-red-500"><span class="font-bold">Gagal !</span> {{ $message }}</p>
+                        @enderror
+                        @if (session('successName'))
+                            <p class="mt-2 text-sm font-medium text-green-600 dark:text-green-500"><span class="font-bold">Berhasil ! </span> {{ session('successName') }}</p>
+                        @endif
                     </div>
                     <div class="email lg:mt-0 mt-5 sm:mt-5">
                         <label for="helper-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email <span class="text-red-500">*</span></label>
@@ -126,11 +126,33 @@
                     </div>
                 </div>
                 <div class="lg:mt-2 sm:mt-6 mt-2">
-                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tentang Saya</label>
-                    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here...">{{ old('message') }}</textarea>
+                  <label for="message" class="block mb-2 text-sm font-medium 
+                      @error('description') text-red-700 dark:text-red-500 
+                      @elseif(session('success')) text-green-700 dark:text-green-500 
+                      @else text-gray-900 dark:text-white @enderror">
+                      Tentang Saya
+                  </label>
+                  <textarea 
+                      id="message" 
+                      name="description" 
+                      rows="4" 
+                      class="block p-2.5 w-full text-sm 
+                          @error('description') bg-red-50 border-red-500 text-red-900 placeholder-red-700 dark:border-red-500 dark:bg-red-800 dark:text-red-500 
+                          @elseif(session('successDesc')) bg-green-50 border-green-500 text-green-900 placeholder-green-700 dark:border-green-500 dark:bg-gray-700 dark:text-white font-medium
+                          @else bg-gray-50 border-gray-300 text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white @enderror
+                          rounded-lg border focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                      placeholder="Tulis Deskripsi Kamu Disini..."
+                  >{{ old('description', Auth::user()->description) }}</textarea>
+                  @error('description')
+                      <p class="mt-2 text-sm font-medium text-red-600 dark:text-red-500"><span class="font-bold">Gagal !</span> {{ $message }}</p>
+                  @enderror
+                  @if (session('successDesc'))
+                      <p class="mt-2 text-sm font-medium text-green-600 dark:text-green-500"><span class="font-bold">Berhasil ! </span> {{ session('successDesc') }}</p>
+                  @endif
                 </div>
+              
                 <button type="submit" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 lg:mt-5 mt-5 sm:mt-5">Simpan Perubahan</button>
-              </form>
+              </form>                  
             </div>
           </div>
         </div>

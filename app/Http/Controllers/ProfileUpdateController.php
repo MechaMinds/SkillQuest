@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileUpdateController extends Controller
 {
-    public function updateName(Request $request)
+    public function updateProfile(Request $request)
     {
         $request->validate([
             'name' => ['required', 'string', 'min:3', function ($attribute, $value, $fail) {
@@ -16,12 +16,36 @@ class ProfileUpdateController extends Controller
                     $fail('Nama lengkap harus lebih dari 2 kata.');
                 }
             }],
+            'description' => 'nullable|string|max:255',
         ]);
-        
-        $user = Auth::user();
-        $user->name = $request->input('name');
-        $user->save();
 
-        return redirect()->back()->with('success', 'Nama Lengkap Berhasil Diganti.');
+        $user = Auth::user();
+        $isNameChanged = $user->name !== $request->input('name');
+        $isDescriptionChanged = $user->description !== $request->input('description');
+
+        if ($isNameChanged || $isDescriptionChanged) {
+            if ($isNameChanged) {
+                $user->name = $request->input('name');
+            }
+
+            if ($isDescriptionChanged) {
+                $user->description = $request->input('description');
+            }
+
+            $user->save();
+
+            $response = redirect()->back();
+            if ($isNameChanged) {
+                $response->with('successName', 'Nama Lengkap Berhasil Diperbarui');
+            }
+            if ($isDescriptionChanged) {
+                $response->with('successDesc', 'Deskripsi Berhasil Diperbarui');
+            }
+
+            return $response;
+        }
+
+        return redirect()->back();
     }
+
 }
