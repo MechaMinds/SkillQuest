@@ -193,9 +193,14 @@
                                         <p class="text-gray-900 dark:text-white text-2xl font-semibold">Rp 150.000</p>
                                         </div>
                                         <div class="flex justify-end">
-                                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="/course/belajar-bahasa-pemrograman-python" class="text-md">Gabung Kelas</a>
-                                        </button>
+                                            <button id="checkout-button" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                <a href="/course/belajar-bahasa-pemrograman-python" id="button-text" class="text-md">Gabung Kelas</a>
+                                            </button>
+                                        </div>
+                                        <div class="flex justify-end">
+                                            <button id="continue-button" type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 hidden">
+                                                <a href="/course/belajar-bahasa-pemrograman-python/persiapan" class="text-md">Lanjut Belajar</a>
+                                            </button>
                                         </div>
                                     </div>                                                  
                                 </div>
@@ -601,6 +606,27 @@
         <script src="{{ asset('js/main.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const checkoutButton = document.getElementById('checkout-button');
+                const continueButton = document.getElementById('continue-button');
+
+                // Periksa status pembayaran dari database
+                axios.get('/order/status')
+                    .then(response => {
+                        console.log(response.data); // Tambahkan ini untuk memeriksa respons API
+                        const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
+                        if (paymentStatus === 'success') {
+                            checkoutButton.classList.add('hidden');
+                            continueButton.classList.remove('hidden');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching payment status:', error);
+                    });
+            });
+        </script>
         <script>
             document.getElementById('filterButton').addEventListener('click', function() {
                 var background = document.getElementById('background');

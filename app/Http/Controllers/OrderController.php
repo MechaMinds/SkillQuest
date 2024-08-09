@@ -70,13 +70,15 @@ class OrderController extends Controller
     public function getOrderStatus()
     {
         $userId = Auth::id();
-        $order = Order::where('customer_id', $userId)->latest()->first(); // Ambil pesanan terakhir
+        $order = Order::where('customer_id', $userId)
+                        ->where('status', 'success')
+                        ->first(); // Ambil pesanan terakhir dengan status 'success'
 
         if ($order) {
-            return response()->json(['status' => $order->status]);
+            return response()->json(['status' => 'success']);
         }
 
-        return response()->json(['status' => 'pending']); // Default jika tidak ada pesanan
+        return response()->json(['status' => 'pending']); // Default jika tidak ada pesanan dengan status 'success'
     }
 
     public function updateOrderStatus(Request $request)
