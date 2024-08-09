@@ -807,6 +807,7 @@ video {
     }
     .contentSection {
         padding: 30px 120px 50px 90px;
+        height: 100vh;
     }
     #sidebar {
         width: 20rem;
@@ -982,6 +983,7 @@ video {
     }
     .contentSection {
         padding: 30px 10px 50px 70px;
+        height: 100vh;
     }
     #sidebar {
         position: fixed;

@@ -12,12 +12,14 @@
 <body>
     <div class="min-h-screen bg-background text-foreground flex flex-col">
         <header class="bg-white dark:bg-black text-gray-900 dark:text-white py-6 px-6 flex items-center justify-between border-b border-gray-200 dark:border-gray-600">
-            <div class="title flex flex-row gap-2 items-center justify-center py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4">
-                    <path class="dark:fill-white" fill="rgb(55 65 81)" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
-                </svg>
-                <a href="/course/belajar-bahasa-pemrograman-python" class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Belajar Bahasa Pemrograman Python </a>       
-            </div>
+            <a href="/course/belajar-bahasa-pemrograman-python">
+                <div class="title flex flex-row gap-2 items-center justify-center py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4">
+                        <path class="dark:fill-white" fill="rgb(55 65 81)" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+                    </svg>
+                    <p class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Belajar Bahasa Pemrograman Python </p>       
+                </div>
+            </a>
             <div class="flex items-center space-x-4">
                 <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 sm:mr-5">
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -326,7 +328,7 @@
     <!-- Footer Mobile -->
     <div class="fixed bottom-0 left-0 z-50 w-full h-20 bg-white dark:bg-black text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-600 lg:hidden">
         <div class="flex justify-between items-center h-full px-4 md:px-8">
-            <div class="flex items-center text-gray-500 dark:text-gray-400 gap-2" id="prevMateri" style="cursor:pointer">
+            <div class="flex items-center text-gray-500 dark:text-gray-400 gap-2" id="prevMateriMobile" style="cursor:pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5" style="margin-top: 2px">
                     <path class="dark:fill-white" fill="rgb(55 65 81)" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/>
                 </svg>
@@ -366,8 +368,8 @@
                     <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
             </div>
-            <div class="flex items-center text-gray-500 dark:text-gray-400 gap-2" id="nextMateri" style="cursor:pointer">
-                <p class="dark:text-white text-gray-900 font-semibold hidden sm:block">Berikutnya</p>
+            <div class="flex items-center text-gray-500 dark:text-gray-400 gap-2" id="nextMateriMobile" style="cursor:pointer">
+                <p class="dark:text-white text-gray-900 font-semibold hidden sm:block">Selanjutnya</p>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5" style="margin-top: 2px">
                     <path class="dark:fill-white" fill="rgb(55 65 81)" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/>
                 </svg>
@@ -435,187 +437,13 @@
         </div>
     </div>  
     <!-- Chat AI Selesai -->  
+    @component('components.source.javascriptPersiapan')
+    @endcomponent
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="{{ asset('./js/main.js') }}"></script>
     <script src="{{ asset('./js/chat.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const materi = ["pengenalanKelas", "mekanismeBelajar", "forumDiskusi"];
-            let currentIndex = 0;
-
-            function getProgress() {
-                let progress = localStorage.getItem("progress");
-                return progress ? parseInt(progress) : 0; // Default to 0% if not set
-            }
-
-            function getTotalMateri(){
-                let totalProgress = localStorage.getItem("totalProgress");
-                return totalProgress ? parseInt(totalProgress) : 0; 
-            }
-
-            function updateTotalMateri(){
-                const totalProg = getTotalMateri();
-                document.getElementById('progressCount').innerText = `${totalProg}/3`;
-            }
-
-            function updateProgressDisplay() {
-                const progress = getProgress();
-                document.getElementById("progressText").innerText = `${progress}% Progress`;
-                document.getElementById("progressBar").style.width = `${progress}%`;
-            }
-
-            function setProgress(progress) {
-                localStorage.setItem("progress", progress);
-            }
-
-            function getVisitedMateri() {
-                let visited = localStorage.getItem("visitedMateri");
-                return visited ? JSON.parse(visited) : [];
-            }
-
-            function setVisitedMateri(visited) {
-                localStorage.setItem("visitedMateri", JSON.stringify(visited));
-            }
-
-            function updateMateri() {
-                materi.forEach((id, index) => {
-                    document.getElementById(id).style.display = index === currentIndex ? "block" : "none";
-                });
-
-                let visitedMateri = getVisitedMateri();
-                if (!visitedMateri.includes(currentIndex)) {
-                    visitedMateri.push(currentIndex);
-                    setVisitedMateri(visitedMateri);
-
-                    let newProgress = getProgress() + 5;
-                    setProgress(Math.min(newProgress, 100)); // Cap progress at 100%
-                }
-
-                updateTotalMateri();
-                updateProgressDisplay();
-                updateStatusIcons();
-            }
-
-            function updateStatusIcons() {
-                let visitedMateri = getVisitedMateri();
-                materi.forEach((id, index) => {
-                    const statusIcon = document.getElementById(`status${index + 1}`);
-                    if (visitedMateri.includes(index)) {
-                        statusIcon.innerHTML = `<path fill="#146ffe" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>`;
-                    } else {
-                        statusIcon.innerHTML = `<path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>`;
-                    }
-                });
-            }
-
-            function nextMateri() {
-                if (currentIndex < materi.length - 1) {
-                    currentIndex++;
-                    updateMateri();
-                }
-            }
-
-            function prevMateri() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateMateri();
-                }
-            }
-
-            // Attach event listeners to buttons
-            document.getElementById("nextMateri").addEventListener("click", nextMateri);
-            document.getElementById("prevMateri").addEventListener("click", prevMateri);
-
-            updateMateri(); // Initial update
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const asideButton = document.getElementById('asideButton');
-            const aside = document.querySelector('aside');
-            const showSidebarButton = document.getElementById('showSidebarButton');
-    
-            // Fungsi untuk memeriksa mode layar
-            function checkScreenMode() {
-                if (window.innerWidth >= 1024) { // Sesuaikan dengan breakpoint untuk desktop
-                    aside.classList.remove('hidden');
-                    aside.classList.remove('slide-out');
-                    aside.classList.add('slide-in');
-                } else {
-                    aside.classList.add('hidden');
-                }
-            }
-    
-            // Jalankan fungsi saat halaman dimuat
-            checkScreenMode();
-    
-            // Jalankan fungsi saat ukuran layar berubah
-            window.addEventListener('resize', checkScreenMode);
-    
-            // Event listener untuk tombol aside
-            asideButton.addEventListener('click', function() {
-                if (aside.classList.contains('slide-in') || !aside.classList.contains('slide-out')) {
-                    aside.classList.remove('slide-in');
-                    aside.classList.add('slide-out');
-                    setTimeout(function() {
-                        aside.classList.add('hidden');
-                    }, 300); // Sesuaikan dengan durasi animasi
-                } else {
-                    aside.classList.remove('hidden');
-                    aside.classList.remove('slide-out');
-                    aside.classList.add('slide-in');
-                }
-            });
-    
-            // Event listener untuk tombol showSidebarButton
-            showSidebarButton.addEventListener('click', function() {
-                if (aside.classList.contains('hidden') || aside.classList.contains('slide-out')) {
-                    aside.classList.remove('hidden');
-                    aside.classList.remove('slide-out');
-                    aside.classList.add('slide-in');
-                } else {
-                    aside.classList.add('hidden');
-                    aside.classList.remove('slide-in');
-                    aside.classList.add('slide-out');
-                }
-            });
-        });
-    
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdownmenuDefault = document.getElementById('dropdownmenuDefault');
-            const dropdowniconDefault = document.getElementById('dropdowniconDefault');
-    
-            // Ensure the menu is visible
-            dropdownmenuDefault.classList.remove('hidden');
-    
-            // Ensure the icon is rotated to indicate the menu is open
-            dropdowniconDefault.classList.add('rotate-180');
-        });
-    
-        document.getElementById('dropdownbuttonDefault').addEventListener('click', function() {
-            const dropdownmenuDefault = document.getElementById('dropdownmenuDefault');
-            const dropdowniconDefault = document.getElementById('dropdowniconDefault');
-    
-            // Toggle visibility of the dropdown menu
-            dropdownmenuDefault.classList.toggle('hidden');
-    
-            // Rotate the icon
-            dropdowniconDefault.classList.toggle('rotate-180');
-        });
-    
-        document.getElementById('dropdownButton').addEventListener('click', function() {
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            const dropdownIcon = document.getElementById('dropdownIcon');
-    
-            // Toggle visibility of the dropdown menu
-            dropdownMenu.classList.toggle('hidden');
-    
-            // Rotate the icon
-            dropdownIcon.classList.toggle('rotate-180');
-        });
-    </script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>   
 </body>
 </html>
