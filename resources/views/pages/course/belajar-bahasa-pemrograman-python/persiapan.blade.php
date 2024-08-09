@@ -36,8 +36,8 @@
                 </button>
                 <button id="userButton" data-dropdown-toggle="userMenu" class="flex items-center text-sm pe-1 font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-white md:me-0 dark:text-gray-400" type="button">
                     <span class="sr-only">Open user menu</span>
-                    <p class="mr-5 text-lg sm:hidden lg:block hidden">Riovaldo Alifyan Fahmi Rahman</p>
-                    <img class="w-10 h-10 rounded-full mr-2 object-cover" src="{{asset('./images/user/profile.jpg')}}" alt="user photo">
+                    <p class="mr-5 text-lg sm:hidden lg:block hidden">{{ Auth::user()->name }}</p>
+                    <img class="w-10 h-10 rounded-full mr-2 object-cover" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}" alt="user photo">
                     <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                     </svg>
@@ -45,22 +45,41 @@
                 <!-- Dropdown menu -->
                 <div id="userMenu" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                     <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                    <div class="font-medium ">Riovaldo Alfiyan</div>
-                    <div class="truncate">rriovld@gmail.com</div>
+                    @php
+                        $fullName = Auth::user()->name;
+                        $nameParts = explode(' ', $fullName);
+
+                        // Proses mengambil sebagian nama
+                        $shortName = implode(' ', array_slice($nameParts, 0, 2));
+
+                        // Tambahkan '...' jika nama memiliki lebih dari dua kata
+                        if (count($nameParts) > 2) {
+                            $shortName .= ' ' . substr($nameParts[2], 0, 1) . '...';
+                        }
+                    @endphp
+                    <div class="font-medium ">{{ $shortName }}</div>
+                    <div class="truncate">{{ Auth::user()->email }}</div>
                     </div>
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                    </li>
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                        <li>
+                            <a href="/profile" class="block font-medium px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile Saya</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block font-medium px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Course Saya</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block font-medium px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Transaksi</a>
+                        </li>
                     </ul>
-                    <div class="py-2">
-                    <a href="#" class="block px-4 py-2 text-sm text-red-500 font-semibold">Keluar</a>
+                    <div class="py-1">
+                        <form method="GET" action="{{ route('logout') }}">
+                            @csrf
+                            <a type="submit" class="block font-medium px-4 py-2 text-sm text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-red-500">
+                                <button>
+                                    Keluar
+                                </button>
+                            </a>
+                        </form>
                     </div>
                 </div>
             </div>
