@@ -32,12 +32,56 @@
                         <input type="text" id="name" name="name" class="border border-gray-300 rounded-lg p-2 w-full" required />
                     </div>
                     <div class="mb-4">
-                        <label for="email" class="block text-gray-900 font-medium mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                        <label for="email" 
+                            class="block mb-2 text-sm font-medium 
+                            @error('email') text-red-700 dark:text-red-500 
+                            @elseif(session('success')) text-green-700 dark:text-green-500 
+                            @else text-gray-900 dark:text-white @enderror">
+                            Email <span class="text-red-500">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            aria-describedby="email-helper-text" 
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium dark:focus:ring-blue-500 dark:focus:border-blue-500
+                            @error('email') bg-red-50 border-red-500 text-red-900 placeholder-red-700 dark:border-red-500 dark:placeholder-red-500 dark:text-red-500 focus:ring-red-500 focus:border-red-500 
+                            @elseif(session('success')) bg-green-50 border-green-500 text-green-900 placeholder-green-700 dark:border-green-500 dark:placeholder-green-500 dark:text-white font-medium focus:ring-green-500 focus:border-green-500 
+                            @enderror"
+                            required
+                        >
+                        @error('email')
+                            <p class="mt-2 text-sm font-medium text-red-600 dark:text-red-500"><span class="font-bold">Gagal!</span> {{ $message }}</p>
+                        @enderror
+                        @if (session('success'))
+                            <p class="mt-2 text-sm font-medium text-green-600 dark:text-green-500"><span class="font-bold">Berhasil!</span> {{ session('success') }}</p>
+                        @endif
                     </div>
+                    
                     <div class="mb-4">
-                        <label for="password" class="block text-gray-900 font-medium mb-2">Kata Sandi</label>
-                        <input type="password" id="password" name="password" class="border border-gray-300 rounded-lg p-2 w-full" required />
+                        <label for="password" 
+                            class="block mb-2 text-sm font-medium 
+                            @error('password') text-red-700 dark:text-red-500 
+                            @elseif(session('successPassword')) text-green-700 dark:text-green-500 
+                            @else text-gray-900 dark:text-white @enderror">
+                            Kata Sandi <span class="text-red-500">*</span>
+                        </label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium dark:focus:ring-blue-500 dark:focus:border-blue-500 
+                            @error('password') bg-red-50 border-red-500 text-red-900 placeholder-red-700 dark:border-red-500 dark:placeholder-red-500 dark:text-red-500 focus:ring-red-500 focus:border-red-500 
+                            @elseif(session('successPassword')) bg-green-50 border-green-500 text-green-900 placeholder-green-700 dark:border-green-500 dark:placeholder-green-500 dark:text-white font-medium focus:ring-green-500 focus:border-green-500 
+                            @enderror"
+                            required 
+                        />
+                        @error('password')
+                            <p class="mt-2 text-sm font-medium text-red-600 dark:text-red-500"><span class="font-bold">Gagal!</span> {{ $message }}</p>
+                        @enderror
+                        @if (session('successPassword'))
+                            <p class="mt-2 text-sm font-medium text-green-600 dark:text-green-500"><span class="font-bold">Berhasil!</span> {{ session('successPassword') }}</p>
+                        @endif
                     </div>
                     <div class="flex items-center mb-6 mt-6">
                         <div class="flex w-full">
@@ -66,17 +110,7 @@
                             </svg>
                             Github
                         </button>        
-                    </div> 
-                    @if ($errors->any())
-                        <div id="notif-gagal" class="fixed flex items-center w-62 p-4 space-x-4 text-white bg-red-500 divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow top-5 right-5 dark:text-gray-400 dark:divide-gray-700 dark:bg-gray-800" role="alert">
-                            <div class="text-md font-medium">Email Sudah Digunakan !</div>
-                        </div>
-                    @endif  
-                    @if (session('success'))
-                        <div id="notif-berhasil" class="fixed flex items-center w-62 p-4 space-x-4 text-white bg-green-500 divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow top-5 right-5 dark:text-gray-400 dark:divide-gray-700 dark:bg-gray-800" role="alert">
-                            <div class="text-md font-medium">Pendaftaran Berhasil !</div>
-                        </div>
-                    @endif
+                    </div>
                 </form>                             
             </div>
         </div>

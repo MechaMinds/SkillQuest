@@ -23,26 +23,21 @@ class RegisterController extends Controller
         ]);
 
         if ($validator->fails()) {
-            \Log::error('Validation failed:', $validator->errors()->toArray());
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        \Log::info('Creating user:', ['email' => $request->email]);
-
+        // Pendaftaran user
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        \Log::info('User created:', ['id' => $user->id]);
-
-        // Generate email verification token
+        // Generate dan kirim email verifikasi
         $verificationToken = Str::random(60);
         $user->remember_token = $verificationToken;
         $user->save();
 
-        // Send verification email
         $this->sendVerificationEmail($user);
 
         return redirect()->route('login')->with('success', 'Pendaftaran Berhasil! Silakan cek email Anda untuk verifikasi.');

@@ -31,7 +31,6 @@
                         <label for="email" 
                             class="block mb-2 text-sm font-medium 
                             @error('email') text-red-700 dark:text-red-500 
-                            @elseif(session('success')) text-green-700 dark:text-green-500 
                             @else text-gray-900 dark:text-white @enderror">
                             Email <span class="text-red-500">*</span>
                         </label>
@@ -42,22 +41,17 @@
                             aria-describedby="email-helper-text" 
                             class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium dark:focus:ring-blue-500 dark:focus:border-blue-500
                             @error('email') bg-red-50 border-red-500 text-red-900 placeholder-red-700 dark:border-red-500 dark:placeholder-red-500 dark:text-red-500 focus:ring-red-500 focus:border-red-500 
-                            @elseif(session('success')) bg-green-50 border-green-500 text-green-900 placeholder-green-700 dark:border-green-500 dark:placeholder-green-500 dark:text-white font-medium focus:ring-green-500 focus:border-green-500 
                             @enderror"
                             required
                         >
                         @error('email')
                             <p class="mt-2 text-sm font-medium text-red-600 dark:text-red-500"><span class="font-bold">Gagal!</span> {{ $message }}</p>
                         @enderror
-                        @if (session('success'))
-                            <p class="mt-2 text-sm font-medium text-green-600 dark:text-green-500"><span class="font-bold">Berhasil!</span> {{ session('success') }}</p>
-                        @endif
                     </div>
                     <div class="mb-4">
                         <label for="password" 
                             class="block mb-2 text-sm font-medium 
                             @error('password') text-red-700 dark:text-red-500 
-                            @elseif(session('success')) text-green-700 dark:text-green-500 
                             @else text-gray-900 dark:text-white @enderror">
                             Kata Sandi <span class="text-red-500">*</span>
                         </label>
