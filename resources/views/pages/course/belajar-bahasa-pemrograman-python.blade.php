@@ -930,25 +930,6 @@
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-          const checkoutButtonMobile = document.getElementById('checkout-button-mobile');
-          const successLinkMobile = document.getElementById('success-link-mobile');
-
-          // Periksa status pembayaran dari database
-          axios.get('/order/status')
-              .then(response => {
-                  const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
-                  if (paymentStatus === 'success') {
-                      checkoutButtonMobile.classList.add('hidden');
-                      successLinkMobile.classList.remove('hidden');
-                  }
-              })
-              .catch(error => {
-                  console.error('Error fetching payment status:', error);
-              });
-      });
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
         const checkoutButtonMobile = document.getElementById('checkout-button-mobile');
         const successLinkMobile = document.getElementById('success-link-mobile');
 
@@ -1002,6 +983,62 @@
             });
         });
     });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const checkoutButton = document.getElementById('checkout-button');
+          const successLink = document.getElementById('success-link');
+
+          // Periksa status pembayaran dari database
+          axios.get('/order/status') // Endpoint API untuk memeriksa status pembayaran
+              .then(response => {
+                  const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
+                  if (paymentStatus === 'success') {
+                      checkoutButton.classList.add('hidden');
+                      successLink.classList.remove('hidden');
+                      successLink.addEventListener('click', function () {
+                          window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
+                      });
+                  }
+              })
+              .catch(error => {
+                  console.error('Error fetching payment status:', error);
+              });
+
+          checkoutButton.addEventListener('click', function () {
+              axios.post('/order', {
+                  product_id: 1
+              })
+              .then(response => {
+                  const snapToken = response.data.snap_token;
+                  window.snap.pay(snapToken, {
+                      onSuccess: function(result) {
+                          console.log(result);
+                          // Simpan status pembayaran dan ubah tombol
+                          axios.post('/order/update-status', {
+                              order_id: response.data.order_id,
+                              status: 'success'
+                          })
+                          .then(() => {
+                              checkoutButton.classList.add('hidden');
+                              successLink.classList.remove('hidden');
+                              successLink.addEventListener('click', function () {
+                                  window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
+                              });
+                          })
+                          .catch(error => {
+                              console.error('Error updating order status:', error);
+                          });
+                      },
+                      onPending: function(result) { console.log(result); },
+                      onError: function(result) { console.log(result); }
+                  });
+              })
+              .catch(error => {
+                  console.error('Error creating order:', error);
+              });
+          });
+      });
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
