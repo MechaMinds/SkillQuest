@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use App\Models\User;
+
 
 class LoginController extends Controller
 {
@@ -25,15 +27,24 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $credentials = $request->only('email', 'password');
+        $email = $request->input('email');
+        $password = $request->input('password');
 
-        if (Auth::attempt($credentials)) {
-            // Authentication passed
-            return redirect()->intended('/')->with('success', 'Login Berhasil!');
+        // Cek apakah email ada di database
+        $user = User::where('email', $email)->first();
+
+        if ($user) {
+            // Jika email ada, coba verifikasi password
+            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+                // Authentication passed
+                return redirect()->intended('/')->with('success', 'Login Berhasil!');
+            } else {
+                // Password salah
+                return redirect()->back()->withErrors(['password' => 'Kata sandi salah'])->withInput();
+            }
         } else {
-            // Authentication failed
-            // Menambahkan manual error untuk email ketika login gagal
-            return redirect()->back()->withErrors(['email' => 'Email tidak dapat ditemukan'])->withInput();
+            // Email tidak ditemukan
+            return redirect()->back()->withErrors(['email' => 'Email tidak ditemukan'])->withInput();
         }
     }
 }
