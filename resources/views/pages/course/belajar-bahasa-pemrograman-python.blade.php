@@ -103,7 +103,7 @@
 
             <!-- Tombol Lanjut Kelas -->
             <button id="success-link" type="button" class="w-full mt-6 py-6 font-medium text-white bg-green-500 rounded hidden" style="border-radius: 0px 0px 20px 20px; font-size:22px">
-              Lanjut Kelas
+              Lanjut Belajar
             </button>
           </div>          
         </div>
@@ -901,11 +901,11 @@
     <div class="z-50 fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 bottom-bar" style="height: 80px">
       <div class="flex items-center justify-between px-4 py-3 mt-2">
           <span class="text-lg font-bold text-black dark:text-white ml-4">Rp. 150.000</span>
-          <button id="checkout-button" class="px-4 py-2 font-semibold text-md text-white bg-blue-700 rounded mr-4" style="border-radius:50px; flex-shrink: 0;">
-            Gabung Kelas
+          <button id="checkout-button-mobile" class="px-4 py-2 font-semibold text-md text-white bg-blue-700 rounded mr-4" style="border-radius:50px; flex-shrink: 0;">
+              Gabung Kelas
           </button>
-          <button id="success-link" class="px-4 py-2 font-semibold text-md text-white bg-green-500 rounded mr-4 hidden" style="border-radius:50px; flex-shrink: 0;">
-            Lanjut Kelas
+          <button id="success-link-mobile" class="px-4 py-2 font-semibold text-md text-white bg-green-500 rounded mr-4 hidden" style="border-radius:50px; flex-shrink: 0;">
+              Lanjut Belajar
           </button>
       </div>
     </div>
@@ -930,59 +930,78 @@
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-          const checkoutButton = document.getElementById('checkout-button');
-          const successLink = document.getElementById('success-link');
+          const checkoutButtonMobile = document.getElementById('checkout-button-mobile');
+          const successLinkMobile = document.getElementById('success-link-mobile');
 
           // Periksa status pembayaran dari database
-          axios.get('/order/status') // Endpoint API untuk memeriksa status pembayaran
+          axios.get('/order/status')
               .then(response => {
                   const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
                   if (paymentStatus === 'success') {
-                      checkoutButton.classList.add('hidden');
-                      successLink.classList.remove('hidden');
-                      successLink.addEventListener('click', function () {
-                          window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                      });
+                      checkoutButtonMobile.classList.add('hidden');
+                      successLinkMobile.classList.remove('hidden');
                   }
               })
               .catch(error => {
                   console.error('Error fetching payment status:', error);
               });
-
-          checkoutButton.addEventListener('click', function () {
-              axios.post('/order', {
-                  product_id: 1
-              })
-              .then(response => {
-                  const snapToken = response.data.snap_token;
-                  window.snap.pay(snapToken, {
-                      onSuccess: function(result) {
-                          console.log(result);
-                          // Simpan status pembayaran dan ubah tombol
-                          axios.post('/order/update-status', {
-                              order_id: response.data.order_id,
-                              status: 'success'
-                          })
-                          .then(() => {
-                              checkoutButton.classList.add('hidden');
-                              successLink.classList.remove('hidden');
-                              successLink.addEventListener('click', function () {
-                                  window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                              });
-                          })
-                          .catch(error => {
-                              console.error('Error updating order status:', error);
-                          });
-                      },
-                      onPending: function(result) { console.log(result); },
-                      onError: function(result) { console.log(result); }
-                  });
-              })
-              .catch(error => {
-                  console.error('Error creating order:', error);
-              });
-          });
       });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkoutButtonMobile = document.getElementById('checkout-button-mobile');
+        const successLinkMobile = document.getElementById('success-link-mobile');
+
+        // Periksa status pembayaran dari database
+        axios.get('/order/status') // Endpoint API untuk memeriksa status pembayaran
+            .then(response => {
+                const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
+                if (paymentStatus === 'success') {
+                    checkoutButtonMobile.classList.add('hidden');
+                    successLinkMobile.classList.remove('hidden');
+                    successLinkMobile.addEventListener('click', function () {
+                        window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching payment status:', error);
+            });
+
+        checkoutButtonMobile.addEventListener('click', function () {
+            axios.post('/order', {
+                product_id: 1
+            })
+            .then(response => {
+                const snapToken = response.data.snap_token;
+                window.snap.pay(snapToken, {
+                    onSuccess: function(result) {
+                        console.log(result);
+                        // Simpan status pembayaran dan ubah tombol
+                        axios.post('/order/update-status', {
+                            order_id: response.data.order_id,
+                            status: 'success'
+                        })
+                        .then(() => {
+                            checkoutButtonMobile.classList.add('hidden');
+                            successLinkMobile.classList.remove('hidden');
+                            successLinkMobile.addEventListener('click', function () {
+                                window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error updating order status:', error);
+                        });
+                    },
+                    onPending: function(result) { console.log(result); },
+                    onError: function(result) { console.log(result); }
+                });
+            })
+            .catch(error => {
+                console.error('Error creating order:', error);
+            });
+        });
+    });
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {

@@ -141,8 +141,8 @@
                                         <p class="text-gray-900 dark:text-white text-2xl font-semibold">Rp 150.000</p>
                                     </div>
                                     <div class="flex justify-end">
-                                        <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                        <a href="#" class="text-md">Lanjut Belajar</a>
+                                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
                                         </button>
                                     </div>
                                     </div> 
