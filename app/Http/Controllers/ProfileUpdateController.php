@@ -68,20 +68,23 @@ class ProfileUpdateController extends Controller
         return redirect()->back();
     }
     public function updatePassword(Request $request)
-    {
-        $request->validate([
-            'current_password' => ['required', function ($attribute, $value, $fail) {
-                if (!Hash::check($value, Auth::user()->password)) {
-                    $fail('Kata sandi saat ini salah.');
-                }
-            }],
-            'new_password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+{
+    $request->validate([
+        'current_password' => ['required', function ($attribute, $value, $fail) {
+            if (!Hash::check($value, Auth::user()->password)) {
+                $fail('Kata sandi saat ini salah.');
+            }
+        }],
+        'new_password' => ['required', 'string', 'min:8', 'confirmed'],
+    ], [
+        'new_password.min' => 'Kata sandi kurang dari 8.',
+        'new_password.confirmed' => 'Kata sandi konfirmasi tidak sama.',
+    ]);
 
-        $user = Auth::user();
-        $user->password = Hash::make($request->new_password);
-        $user->save();
+    $user = Auth::user();
+    $user->password = Hash::make($request->new_password);
+    $user->save();
 
-        return redirect()->back()->with('successPassword', 'Kata Sandi Berhasil Diperbarui');
-    }
+    return redirect()->back()->with('successPassword', 'Kata Sandi Berhasil Diperbarui');
+}
 }
