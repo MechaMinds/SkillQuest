@@ -57,8 +57,9 @@ class OrderController extends Controller
                 'price' => $product['price'],
                 'customer_name' => $user->name,
                 'customer_email' => $user->email,
-                'status' => 'pending', // Status awal
-                'customer_id' => $user->id, // Menyimpan ID pengguna yang sedang login
+                'status' => 'pending',
+                'customer_id' => $user->id,
+                'payment_method' => null,
             ]);
 
             return response()->json(['success' => true, 'snap_token' => $snapToken, 'order_id' => $orderId]);

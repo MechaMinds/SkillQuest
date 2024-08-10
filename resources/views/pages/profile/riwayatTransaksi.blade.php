@@ -69,47 +69,46 @@
                 <!-- Tabel yang dapat discroll -->
                 <div class="relative overflow-x-auto border-b border-gray-200 dark:border-gray-700 " style="border-radius: 0px 0px 12px 12px">
                     <!-- Menampilkan data dalam tabel -->
-                        @php
-                            use Illuminate\Support\Str;
-                        @endphp
-
-                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">No</th>
-                                    <th scope="col" class="px-6 py-3">Product Name</th>
-                                    <th scope="col" class="px-6 py-3">Price</th>
-                                    <th scope="col" class="px-6 py-3">Customer Name</th>
-                                    <th scope="col" class="px-6 py-3">Customer Email</th>
-                                    <th scope="col" class="px-6 py-3">Status</th>
-                                    <th scope="col" class="px-6 py-3">Action</th>
+                    @php
+                        use Illuminate\Support\Str;
+                    @endphp
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">No</th>
+                                <th scope="col" class="px-6 py-3">Order ID</th>
+                                <th scope="col" class="px-6 py-3">Nama Produk</th>
+                                <th scope="col" class="px-6 py-3">Harga</th>
+                                <th scope="col" class="px-6 py-3">Tanggal Pembelian</th>
+                                <th scope="col" class="px-6 py-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($orderList as $index => $order)
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">{{ $index + 1 }}</th>
+                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $order->order_id }}</td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        @php
+                                            $productName = Str::after($order->product_name, 'Course - ');
+                                            $productNameWords = explode(' ', $productName);
+                                            $productNameFormatted = implode(' ', array_slice($productNameWords, 0, 2)) . '<br>' . implode(' ', array_slice($productNameWords, 2));
+                                        @endphp
+                                        {!! $productNameFormatted !!}
+                                    </td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Rp {{ number_format($order->price, 0, ',', '.') }}</td>
+                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{ \Carbon\Carbon::parse($order->created_at)->format('d-m-Y, H:i') }}
+                                    </td>                                    
+                                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ ucfirst($order->status) }}</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @forelse ($orderList as $index => $order)
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <th class="px-6 py-4 text-center">{{ $index + 1 }}</th>
-                                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            @php
-                                                $productName = Str::after($order->product_name, 'Course - ');
-                                            @endphp
-                                            {{ $productName }}
-                                        </td>
-                                        <td class="px-6 py-4">Rp {{ number_format($order->price, 0, ',', '.') }}</td>
-                                        <td class="px-6 py-4">{{ $order->customer_name }}</td>
-                                        <td class="px-6 py-4">{{ $order->customer_email }}</td>
-                                        <td class="px-6 py-4">{{ ucfirst($order->status) }}</td>
-                                        <td class="px-6 py-4">
-                                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="7" class="px-6 py-4 text-center">No orders found.</td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
-                        </table>           
+                            @empty
+                                <tr>
+                                    <td colspan="7" class="px-6 py-4 text-center">No orders found.</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>           
                 </div>
                 <div class="container mx-auto">
                     <nav class="flex justify-end items-center pt-4" aria-label="Table navigation">

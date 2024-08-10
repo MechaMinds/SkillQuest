@@ -84,6 +84,7 @@ Route::middleware('auth')->post('/profile/update', [ProfileUpdateController::cla
 Route::post('/update-avatar', [AvatarController::class, 'update'])->name('profile.updateAvatar');
 Route::get('/riwayat-transaksi', [OrderController::class, 'showOrders'])->name('orders.show');
 Route::get('/orders', [OrderController::class, 'showOrders'])->name('orders.show');
+Route::post('/midtrans-callback', [OrderController::class, 'handleMidtransCallback'])->name('midtrans.callback');
 
 
 
