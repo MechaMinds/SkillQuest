@@ -49,7 +49,6 @@ Route::get('/order/status', [OrderController::class, 'getOrderStatus']);
 Route::get('/products', function (Request $request) {
     return Product::all();
 });
-
 Route::get('/login', function () {
     return view('login');
 })->name('login');
@@ -63,7 +62,6 @@ Route::get('/daftar', function () {
 Route::post('/daftar', [RegisterController::class, 'daftar'])->name('daftar');
 Route::get('/verify-email/{token}', [RegisterController::class, 'verifyEmail'])->name('verify.email');
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
-
 Route::get('/profile', function () {
     return view('pages.profile.profile');
 });
@@ -84,6 +82,11 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware('auth')->post('/profile/update', [ProfileUpdateController::class, 'updateProfile'])->name('profile.update');
 Route::post('/update-avatar', [AvatarController::class, 'update'])->name('profile.updateAvatar');
+Route::get('/riwayat-transaksi', [OrderController::class, 'showOrders'])->name('orders.show');
+Route::get('/orders', [OrderController::class, 'showOrders'])->name('orders.show');
+
+
+
 
 
 

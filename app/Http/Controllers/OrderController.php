@@ -94,4 +94,9 @@ class OrderController extends Controller
 
         return response()->json(['message' => 'Order status updated']);
     }
+    public function showOrders()
+    {
+        $orderList = \App\Models\Order::all();
+        return view('pages.profile.riwayatTransaksi', compact('orderList'));
+    }
 }

@@ -288,9 +288,6 @@
         <div class="flex items-center justify-center mx-auto space-x-4">
             <button data-modal-target="chat-modal" data-modal-toggle="chat-modal" data-tooltip-target="tooltip-AI" type="button">
                 <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-9 h-9 rounded-full">
-                {{-- <svg class="w-4 h-4 text-gray-500 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12.25V1m0 11.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M4 19v-2.25m6-13.5V1m0 2.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M10 19V7.75m6 4.5V1m0 11.25a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM16 19v-2"/>
-                </svg> --}}
                 <span class="sr-only">Silva AI</span>
             </button>
             <div id="tooltip-AI" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
@@ -336,8 +333,8 @@
                 <p class="dark:text-white text-gray-900 font-semibold hidden sm:block">Sebelum</p>
             </div>
             <div class="flex items-center space-x-4">
-                <button data-modal-target="pop-chat-mobile" data-modal-toggle="pop-chat-mobile" data-tooltip-target="tooltip-microphone" type="button" class="p-2.5 bg-gray-100 rounded-full hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:bg-gray-600 dark:hover:bg-gray-800">
-                    <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-10 h-10 rounded-full">
+                <button data-modal-target="pop-chat-mobile" data-modal-toggle="pop-chat-mobile" data-tooltip-target="tooltip-microphone" type="button">
+                    <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-9 h-9 rounded-full">
                     <span class="sr-only">Silva AI</span>
                 </button>
                 <div id="tooltip-microphone" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">

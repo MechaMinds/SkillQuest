@@ -7,15 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    use HasFactory;
-
-    protected $fillable = [
-        'order_id',
-        'product_name',
-        'price',
-        'customer_name',
-        'customer_email',
-        'status',
-        'customer_id',
-    ];
+    protected $table = 'orders'; // Pastikan nama tabel sesuai
+    protected $fillable = ['order_id', 'product_name', 'price', 'customer_name', 'customer_email', 'status', 'customer_id'];
 }
+

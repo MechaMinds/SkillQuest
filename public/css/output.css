@@ -921,6 +921,9 @@ video {
         opacity: 0;
         transform: translateY(20px); /* Akhir animasi dengan offset ke bawah */
     }
+    .tabelTransaction {
+        width: 100%;
+    }
 }
 
 @media (max-width: 1025px) {
@@ -1082,6 +1085,9 @@ video {
     }
     .alertSuccess {
         display: none;
+    }
+    .tabelTransaction {
+        width: 400px;
     }
 }
 /* 
