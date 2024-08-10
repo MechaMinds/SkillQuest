@@ -81,10 +81,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/updatePhoto', [ProfileController::class, 'updateProfilePhoto'])->name('profile.updatePhoto');
 });
 Route::middleware('auth')->post('/profile/update', [ProfileUpdateController::class, 'updateProfile'])->name('profile.update');
+Route::middleware('auth')->post('/pengaturan/update', [ProfileUpdateController::class, 'updatePengaturan'])->name('pengaturan.update');
 Route::post('/update-avatar', [AvatarController::class, 'update'])->name('profile.updateAvatar');
 Route::get('/riwayat-transaksi', [OrderController::class, 'showOrders'])->name('orders.show');
 Route::get('/orders', [OrderController::class, 'showOrders'])->name('orders.show');
 Route::post('/midtrans-callback', [OrderController::class, 'handleMidtransCallback'])->name('midtrans.callback');
+Route::get('/pengaturan', function(){
+    return view('pages.profile.pengaturan');
+});
 
 
 

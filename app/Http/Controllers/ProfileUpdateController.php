@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule; 
 
 class ProfileUpdateController extends Controller
 {
@@ -47,5 +48,22 @@ class ProfileUpdateController extends Controller
 
         return redirect()->back();
     }
+    public function updatePengaturan(Request $request)
+    {
+        $request->validate([
+            'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore(Auth::id())],
+        ]);
 
+        $user = Auth::user();
+        $isEmailChanged = $user->email !== $request->input('email');
+
+        if ($isEmailChanged) {
+            $user->email = $request->input('email');
+            $user->save();
+
+            return redirect()->back()->with('successEmail', 'Email Berhasil Diperbarui');
+        }
+
+        return redirect()->back();
+    }
 }

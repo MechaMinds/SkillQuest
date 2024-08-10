@@ -19,7 +19,7 @@
                 <a href="/riwayat-transaksi" class="text-sm font-medium text-gray-500 dark:text-gray-400 text-center">Riwayat Transaksi</a>
               </div>
               <div class="profile w-full p-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow items-center text-center sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                <a href="/profile" class="text-sm font-medium text-gray-500 dark:text-gray-400 text-center">Pengaturan Lanjut</a>
+                <a href="/pengaturan" class="text-sm font-medium text-gray-500 dark:text-gray-400 text-center">Pengaturan Lanjut</a>
               </div>
             </div>
         </div>
