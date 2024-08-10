@@ -82,6 +82,7 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware('auth')->post('/profile/update', [ProfileUpdateController::class, 'updateProfile'])->name('profile.update');
 Route::middleware('auth')->post('/pengaturan/update', [ProfileUpdateController::class, 'updatePengaturan'])->name('pengaturan.update');
+Route::middleware('auth')->post('/pengaturan/update-password', [ProfileUpdateController::class, 'updatePassword'])->name('pengaturan.updatePassword');
 Route::post('/update-avatar', [AvatarController::class, 'update'])->name('profile.updateAvatar');
 Route::get('/riwayat-transaksi', [OrderController::class, 'showOrders'])->name('orders.show');
 Route::get('/orders', [OrderController::class, 'showOrders'])->name('orders.show');

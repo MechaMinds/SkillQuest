@@ -61,7 +61,76 @@
                                 </div>
                             </div>
                             <button type="submit" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 lg:mt-5 mt-5 sm:mt-5">Ubah Email</button>
-                        </form>                                                           
+                        </form>    
+                        <h1 class="font-medium mt-10 dark:text-white text-gray-900 text-lg">Ubah Kata Sandi</h1>    
+                        <form action="{{ route('pengaturan.updatePassword') }}" method="POST">
+                            @csrf
+                            <div class="sm:mt-6 mt-7 lg:mt-7 lg:grid lg:grid-cols-2 sm:flex gap-4">
+                                <div class="password">
+                                    <label for="current_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                        Kata Sandi Saat Ini <span class="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="password" 
+                                        name="current_password" 
+                                        id="current_password" 
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium"
+                                        required
+                                    >
+                                    @error('current_password')
+                                        <p class="mt-2 text-sm font-medium text-red-600 dark:text-red-500">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="new_password mt-4 lg:mt-0">
+                                    <label for="new_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                        Kata Sandi Baru <span class="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="password" 
+                                        name="new_password" 
+                                        id="new_password" 
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium"
+                                        required
+                                    >
+                                    @error('new_password')
+                                        <p class="mt-2 text-sm font-medium text-red-600 dark:text-red-500">{{ $message }}</p>
+                                    @enderror
+                                </div>  
+                                <div class="new_password_confirmation mt-4 lg:mt-0">
+                                    <label for="new_password_confirmation" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                        Konfirmasi Kata Sandi Baru <span class="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="password" 
+                                        name="new_password_confirmation" 
+                                        id="new_password_confirmation" 
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white font-medium"
+                                        required
+                                    >
+                                </div>
+                            </div>                        
+                            <ul class="max-w-md space-y-1 mt-3 text-gray-500 list-inside dark:text-gray-400">
+                                <li class="flex items-center">
+                                    <svg class="w-3.5 h-3.5 me-2 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                    </svg>
+                                    At least 10 characters
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-3.5 h-3.5 me-2 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                    </svg>
+                                    At least one lowercase character
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                                    </svg>
+                                    At least one special character, e.g., ! @ # ?
+                                </li>
+                            </ul>
+                            <button type="submit" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 lg:mt-5 mt-5 sm:mt-5">Kata Sandi</button>
+                        </form>                                                        
                     </div>
                 </div>
             </div>

@@ -27,24 +27,14 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $email = $request->input('email');
-        $password = $request->input('password');
+        $credentials = $request->only('email', 'password');
 
-        // Cek apakah email ada di database
-        $user = User::where('email', $email)->first();
-
-        if ($user) {
-            // Jika email ada, coba verifikasi password
-            if (Auth::attempt(['email' => $email, 'password' => $password])) {
-                // Authentication passed
-                return redirect()->intended('/')->with('success', 'Login Berhasil!');
-            } else {
-                // Password salah
-                return redirect()->back()->withErrors(['password' => 'Kata sandi salah'])->withInput();
-            }
+        if (Auth::attempt($credentials)) {
+            // Authentication passed
+            return redirect()->intended('/')->with('success', 'Login Berhasil!');
         } else {
-            // Email tidak ditemukan
-            return redirect()->back()->withErrors(['email' => 'Email tidak ditemukan'])->withInput();
+            // Authentication failed
+            return redirect()->back()->withErrors(['email' => 'Email atau kata sandi salah'])->withInput();
         }
     }
 }
