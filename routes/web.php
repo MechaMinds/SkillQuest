@@ -91,7 +91,10 @@ Route::post('/midtrans-callback', [OrderController::class, 'handleMidtransCallba
 Route::get('/pengaturan', function(){
     return view('pages.profile.pengaturan');
 });
-Route::get('/data-pribadi', [DataPribadiController::class, 'show']);
+Route::get('/data-pribadi', [DataPribadiController::class, 'showProvinsi']);
+Route::get('/cities', [DataPribadiController::class, 'getCities']);
+
+
 
 
 
