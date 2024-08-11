@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\ProfileUpdateController;
 use App\Http\Controllers\DataPribadiController;
+use App\Http\Controllers\PersonalDataController;
 use App\Models\Product;
 
 /*
@@ -22,7 +23,7 @@ use App\Models\Product;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Auth::routes();
 Route::get('/', function () {
     return view('home');
 });
@@ -53,26 +54,28 @@ Route::get('/products', function (Request $request) {
 Route::get('/login', function () {
     return view('login');
 })->name('login');
-
 Route::post('login', [LoginController::class, 'login']);
 
 Route::get('/daftar', function () {
     return view('daftar');
 })->name('daftar');
-
 Route::post('/daftar', [RegisterController::class, 'daftar'])->name('daftar');
 Route::get('/verify-email/{token}', [RegisterController::class, 'verifyEmail'])->name('verify.email');
+Route::get('/data-pribadi', [PersonalDataController::class, 'show'])->middleware('auth');
+Route::get('/data-pribadi', function(){
+    return view('pages.profile.dataPribadi');
+});
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 Route::get('/profile', function () {
     return view('pages.profile.profile');
 });
-Auth::routes();
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', function () {
         return view('pages.profile.profile');
     })->name('profile');
-
+    Route::get('/data-pribadi', function(){
+        return view('pages.profile.dataPribadi');
+    })->name('data-pribadi');
     Route::get('/logout', function () {
         Auth::logout();
         return redirect('/');
@@ -94,6 +97,11 @@ Route::get('/pengaturan', function(){
 Route::get('/data-pribadi', [DataPribadiController::class, 'showProvinsi']);
 Route::get('/cities', [DataPribadiController::class, 'getCities']);
 Route::get('/postal-codes', [DataPribadiController::class, 'getPostalCodes']);
+Route::get('/checkout', function(){
+    return view('pages.payment.checkout');
+});
+
+
 
 
 

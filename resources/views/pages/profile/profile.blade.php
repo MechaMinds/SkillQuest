@@ -113,7 +113,6 @@
                       <p class="mt-2 text-sm font-medium text-green-600 dark:text-green-500"><span class="font-bold">Berhasil ! </span> {{ session('successDesc') }}</p>
                   @endif
                 </div>
-              
                 <button type="submit" class="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 lg:mt-5 mt-5 sm:mt-5">Simpan Perubahan</button>
               </form>                  
             </div>

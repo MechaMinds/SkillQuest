@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Models\PersonalData;
 
 class DataPribadiController extends Controller
 {
+
     public function showProvinsi()
     {
         // Fetch data provinsi dari API RajaOngkir
