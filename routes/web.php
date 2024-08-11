@@ -98,6 +98,7 @@ Route::get('/data-pribadi', [DataPribadiController::class, 'showProvinsi']);
 Route::get('/cities', [DataPribadiController::class, 'getCities']);
 Route::get('/postal-codes', [DataPribadiController::class, 'getPostalCodes']);
 Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
+Route::post('/apply-discount', [OrderController::class, 'applyDiscount'])->name('apply.discount');
 
 
 

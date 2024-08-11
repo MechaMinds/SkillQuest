@@ -10,17 +10,18 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
+
     public function createOrder(Request $request)
     {
         $products = [
             [
                 'id' => 1,
-                'name' => 'Course - Belajar Bahasa Pemrograman Python',
+                'name' => 'Belajar Bahasa Pemrograman Python',
                 'price' => 500000
             ],
             [
                 'id' => 2,
-                'name' => 'Course - Belajar Laravel',
+                'name' => 'Belajar Laravel',
                 'price' => 600000
             ]
         ];
@@ -119,6 +120,7 @@ class OrderController extends Controller
     public function checkout(Request $request)
     {
         $productId = $request->query('id'); // Ambil ID dari query parameter
+        $discountCode = $request->session()->get('discount_code', ''); // Ambil kode diskon dari session jika ada
 
         // Daftar produk
         $products = [
@@ -142,10 +144,41 @@ class OrderController extends Controller
             return abort(404); // atau kembali dengan pesan error
         }
 
-        // Kirim data produk ke view
+        // Hitung PPN
+        $vatRate = 0.11; // 11%
+        $vatAmount = $product['price'] * $vatRate;
+
+        // Hitung harga sebelum diskon
+        $totalPriceBeforeDiscount = $product['price'] + $vatAmount;
+
+        // Cek kode diskon dan terapkan diskon
+        $discountRate = 0;
+        if ($discountCode === 'BELAJARPYTHONASIK') {
+            $discountRate = 0.45;
+        }
+        $discountAmount = $totalPriceBeforeDiscount * $discountRate;
+        $totalPrice = $totalPriceBeforeDiscount - $discountAmount;
+
+        // Kirim data produk dan harga ke view
         return view('pages.payment.checkout', [
             'product' => $product,
-            'productId' => $productId
+            'productId' => $productId,
+            'vatAmount' => $vatAmount,
+            'totalPrice' => $totalPrice,
+            'discountAmount' => $discountAmount,
+            'discountCode' => $discountCode, // Kirim kode diskon ke view
         ]);
-    } 
+    }
+
+    public function applyDiscount(Request $request)
+    {
+        $discountCode = $request->input('discount_code');
+        
+        // Simpan kode diskon di session
+        $request->session()->put('discount_code', $discountCode);
+
+        // Redirect ke halaman checkout dengan query ID produk
+        return redirect()->route('checkout', ['id' => $request->input('product_id')]);
+    }
+
 }

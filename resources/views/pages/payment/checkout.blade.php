@@ -68,12 +68,16 @@
                                 </div>
                             </div>                            
                         </div>
-                    
                         <div class="mt-6 grow sm:mt-8 lg:mt-0">
                             <div class="space-y-4 rounded-xl border border-gray-100 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800">
-                                <label for="helper-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kode Diskon</label>
-                                <input type="text" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"> 
+                                <form action="{{ route('apply.discount') }}" method="POST">
+                                    @csrf
+                                    <label for="discount_code" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Kode Diskon</label>
+                                    <input type="text" id="discount_code" name="discount_code" aria-describedby="helper-text-explanation" placeholder="Masukkan kode diskon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ old('discount_code', $discountCode) }}">
+                                    <input type="hidden" name="product_id" value="{{ $productId }}">
+                                    <button type="submit" class="mt-2 w-full px-4 py-3 font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Gunakan Kode Diskon</button>
+                                </form>
+                                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                                 
                                 <div class="space-y-2">
                                     <!-- Menampilkan produk berdasarkan data yang diterima -->
@@ -82,32 +86,31 @@
                                             <dt class="text-base font-normal text-gray-500 dark:text-gray-400">{{ $product['name'] }}</dt>
                                             <dd class="text-base font-medium text-gray-900 dark:text-white">Rp. {{ number_format($product['price'], 0, ',', '.') }}</dd>
                                         </dl>
+                                        <!-- Menampilkan PPN -->
+                                        <dl class="flex items-center justify-between gap-4">
+                                            <dt class="text-base font-normal text-gray-500 dark:text-gray-400">PPN (11%)</dt>
+                                            <dd class="text-base font-medium text-green-400">+ Rp. {{ number_format($vatAmount, 0, ',', '.') }}</dd>
+                                        </dl>
+                                        <!-- Menampilkan Kode Diskon jika ada -->
+                                        @if(isset($discountAmount) && $discountAmount > 0)
+                                            <dl class="flex items-center justify-between gap-4">
+                                                <dt class="text-base font-normal text-gray-500 dark:text-gray-400">Diskon</dt>
+                                                <dd class="text-base font-medium text-red-500">- Rp. {{ number_format($discountAmount, 0, ',', '.') }}</dd>
+                                            </dl>
+                                        @endif
                                     @else
                                         <p class="text-red-500">Product data is incomplete.</p>
                                     @endif
                                 </div>
-                                
-                                <!-- Menampilkan harga total jika ada lebih dari satu produk atau menghitung total jika diperlukan -->
+                                <!-- Menampilkan harga total -->
                                 <dl class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
-                                    <dt class="text-base font-bold text-gray-900 dark:text-white">Total</dt>
-                                    <dd class="text-base font-bold text-gray-900 dark:text-white">Rp. {{ number_format($product['price'] ?? 0, 0, ',', '.') }}</dd>
+                                    <dt class="text-lg font-bold text-gray-900 dark:text-white">Total</dt>
+                                    <dd class="text-xl font-bold text-gray-900 dark:text-white">Rp. {{ number_format($totalPrice ?? 0, 0, ',', '.') }}</dd>
                                 </dl>
+                                <button type="button" id="tuku" class="w-full px-4 py-3 font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700" style="margin-top: 30px">Bayar & Gabung Kelas</button>
                             </div>
-                            <div class="mt-6 flex items-center justify-center gap-8">
-                                <!-- Payment method images -->
-                                <img class="h-8 w-auto dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/paypal.svg" alt="" />
-                                <img class="hidden h-8 w-auto dark:flex" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/paypal-dark.svg" alt="" />
-                                <img class="h-8 w-auto dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa.svg" alt="" />
-                                <img class="hidden h-8 w-auto dark:flex" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa-dark.svg" alt="" />
-                                <img class="h-8 w-auto dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/mastercard.svg" alt="" />
-                                <img class="hidden h-8 w-auto dark:flex" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/mastercard-dark.svg" alt="" />
-                            </div>
-                        </div>                                                
+                        </div>                                                                                                                                                                                              
                     </div>                    
-                        {{-- <p class="mt-6 text-center text-gray-500 dark:text-gray-400 sm:mt-8 lg:text-left">
-                        Payment processed by <a href="#" title="" class="font-medium text-primary-700 underline hover:no-underline dark:text-primary-500">Paddle</a> for <a href="#" title="" class="font-medium text-primary-700 underline hover:no-underline dark:text-primary-500">Flowbite LLC</a>
-                        - United States Of America
-                        </p> --}}
                 </div>
             </div>
         </section>
@@ -115,18 +118,6 @@
         <!-- Footer Mulai -->
         <div id="app">
         <x-footer />
-        </div>
-        <!-- Mode Mobile -->
-        <div class="z-50 fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 bottom-bar" style="height: 80px">
-        <div class="flex items-center justify-between px-4 py-3 mt-2">
-            <span class="text-lg font-bold text-black dark:text-white ml-4">Rp. 150.000</span>
-            <button id="checkout-button-mobile" class="px-4 py-2 font-semibold text-md text-white bg-blue-700 rounded mr-4" style="border-radius:50px; flex-shrink: 0;">
-                Gabung Kelas
-            </button>
-            <button id="success-link-mobile" class="px-4 py-2 font-semibold text-md text-white bg-green-500 rounded mr-4 hidden" style="border-radius:50px; flex-shrink: 0;">
-                Lanjut Belajar
-            </button>
-        </div>
         </div>
         <div data-dial-init class="z-50 fixed start-6 group" style="bottom: 100px">
         <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 sm:mr-5">
@@ -145,149 +136,54 @@
         <script src="{{ asset('js/main.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script> 
+        <script src="{{ asset('js/main.js') }}"></script>
+        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-XFRfqvTOMmYZa4mu"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}"></script>
         <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const checkoutButtonMobile = document.getElementById('checkout-button-mobile');
-            const successLinkMobile = document.getElementById('success-link-mobile');
-
-            // Periksa status pembayaran dari database
-            axios.get('/order/status') // Endpoint API untuk memeriksa status pembayaran
-                .then(response => {
-                    const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
-                    if (paymentStatus === 'success') {
-                        checkoutButtonMobile.classList.add('hidden');
-                        successLinkMobile.classList.remove('hidden');
-                        successLinkMobile.addEventListener('click', function () {
-                            window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching payment status:', error);
-                });
-
-            checkoutButtonMobile.addEventListener('click', function () {
-                axios.post('/order', {
-                    product_id: 1
-                })
-                .then(response => {
-                    const snapToken = response.data.snap_token;
-                    window.snap.pay(snapToken, {
-                        onSuccess: function(result) {
-                            console.log(result);
-                            // Simpan status pembayaran dan ubah tombol
-                            axios.post('/order/update-status', {
-                                order_id: response.data.order_id,
-                                status: 'success'
-                            })
-                            .then(() => {
-                                checkoutButtonMobile.classList.add('hidden');
-                                successLinkMobile.classList.remove('hidden');
-                                successLinkMobile.addEventListener('click', function () {
-                                    window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                                });
-                            })
-                            .catch(error => {
-                                console.error('Error updating order status:', error);
+            document.addEventListener('DOMContentLoaded', function () {
+                const tuku = document.getElementById('tuku');
+                if (!tuku) {
+                    console.error('Element with ID "tuku" not found.');
+                    return;
+                }
+                console.log('Button "tuku" found.');
+                
+                tuku.addEventListener('click', function () {
+                    axios.post('/order', {
+                        product_id: 1 // Sesuaikan dengan ID produk yang sebenarnya
+                    })
+                    .then(response => {
+                        const snapToken = response.data.snap_token;
+                        console.log('Snap Token:', snapToken);
+                        if (snapToken) {
+                            window.snap.pay(snapToken, {
+                                onSuccess: function(result) {
+                                    console.log(result);
+                                    axios.post('/order/update-status', {
+                                        order_id: response.data.order_id,
+                                        status: 'success'
+                                    })
+                                    .then(() => {
+                                        tuku.classList.add('hidden');
+                                        window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan';
+                                    })
+                                    .catch(error => {
+                                        console.error('Error updating order status:', error);
+                                    });
+                                },
+                                onPending: function(result) { console.log(result); },
+                                onError: function(result) { console.log(result); }
                             });
-                        },
-                        onPending: function(result) { console.log(result); },
-                        onError: function(result) { console.log(result); }
+                        } else {
+                            console.error('Snap Token is missing or invalid.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error creating order:', error);
                     });
-                })
-                .catch(error => {
-                    console.error('Error creating order:', error);
                 });
             });
-        });
+
         </script>
-        <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const checkoutButton = document.getElementById('checkout-button');
-            const successLink = document.getElementById('success-link');
-
-            // Periksa status pembayaran dari database
-            axios.get('/order/status') // Endpoint API untuk memeriksa status pembayaran
-                .then(response => {
-                    const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
-                    if (paymentStatus === 'success') {
-                        checkoutButton.classList.add('hidden');
-                        successLink.classList.remove('hidden');
-                        successLink.addEventListener('click', function () {
-                            window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching payment status:', error);
-                });
-
-            checkoutButton.addEventListener('click', function () {
-                axios.post('/order', {
-                    product_id: 1
-                })
-                .then(response => {
-                    const snapToken = response.data.snap_token;
-                    window.snap.pay(snapToken, {
-                        onSuccess: function(result) {
-                            console.log(result);
-                            // Simpan status pembayaran dan ubah tombol
-                            axios.post('/order/update-status', {
-                                order_id: response.data.order_id,
-                                status: 'success'
-                            })
-                            .then(() => {
-                                checkoutButton.classList.add('hidden');
-                                successLink.classList.remove('hidden');
-                                successLink.addEventListener('click', function () {
-                                    window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                                });
-                            })
-                            .catch(error => {
-                                console.error('Error updating order status:', error);
-                            });
-                        },
-                        onPending: function(result) { console.log(result); },
-                        onError: function(result) { console.log(result); }
-                    });
-                })
-                .catch(error => {
-                    console.error('Error creating order:', error);
-                });
-            });
-        });
-        </script>
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const buttons = document.querySelectorAll(".nav-button");
-        const sections = document.querySelectorAll(".content-section > div");
-
-        // Function to switch content
-        function switchContent(target) {
-            sections.forEach((section) => {
-                section.classList.remove("active");
-                section.classList.add("hidden");
-            });
-
-            const targetSection = document.getElementById(target);
-            targetSection.classList.remove("hidden");
-            setTimeout(() => {
-                targetSection.classList.add("active");
-            }, 10); // Timeout to allow transition to apply
-        }
-
-        // Set the "aboutContent" as the default active section
-        switchContent("aboutContent");
-
-        buttons.forEach((button) => {
-            button.addEventListener("click", function () {
-                const target = this.id.replace("Btn", "Content");
-                switchContent(target);
-            });
-            });
-        });
-        </script> 
     </body>
 </html>
