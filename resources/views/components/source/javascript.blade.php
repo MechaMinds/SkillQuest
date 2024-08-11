@@ -324,11 +324,12 @@
         document.addEventListener('DOMContentLoaded', function () {
             const provinsiSelect = document.getElementById('provinsi-select');
             const kotaSelect = document.getElementById('kota-select');
-    
+        
             // Event listener for province selection
             provinsiSelect.addEventListener('change', function() {
                 const provinceId = this.value;
                 if (provinceId) {
+                    kotaSelect.disabled = false; // Enable kota dropdown
                     fetch(`/cities?province_id=${provinceId}`)
                         .then(response => response.json())
                         .then(data => {
@@ -337,7 +338,8 @@
                                 data.forEach(city => {
                                     const option = document.createElement('option');
                                     option.value = city.city_id;
-                                    option.textContent = city.city_name;
+                                    // Format "Kota" or "Kabupaten" to the city name
+                                    option.textContent = `${city.city_name} (${city.type})`;
                                     kotaSelect.appendChild(option);
                                 });
                             } else {
@@ -349,10 +351,11 @@
                         })
                         .catch(error => console.error('Error fetching cities:', error));
                 } else {
+                    kotaSelect.disabled = true; // Disable kota dropdown
                     kotaSelect.innerHTML = '<option value="">Pilih Kota atau Kabupaten</option>'; // Reset kota dropdown
                 }
             });
         });
-    </script>    
+    </script>               
 </body>
 </html>

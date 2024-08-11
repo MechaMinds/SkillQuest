@@ -96,6 +96,7 @@
                                     @endforeach
                                 </select>
                             </div>
+
                             <!-- Kota Dropdown -->
                             <div class="sm:mt-5 lg:mt-0 mt-5 kotaKabupaten relative">
                                 <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Kota atau Kabupaten <span class="text-red-500">*</span></h1>
@@ -103,12 +104,13 @@
                                     <select 
                                         id="kota-select" 
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        disabled
                                     >
                                         <option value="">Pilih Kota atau Kabupaten</option>
                                         <!-- Options will be populated dynamically -->
                                     </select>
                                 </div>
-                            </div>                            
+                            </div>
                             <div class="sm:mt-5 lg:mt-0 mt-5 kotaKabupaten">
                                 <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Kode Pos<span class="text-red-500">*</span></h1>                    
                                 <div class="relative max-w-sm">
