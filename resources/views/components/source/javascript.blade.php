@@ -321,50 +321,89 @@
         });
     </script>
     <script>
-        const inputField = document.getElementById('provinsi-input');
-        const dropdown = document.getElementById('dropdown');
-    
-        // Fetch provinces and populate the dropdown
-        async function fetchProvinces(query = '') {
-            const response = await fetch('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json');
-            const provinces = await response.json();
-            const filteredProvinces = provinces.filter(province => province.name.toLowerCase().includes(query.toLowerCase()));
-            const dropdownList = dropdown.querySelector('ul');
-            
-            // Clear previous list items
-            dropdownList.innerHTML = '';
-    
-            // Populate dropdown with filtered provinces
-            filteredProvinces.forEach(province => {
-                const listItem = document.createElement('li');
-                const button = document.createElement('button');
-                button.type = 'button';
-                button.className = 'inline-flex w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white';
-                button.textContent = province.name;
-                button.addEventListener('click', function() {
-                    inputField.value = province.name;
-                    dropdown.classList.add('hidden');
-                });
-                listItem.appendChild(button);
-                dropdownList.appendChild(listItem);
-            });
-    
-            // Show or hide dropdown based on query
-            dropdown.classList.toggle('hidden', filteredProvinces.length === 0);
-        }
-    
-        // Event listener for input field
-        inputField.addEventListener('input', function() {
-            fetchProvinces(this.value);
-        });
-    
-        // Hide dropdown if click outside
-        document.addEventListener('click', function(event) {
-            if (!inputField.contains(event.target) && !dropdown.contains(event.target)) {
-                dropdown.classList.add('hidden');
+        document.addEventListener('DOMContentLoaded', function() {
+            const provinsiInput = document.getElementById('provinsi-input');
+            const dropdown = document.getElementById('dropdown');
+            const kotaKabupatenInput = document.getElementById('kota-kabupaten-input');
+            const cityDropdown = document.getElementById('city-dropdown');
+
+            // Fetch provinces and populate the dropdown
+            async function fetchProvinces(query = '') {
+                try {
+                    const response = await fetch('https://api.rajaongkir.com/starter/province', {
+                        headers: {
+                            'key': 'b3b9be5348ad8db5d4cafbe4a671e1da' // Ganti dengan API key Anda
+                        }
+                    });
+                    const data = await response.json();
+                    const provinces = data.rajaongkir.results;
+                    const filteredProvinces = provinces.filter(province => province.province.toLowerCase().includes(query.toLowerCase()));
+
+                    const dropdownList = dropdown.querySelector('ul');
+                    dropdownList.innerHTML = '';
+
+                    filteredProvinces.forEach(province => {
+                        const listItem = document.createElement('li');
+                        const button = document.createElement('button');
+                        button.type = 'button';
+                        button.className = 'inline-flex w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white';
+                        button.textContent = province.province;
+                        button.dataset.id = province.province_id; // Store province_id in data attribute
+                        button.addEventListener('click', function() {
+                            provinsiInput.value = province.province;
+                            dropdown.classList.add('hidden');
+                            fetchCities(this.dataset.id); // Fetch cities based on selected province_id
+                        });
+                        listItem.appendChild(button);
+                        dropdownList.appendChild(listItem);
+                    });
+
+                    dropdown.classList.toggle('hidden', filteredProvinces.length === 0);
+                } catch (error) {
+                    console.error('Error fetching provinces:', error);
+                }
             }
+
+            async function fetchCities(provinceId) {
+                try {
+                    const response = await fetch(`https://emsifa.github.io/api-wilayah-indonesia/api/regencies/${provinceId}.json`);
+                    const cities = await response.json();
+                    const cityDropdownList = cityDropdown.querySelector('ul');
+                    cityDropdownList.innerHTML = '';
+
+                    cities.forEach(city => {
+                        const listItem = document.createElement('li');
+                        const button = document.createElement('button');
+                        button.type = 'button';
+                        button.className = 'inline-flex w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white';
+                        button.textContent = city.name;
+                        button.addEventListener('click', function() {
+                            kotaKabupatenInput.value = city.name;
+                            cityDropdown.classList.add('hidden');
+                        });
+                        listItem.appendChild(button);
+                        cityDropdownList.appendChild(listItem);
+                    });
+
+                    cityDropdown.classList.toggle('hidden', cities.length === 0);
+                } catch (error) {
+                    console.error('Error fetching cities:', error);
+                }
+            }
+
+            provinsiInput.addEventListener('input', function() {
+                fetchProvinces(this.value);
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!provinsiInput.contains(event.target) && !dropdown.contains(event.target)) {
+                    dropdown.classList.add('hidden');
+                }
+                if (!kotaKabupatenInput.contains(event.target) && !cityDropdown.contains(event.target)) {
+                    cityDropdown.classList.add('hidden');
+                }
+            });
         });
     </script>
-    
 </body>
 </html>

@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\ProfileUpdateController;
+use App\Http\Controllers\DataPribadiController;
 use App\Models\Product;
 
 /*
@@ -90,9 +91,8 @@ Route::post('/midtrans-callback', [OrderController::class, 'handleMidtransCallba
 Route::get('/pengaturan', function(){
     return view('pages.profile.pengaturan');
 });
-Route::get('/data-pribadi', function(){
-    return view('pages.profile.dataPribadi');
-});
+Route::get('/data-pribadi', [DataPribadiController::class, 'show']);
+
 
 
 
