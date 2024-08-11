@@ -97,9 +97,8 @@ Route::get('/pengaturan', function(){
 Route::get('/data-pribadi', [DataPribadiController::class, 'showProvinsi']);
 Route::get('/cities', [DataPribadiController::class, 'getCities']);
 Route::get('/postal-codes', [DataPribadiController::class, 'getPostalCodes']);
-Route::get('/checkout', function(){
-    return view('pages.payment.checkout');
-});
+Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
+
 
 
 

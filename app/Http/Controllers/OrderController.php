@@ -12,61 +12,76 @@ class OrderController extends Controller
 {
     public function createOrder(Request $request)
     {
-        $product = [
-            'id' => 1,
-            'name' => 'Course - Belajar Bahasa Pemrograman Python',
-            'price' => 150000
+        $products = [
+            [
+                'id' => 1,
+                'name' => 'Course - Belajar Bahasa Pemrograman Python',
+                'price' => 500000
+            ],
+            [
+                'id' => 2,
+                'name' => 'Course - Belajar Laravel',
+                'price' => 600000
+            ]
         ];
+
+        $orderId = uniqid();
+        $user = Auth::user();
+
+        $itemDetails = [];
+        $grossAmount = 0;
+
+        foreach ($products as $product) {
+            $itemDetails[] = [
+                'id' => $product['id'],
+                'price' => $product['price'],
+                'quantity' => 1,
+                'name' => $product['name'],
+            ];
+            $grossAmount += $product['price'];
+        }
 
         Config::$serverKey = config('services.midtrans.server_key');
         Config::$isProduction = config('services.midtrans.is_production');
         Config::$isSanitized = config('services.midtrans.is_sanitized');
         Config::$is3ds = config('services.midtrans.is_3ds');
 
-        $orderId = uniqid();
-        $user = Auth::user();
-
         $params = [
             'transaction_details' => [
                 'order_id' => $orderId,
-                'gross_amount' => $product['price'],
+                'gross_amount' => $grossAmount,
             ],
-            'item_details' => [
-                [
-                    'id' => $product['id'],
-                    'price' => $product['price'],
-                    'quantity' => 1,
-                    'name' => $product['name'],
-                ],
-            ],
+            'item_details' => $itemDetails,
             'customer_details' => [
                 'first_name' => $user->name,
                 'last_name' => '',
                 'email' => $user->email,
-                'phone' => $user->phone, // Pastikan kolom phone ada di tabel users
+                'phone' => $user->phone,
             ],
         ];
 
         try {
             $snapToken = Snap::getSnapToken($params);
 
-            // Simpan data pembelian ke database
-            Order::create([
-                'order_id' => $orderId,
-                'product_name' => $product['name'],
-                'price' => $product['price'],
-                'customer_name' => $user->name,
-                'customer_email' => $user->email,
-                'status' => 'pending',
-                'customer_id' => $user->id,
-                'payment_method' => null,
-            ]);
+            foreach ($products as $product) {
+                Order::create([
+                    'order_id' => $orderId,
+                    'product_name' => $product['name'],
+                    'price' => $product['price'],
+                    'customer_name' => $user->name,
+                    'customer_email' => $user->email,
+                    'status' => 'pending',
+                    'customer_id' => $user->id,
+                    'payment_method' => null,
+                ]);
+            }
 
             return response()->json(['success' => true, 'snap_token' => $snapToken, 'order_id' => $orderId]);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
         }
     }
+
 
     public function getOrderStatus()
     {
@@ -100,4 +115,37 @@ class OrderController extends Controller
         $orderList = \App\Models\Order::all();
         return view('pages.profile.riwayatTransaksi', compact('orderList'));
     }
+    
+    public function checkout(Request $request)
+    {
+        $productId = $request->query('id'); // Ambil ID dari query parameter
+
+        // Daftar produk
+        $products = [
+            [
+                'id' => 1,
+                'name' => 'Belajar Bahasa Pemrograman Python',
+                'price' => 500000
+            ],
+            [
+                'id' => 2,
+                'name' => 'Belajar Laravel',
+                'price' => 600000
+            ]
+        ];
+
+        // Cari produk berdasarkan ID
+        $product = collect($products)->firstWhere('id', $productId);
+
+        // Jika produk tidak ditemukan
+        if (!$product) {
+            return abort(404); // atau kembali dengan pesan error
+        }
+
+        // Kirim data produk ke view
+        return view('pages.payment.checkout', [
+            'product' => $product,
+            'productId' => $productId
+        ]);
+    } 
 }
