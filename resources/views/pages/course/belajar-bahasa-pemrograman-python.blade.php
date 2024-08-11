@@ -902,11 +902,9 @@
     <div class="z-50 fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 bottom-bar" style="height: 80px">
       <div class="flex items-center justify-between px-4 py-3 mt-2">
           <span class="text-lg font-bold text-black dark:text-white ml-4">Rp. 150.000</span>
-          <a href="{{ route('checkout', ['id' => 1]) }}" class="">
-            <button id="checkout-button-mobile" class="px-4 py-2 font-semibold text-md text-white bg-blue-700 rounded mr-4" style="border-radius:50px; flex-shrink: 0;">
-                Gabung Kelas
-            </button>
-          </a>
+          <button id="checkout-button-mobile" class="px-4 py-2 font-semibold text-md text-white bg-blue-700 rounded mr-4" style="border-radius:50px; flex-shrink: 0;">
+              Gabung Kelas
+          </button>
           <button id="success-link-mobile" class="px-4 py-2 font-semibold text-md text-white bg-green-500 rounded mr-4 hidden" style="border-radius:50px; flex-shrink: 0;">
               Lanjut Belajar
           </button>

@@ -11,6 +11,7 @@ use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\ProfileUpdateController;
 use App\Http\Controllers\DataPribadiController;
 use App\Http\Controllers\PersonalDataController;
+use App\Http\Controllers\CheckoutController;
 use App\Models\Product;
 
 /*
@@ -97,8 +98,8 @@ Route::get('/pengaturan', function(){
 Route::get('/data-pribadi', [DataPribadiController::class, 'showProvinsi']);
 Route::get('/cities', [DataPribadiController::class, 'getCities']);
 Route::get('/postal-codes', [DataPribadiController::class, 'getPostalCodes']);
-Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
-Route::post('/apply-discount', [OrderController::class, 'applyDiscount'])->name('apply.discount');
+Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+Route::post('/apply-discount', [CheckoutController::class, 'applyDiscount'])->name('apply.discount');
 
 
 
