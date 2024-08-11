@@ -320,5 +320,51 @@
             }
         });
     </script>
+    <script>
+        const inputField = document.getElementById('provinsi-input');
+        const dropdown = document.getElementById('dropdown');
+    
+        // Fetch provinces and populate the dropdown
+        async function fetchProvinces(query = '') {
+            const response = await fetch('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json');
+            const provinces = await response.json();
+            const filteredProvinces = provinces.filter(province => province.name.toLowerCase().includes(query.toLowerCase()));
+            const dropdownList = dropdown.querySelector('ul');
+            
+            // Clear previous list items
+            dropdownList.innerHTML = '';
+    
+            // Populate dropdown with filtered provinces
+            filteredProvinces.forEach(province => {
+                const listItem = document.createElement('li');
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'inline-flex w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white';
+                button.textContent = province.name;
+                button.addEventListener('click', function() {
+                    inputField.value = province.name;
+                    dropdown.classList.add('hidden');
+                });
+                listItem.appendChild(button);
+                dropdownList.appendChild(listItem);
+            });
+    
+            // Show or hide dropdown based on query
+            dropdown.classList.toggle('hidden', filteredProvinces.length === 0);
+        }
+    
+        // Event listener for input field
+        inputField.addEventListener('input', function() {
+            fetchProvinces(this.value);
+        });
+    
+        // Hide dropdown if click outside
+        document.addEventListener('click', function(event) {
+            if (!inputField.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    </script>
+    
 </body>
 </html>
