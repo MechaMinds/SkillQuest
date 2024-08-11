@@ -93,7 +93,7 @@ Route::get('/pengaturan', function(){
 });
 Route::get('/data-pribadi', [DataPribadiController::class, 'showProvinsi']);
 Route::get('/cities', [DataPribadiController::class, 'getCities']);
-
+Route::get('/postal-codes', [DataPribadiController::class, 'getPostalCodes']);
 
 
 

@@ -33,4 +33,21 @@ class DataPribadiController extends Controller
 
         return response()->json([]);
     }
+
+    public function getPostalCodes(Request $request)
+    {
+        $cityId = $request->query('city_id');
+        if ($cityId) {
+            // Ganti URL API dan API key sesuai dengan kebutuhan Anda
+            $response = Http::withHeaders([
+                'key' => 'b3b9be5348ad8db5d4cafbe4a671e1da',
+            ])->get("https://api.rajaongkir.com/starter/city?id={$cityId}");
+
+            // Pastikan response JSON sesuai dengan format yang Anda butuhkan
+            $data = $response->json();
+            return response()->json($data);
+        }
+
+        return response()->json([]);
+    }
 }

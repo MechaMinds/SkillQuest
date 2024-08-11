@@ -111,13 +111,22 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="sm:mt-5 lg:mt-0 mt-5 kotaKabupaten">
-                                <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Kode Pos<span class="text-red-500">*</span></h1>                    
+
+                            <!-- Kode Pos Dropdown -->
+                            <div class="sm:mt-5 lg:mt-0 mt-5 kodePos relative">
+                                <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Kode Pos <span class="text-red-500">*</span></h1>
                                 <div class="relative max-w-sm">
-                                    <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"placeholder="Ketik Kode Pos" >
-                                </div>  
-                            </div>  
-                        </div> 
+                                    <select 
+                                        id="kode-pos-select" 
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        disabled
+                                    >
+                                        <option value="">Pilih Kode Pos</option>
+                                        <!-- Options will be populated dynamically -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         <div class="w-full mt-5">
                             <div class="sm:mt-5 lg:mt-0 mt-5 Alamat">
                                 <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Alamat Tempat Tinggal <span class="text-red-500">*</span></h1>                    

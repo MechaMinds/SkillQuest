@@ -324,12 +324,14 @@
         document.addEventListener('DOMContentLoaded', function () {
             const provinsiSelect = document.getElementById('provinsi-select');
             const kotaSelect = document.getElementById('kota-select');
-        
+            const kodePosSelect = document.getElementById('kode-pos-select');
+    
             // Event listener for province selection
             provinsiSelect.addEventListener('change', function() {
                 const provinceId = this.value;
                 if (provinceId) {
                     kotaSelect.disabled = false; // Enable kota dropdown
+                    kodePosSelect.disabled = true; // Disable kode pos dropdown
                     fetch(`/cities?province_id=${provinceId}`)
                         .then(response => response.json())
                         .then(data => {
@@ -338,7 +340,6 @@
                                 data.forEach(city => {
                                     const option = document.createElement('option');
                                     option.value = city.city_id;
-                                    // Format "Kota" or "Kabupaten" to the city name
                                     option.textContent = `${city.city_name} (${city.type})`;
                                     kotaSelect.appendChild(option);
                                 });
@@ -353,9 +354,40 @@
                 } else {
                     kotaSelect.disabled = true; // Disable kota dropdown
                     kotaSelect.innerHTML = '<option value="">Pilih Kota atau Kabupaten</option>'; // Reset kota dropdown
+                    kodePosSelect.disabled = true; // Disable kode pos dropdown
+                    kodePosSelect.innerHTML = '<option value="">Pilih Kode Pos</option>'; // Reset kode pos dropdown
+                }
+            });
+    
+            // Event listener for city selection
+            kotaSelect.addEventListener('change', function() {
+                const cityId = this.value;
+                if (cityId) {
+                    kodePosSelect.disabled = false; // Enable kode pos dropdown
+                    fetch(`/postal-codes?city_id=${cityId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            kodePosSelect.innerHTML = '<option value="">Pilih Kode Pos</option>'; // Reset kode pos dropdown
+                            if (data && data.rajaongkir && data.rajaongkir.results) {
+                                const postalCode = data.rajaongkir.results.postal_code;
+                                const option = document.createElement('option');
+                                option.value = postalCode;
+                                option.textContent = postalCode;
+                                kodePosSelect.appendChild(option);
+                            } else {
+                                const option = document.createElement('option');
+                                option.value = "";
+                                option.textContent = "Tidak ada data kode pos";
+                                kodePosSelect.appendChild(option);
+                            }
+                        })
+                        .catch(error => console.error('Error fetching postal codes:', error));
+                } else {
+                    kodePosSelect.disabled = true; // Disable kode pos dropdown
+                    kodePosSelect.innerHTML = '<option value="">Pilih Kode Pos</option>'; // Reset kode pos dropdown
                 }
             });
         });
-    </script>               
+    </script>            
 </body>
 </html>
