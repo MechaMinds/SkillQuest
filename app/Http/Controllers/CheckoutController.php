@@ -10,80 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
-
-    public function createOrder(Request $request)
-    {
-        $products = [
-            [
-                'id' => 1,
-                'name' => 'Belajar Bahasa Pemrograman Python',
-                'price' => 500000
-            ],
-            [
-                'id' => 2,
-                'name' => 'Belajar Laravel',
-                'price' => 600000
-            ]
-        ];
-
-        $orderId = uniqid();
-        $user = Auth::user();
-
-        $itemDetails = [];
-        $grossAmount = 0;
-
-        foreach ($products as $product) {
-            $itemDetails[] = [
-                'id' => $product['id'],
-                'price' => $product['price'],
-                'quantity' => 1,
-                'name' => $product['name'],
-            ];
-            $grossAmount += $product['price'];
-        }
-
-        Config::$serverKey = config('services.midtrans.server_key');
-        Config::$isProduction = config('services.midtrans.is_production');
-        Config::$isSanitized = config('services.midtrans.is_sanitized');
-        Config::$is3ds = config('services.midtrans.is_3ds');
-
-        $params = [
-            'transaction_details' => [
-                'order_id' => $orderId,
-                'gross_amount' => $grossAmount,
-            ],
-            'item_details' => $itemDetails,
-            'customer_details' => [
-                'first_name' => $user->name,
-                'last_name' => '',
-                'email' => $user->email,
-                'phone' => $user->phone,
-            ],
-        ];
-
-        try {
-            $snapToken = Snap::getSnapToken($params);
-
-            foreach ($products as $product) {
-                Order::create([
-                    'order_id' => $orderId,
-                    'product_name' => $product['name'],
-                    'price' => $product['price'],
-                    'customer_name' => $user->name,
-                    'customer_email' => $user->email,
-                    'status' => 'pending',
-                    'customer_id' => $user->id,
-                    'payment_method' => null,
-                ]);
-            }
-
-            return response()->json(['success' => true, 'snap_token' => $snapToken, 'order_id' => $orderId]);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
-        }
-    }
-
-
     public function getOrderStatus()
     {
         $userId = Auth::id();
@@ -111,11 +37,6 @@ class CheckoutController extends Controller
 
         return response()->json(['message' => 'Order status updated']);
     }
-    public function showOrders()
-    {
-        $orderList = \App\Models\Order::all();
-        return view('pages.profile.riwayatTransaksi', compact('orderList'));
-    }
     
     public function checkout(Request $request)
     {
@@ -139,34 +60,30 @@ class CheckoutController extends Controller
         // Cari produk berdasarkan ID
         $product = collect($products)->firstWhere('id', $productId);
 
-        // Jika produk tidak ditemukan
         if (!$product) {
-            return abort(404); // atau kembali dengan pesan error
+            return redirect()->route('home')->with('error', 'Produk tidak ditemukan.');
         }
 
-        // Hitung PPN
-        $vatRate = 0.11; // 11%
+        // Menghitung harga setelah diskon
+        $discountAmount = 0;
+        if ($discountCode === 'DISKON10') { // Contoh pengecekan kode diskon
+            $discountAmount = $product['price'] * 0.1; // Diskon 10%
+        }
+
+        // Menghitung PPN (misalnya 11%)
+        $vatRate = 0.11;
         $vatAmount = $product['price'] * $vatRate;
 
-        // Hitung harga sebelum diskon
-        $totalPriceBeforeDiscount = $product['price'] + $vatAmount;
+        // Menghitung harga total
+        $totalPrice = $product['price'] + $vatAmount - $discountAmount;
 
-        // Cek kode diskon dan terapkan diskon
-        $discountRate = 0;
-        if ($discountCode === 'BELAJARPYTHONASIK') {
-            $discountRate = 0.45;
-        }
-        $discountAmount = $totalPriceBeforeDiscount * $discountRate;
-        $totalPrice = $totalPriceBeforeDiscount - $discountAmount;
-
-        // Kirim data produk dan harga ke view
         return view('pages.payment.checkout', [
             'product' => $product,
             'productId' => $productId,
-            'vatAmount' => $vatAmount,
-            'totalPrice' => $totalPrice,
+            'discountCode' => $discountCode,
             'discountAmount' => $discountAmount,
-            'discountCode' => $discountCode, // Kirim kode diskon ke view
+            'vatAmount' => $vatAmount,
+            'totalPrice' => $totalPrice
         ]);
     }
 

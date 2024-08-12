@@ -12,53 +12,89 @@ class OrderController extends Controller
 {
     public function createOrder(Request $request)
     {
-        $product = [
-            'id' => 1,
-            'name' => 'Course - Belajar Bahasa Pemrograman Python',
-            'price' => 150000
+        $productId = $request->input('product_id');
+
+        // Daftar produk
+        $products = [
+            [
+                'id' => 1,
+                'name' => 'Belajar Bahasa Pemrograman Python',
+                'price' => 500000
+            ],
+            [
+                'id' => 2,
+                'name' => 'Belajar Laravel',
+                'price' => 600000
+            ]
         ];
 
+        // Cari produk berdasarkan ID
+        $product = collect($products)->firstWhere('id', $productId);
+
+        if (!$product) {
+            return response()->json(['success' => false, 'message' => 'Produk tidak ditemukan.'], 404);
+        }
+
+        // Menghitung harga setelah diskon
+        $discountCode = $request->session()->get('discount_code', '');
+        $discountAmount = 0;
+        if ($discountCode === 'DISKON10') { // Contoh pengecekan kode diskon
+            $discountAmount = $product['price'] * 0.1; // Diskon 10%
+        }
+
+        // Menghitung PPN (misalnya 11%)
+        $vatRate = 0.11;
+        $vatAmount = $product['price'] * $vatRate;
+
+        // Menghitung harga total
+        $totalPrice = $product['price'] + $vatAmount - $discountAmount;
+
+        $orderId = uniqid();
+        $user = Auth::user();
+
+        // Detail item, dengan total price yang dihitung di atas
+        $itemDetails = [
+            [
+                'id' => $product['id'],
+                'price' => $totalPrice, // Menggunakan total price sebagai harga item
+                'quantity' => 1,
+                'name' => $product['name'],
+            ]
+        ];
+
+        // Konfigurasi Midtrans
         Config::$serverKey = config('services.midtrans.server_key');
         Config::$isProduction = config('services.midtrans.is_production');
         Config::$isSanitized = config('services.midtrans.is_sanitized');
         Config::$is3ds = config('services.midtrans.is_3ds');
 
-        $orderId = uniqid();
-        $user = Auth::user();
-
         $params = [
             'transaction_details' => [
                 'order_id' => $orderId,
-                'gross_amount' => $product['price'],
+                'gross_amount' => $totalPrice, // Gunakan total price sebagai gross amount
             ],
-            'item_details' => [
-                [
-                    'id' => $product['id'],
-                    'price' => $product['price'],
-                    'quantity' => 1,
-                    'name' => $product['name'],
-                ],
-            ],
+            'item_details' => $itemDetails,
             'customer_details' => [
                 'first_name' => $user->name,
                 'last_name' => '',
                 'email' => $user->email,
-                'phone' => $user->phone, // Pastikan kolom phone ada di tabel users
+                'phone' => $user->phone,
             ],
         ];
 
         try {
             $snapToken = Snap::getSnapToken($params);
 
-            // Simpan data pembelian ke database
+            // Simpan order ke database
             Order::create([
                 'order_id' => $orderId,
                 'product_name' => $product['name'],
-                'price' => $product['price'],
+                'price' => $totalPrice, // Simpan total price sebagai harga
                 'customer_name' => $user->name,
                 'customer_email' => $user->email,
-                'status' => 'pending', // Status awal
-                'customer_id' => $user->id, // Menyimpan ID pengguna yang sedang login
+                'status' => 'pending',
+                'customer_id' => $user->id,
+                'payment_method' => null,
             ]);
 
             return response()->json(['success' => true, 'snap_token' => $snapToken, 'order_id' => $orderId]);
@@ -66,6 +102,7 @@ class OrderController extends Controller
             return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
         }
     }
+
 
     public function getOrderStatus()
     {
@@ -93,5 +130,10 @@ class OrderController extends Controller
         }
 
         return response()->json(['message' => 'Order status updated']);
+    }
+    public function showOrders()
+    {
+        $orderList = \App\Models\Order::all();
+        return view('pages.profile.riwayatTransaksi', compact('orderList'));
     }
 }
