@@ -20,7 +20,14 @@
         <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] py-8 lg:py-16">
             <div class="px-4 mx-auto max-w-screen-xl text-left z-10 relative"> 
                 <div class="mx-auto max-w-5xl" style="margin-top: 150px">
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Pembayaran</h2>
+                    <a href="{{ route('reset.discount', ['id' => $productId]) }}">
+                        <div style="width: 150px" class="title flex flex-row gap-2 items-center justify-center py-3 px-3 rounded-xl text-gray-900 focus:outline-none bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4">
+                                <path class="dark:fill-white" fill="rgb(55 65 81)" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+                            </svg>
+                            <p class="dark:text-white text-gray-900 font-semibold">Kembali</p>
+                        </div>
+                    </a>
                     <div class="mt-6 sm:mt-8 sm:flex lg:grid lg:grid-cols-2 lg:gap-12">
                         <div class="w-full rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:max-w-xl">
                             <div class="flex flex-col items-start gap-4 p-6">
@@ -73,7 +80,7 @@
                                 <form action="{{ route('apply.discount') }}" method="POST">
                                     @csrf
                                     <label for="discount_code" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Kode Diskon</label>
-                                    <input type="text" id="discount_code" name="discount_code" aria-describedby="helper-text-explanation" placeholder="Masukkan kode diskon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ old('discount_code', $discountCode) }}">
+                                    <input type="text" id="discount_code" name="discount_code" aria-describedby="helper-text-explanation" placeholder="Masukkan kode diskon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                     <input type="hidden" name="product_id" value="{{ $productId }}">
                                     <button type="submit" class="mt-2 w-full px-4 py-3 font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Gunakan Kode Diskon</button>
                                 </form>
@@ -108,6 +115,7 @@
                                     <dd class="text-xl font-bold text-gray-900 dark:text-white">Rp. {{ number_format($totalPrice ?? 0, 0, ',', '.') }}</dd>
                                 </dl>
                                 <button type="button" id="checkout-button" class="w-full px-4 py-3 font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700" style="margin-top: 30px">Bayar & Gabung Kelas</button>
+                                <button type="button" id="success-link" class="hidden w-full px-4 py-3 font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700" style="margin-top: 30px">Bayar & Gabung Kelas</button>
                             </div>
                         </div>                                                                                                                                                                                              
                     </div>                    
@@ -137,118 +145,58 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script> 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}"></script>
+        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}"></script>       
         <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const checkoutButtonMobile = document.getElementById('checkout-button-mobile');
-            const successLinkMobile = document.getElementById('success-link-mobile');
-
-            // Periksa status pembayaran dari database
-            axios.get('/order/status') // Endpoint API untuk memeriksa status pembayaran
-                .then(response => {
-                    const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
-                    if (paymentStatus === 'success') {
-                        checkoutButtonMobile.classList.add('hidden');
-                        successLinkMobile.classList.remove('hidden');
-                        successLinkMobile.addEventListener('click', function () {
-                            window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching payment status:', error);
-                });
-
-            checkoutButtonMobile.addEventListener('click', function () {
-                axios.post('/order', {
-                    product_id: 1
-                })
-                .then(response => {
-                    const snapToken = response.data.snap_token;
-                    window.snap.pay(snapToken, {
-                        onSuccess: function(result) {
-                            console.log(result);
-                            // Simpan status pembayaran dan ubah tombol
-                            axios.post('/order/update-status', {
-                                order_id: response.data.order_id,
-                                status: 'success'
-                            })
-                            .then(() => {
-                                checkoutButtonMobile.classList.add('hidden');
-                                successLinkMobile.classList.remove('hidden');
-                                successLinkMobile.addEventListener('click', function () {
-                                    window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                                });
-                            })
-                            .catch(error => {
-                                console.error('Error updating order status:', error);
-                            });
-                        },
-                        onPending: function(result) { console.log(result); },
-                        onError: function(result) { console.log(result); }
+            document.addEventListener('DOMContentLoaded', function () {
+                const checkoutButton = document.getElementById('checkout-button');
+                const successLink = document.getElementById('success-link');
+        
+                // Periksa status pembayaran dari database
+                axios.get('/order/status') // Endpoint API untuk memeriksa status pembayaran
+                    .then(response => {
+                        const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
+                        if (paymentStatus === 'success') {
+                            checkoutButton.classList.add('hidden');
+                            successLink.classList.remove('hidden');
+                            window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // Arahkan pengguna ke halaman yang diinginkan
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching payment status:', error);
                     });
-                })
-                .catch(error => {
-                    console.error('Error creating order:', error);
+        
+                checkoutButton.addEventListener('click', function () {
+                    axios.post('/order', {
+                        product_id: 1
+                    })
+                    .then(response => {
+                        const snapToken = response.data.snap_token;
+                        window.snap.pay(snapToken, {
+                            onSuccess: function(result) {
+                                console.log(result);
+                                // Simpan status pembayaran dan ubah tombol
+                                axios.post('/order/update-status', {
+                                    order_id: response.data.order_id,
+                                    status: 'success'
+                                })
+                                .then(() => {
+                                    checkoutButton.classList.add('hidden');
+                                    successLink.classList.remove('hidden');
+                                    window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // Arahkan pengguna ke halaman yang diinginkan
+                                })
+                                .catch(error => {
+                                    console.error('Error updating order status:', error);
+                                });
+                            },
+                            onPending: function(result) { console.log(result); },
+                            onError: function(result) { console.log(result); }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error creating order:', error);
+                    });
                 });
             });
-        });
-        </script>
-        <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const checkoutButton = document.getElementById('checkout-button');
-            const successLink = document.getElementById('success-link');
-
-            // Periksa status pembayaran dari database
-            axios.get('/order/status') // Endpoint API untuk memeriksa status pembayaran
-                .then(response => {
-                    const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
-                    if (paymentStatus === 'success') {
-                        checkoutButton.classList.add('hidden');
-                        successLink.classList.remove('hidden');
-                        successLink.addEventListener('click', function () {
-                            window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching payment status:', error);
-                });
-
-            checkoutButton.addEventListener('click', function () {
-                axios.post('/order', {
-                    product_id: 1
-                })
-                .then(response => {
-                    const snapToken = response.data.snap_token;
-                    window.snap.pay(snapToken, {
-                        onSuccess: function(result) {
-                            console.log(result);
-                            // Simpan status pembayaran dan ubah tombol
-                            axios.post('/order/update-status', {
-                                order_id: response.data.order_id,
-                                status: 'success'
-                            })
-                            .then(() => {
-                                checkoutButton.classList.add('hidden');
-                                successLink.classList.remove('hidden');
-                                successLink.addEventListener('click', function () {
-                                    window.location.href = '/course/belajar-bahasa-pemrograman-python/persiapan'; // URL yang sesuai
-                                });
-                            })
-                            .catch(error => {
-                                console.error('Error updating order status:', error);
-                            });
-                        },
-                        onPending: function(result) { console.log(result); },
-                        onError: function(result) { console.log(result); }
-                    });
-                })
-                .catch(error => {
-                    console.error('Error creating order:', error);
-                });
-            });
-        });
-        </script>
+        </script>        
     </body>
 </html>

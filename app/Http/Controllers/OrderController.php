@@ -16,16 +16,8 @@ class OrderController extends Controller
 
         // Daftar produk
         $products = [
-            [
-                'id' => 1,
-                'name' => 'Belajar Bahasa Pemrograman Python',
-                'price' => 500000
-            ],
-            [
-                'id' => 2,
-                'name' => 'Belajar Laravel',
-                'price' => 600000
-            ]
+            ['id' => 1, 'name' => 'Belajar Bahasa Pemrograman Python', 'price' => 500000],
+            ['id' => 2, 'name' => 'Belajar Laravel', 'price' => 600000]
         ];
 
         // Cari produk berdasarkan ID
@@ -37,9 +29,11 @@ class OrderController extends Controller
 
         // Menghitung harga setelah diskon
         $discountCode = $request->session()->get('discount_code', '');
+        $discount = \App\Models\Discount::where('code', $discountCode)->first();
         $discountAmount = 0;
-        if ($discountCode === 'DISKON10') { // Contoh pengecekan kode diskon
-            $discountAmount = $product['price'] * 0.1; // Diskon 10%
+
+        if ($discount) {
+            $discountAmount = $product['price'] * ($discount->amount / 100); // Potongan diskon dalam persen
         }
 
         // Menghitung PPN (misalnya 11%)
@@ -80,6 +74,7 @@ class OrderController extends Controller
                 'email' => $user->email,
                 'phone' => $user->phone,
             ],
+            'return_url' => url('/course/belajar-bahasa-pemrograman-python/persiapan'), // URL tujuan setelah pembayaran berhasil
         ];
 
         try {
@@ -96,6 +91,9 @@ class OrderController extends Controller
                 'customer_id' => $user->id,
                 'payment_method' => null,
             ]);
+
+            // Reset kode diskon di session
+            $request->session()->forget('discount_code');
 
             return response()->json(['success' => true, 'snap_token' => $snapToken, 'order_id' => $orderId]);
         } catch (\Exception $e) {
@@ -127,10 +125,16 @@ class OrderController extends Controller
         if ($order) {
             $order->status = $status;
             $order->save();
+
+            if ($status === 'success') {
+                // Redirection logic
+                return response()->json(['redirect' => '/course/belajar-bahasa-pemrograman-python/persiapan']);
+            }
         }
 
         return response()->json(['message' => 'Order status updated']);
     }
+
     public function showOrders()
     {
         $orderList = \App\Models\Order::all();

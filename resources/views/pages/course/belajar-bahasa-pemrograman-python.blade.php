@@ -103,9 +103,11 @@
               </button>
             </a>
             <!-- Tombol Lanjut Kelas -->
-            <button id="continue-button" type="button" class="w-full mt-6 py-6 font-medium text-white bg-green-500 rounded hidden" style="border-radius: 0px 0px 20px 20px; font-size:22px">
-              Lanjut Belajar
-            </button>
+            <a href="/course/belajar-bahasa-pemrograman-python/persiapan" class="">
+              <button id="continue-button" type="button" class="w-full mt-6 py-6 font-medium text-white bg-green-500 rounded hidden" style="border-radius: 0px 0px 20px 20px; font-size:22px">
+                Lanjut Belajar
+              </button>
+            </a>
           </div>          
         </div>
       </div>
@@ -907,9 +909,11 @@
                 Gabung Kelas
             </button>
           </a>
-          <button id="continue-buttonMobile" class="px-4 py-2 font-semibold text-md text-white bg-green-500 rounded mr-4 hidden" style="border-radius:50px; flex-shrink: 0;">
+          <a href="/course/belajar-bahasa-pemrograman-python/persiapan" class="">
+            <button id="continue-buttonMobile" class="px-4 py-2 font-semibold text-md text-white bg-green-500 rounded mr-4 hidden" style="border-radius:50px; flex-shrink: 0;">
               Lanjut Belajar
           </button>
+          </a>
       </div>
     </div>
     <div data-dial-init class="z-50 fixed start-6 group" style="bottom: 100px">

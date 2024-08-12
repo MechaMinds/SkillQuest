@@ -98,8 +98,12 @@ Route::get('/pengaturan', function(){
 Route::get('/data-pribadi', [DataPribadiController::class, 'showProvinsi']);
 Route::get('/cities', [DataPribadiController::class, 'getCities']);
 Route::get('/postal-codes', [DataPribadiController::class, 'getPostalCodes']);
-Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
-Route::post('/apply-discount', [CheckoutController::class, 'applyDiscount'])->name('apply.discount');
+Route::get('/reset-discount/{id}', [CheckoutController::class, 'resetDiscount'])->name('reset.discount');
+Route::middleware(['check.checkout'])->group(function () {
+    Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+    Route::post('/apply-discount', [CheckoutController::class, 'applyDiscount'])->name('apply.discount');
+});
+
 
 
 
