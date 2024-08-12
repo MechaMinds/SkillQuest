@@ -137,7 +137,9 @@ class OrderController extends Controller
 
     public function showOrders()
     {
-        $orderList = \App\Models\Order::all();
+        $userId = Auth::id(); // Get the logged-in user's ID
+        $orderList = Order::where('customer_id', $userId)->get(); // Get orders for the logged-in user
+
         return view('pages.profile.riwayatTransaksi', compact('orderList'));
     }
 }

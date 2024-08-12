@@ -9,20 +9,33 @@
 <body>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const userId = {{ Auth::user()->id }}; // Replace this with the actual logged-in user's ID
             const materi = ["pengenalanKelas", "mekanismeBelajar", "forumDiskusi"];
             let currentIndex = 0;
 
+            function getProgressKey() {
+                return `progress_${userId}`;
+            }
+
+            function getVisitedMateriKey() {
+                return `visitedMateri_${userId}`;
+            }
+
+            function getTotalMateriKey() {
+                return `totalProgress_${userId}`;
+            }
+
             function getProgress() {
-                let progress = localStorage.getItem("progress");
+                let progress = localStorage.getItem(getProgressKey());
                 return progress ? parseInt(progress) : 0; // Default to 0% if not set
             }
 
-            function getTotalMateri(){
-                let totalProgress = localStorage.getItem("totalProgress");
-                return totalProgress ? parseInt(totalProgress) : 0; 
+            function getTotalMateri() {
+                let totalProgress = localStorage.getItem(getTotalMateriKey());
+                return totalProgress ? parseInt(totalProgress) : 0;
             }
 
-            function updateTotalMateri(){
+            function updateTotalMateri() {
                 const totalProg = getTotalMateri();
                 document.getElementById('progressCount').innerText = `${totalProg}/3`;
             }
@@ -34,16 +47,16 @@
             }
 
             function setProgress(progress) {
-                localStorage.setItem("progress", progress);
+                localStorage.setItem(getProgressKey(), progress);
             }
 
             function getVisitedMateri() {
-                let visited = localStorage.getItem("visitedMateri");
+                let visited = localStorage.getItem(getVisitedMateriKey());
                 return visited ? JSON.parse(visited) : [];
             }
 
             function setVisitedMateri(visited) {
-                localStorage.setItem("visitedMateri", JSON.stringify(visited));
+                localStorage.setItem(getVisitedMateriKey(), JSON.stringify(visited));
             }
 
             function updateMateri() {
