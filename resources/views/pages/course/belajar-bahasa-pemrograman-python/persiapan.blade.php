@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Pintar Path ⸺ Solusi Belajar IT</title>
         <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
         <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
         <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
@@ -93,16 +94,16 @@
                     <h2 class="text-xl font-semibold">Daftar Modul</h2>
                     <svg id="asideButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-9 h-9 cursor-pointer px-2 py-2">
                         <path class="dark:fill-white" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
-                    </svg>
+                    </svg>      
                 </div>
                 <div class="dark:bg-gray-700 bg-gray-200 py-4 px-4">
-                    <span id="progressText" class="font-semibold text-lg">5% Progress</span>
+                    <span id="progressText" class="font-semibold text-lg">0% Progress</span>
                     <div class="bar mt-2">
                         <div class="w-full bg-gray-400 rounded-full h-1.5 dark:bg-gray-800">
-                            <div id="progressBar" class="bg-blue-600 h-1.5 rounded-full" style="width: 5%"></div>
+                            <div id="progressBar" class="bg-blue-600 h-1.5 rounded-full" style="width: 0%"></div>
                         </div>
                     </div>                 
-                </div>
+                </div>                                
                 <div class="space-y-4 py-4 px-4">
                     <div id="persiapanBelajar">
                         <button id="dropdownbuttonDefault" class="flex justify-between w-full text-left text-foreground">
@@ -144,32 +145,20 @@
                                 </svg>
                                 <span class="text-lg font-semibold">Sesi 1</span>
                             </div>
-                            <span class="text-muted-foreground">0/6</span>
+                            <span class="text-muted-foreground">0/2</span>
                         </button>
                         <ul id="dropdownMenu" class="mt-2 space-y-2 hidden" style="padding-left: 18px">
-                            <li class="flex items-center text-foreground">
-                                <span class="text-blue-500">⭘</span>
-                                <span class="ml-2">Persetujuan Hak Cipta <span class="text-muted-foreground">(Gratis)</span></span>
+                            <li class="flex items-center text-foreground" id="item4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="status4">
+                                    <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                                </svg>
+                                <span class="ml-2">Hello World Python</span>
                             </li>
-                            <li class="flex items-center text-foreground">
-                                <span class="text-blue-500">⭘</span>
-                                <span class="ml-2">Pengenalan Kelas <span class="text-muted-foreground">(Gratis)</span></span>
-                            </li>
-                            <li class="flex items-center text-foreground">
-                                <span class="text-blue-500">⭘</span>
-                                <span class="ml-2">Mekanisme Belajar <span class="text-muted-foreground">(Gratis)</span></span>
-                            </li>
-                            <li class="flex items-center text-foreground">
-                                <span class="text-blue-500">⭘</span>
-                                <span class="ml-2">Forum Diskusi <span class="text-muted-foreground">(Gratis)</span></span>
-                            </li>
-                            <li class="flex items-center text-foreground">
-                                <span class="text-blue-500">⭘</span>
-                                <span class="ml-2">Mekanisme Belajar <span class="text-muted-foreground">(Gratis)</span></span>
-                            </li>
-                            <li class="flex items-center text-foreground">
-                                <span class="text-blue-500">⭘</span>
-                                <span class="ml-2">Forum Diskusi <span class="text-muted-foreground">(Gratis)</span></span>
+                            <li class="flex items-center text-foreground" id="item5">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-3 h-3" id="status5">
+                                    <path fill="#146ffe" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/>
+                                </svg>
+                                <span class="ml-2">Quiz 1</span>
                             </li>
                             <hr class="my-8 bg-gray-200 border-0 dark:bg-gray-700 h-px">
                         </ul>
@@ -183,7 +172,7 @@
             </button>
             <!-- Desktop Sidebar Selesai -->
             <div class="contentSection flex-1 overflow-y-auto">
-                <div id="pengenalanKelas">
+                <div id="pengenalanKelas" data-materi-id="1">
                     <h1 class="text-4xl font-bold mb-6">Pengenalan Kelas Belajar Bahasa Pemrograman Python</h1>
                     <section class="mb-8">
                         <p class="mb-4 font-small text-1xl">
@@ -220,7 +209,7 @@
                         </p>
                     </section>
                 </div>
-                <div id="mekanismeBelajar" class="hidden">
+                <div id="mekanismeBelajar" data-materi-id="2" class="hidden">
                     <h1 class="text-4xl font-bold mb-6">Mekanisme Belajar</h1>
                     <section class="mb-8">
                         <p class="mb-4 font-small text-1xl">
@@ -234,7 +223,7 @@
                         </p>
                     </section>
                 </div>
-                <div id="forumDiskusi" class="hidden">
+                <div id="forumDiskusi" data-materi-id="3" class="hidden">
                     <h1 class="text-4xl font-bold mb-6">Forum Diskusi</h1>
                     <section class="mb-8">
                         <p class="mb-4 font-small text-1xl">
@@ -247,6 +236,55 @@
                             4. Forum Diskusi: Tempat untuk bertanya dan berdiskusi dengan instruktur dan sesama peserta kursus.<br>
                         </p>
                     </section>
+                </div>
+                <div id="helloWorld" data-materi-id="3" class="hidden">
+                    <h1 class="text-4xl font-bold mb-6">Hello World Python</h1>
+                    <section class="mb-8">
+                        <p class="mb-4 text-2xl font-medium text-1xl">
+                            Apa itu Python?
+                        </p>
+                        <p class="mb-4 text-1xl font-medium text-1xl">
+                            Python adalah bahasa pemrograman yang populer. Bahasa ini diciptakan oleh Guido van Rossum dan dirilis pada tahun 1991, Python digunakan untuk:
+                        </p>
+                        <p class="mb-4 font-small text-1xl pl-5">
+                            1. Pengembangan web (sisi server),<br>
+                            2. Pengembangan perangkat lunak<br>
+                            3. Matematika,<br>
+                            4. Skrip sistem..<br>
+                        </p>
+                        <p class="mb-4 text-2xl font-medium text-1xl">
+                            Apa yang bisa dilakukan Python?
+                        </p>
+                        <p class="mb-4 font-small text-1xl pl-5">
+                            1. Pengembangan web (sisi server),<br>
+                            2. Pengembangan perangkat lunak<br>
+                            3. Matematika,<br>
+                            4. Skrip sistem..<br>
+                        </p>
+                    </section>
+                </div>
+                <div id="quiz1" data-materi-id="3" class="hidden">
+                    <h1 class="text-4xl font-bold mb-6">Quiz 1</h1>
+                    <section class="mb-8">
+                        <p class="mb-4 text-2xl font-medium text-1xl">
+                            Peraturan Kuis
+                        </p>
+                        <p class="mb-4 text-1xl font-medium text-1xl">
+                            Sebelum memulai kuis, harap perhatikan peraturan berikut:
+                        </p>
+                        <p class="mb-4 font-small text-1xl pl-5">
+                            1. Bacalah setiap pertanyaan dengan cermat.<br>
+                            2. Jawab setiap pertanyaan sesuai dengan pengetahuan Anda.<br>
+                            3. Tidak ada batasan waktu untuk setiap pertanyaan, namun pastikan Anda menyelesaikan kuis dalam waktu yang ditentukan.<br>
+                            4. Setelah menyelesaikan kuis, pastikan untuk mengklik tombol 'Kirim' untuk menyimpan jawaban Anda.<br>
+                            5. Hasil kuis akan ditampilkan setelah Anda menyelesaikan seluruh kuis.<br>
+                        </p>
+                        <div class="mt-6">
+                            <a href="/course/belajar-bahasa-pemrograman-python/quiz1" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+                                Mulai Kuis
+                            </a>
+                        </div>
+                    </section>  
                 </div>
             </div>
         </div>           

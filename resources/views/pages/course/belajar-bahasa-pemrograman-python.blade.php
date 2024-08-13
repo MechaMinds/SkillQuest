@@ -6,6 +6,7 @@
     <title>Pintar Path ⸺ Solusi Belajar IT</title>
     <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> -->
   </head>
@@ -105,7 +106,7 @@
             <!-- Tombol Lanjut Kelas -->
             <a href="/course/belajar-bahasa-pemrograman-python/persiapan" class="">
               <button id="continue-button" type="button" class="w-full mt-6 py-6 font-medium text-white bg-green-500 rounded hidden" style="border-radius: 0px 0px 20px 20px; font-size:22px">
-                Lanjut Belajar
+                  Lanjut Belajar
               </button>
             </a>
           </div>          
@@ -909,11 +910,9 @@
                 Gabung Kelas
             </button>
           </a>
-          <a href="/course/belajar-bahasa-pemrograman-python/persiapan" class="">
-            <button id="continue-buttonMobile" class="px-4 py-2 font-semibold text-md text-white bg-green-500 rounded mr-4 hidden" style="border-radius:50px; flex-shrink: 0;">
-              Lanjut Belajar
+          <button id="continue-button" type="button" class="w-full mt-6 py-6 font-medium text-white bg-green-500 rounded hidden" style="border-radius: 0px 0px 20px 20px; font-size:22px">
+            Lanjut Belajar
           </button>
-          </a>
       </div>
     </div>
     <div data-dial-init class="z-50 fixed start-6 group" style="bottom: 100px">
@@ -928,6 +927,8 @@
         </svg>
       </button>
     </div>
+    @component('components.source.javascriptPersiapan')
+    @endcomponent
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
@@ -937,29 +938,9 @@
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-          const checkoutButton = document.getElementById('checkout-buttonMobile');
-          const continueButton = document.getElementById('continue-buttonMobile');
-
-          // Periksa status pembayaran dari database
-          axios.get('/order/status')
-              .then(response => {
-                  console.log(response.data); // Tambahkan ini untuk memeriksa respons API
-                  const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
-                  if (paymentStatus === 'success') {
-                      checkoutButton.classList.add('hidden');
-                      continueButton.classList.remove('hidden');
-                  }
-              })
-              .catch(error => {
-                  console.error('Error fetching payment status:', error);
-              });
-      });
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
           const checkoutButton = document.getElementById('checkout-button');
           const continueButton = document.getElementById('continue-button');
-
+  
           // Periksa status pembayaran dari database
           axios.get('/order/status')
               .then(response => {
@@ -973,8 +954,29 @@
               .catch(error => {
                   console.error('Error fetching payment status:', error);
               });
+  
+          // Tangani klik tombol "Lanjut Belajar"
+          continueButton.addEventListener('click', function() {
+              fetch('/api/start-course', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                  },
+                  body: JSON.stringify({
+                      course_id: 1  // Ganti dengan ID kursus yang sesuai jika diperlukan
+                  })
+              }).then(response => response.json())
+              .then(data => {
+                  if (data.success) {
+                      console.log('Kursus dimulai');
+                  } else {
+                      console.log('Gagal memulai kursus');
+                  }
+              });
+          });
       });
-    </script>
+    </script>      
     <script>
       document.addEventListener("DOMContentLoaded", function () {
       const buttons = document.querySelectorAll(".nav-button");

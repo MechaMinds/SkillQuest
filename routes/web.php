@@ -12,6 +12,8 @@ use App\Http\Controllers\ProfileUpdateController;
 use App\Http\Controllers\DataPribadiController;
 use App\Http\Controllers\PersonalDataController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ExecutionCodeController;
 use App\Models\Product;
 
 /*
@@ -36,6 +38,9 @@ Route::get('/course/belajar-bahasa-pemrograman-python', function(){
 });
 Route::get('/course/belajar-bahasa-pemrograman-python/persiapan', function(){
     return view('pages.course.belajar-bahasa-pemrograman-python.persiapan');
+});
+Route::get('/course/belajar-bahasa-pemrograman-python/quiz1', function(){
+    return view('pages.course.belajar-bahasa-pemrograman-python.quiz1');
 });
 Route::get('/roadmap/machine-learning', function(){
     return view('pages.roadmap.machine-learning');
@@ -103,8 +108,10 @@ Route::middleware(['check.checkout'])->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
     Route::post('/apply-discount', [CheckoutController::class, 'applyDiscount'])->name('apply.discount');
 });
-
-
+Route::post('/api/start-course', [CourseController::class, 'startCourse']);
+Route::post('/api/update-progress', [CourseController::class, 'updateProgress']);
+Route::get('/course/belajar-bahasa-pemrograman-python/persiapan/get-progress', [CourseController::class, 'getProgress']);
+Route::post('/execute-python', [ExecutionCodeController::class, 'executePython']);
 
 
 
