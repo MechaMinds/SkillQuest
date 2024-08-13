@@ -53,7 +53,7 @@
             <!-- Output Card -->
             <div class=" flex-1 overflow-auto">
                 <h2 class="text-1xl font-bold bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 dark:text-white p-3" style="border-radius: 12px 12px 0px 0px">Output</h2>
-                <pre id="output" class="dark:text-white border border-gray-200 dark:border-gray-700 shadow text-gray-900 bg-gray-100 dark:bg-gray-700 h-28"></pre>
+                <pre id="output" class="dark:text-white border border-gray-200 dark:border-gray-700 p-3 shadow text-gray-900 bg-gray-100 dark:bg-gray-700 h-28">Output kamu akan keluar disini...</pre>
             </div>    
 
             <div class="flex gap-2 flex-wrap">
