@@ -13,7 +13,7 @@ use App\Http\Controllers\DataPribadiController;
 use App\Http\Controllers\PersonalDataController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\ExecutionCodeController;
+use App\Http\Controllers\CodeController;
 use App\Models\Product;
 
 /*
@@ -111,7 +111,7 @@ Route::middleware(['check.checkout'])->group(function () {
 Route::post('/api/start-course', [CourseController::class, 'startCourse']);
 Route::post('/api/update-progress', [CourseController::class, 'updateProgress']);
 Route::get('/course/belajar-bahasa-pemrograman-python/persiapan/get-progress', [CourseController::class, 'getProgress']);
-Route::post('/execute-python', [ExecutionCodeController::class, 'executePython']);
+Route::post('/run-code', [CodeController::class, 'runPythonCode']);
 
 
 
