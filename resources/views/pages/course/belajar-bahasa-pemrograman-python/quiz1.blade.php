@@ -48,10 +48,10 @@
             </div>
             
             <!-- Output Card -->
-            <div class=" flex-1 overflow-auto">
+            <div class="flex-1 overflow-auto">
                 <h2 class="text-1xl font-bold bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 dark:text-white p-3" style="border-radius: 12px 12px 0px 0px">Output</h2>
-                <pre id="output" class="dark:text-white border border-gray-200 dark:border-gray-700 p-3 shadow text-gray-900 bg-gray-100 dark:bg-gray-700 h-28">Output kamu akan keluar disini...</pre>
-            </div>    
+                <pre id="output" class="font-medium dark:text-white border border-gray-200 dark:border-gray-700 p-3 shadow text-gray-900 bg-gray-100 dark:bg-gray-700 h-28">Output kamu akan keluar disini...</pre>
+            </div>   
 
             <div class="flex gap-2 flex-wrap">
                 <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-xl text-sm px-4 py-2 whitespace-nowrap dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
@@ -82,7 +82,7 @@
 
         // Run the code function
         function runCode() {
-            let code = editor.getValue(); // Mendapatkan nilai dari CodeMirror
+            let code = editor.getValue();
             document.getElementById('output').textContent = "Memproses...";
 
             fetch('/run-code', {
@@ -95,8 +95,14 @@
             })
             .then(response => response.json())
             .then(data => {
-                let outputMessage = data.output;
-                document.getElementById('output').textContent = outputMessage;
+                let rawOutput = data.rawOutput;
+                let outputMessage = data.outputMessage;
+
+                // Menampilkan output program
+                document.getElementById('output').textContent = "Hasil: " + rawOutput + "\n" + outputMessage;
+
+                // Memberi warna merah jika jawaban salah, dan hijau jika benar
+                document.getElementById('output').style.color = data.isCorrect ? "green" : "red";
             })
             .catch(error => {
                 console.error('Terjadi kesalahan:', error);
