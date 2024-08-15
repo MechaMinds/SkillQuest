@@ -14,8 +14,8 @@ class CodeController extends Controller
         $clientSecret = '95c897580a48044d7829b45ffeb21a79d742d5b019e9bafc7bd804d4f0c3a611';  // Ganti dengan Client Secret Anda
     
         // Tentukan output yang diharapkan
-        $expectedOutput = "aku rio";
-    
+        $expectedOutput = "a";
+        
         $url = 'https://api.jdoodle.com/v1/execute';
     
         try {

@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="lg:mt-100 sm:mt-50">
-          <img src="{{ asset('images/thumbnail.jpg')}}" alt="" class="section-image mx-auto w-full lg:max-w-xl rounded-lg" />
+          <img src="{{ asset('images/thumbnail.jpg')}}" alt="" class="section-image mx-auto w-full lg:max-w-xl rounded-xl" />
         </div>
       </div>
     </section>
@@ -269,44 +269,83 @@
           Pertanyaan Yang Sering <br />
           Ditanyakan
         </h1>
-        <div class="max-w-screen-md mx-auto p-4 text-left">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div class="p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700" style="border-radius: 15px">
-              <div class="flex justify-between items-center cursor-pointer" onclick="toggleAnswer(0)">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Apa itu UX Writing?</h2>
-                <span id="icon-0" class="text-gray-900 dark:text-white font-black text-2xl">+</span>
+        <div class="FAQ">
+              <h2 class="text-black dark:text-white text-xl font-bold lg:marg-lg sm:marg-sm mb-7 text-center" style="font-size: 35px; margin-top:100px">Pertanyaan seputar tentang kelas ini</h2>
+              <p class="text-center text-black dark:text-gray-100 mb-10 text-md font-semibold">Berikut adalah beberapa pertanyaan yang paling sering ditanyakan.</p>                
+              <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white" class="grid items-center justify-center min-h-screen">
+                <h2 id="accordion-color-heading-1" class="mt-3">
+                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-1" aria-expanded="false" aria-controls="accordion-color-body-1">
+                    <span class="text-left">Apakah ada saran untuk meningkatkan kemampuan pemrograman Python?</span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                  </button>
+                </h2>
+                <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
+                  <div class="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 faqw">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Anda bisa mengikuti kursus lanjutan, membaca dokumentasi resmi Python, atau bergabung dengan komunitas pengembang untuk belajar dari pengalaman mereka.</p>
+                  </div>
+                </div>
+
+                <h2 id="accordion-color-heading-2" class="mt-3">
+                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
+                    <span class="text-left">Apa yang akan saya pelajari dalam kursus ini?</span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                  </button>
+                </h2>
+                <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+                  <div class="p-5 border border-gray-200 dark:border-gray-700 faqw">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Anda akan mempelajari dasar-dasar Python seperti variabel, tipe data, struktur kontrol, fungsi, dan modul.
+                    </p>
+                  </div>
+                </div>
+
+                <h2 id="accordion-color-heading-3" class="mt-3">
+                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
+                    <span class="text-left">Apa yang harus saya lakukan jika saya mengalami kesulitan dalam memahami konsep tertentu?</span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                  </button>
+                </h2>
+                <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+                  <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI Pintar Path atau bertanya pada forum diskusi</p>
+                  </div>
+                </div>
+                
+                <h2 id="accordion-color-heading-4" class="mt-3">
+                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4">
+                    <span class="text-left">Apa yang harus saya lakukan jika saya mengalami kesulitan dalam memahami konsep tertentu?</span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                  </button>
+                </h2>
+                <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
+                  <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI Pintar Path atau bertanya pada forum diskusi</p>
+                  </div>
+                </div>
+                
+                <h2 id="accordion-color-heading-5" class="mt-3">
+                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-5" aria-expanded="false" aria-controls="accordion-color-body-5">
+                    <span class="text-left">Apa yang harus saya lakukan jika saya mengalami kesulitan dalam memahami konsep tertentu?</span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                  </button>
+                </h2>
+                <div id="accordion-color-body-5" class="hidden" aria-labelledby="accordion-color-heading-5">
+                  <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI Pintar Path atau bertanya pada forum diskusi</p>
+                  </div>
+                </div>
+
               </div>
-              <p id="answer-0" class="hidden-answer text-gray-900 dark:text-white">UX Writing adalah proses pembuatan teks yang membantu pengguna berinteraksi dengan produk atau layanan digital dengan mudah dan efisien.</p>
             </div>
-            <div class="p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700" style="border-radius: 15px">
-              <div class="flex justify-between items-center cursor-pointer" onclick="toggleAnswer(1)">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Mengapa UX Writing penting?</h2>
-                <span id="icon-1" class="text-gray-900 dark:text-white font-black text-2xl">+</span>
-              </div>
-              <p id="answer-1" class="hidden-answer text-gray-900 dark:text-white">
-                UX Writing penting karena teks yang baik dapat meningkatkan pengalaman pengguna, membantu mereka mencapai tujuan mereka, dan mengurangi kebingungan atau frustrasi.
-              </p>
-            </div>
-            <div class="p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700" style="border-radius: 15px">
-              <div class="flex justify-between items-center cursor-pointer" onclick="toggleAnswer(2)">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Bagaimana cara memulai karir di UX Writing?</h2>
-                <span id="icon-2" class="text-gray-900 dark:text-white font-black text-2xl">+</span>
-              </div>
-              <p id="answer-2" class="hidden-answer text-gray-900 dark:text-white">
-                Untuk memulai karir di UX Writing, Anda perlu memahami prinsip dasar UX, memiliki keterampilan menulis yang baik, dan mempelajari cara membuat teks yang efektif untuk berbagai konteks pengguna.
-              </p>
-            </div>
-            <div class="p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700" style="border-radius: 15px">
-              <div class="flex justify-between items-center cursor-pointer" onclick="toggleAnswer(3)">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Apakah ada sumber daya belajar UX Writing yang disarankan?</h2>
-                <span id="icon-3" class="text-gray-900 dark:text-white font-black text-2xl">+</span>
-              </div>
-              <p id="answer-3" class="hidden-answer text-gray-900 dark:text-white">
-                Ya, ada banyak sumber daya online seperti buku, kursus, dan artikel yang bisa membantu Anda belajar UX Writing. Beberapa buku yang direkomendasikan termasuk "Microcopy: The Complete Guide" dan "Writing for Designers".
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
     <!-- FAQ Selesai -->

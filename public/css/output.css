@@ -1209,13 +1209,13 @@ video {
     background-image: url("/images/inspirasi/inspirasi1.jpg");
 }
 .testimoni:nth-child(2) {
-    background-image: url("/images/inspirasi/inspirasi1.jpg");
+    background-image: url("/images/inspirasi/inspirasi2.png");
 }
 .testimoni:nth-child(3) {
-    background-image: url("/images/inspirasi/inspirasi1.jpg");
+    background-image: url("/images/inspirasi/inspirasi3.png");
 }
 .testimoni:nth-child(4) {
-    background-image: url("/images/inspirasi/inspirasi1.jpg");
+    background-image: url("/images/inspirasi/inspirasi4.png");
 }
 .testimoni:nth-child(n + 2) {
     margin-left: -20px;
@@ -1276,4 +1276,7 @@ video {
 
 .dropdown::-webkit-scrollbar-track {
     background-color: #f3f4f6; /* Background of the scrollbar track */
+}
+.border-active {
+    border: 1px solid #e5e7eb;
 }
