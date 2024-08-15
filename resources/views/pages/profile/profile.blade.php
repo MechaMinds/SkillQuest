@@ -144,12 +144,12 @@
     <form id="avatarPhotoForm" action="{{ route('profile.updateAvatar') }}" method="POST" enctype="multipart/form-data" class="flex flex-col">
       @csrf
       <div id="avatarPopup" class="fixed inset-0 hidden flex items-center justify-center z-50">
-          <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 cardPhoto">
+          <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 cardPhoto" style="width:500px">
               <h2 class="text-lg font-medium dark:text-white text-gray-900">Pilih Karakter Avatar Kamu</h2>
               <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
               <img id="profileImageAvatar" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}" alt="Profile" class="w-24 h-24 rounded-full">
               <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
-              <div class="grid grid-cols-4 gap-2" id="avatarContainerAdditional">
+              <div class="lg:grid lg:grid-cols-4 sm:grid-cols-2 grid grid-cols-3 sm:grid gap-2" id="avatarContainerAdditional">
                   <!-- Avatar lainnya akan ditambahkan di sini oleh JavaScript -->
               </div>
               <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">

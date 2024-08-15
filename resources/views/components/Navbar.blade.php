@@ -19,7 +19,7 @@
         @auth        
         <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-11 h-11 rounded-full cursor-pointer sm:hidden lg:block hidden" src="{{ auth()->user()->profile_photo ? asset('images/photoProfileUser/' . auth()->user()->profile_photo) : asset('images/avatarDefault.png') }}"  alt="User dropdown">
           <!-- Dropdown menu -->
-          <div id="userDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <div id="userDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
               <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                 @php
                   $fullName = Auth::user()->name;
@@ -58,7 +58,7 @@
                     </a>
                 </form>
               </div>
-          </div>
+            </div>
         @endauth
         <button data-collapse-toggle="mobile-bar" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-bar" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -223,6 +223,14 @@
                   </div>
                   <span class="text-black font-bold text-left text-lg">Blog Berita</span>
                 </div>
+                <div class="flex items-center space-x-3 mb-4 hover:text-blue-600 dark:hover:text-blue-500">
+                  <div class="bg-gray-200 py-3 px-3 rounded-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
+                      <path fill="#146ffe" d="M96 96c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H80c-44.2 0-80-35.8-80-80V128c0-17.7 14.3-32 32-32s32 14.3 32 32V400c0 8.8 7.2 16 16 16s16-7.2 16-16V96zm64 24v80c0 13.3 10.7 24 24 24H296c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24H184c-13.3 0-24 10.7-24 24zm208-8c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zM160 304c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16z"/>
+                    </svg>
+                  </div>
+                  <span class="text-black font-bold text-left text-lg">Code Playground</span>
+                </div>
               </div>
             </div>                  
           </li>
@@ -257,7 +265,7 @@
     </div>
   </div>
   <!-- Mobile Navbar -->
-  <div id="mobile-bar" class="fixed inset-0 bg-white dark:bg-gray-800 hidden items-end justify-end" style="z-index: 100;">
+  <div id="mobile-bar" class="fixed inset-0 bg-white dark:bg-gray-800 hidden items-end justify-end overflow-hidden" style="z-index: 100;">
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto px-6 py-6">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="{{ asset('images/logo.png') }}" class="h-8" alt="Pintar Path Logo" />
@@ -272,7 +280,7 @@
     <div class="px-3 py-4 overflow-y-auto rounded">
 			<ul class="space-y-2">
 				<li>
-					<a href="#"
+					<a href="/"
 						class="flex items-center w-full px-4 py-4 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white">
               <path fill="currentColor" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/>
@@ -370,8 +378,60 @@
 							<a href="#"
 								class="flex items-center w-full px-4 py-4 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Blog Berita</a>
 						</li>
+						<li>
+							<a href="#"
+								class="flex items-center w-full px-4 py-4 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Code Playground</a>
+						</li>
 					</ul>
 				</li>
+        <hr class="w-full h-px bg-gray-300 border-0 dark:bg-gray-700">
+        @guest
+          <li class="py-4 col-span-2 mt-auto gap-4 justify-end flex">
+            <a href="/login" class="text-gray-800 dark:text-white hover:bg-gray-50 border-2 dark:border-gray-700 border-gray-200 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-4 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 w-full text-center">Login</a>
+            <a href="/daftar" class="text-white bg-blue-700 border-2 border-blue-700 dark:border-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-full text-center">Daftar</a>
+          </li>
+        @endguest
+        @auth        
+          <div class="flex items-center gap-3 py-4 px-2.5">
+            <img class="w-12 h-12 rounded-full" src="{{Auth::user()->profile_photo ? asset('images/photoProfileUser/' . Auth::user()->profile_photo) : asset('images/avatarDefault.png')}}" alt="Avatar">
+            <div class="font-medium dark:text-white">
+                <div>{{Auth::user()->name}}</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">{{Auth::user()->email}}</div>
+            </div>
+          </div>
+          <ul class="space-y-2">
+            <li>
+              <a href="/profile"
+                class="flex items-center w-full px-4 py-4 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                <span class="font-semibold">Profile Saya</span>
+              </a>
+            </li>
+            <li>
+              <a href="/"
+                class="flex items-center w-full px-4 py-4 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                <span class="font-semibold">Course Saya</span>
+              </a>
+            </li>
+            <li>
+              <a href="/riwayat-transaksi"
+                class="flex items-center w-full px-4 py-4 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                <span class="font-semibold">Transaksi </span>
+              </a>
+            </li>
+            <hr class="w-full h-px bg-gray-300 border-0 dark:bg-gray-700">
+            <li>
+              <form method="GET" action="{{ route('logout') }}">
+                @csrf
+                <a type="submit"
+                  class="flex items-center w-full px-4 py-4 text-base font-normal text-red-500 transition duration-75 rounded-lg group hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <button class="font-semibold">
+                    Keluar
+                  </button>
+                </a>
+              </form>
+            </li>
+          <ul>
+        @endauth
       </ul>
   </div>
   
