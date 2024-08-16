@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('terbaru', 'components.terbaru');
             $view->with('benefit', 'components.benefit');
         });
+        // if(config('app.env') === 'local'){
+        //     URL::forceScheme('https');
+        // }
     }
 }

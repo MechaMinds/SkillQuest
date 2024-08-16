@@ -21,9 +21,10 @@
             <div class="soalNavbar flex mb-4">
                 <button id="quizButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active">Soal Quiz</button>
                 <button id="forumButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active">Forum Diskusi</button>
+                <button id="silvaButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active">Tanya Silva</button>
             </div>
-            <div id="content" class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 rounded-xl flex-1 overflow-auto">
-                <div id="quizSection">
+            <div id="content" class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 rounded-xl flex-1 overflow-auto">
+                <div id="quizSection" class="p-6">
                     <p class="text-black dark:text-white mb-4">Buatlah sebuah fungsi bernama <span class="font-medium underline text-blue-600">karakter terbanyak</span> yang menerima sebuah string sebagai input. Fungsi ini harus mengembalikan karakter yang paling sering muncul dalam string tersebut. Jika ada lebih dari satu karakter dengan jumlah kemunculan yang sama, kembalikan karakter yang muncul lebih dahulu.</p>
                     <div class="dark:text-white text-gray-900 bg-gray-100 dark:bg-gray-700 p-4 rounded-xl overflow-x-auto">
                         <code>
@@ -36,8 +37,50 @@
                         <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Algorithms</span>
                     </div>
                 </div>
-                <div id="forumSection" class="hidden">
+                <div id="forumSection" class="hidden p-6">
                     <p>Ini adalah forum diskusi. Anda bisa berdiskusi di sini.</p>
+                </div>
+                <div id="silvaSection" class="hidden p-3">
+                    <div class="flex flex-col" style="height: 570px">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <div class="flex items-center">
+                                <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-10 h-10 rounded-full">
+                                <div class="title grid">
+                                    <h3 class="ms-4 text-lg font-semibold text-gray-900 dark:text-white">
+                                        Tanya Silva
+                                    </h3>
+                                    <div class="ms-4 status flex gap-1 items-center">
+                                        <div class="bg-green-500 w-2 h-2 rounded-full"></div>
+                                        <p class="text-sm font-light text-gray-900 dark:text-white">
+                                            Aktif
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="flex flex-col flex-1 p-4 md:p-5 overflow-hidden">
+                            <div id="chat-box" class="flex flex-col space-y-4 overflow-y-auto flex-1">
+                                <!-- Chat Sambutan -->
+                                <div class="flex flex-col items-start">
+                                    <p class="text-gray-900 dark:text-white self-end mt-1 mb-2 font-semibold text-md">Silva</p>
+                                    <div class="bg-gray-50 dark:bg-gray-600 text-gray-900 dark:text-white px-3 py-3 max-w-xs chat-ai">
+                                        <p>Halo Selamat Datang di Silvia</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Form input -->
+                            <form id="chat-form" class="flex items-center space-x-2 mt-10">
+                                <input type="text" name="chat" id="chat-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type your message here" required>
+                                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
+                                        <path fill="#fff" d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376l0 103.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"/>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,20 +121,41 @@
         </div>
     </div>
     <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{ asset('./js/chat.js')}}"></script>
     <script>
-        document.getElementById("quizButton").addEventListener("click", function () {
-            document.getElementById("quizSection").classList.remove("hidden");
-            document.getElementById("forumSection").classList.add("hidden");
-            document.getElementById("quizButton").classList.add("border-active");
-            document.getElementById("forumButton").classList.remove("border-active");
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ambil section terakhir yang disimpan di localStorage
+            const lastSection = localStorage.getItem('activeSection') || 'quizSection';
+            showSection(lastSection);
+
+            // Fungsi untuk menampilkan section yang sesuai
+            function showSection(sectionId) {
+                // Sembunyikan semua section
+                document.getElementById('quizSection').classList.add('hidden');
+                document.getElementById('forumSection').classList.add('hidden');
+                document.getElementById('silvaSection').classList.add('hidden');
+
+                // Tampilkan section yang dipilih
+                document.getElementById(sectionId).classList.remove('hidden');
+            }
+
+            // Tambahkan event listener ke tombol untuk menyimpan section yang dipilih di localStorage
+            document.getElementById('quizButton').addEventListener('click', function() {
+                localStorage.setItem('activeSection', 'quizSection');
+                showSection('quizSection');
+            });
+
+            document.getElementById('forumButton').addEventListener('click', function() {
+                localStorage.setItem('activeSection', 'forumSection');
+                showSection('forumSection');
+            });
+
+            document.getElementById('silvaButton').addEventListener('click', function() {
+                localStorage.setItem('activeSection', 'silvaSection');
+                showSection('silvaSection');
+            });
         });
 
-        document.getElementById("forumButton").addEventListener("click", function () {
-            document.getElementById("quizSection").classList.add("hidden");
-            document.getElementById("forumSection").classList.remove("hidden");
-            document.getElementById("forumButton").classList.add("border-active");
-            document.getElementById("quizButton").classList.remove("border-active");
-        });
         document.getElementById('resetButton').addEventListener('click', function() {
             // Me-refresh halaman
             window.location.reload();
