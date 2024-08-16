@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pintar Path ⸺ Solusi Belajar IT</title>
+    <title>SkillQuest ⸺ Solusi Belajar IT</title>
     <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />

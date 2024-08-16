@@ -1,8 +1,8 @@
 <nav class="fixed top-0 w-full z-50 navbar bg-white border border-gray-200 rounded-full shadow dark:bg-gray-800 dark:border-gray-700">
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="{{ asset('images/logo.png') }}" class="h-8" alt="Pintar Path Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">Pintar Path</span>
+        <img src="{{ asset('images/logo.png') }}" class="h-8" alt="SkillQuest Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">SkillQuest</span>
       </a>
       <div class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
         <button data-modal-target="search-modal" data-modal-toggle="search-modal" type="button" class="searching bg-gray-100 dark:bg-gray-700 py-4 px-4 rounded-full">
@@ -268,8 +268,8 @@
   <div id="mobile-bar" class="fixed inset-0 bg-white dark:bg-gray-800 hidden items-end justify-end overflow-hidden" style="z-index: 100;">
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto px-6 py-6">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="{{ asset('images/logo.png') }}" class="h-8" alt="Pintar Path Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">Pintar Path</span>
+        <img src="{{ asset('images/logo.png') }}" class="h-8" alt="SkillQuest Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">SkillQuest</span>
       </a>
       <button id="close-button" class="ml-auto flex items-center justify-center h-8 w-8 text-gray-900 dark:text-white">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

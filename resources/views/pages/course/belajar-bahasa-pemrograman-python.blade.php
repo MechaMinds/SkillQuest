@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pintar Path ⸺ Solusi Belajar IT</title>
+    <title>SkillQuest ⸺ Solusi Belajar IT</title>
     <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -757,7 +757,7 @@
             </div>
             <!-- Testimoni -->
             <h2 class="text-black dark:text-white text-xl font-bold lg:marg-lg sm:marg-sm mb-7 text-center" style="font-size: 35px; margin-top:100px">Testimoni Pelajar</h2>
-            <p class="text-center text-black dark:text-gray-100  text-md font-semibold">Ribuan siswa sudah bergabung dikelas Belajar Bahasa Pemrograman Python di <span class="text-blue-500">Pintar Path</span>, apa kata mereka ?</p>
+            <p class="text-center text-black dark:text-gray-100  text-md font-semibold">Ribuan siswa sudah bergabung dikelas Belajar Bahasa Pemrograman Python di <span class="text-blue-500">SkillQuest</span>, apa kata mereka ?</p>
             <div class="owl-carousel grid grid-cols-1 md:grid-cols-2 gap-6" style="margin-top: 50px">
               <div class="testimoni-1">
                 <div class="w-full p-4 text-left bg-white border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" style="border-radius: 20px">
@@ -886,7 +886,7 @@
                 </h2>
                 <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
                   <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI Pintar Path atau bertanya pada forum diskusi</p>
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI SkillQuest atau bertanya pada forum diskusi</p>
                   </div>
                 </div>
               </div>

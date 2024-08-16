@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pintar Path ⸺ Solusi Belajar IT</title>
+    <title>SkillQuest ⸺ Solusi Belajar IT</title>
     <link href="{{ asset('css/output.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.ico') }}" />
@@ -22,7 +22,7 @@
       <div class="px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
         <div class="flex flex-col justify-center">
           <div style="margin-top: 100px">
-            <h1 class="section-title mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">Raih Masa Depan bersama <span class="text-blue-600 dark:text-blue-500">Pintar Path</span></h1>
+            <h1 class="section-title mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">Raih Masa Depan bersama <span class="text-blue-600 dark:text-blue-500">SkillQuest</span></h1>
             <p class="section-content font-normal text-gray-500 lg:text-xl dark:text-gray-400 md:text-4xl">
               Kami berfokus pada teknologi, inovasi, dan pembelajaran dapat membuka nilai jangka panjang dan mendorong pertumbuhan ekonomi melalui kursus IT online.
             </p>
@@ -44,7 +44,7 @@
                     </ul>
                   </div>
                 </div>
-                <p class="font-medium text-gray-900 dark:text-white text-left">Bergabunglah dengan<span class="font-extrabold dark:text-white text-gray-900"> 90 Ribu+</span> Pelajar di Pintar Path</p>
+                <p class="font-medium text-gray-900 dark:text-white text-left">Bergabunglah dengan<span class="font-extrabold dark:text-white text-gray-900"> 90 Ribu+</span> Pelajar di SkillQuest</p>
               </div>
             </div>                
           </div>
@@ -75,7 +75,7 @@
       <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
         <p class="font-medium text-green-500 lg:text-sm dark:text-green-400 mb-2" style="font-size: 15px">Rekomendasi Kelas.</p>
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
-          Temukan Banyak Kelas Profesional <br />di <span class="text-blue-600 dark:text-blue-500">Pintar Path</span>
+          Temukan Banyak Kelas Profesional <br />di <span class="text-blue-600 dark:text-blue-500">SkillQuest</span>
         </h1>
         <div class="d-flex justify-content-start align-items-center space-y-4 mt-8">
           <a
@@ -269,83 +269,79 @@
           Pertanyaan Yang Sering <br />
           Ditanyakan
         </h1>
-        <div class="FAQ">
-              <h2 class="text-black dark:text-white text-xl font-bold lg:marg-lg sm:marg-sm mb-7 text-center" style="font-size: 35px; margin-top:100px">Pertanyaan seputar tentang kelas ini</h2>
-              <p class="text-center text-black dark:text-gray-100 mb-10 text-md font-semibold">Berikut adalah beberapa pertanyaan yang paling sering ditanyakan.</p>                
-              <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white" class="grid items-center justify-center min-h-screen">
-                <h2 id="accordion-color-heading-1" class="mt-3">
-                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-1" aria-expanded="false" aria-controls="accordion-color-body-1">
-                    <span class="text-left">Apakah ada saran untuk meningkatkan kemampuan pemrograman Python?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                  </button>
-                </h2>
-                <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
-                  <div class="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 faqw">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Anda bisa mengikuti kursus lanjutan, membaca dokumentasi resmi Python, atau bergabung dengan komunitas pengembang untuk belajar dari pengalaman mereka.</p>
-                  </div>
-                </div>
-
-                <h2 id="accordion-color-heading-2" class="mt-3">
-                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
-                    <span class="text-left">Apa yang akan saya pelajari dalam kursus ini?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                  </button>
-                </h2>
-                <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
-                  <div class="p-5 border border-gray-200 dark:border-gray-700 faqw">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Anda akan mempelajari dasar-dasar Python seperti variabel, tipe data, struktur kontrol, fungsi, dan modul.
-                    </p>
-                  </div>
-                </div>
-
-                <h2 id="accordion-color-heading-3" class="mt-3">
-                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
-                    <span class="text-left">Apa yang harus saya lakukan jika saya mengalami kesulitan dalam memahami konsep tertentu?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                  </button>
-                </h2>
-                <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
-                  <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI Pintar Path atau bertanya pada forum diskusi</p>
-                  </div>
-                </div>
-                
-                <h2 id="accordion-color-heading-4" class="mt-3">
-                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4">
-                    <span class="text-left">Apa yang harus saya lakukan jika saya mengalami kesulitan dalam memahami konsep tertentu?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                  </button>
-                </h2>
-                <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
-                  <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI Pintar Path atau bertanya pada forum diskusi</p>
-                  </div>
-                </div>
-                
-                <h2 id="accordion-color-heading-5" class="mt-3">
-                  <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-5" aria-expanded="false" aria-controls="accordion-color-body-5">
-                    <span class="text-left">Apa yang harus saya lakukan jika saya mengalami kesulitan dalam memahami konsep tertentu?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                  </button>
-                </h2>
-                <div id="accordion-color-body-5" class="hidden" aria-labelledby="accordion-color-heading-5">
-                  <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI Pintar Path atau bertanya pada forum diskusi</p>
-                  </div>
-                </div>
-
+        <div class="FAQ">               
+          <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white" class="grid items-center justify-center min-h-screen">
+            <h2 id="accordion-color-heading-1" class="mt-3">
+              <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-1" aria-expanded="false" aria-controls="accordion-color-body-1">
+                <span class="text-left">Apakah ada saran untuk meningkatkan kemampuan pemrograman Python?</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
+              <div class="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 faqw">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Anda bisa mengikuti kursus lanjutan, membaca dokumentasi resmi Python, atau bergabung dengan komunitas pengembang untuk belajar dari pengalaman mereka.</p>
               </div>
             </div>
+
+            <h2 id="accordion-color-heading-2" class="mt-3">
+              <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
+                <span class="text-left">Apa yang akan saya pelajari dalam kursus ini?</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+              <div class="p-5 border border-gray-200 dark:border-gray-700 faqw">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Anda akan mempelajari dasar-dasar Python seperti variabel, tipe data, struktur kontrol, fungsi, dan modul.
+                </p>
+              </div>
+            </div>
+
+            <h2 id="accordion-color-heading-3" class="mt-3">
+              <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
+                <span class="text-left">Apa yang harus saya lakukan jika saya mengalami kesulitan dalam memahami konsep tertentu?</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+              <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI SkillQuest atau bertanya pada forum diskusi</p>
+              </div>
+            </div>
+            
+            <h2 id="accordion-color-heading-4" class="mt-3">
+              <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4">
+                <span class="text-left">Apa yang harus saya lakukan jika saya mengalami kesulitan dalam memahami konsep tertentu?</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
+              <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI SkillQuest atau bertanya pada forum diskusi</p>
+              </div>
+            </div>
+            
+            <h2 id="accordion-color-heading-5" class="mt-3">
+              <button type="button" class="flex items-center justify-between p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3 faqw" data-accordion-target="#accordion-color-body-5" aria-expanded="false" aria-controls="accordion-color-body-5">
+                <span class="text-left">Apa yang harus saya lakukan jika saya mengalami kesulitan dalam memahami konsep tertentu?</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-5" class="hidden" aria-labelledby="accordion-color-heading-5">
+              <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700 faqw">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Jangan ragu untuk bertanya kepada mentor, menggunakan AI SkillQuest atau bertanya pada forum diskusi</p>
+              </div>
+            </div>
+          </div>
       </div>
     </section>
     <!-- FAQ Selesai -->
