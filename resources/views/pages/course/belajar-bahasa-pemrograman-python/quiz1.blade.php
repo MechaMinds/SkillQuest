@@ -19,9 +19,15 @@
         <!-- Soal Card -->
         <div class="flex-1 flex flex-col">
             <div class="soalNavbar flex mb-4">
-                <button id="quizButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active">Soal Quiz</button>
-                <button id="forumButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active">Forum Diskusi</button>
-                <button id="silvaButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active">Tanya Silva</button>
+                <button id="quizButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active whitespace-nowrap">
+                    Soal Quiz
+                </button>
+                <button id="forumButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active whitespace-nowrap">
+                    Forum Diskusi
+                </button>
+                <button id="silvaButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active relative whitespace-nowrap">
+                    Tanya Silva
+                </button>
             </div>
             <div id="content" class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 rounded-xl flex-1 overflow-auto">
                 <div id="quizSection" class="p-6">
@@ -120,6 +126,13 @@
             </div>
         </div>
     </div>
+    <div class="fixed flex items-center space-x-4 p- divide-x rtl:divide-x-revers rounded-lg shadow right-5 bottom-5" role="alert">
+        <div class="relative text-sm font-normal">
+            <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-12 h-12 rounded-full" data-tooltip-target="tooltip-top">
+        </div>
+    </div>    
+    
+    
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{ asset('./js/chat.js')}}"></script>
     <script>
