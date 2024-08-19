@@ -16,6 +16,8 @@
     },
     "dependencies": {
         "flowbite-typography": "^1.0.3",
+        "laravel-echo": "^1.16.1",
+        "pusher-js": "^8.4.0-rc2",
         "swip": "^0.1.0",
         "swiper": "^11.1.4",
         "uuid": "^10.0.0"
