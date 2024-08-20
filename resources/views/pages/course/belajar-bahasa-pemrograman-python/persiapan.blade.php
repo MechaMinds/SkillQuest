@@ -97,13 +97,13 @@
                     </svg>      
                 </div>
                 <div class="dark:bg-gray-700 bg-gray-200 py-4 px-4">
-                    <span id="progressText" class="font-semibold text-lg">0% Progress</span>
+                    <span id="progressText" class="font-semibold text-lg" data-progress="0" data-visited="[]">0% Progress</span>
                     <div class="bar mt-2">
                         <div class="w-full bg-gray-400 rounded-full h-1.5 dark:bg-gray-800">
                             <div id="progressBar" class="bg-blue-600 h-1.5 rounded-full" style="width: 0%"></div>
                         </div>
                     </div>                 
-                </div>                                
+                </div>                
                 <div class="space-y-4 py-4 px-4">
                     <div id="persiapanBelajar">
                         <button id="dropdownbuttonDefault" class="flex justify-between w-full text-left text-foreground">

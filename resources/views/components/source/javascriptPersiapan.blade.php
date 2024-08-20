@@ -4,46 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Document</title>
 </head>
-<body>
+<body>  
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const materi = ["pengenalanKelas", "mekanismeBelajar", "forumDiskusi", "helloWorld", "quiz1"];
             let currentIndex = 0;
 
+            // Mendapatkan data progress dari server
+            function loadProgressFromServer() {
+                fetch(`/get-progress/{{ Auth::id() }}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status !== 'no data') {
+                            setProgress(data.progress);
+                            setVisitedMateri(data.visitedMateri);
+                        }
+                        updateMateri();
+                        updateProgressDisplay();
+                    })
+                    .catch(error => {
+                        console.error('Error loading progress:', error);
+                    });
+            }
+
             function getProgress() {
-                let progress = localStorage.getItem("progress");
-                return progress ? parseInt(progress) : 0; // Default to 0% if not set
+                return parseInt(document.getElementById("progressText").dataset.progress || 0);
             }
 
-            function getTotalMateri(){
-                let totalProgress = localStorage.getItem("totalProgress");
-                return totalProgress ? parseInt(totalProgress) : 0; 
+            function setProgress(progress) {
+                document.getElementById("progressText").dataset.progress = progress;
             }
 
-            function updateTotalMateri(){
-                const totalProg = getTotalMateri();
-                document.getElementById('progressCount').innerText = `${totalProg}/3`;
+            function getVisitedMateri() {
+                return JSON.parse(document.getElementById("progressText").dataset.visited || "[]");
+            }
+
+            function setVisitedMateri(visited) {
+                document.getElementById("progressText").dataset.visited = JSON.stringify(visited);
             }
 
             function updateProgressDisplay() {
                 const progress = getProgress();
                 document.getElementById("progressText").innerText = `${progress}% Progress`;
                 document.getElementById("progressBar").style.width = `${progress}%`;
-            }
-
-            function setProgress(progress) {
-                localStorage.setItem("progress", progress);
-            }
-
-            function getVisitedMateri() {
-                let visited = localStorage.getItem("visitedMateri");
-                return visited ? JSON.parse(visited) : [];
-            }
-
-            function setVisitedMateri(visited) {
-                localStorage.setItem("visitedMateri", JSON.stringify(visited));
             }
 
             function updateMateri() {
@@ -60,7 +66,6 @@
                     setProgress(Math.min(newProgress, 100)); // Cap progress at 100%
                 }
 
-                updateTotalMateri();
                 updateProgressDisplay();
                 updateStatusIcons();
             }
@@ -81,6 +86,7 @@
                 if (currentIndex < materi.length - 1) {
                     currentIndex++;
                     updateMateri();
+                    saveProgressToServer(); // Save progress setiap kali materi berubah
                 }
             }
 
@@ -88,19 +94,50 @@
                 if (currentIndex > 0) {
                     currentIndex--;
                     updateMateri();
+                    saveProgressToServer(); // Save progress setiap kali materi berubah
                 }
             }
 
-            // Attach event listeners to buttons
+            function saveProgressToServer() {
+                const progressData = {
+                    progress: getProgress(),
+                    visitedMateri: getVisitedMateri(),
+                };
+
+                fetch('/save-progress', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    },
+                    body: JSON.stringify({
+                        user_id: '{{ Auth::id() }}',
+                        progress_data: progressData,
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        console.log("Progress saved successfully");
+                    } else {
+                        console.error("Failed to save progress");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+
             document.getElementById("nextMateri").addEventListener("click", nextMateri);
             document.getElementById("prevMateri").addEventListener("click", prevMateri);
 
-            updateMateri(); // Initial update
+            // Load progress from server when the page loads
+            loadProgressFromServer();
         });
     </script>
-    <script>
+    {{-- <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const materi = ["pengenalanKelas", "mekanismeBelajar", "forumDiskusi"];
+            const materi = ["pengenalanKelas", "mekanismeBelajar", "forumDiskusi", "forumDiskusi", "helloWorld", "quiz1"];
             let currentIndex = 0;
 
             function getProgress() {
@@ -188,7 +225,7 @@
 
             updateMateri(); // Initial update
         });
-    </script>
+    </script> --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const asideButton = document.getElementById('asideButton');
