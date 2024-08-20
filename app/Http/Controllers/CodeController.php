@@ -40,8 +40,8 @@ class CodeController extends Controller
             return response()->json([
                 'rawOutput' => $output,
                 'outputMessage' => $isCorrect 
-                    ? 'Jawaban benar!' 
-                    : 'Jawaban salah. Output yang benar adalah "' . $expectedOutput . '".',
+                    ? 'Output Sesuai!' 
+                    : 'Output Tidak Sesuai',
                 'isCorrect' => $isCorrect,
                 'error' => $data['error'] ?? ''
             ]);

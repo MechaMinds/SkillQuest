@@ -134,6 +134,23 @@
             // Load progress from server when the page loads
             loadProgressFromServer();
         });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pilih semua link yang memiliki data-target-id
+            document.querySelectorAll('a[data-target-id]').forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Mencegah navigasi default
+                    const targetId = this.getAttribute('data-target-id');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth' // Efek scroll halus
+                        });
+                    }
+                });
+            });
+        });          
     </script>
     {{-- <script>
         document.addEventListener("DOMContentLoaded", function () {
