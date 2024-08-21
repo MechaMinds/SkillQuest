@@ -16,6 +16,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CodeController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProgressController;
+use App\Http\Controllers\ForumController;
 use App\Models\Product;
 
 /*
@@ -117,6 +118,9 @@ Route::post('/run-code', [CodeController::class, 'runPythonCode']);
 Route::post('/send-message', [MessageController::class, 'sendMessage'])->middleware('auth');
 Route::post('/save-progress', [ProgressController::class, 'saveProgress']);
 Route::get('/get-progress/{id}', [ProgressController::class, 'getProgress']);
+Route::get('/messages/{forumId}', [ForumController::class, 'fetchMessages']);
+Route::post('/messages', [ForumController::class, 'sendMessage']);
+
 
 
 

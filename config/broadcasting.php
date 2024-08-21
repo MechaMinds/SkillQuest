@@ -39,6 +39,7 @@ return [
             'useTLS' => true,
         ],
     ],
+    // Other connections...
 ],
 
 ];

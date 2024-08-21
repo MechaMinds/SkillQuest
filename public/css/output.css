@@ -1265,6 +1265,23 @@ video {
 .chat-you {
     border-radius: 15px 0px 15px 15px !important;
 }
+.chat-userLain {
+    border-radius: 0px 15px 15px 15px !important;
+    background-color: #f9f9f9; /* Light gray background for light mode */
+    color: #000; /* Text color for light mode */
+}
+
+.dark .chat-userLain {
+    background-color: #2d3748; /* Dark gray background for dark mode */
+    color: #fff; /* Text color for dark mode */
+}
+
+.chat-kamu {
+    border-radius: 15px 0px 15px 15px !important;
+    background-color: #007bff; /* Blue background for your messages */
+    color: #fff; /* White text color */
+}
+
 .dropdown::-webkit-scrollbar {
     width: 8px; /* Width of the scrollbar */
 }
