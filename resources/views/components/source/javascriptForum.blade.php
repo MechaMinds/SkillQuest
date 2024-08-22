@@ -126,4 +126,44 @@
     });
     window.assetUrl = "{{ asset('images/forumImages') }}";
 </script>
-             
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const imageUpload = document.getElementById('image-upload');
+        const imagePreviewContainer = document.getElementById('image-preview-container');
+        const imagePreview = document.getElementById('image-preview');
+        const chatForm = document.getElementById('chat-forum');
+
+        imageUpload.addEventListener('change', function () {
+            // Periksa apakah ada file yang dipilih
+            if (this.files && this.files[0]) {
+                const file = this.files[0];
+                const reader = new FileReader();
+
+                // Saat file dibaca
+                reader.onload = function (e) {
+                    // Atur sumber gambar pratinjau dan tampilkan
+                    imagePreview.src = e.target.result;
+                    imagePreviewContainer.classList.remove('hidden');
+                };
+
+                // Bacalah file sebagai URL data
+                reader.readAsDataURL(file);
+            } else {
+                // Sembunyikan pratinjau jika tidak ada file
+                imagePreviewContainer.classList.add('hidden');
+                imagePreview.src = '';
+            }
+        });
+
+        chatForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Proses pengiriman form atau AJAX request bisa ditambahkan di sini
+
+            // Sembunyikan pratinjau gambar dan reset input file setelah pesan dikirim
+            imagePreviewContainer.classList.add('hidden');
+            imagePreview.src = '';
+            imageUpload.value = '';  // Reset input file
+            chatForm.reset();  // Reset form input (jika diperlukan)
+        });
+    });
+</script>             
