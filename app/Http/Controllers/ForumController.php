@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Events\MessageSent;
-use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ForumController extends Controller
 {
@@ -23,21 +23,33 @@ class ForumController extends Controller
         $forumId = $request->input('forum_id');
         $messageContent = $request->input('message');
         $userId = Auth::id();
+        $userName = Auth::user()->name;
+
+        $image = null;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $imageName = time() . rand(100, 999) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('images/forumImages'), $imageName);
+            $image = $imageName;
+        }
 
         $message = [
             'user_id' => $userId,
+            'user_name' => $userName,
             'message' => $messageContent,
+            'image' => $image,
             'timestamp' => now()->toDateTimeString()
         ];
 
+        // Save message to JSON file
         $filePath = storage_path("app/forum/forum_{$forumId}.json");
         $messages = file_exists($filePath) ? json_decode(file_get_contents($filePath), true) : [];
         $messages[] = $message;
-
         file_put_contents($filePath, json_encode($messages));
 
+        // Broadcast the message using Pusher
         broadcast(new MessageSent($message, $forumId))->toOthers();
 
-        return ['status' => 'Message Sent!'];
+        return response()->json(['status' => 'Message Sent!']);
     }
 }

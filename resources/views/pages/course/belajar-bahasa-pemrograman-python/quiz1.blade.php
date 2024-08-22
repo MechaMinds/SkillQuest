@@ -43,23 +43,36 @@
                         <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Algorithms</span>
                     </div>
                 </div>
+                <!-- Forum Chat -->
                 <div class="flex flex-col flex-1 p-4 md:p-5 overflow-hidden" id="forumSection" data-forum-chat="8347215563">
                     <div class="flex flex-col" style="height: 570px">
-                        <div id="chat-box" class="flex flex-col space-y-4 overflow-y-auto flex-1">
+                        <div id="forum-box" class="flex flex-col space-y-4 overflow-y-auto flex-1">
                             <!-- Chat Bubble -->
                             <!-- Chat messages will be appended here -->
                         </div>
                         <!-- Form input -->
                         <form id="chat-forum" class="flex items-center space-x-2 mt-10">
-                            <input type="text" name="chat" id="chat-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type your message here" required>
+                            <div class="relative w-full">
+                                <input type="text" name="chat" id="chat-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full pl-2.5 pr-10 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type your message here" required>
+                                <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3">
+                                    <!-- SVG icon for image upload -->
+                                    <input type="file" id="image-upload" class="hidden" accept="image/*">
+                                    <label for="image-upload" class="cursor-pointer">
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path class="dark:fill-gray-400 fill-gray-500 hover:fill-gray-900 dark:hover:fill-white" d="M448 80c8.8 0 16 7.2 16 16l0 319.8-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3L48 96c0-8.8 7.2-16 16-16l384 0zM64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/>
+                                        </svg>
+                                    </label>
+                                </button>          
+                            </div>
                             <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
                                     <path fill="#fff" d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376l0 103.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"/>
                                 </svg>
                             </button>
-                        </form>
+                        </form>                        
                     </div>
-                </div>                                                                               
+                </div> 
+                <!-- Forum Chat -->                                                                              
                 <div id="silvaSection" class="hidden p-3">
                     <div class="flex flex-col" style="height: 570px">
                         <!-- Modal header -->
@@ -158,108 +171,9 @@
     </div>    
     @component('components.source.javascriptQuiz1')
     @endcomponent
+    @component('components.source.javascriptForum')
+    @endcomponent
     <script src="{{asset('js/main.js')}}"></script>
-    <script src="{{ asset('./js/chat.js')}}"></script>
-    <script>
-        const messagesContainer = document.getElementById('messages');
-    
-        function addMessage(message, isMine = false) {
-            const messageBubble = document.createElement('div');
-            messageBubble.className = `p-3 rounded-lg ${isMine ? 'bg-blue-500 text-white self-end' : 'bg-gray-200 text-black self-start'}`;
-            messageBubble.textContent = message;
-            messagesContainer.appendChild(messageBubble);
-        }
-    
-        // Example usage:
-        addMessage('This is my message', true);  // true indicates it's our message
-        addMessage('This is an opponent\'s message', false);
-    </script>
-    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const chatBox = document.getElementById('chat-box');
-            const chatInput = document.getElementById('chat-input');
-            const chatForm = document.getElementById('chat-forum');
-            const forumSection = document.getElementById('forumSection');
-    
-            const forumId = forumSection.getAttribute('data-forum-chat');
-            let pusher = null;
-            let channel = null;
-    
-            function fetchMessages(forumId) {
-                fetch(`/messages/${forumId}`)
-                    .then(response => response.json())
-                    .then(messages => {
-                        chatBox.innerHTML = '';
-                        messages.forEach(message => {
-                            addMessage(message);
-                        });
-                    })
-                    .catch(error => console.error('Error fetching messages:', error));
-            }
-    
-            function addMessage(message) {
-                const isMine = message.user_id === parseInt('{{ Auth::id() }}');
-                const messageBubble = document.createElement('div');
-                messageBubble.className = `flex flex-col items-${isMine ? 'end' : 'start'}`;
-                messageBubble.innerHTML = `
-                    <p class="text-gray-900 dark:text-white self-end mt-1 mb-2 font-semibold text-md">${isMine ? 'You' : 'User'}</p>
-                    <div class="${isMine ? 'chat-kamu' : 'chat-userLain'} text-white px-3 py-3 max-w-xs rounded-lg">
-                        ${message.message}
-                    </div>
-                `;
-                chatBox.appendChild(messageBubble);
-                chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll to bottom
-            }
-            function initPusher(forumId) {
-                if (pusher) {
-                    pusher.unsubscribe(`chat.${forumId}`);
-                }
-    
-                pusher = new Pusher('your-pusher-key', {
-                    cluster: 'your-cluster',
-                    encrypted: true
-                });
-    
-                channel = pusher.subscribe(`chat.${forumId}`);
-                channel.bind('App\\Events\\MessageSent', function(data) {
-                    addMessage(data.message);
-                });
-            }
-    
-            chatForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-    
-                if (!forumId) {
-                    alert('Forum ID is not set.');
-                    return;
-                }
-    
-                fetch('/messages', {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        message: chatInput.value,
-                        forum_id: forumId
-                    })
-                })
-                .then(response => response.json())
-                .then(() => {
-                    addMessage({
-                        message: chatInput.value,
-                        user_id: parseInt('{{ Auth::id() }}')
-                    });
-                    chatInput.value = '';
-                })
-                .catch(error => console.error('Error sending message:', error));
-            });
-    
-            fetchMessages(forumId);
-            initPusher(forumId);
-        });
-    </script>                             
+    <script src="{{ asset('./js/chat.js')}}"></script>                           
 </body>
 </html>
