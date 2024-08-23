@@ -37,10 +37,13 @@
                 .catch(error => console.error('Error fetching messages:', error));
         }
 
+        let lastSenderId = null;
+
         function addMessage(message) {
             const isMine = message.user_id === parseInt('{{ Auth::id() }}');
+            const isDifferentSender = message.user_id !== lastSenderId;
             const messageBubble = document.createElement('div');
-            messageBubble.className = `flex flex-col items-${isMine ? 'end' : 'start'}`;
+            messageBubble.className = `flex flex-col items-${isMine ? 'end' : 'start'} ${isDifferentSender ? '' : 'mb-1'}`;
 
             let imageHtml = '';
             if (message.image) {
@@ -48,15 +51,21 @@
                 imageHtml = `<img src="${imageUrl}" class="w-full h-auto mt-2 rounded-lg" onload="handleImageLoad(this)" onerror="handleImageError(this)" />`;
             }
 
-            messageBubble.innerHTML = `
-                <p class="text-gray-900 dark:text-white self-end mt-1 mb-2 font-semibold text-md">
-                    ${isMine ? 'You' : message.user_name || 'Unknown'}
-                </p>
-                <div class="${isMine ? 'chat-kamu' : 'chat-userLain'} text-white px-3 py-3 max-w-xs rounded-lg">
-                    ${message.message}
-                    ${imageHtml}
-                </div>
-            `;
+            // Hanya tampilkan nama jika pengirim berbeda dari pengirim sebelumnya
+            if (isDifferentSender) {
+                const senderName = document.createElement('p');
+                senderName.className = "text-gray-900 dark:text-white self-end font-semibold text-md";
+                senderName.textContent = isMine ? 'You' : message.user_name || 'Unknown';
+                messageBubble.appendChild(senderName);
+                lastSenderId = message.user_id;  // Perbarui pengirim terakhir
+            }
+
+            const chatContent = document.createElement('div');
+            chatContent.className = `${isMine ? 'chat-kamu' : 'chat-userLain'} text-white px-3 py-3 max-w-xs rounded-lg`;
+            chatContent.style.borderRadius = '15px'; // Border radius 15px semua sisi
+            chatContent.innerHTML = `${message.message} ${imageHtml}`;
+            
+            messageBubble.appendChild(chatContent);
             chatBox.appendChild(messageBubble);
             chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll to bottom
         }

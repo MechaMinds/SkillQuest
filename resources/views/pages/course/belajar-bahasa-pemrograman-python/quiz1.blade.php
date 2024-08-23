@@ -46,12 +46,12 @@
                     <!-- Forum Chat -->
                     <div class="flex flex-col flex-1 p-4 md:p-5 overflow-hidden" id="forumSection" data-forum-chat="8347215563">
                         <div class="flex flex-col" style="height: 570px">
-                            <div id="forum-box" class="flex flex-col space-y-4 overflow-y-auto flex-1">
+                            <div id="forum-box" class="flex flex-col space-y-2 overflow-y-auto flex-1">
                                 <!-- Chat Bubble -->
                                 <!-- Chat messages will be appended here -->
                             </div>
                             <!-- Form input -->
-                            <form id="chat-forum" class="space-y-2 border-gray-200 border-t dark:border-gray-700">
+                            <form id="chat-forum" class="space-y-2 mt-5 border-gray-200 border-t dark:border-gray-700">
                                 <!-- Pratinjau Gambar -->
                                 <div id="image-preview-container" class="relative mb-5 hidden mt-5">
                                     <img id="image-preview" src="" alt="Image preview" class="w-auto h-28 mb-2 rounded-lg" />
