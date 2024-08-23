@@ -41,9 +41,8 @@
 
         function addMessage(message) {
             const isMine = message.user_id === parseInt('{{ Auth::id() }}');
-            const isDifferentSender = message.user_id !== lastSenderId;
             const messageBubble = document.createElement('div');
-            messageBubble.className = `flex flex-col items-${isMine ? 'end' : 'start'} ${isDifferentSender ? '' : 'mb-1'}`;
+            messageBubble.className = `flex flex-col items-${isMine ? 'end' : 'start'}`;
 
             let imageHtml = '';
             if (message.image) {
@@ -52,7 +51,7 @@
             }
 
             // Hanya tampilkan nama jika pengirim berbeda dari pengirim sebelumnya
-            if (isDifferentSender) {
+            if (message.user_id !== lastSenderId) {
                 const senderName = document.createElement('p');
                 senderName.className = "text-gray-900 dark:text-white self-end font-semibold text-md";
                 senderName.textContent = isMine ? 'You' : message.user_name || 'Unknown';
@@ -61,7 +60,7 @@
             }
 
             const chatContent = document.createElement('div');
-            chatContent.className = `${isMine ? 'chat-kamu' : 'chat-userLain'} text-white px-3 py-3 max-w-xs rounded-lg`;
+            chatContent.className = `${isMine ? 'chat-kamu' : 'chat-userLain'} font-medium px-3 py-3 max-w-xs rounded-lg`;
             chatContent.style.borderRadius = '15px'; // Border radius 15px semua sisi
             chatContent.innerHTML = `${message.message} ${imageHtml}`;
             

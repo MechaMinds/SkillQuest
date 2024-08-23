@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Events\MessageSent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 
 class ForumController extends Controller
 {
@@ -38,7 +37,7 @@ class ForumController extends Controller
             'user_name' => $userName,
             'message' => $messageContent,
             'image' => $image,
-            'timestamp' => now()->toDateTimeString()
+            'timestamp' => now()->format('H:i')  // Format hanya jam dan menit
         ];
 
         // Save message to JSON file
@@ -53,3 +52,4 @@ class ForumController extends Controller
         return response()->json(['status' => 'Message Sent!']);
     }
 }
+
