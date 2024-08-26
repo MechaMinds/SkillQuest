@@ -187,10 +187,10 @@
                                     <div class="flex items-end justify-between">
                                         <div class="grid harga">
                                         <div class="gap-2 flex flex-row mb-2">
-                                            <p class="py-1 px-3 font-semibold text-white rounded-md bg-green-500">70%</p>
-                                            <p class="self-center text-blue-500 text-small font-light line-through">Rp 500.000</p>
+                                            <p class="py-1 px-3 font-semibold text-white rounded-md bg-green-500">50%</p>
+                                            <p class="self-center text-blue-500 text-small font-light line-through">Rp 800.000</p>
                                         </div>                    
-                                        <p class="text-gray-900 dark:text-white text-2xl font-semibold">Rp 150.000</p>
+                                        <p class="text-gray-900 dark:text-white text-2xl font-semibold">Rp 400.000</p>
                                         </div>
                                         <div class="flex justify-end">
                                             <button id="F" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

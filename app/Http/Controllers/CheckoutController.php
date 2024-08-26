@@ -16,7 +16,7 @@ class CheckoutController extends Controller
 
         // Daftar produk
         $products = [
-            ['id' => 1, 'name' => 'Belajar Bahasa Pemrograman Python', 'price' => 500000],
+            ['id' => 1, 'name' => 'Belajar Bahasa Pemrograman Python', 'price' => 400000],
             ['id' => 2, 'name' => 'Belajar Laravel', 'price' => 600000]
         ];
 
