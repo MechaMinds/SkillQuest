@@ -84,7 +84,7 @@
                             </form>                                                                                                
                         </div>
                     </div> 
-                    <!-- Forum Chat -->                                                                              
+                    <!-- Forum AI Chat -->                                                                              
                     <div id="silvaSection" class="hidden p-3">
                         <div class="flex flex-col" style="height: 570px">
                             <!-- Modal header -->
@@ -106,7 +106,7 @@
                             </div>
                             <!-- Modal body -->
                             <div class="flex flex-col flex-1 p-4 md:p-5 overflow-hidden">
-                                <div id="chat-box" class="flex flex-col space-y-4 overflow-y-auto flex-1">
+                                <div id="silva-chat-box" class="flex flex-col space-y-4 overflow-y-auto flex-1">
                                     <!-- Chat Bubble -->
                                     <div class="flex flex-col items-start">
                                         <p class="text-gray-900 dark:text-white self-end mt-1 mb-2 font-semibold text-md">Silva</p>
@@ -116,8 +116,8 @@
                                     </div>
                                 </div>
                                 <!-- Form input -->
-                                <form id="chat-form" class="flex items-center space-x-2 mt-10">
-                                    <input type="text" name="chat" id="chat-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type your message here" required>
+                                <form id="silva-chat-form" class="flex items-center space-x-2 mt-10">
+                                    <input type="text" name="chat" id="silva-chat-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type your message here" required>
                                     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
                                             <path fill="#fff" d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376l0 103.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"/>
@@ -126,7 +126,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
             </div>
             <!-- Code Editor and Output Cards -->
@@ -173,19 +173,34 @@
                             ></path>
                         </svg>
                     </button>
+                    <button data-modal-target="chat-modal" data-modal-toggle="chat-modal" data-tooltip-target="tooltip-AI" type="button">
+                        <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-9 h-9 rounded-full">
+                        <span class="sr-only">Silva AI</span>
+                    </button>
+                    <div id="tooltip-AI" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        Silva AI
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="fixed flex items-center space-x-4 p- divide-x rtl:divide-x-revers rounded-lg shadow right-5 bottom-5" role="alert">
+        {{-- <div class="fixed flex items-center space-x-4 p- divide-x rtl:divide-x-revers rounded-lg shadow right-5 bottom-5">
             <div class="relative text-sm font-normal">
-                <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-12 h-12 rounded-full" data-tooltip-target="tooltip-top">
+                <button type="button" id="chat-button" data-modal-target="chat-modal" data-modal-toggle="chat-modal">
+                    <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-12 h-12 rounded-full">
+                </button>
             </div>
-        </div>    
+        </div> --}}
+        <div id="app">
+            <x-AIChatDesktop/>
+        </div>          
         @component('components.source.javascriptQuiz1')
         @endcomponent
-        @component('components.source.javascriptForum')
+        @component('components.source.javascriptPersiapan')
         @endcomponent
-        <script src="{{asset('js/main.js')}}"></script>
-        <script src="{{ asset('./js/chat.js')}}"></script>                           
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+        <script src="{{ asset('./js/main.js') }}"></script>
+        {{-- <script src="{{ asset('./js/chat.js')}}"></script> --}}
     </body>
 </html>

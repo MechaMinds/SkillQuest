@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatInput = document.getElementById("chat-input");
     const previousChatBtn = document.getElementById("previous-chat");
     const newChatBtn = document.getElementById("new-chat");
+    const chatButton = document.getElementById("chat-button");
+    const chatModal = document.getElementById("chat-modal");
 
     // Default chat message
     const defaultChatMessage = `
@@ -22,24 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const historyHTML = history
             .map(
                 (message) => `
-            <div id="${message.id}" class="${
+                <div id="${message.id}" class="${
                     message.type === "user"
                         ? "flex flex-col items-end"
                         : "flex flex-col items-start"
                 }">
-                <p class="text-gray-900 dark:text-white self-end mt-1 mb-2 font-semibold text-md">${
-                    message.sender
-                }</p>
-                <div class="bg-gray-50 dark:bg-gray-600 text-gray-900 dark:text-white px-3 py-3 max-w-xs chat-${
-                    message.type
-                }">
-                    <p>${message.text}</p>
+                    <p class="text-gray-900 dark:text-white self-end mt-1 mb-2 font-semibold text-md">${
+                        message.sender
+                    }</p>
+                    <div class="bg-gray-50 dark:bg-gray-600 text-gray-900 dark:text-white px-3 py-3 max-w-xs chat-${
+                        message.type
+                    }">
+                        <p>${message.text}</p>
+                    </div>
+                    <p class="text-gray-900 dark:text-white self-end mt-1">${
+                        message.time
+                    }</p>
                 </div>
-                <p class="text-gray-900 dark:text-white self-end mt-1">${
-                    message.time
-                }</p>
-            </div>
-        `
+            `
             )
             .join("");
         chatBox.innerHTML = defaultChatMessage + historyHTML; // Ensure default message is preserved
@@ -172,4 +174,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initial load of chat history
     loadChatHistory();
+
+    // Manual modal control
+    chatButton.addEventListener("click", () => {
+        chatModal.classList.toggle("hidden"); // Membuka atau menutup modal
+    });
 });
