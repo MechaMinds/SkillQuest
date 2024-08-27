@@ -22,12 +22,35 @@
                     <button id="quizButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active whitespace-nowrap">
                         Soal Quiz
                     </button>
-                    <button id="forumButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active whitespace-nowrap">
+                    <button id="forumButtonMain" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active whitespace-nowrap">
                         Forum Diskusi
                     </button>
-                    <button id="silvaButton" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active relative whitespace-nowrap">
+                    <button id="silvaButtonMain" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active relative whitespace-nowrap">
                         Tanya Silva
                     </button>
+                    <div id="toast-bottom-right" class="fixed flex items-center w-full max-w-xs space-x-4 divide-x rtl:divide-x-reverse right-5 bottom-5 hidden" role="alert">
+                        <div id="toast-interactive" class="w-full max-w-xs p-4 rounded-lg bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 dark:text-gray-500 text-gray-400" role="alert">
+                            <div class="flex">
+                                <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-blue-500 bg-blue-100 rounded-md">
+                                    <img src="{{asset('images/bot_photoprofile.png')}}" alt="Profile" class="rounded-full">
+                                </div>
+                                <div class="ms-3 text-sm font-normal">
+                                    <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Notifikasi Terbaru</span>
+                                    <div class="mb-2 text-sm font-normal">Sepertinya anda mengalami kendala, cobalah fitur dibawah ini. Semoga Membantu Ya!</div> 
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <button id="silvaButtonToast" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-3 min-w-max dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Tanya Silva</button>
+                                        <button id="forumButtonToast" type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm py-3 px-3 min-w-max dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Forum Diskusi</button>
+                                    </div>                            
+                                </div>                    
+                                <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white items-center justify-center flex-shrink-0 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-interactive" aria-label="Close">
+                                    <span class="sr-only">Close</span>
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>          
                 </div>
                 <div id="content" class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 rounded-xl flex-1 overflow-auto">
                     <div id="quizSection" class="p-6">
@@ -44,7 +67,7 @@
                         </div>
                     </div>
                     <!-- Forum Chat -->
-                    <div class="flex flex-col flex-1 p-4 md:p-5 overflow-hidden" id="forumSection" data-forum-chat="8347215563">
+                    <div class="flex flex-col flex-1 p-4 md:p-5 overflow-hidden hidden" id="forumSection" data-forum-chat="8347215563">
                         <div class="flex flex-col" style="height: 570px">
                             <div id="forum-box" class="flex flex-col space-y-2 overflow-y-auto flex-1">
                                 <!-- Chat Bubble -->
@@ -126,7 +149,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div>                    
+                    </div>         
                 </div>
             </div>
             <!-- Code Editor and Output Cards -->
@@ -173,24 +196,9 @@
                             ></path>
                         </svg>
                     </button>
-                    <button data-modal-target="chat-modal" data-modal-toggle="chat-modal" data-tooltip-target="tooltip-AI" type="button">
-                        <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-9 h-9 rounded-full">
-                        <span class="sr-only">Silva AI</span>
-                    </button>
-                    <div id="tooltip-AI" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                        Silva AI
-                        <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
                 </div>
             </div>
         </div>
-        {{-- <div class="fixed flex items-center space-x-4 p- divide-x rtl:divide-x-revers rounded-lg shadow right-5 bottom-5">
-            <div class="relative text-sm font-normal">
-                <button type="button" id="chat-button" data-modal-target="chat-modal" data-modal-toggle="chat-modal">
-                    <img src="{{ asset('./images/bot_photoprofile.png') }}" alt="Profile" class="w-12 h-12 rounded-full">
-                </button>
-            </div>
-        </div> --}}
         <div id="app">
             <x-AIChatDesktop/>
         </div>          

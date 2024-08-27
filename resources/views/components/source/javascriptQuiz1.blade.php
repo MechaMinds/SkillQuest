@@ -179,36 +179,47 @@
     });
 </script>             
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Ambil section terakhir yang disimpan di localStorage
-        const lastSection = localStorage.getItem('activeSection') || 'quizSection';
-        showSection(lastSection);
+    document.addEventListener("DOMContentLoaded", function () {
+        const quizButton = document.getElementById("quizButton");
+        const forumButtonMain = document.getElementById("forumButtonMain");
+        const silvaButtonMain = document.getElementById("silvaButtonMain");
+        const silvaButtonToast = document.getElementById("silvaButtonToast");
+        const forumButtonToast = document.getElementById("forumButtonToast");
 
-        // Fungsi untuk menampilkan section yang sesuai
-        function showSection(sectionId) {
-            // Sembunyikan semua section
-            document.getElementById('quizSection').classList.add('hidden');
-            document.getElementById('forumSection').classList.add('hidden');
-            document.getElementById('silvaSection').classList.add('hidden');
+        const quizSection = document.getElementById("quizSection");
+        const forumSection = document.getElementById("forumSection");
+        const silvaSection = document.getElementById("silvaSection");
 
-            // Tampilkan section yang dipilih
-            document.getElementById(sectionId).classList.remove('hidden');
-        }
-
-        // Tambahkan event listener ke tombol untuk menyimpan section yang dipilih di localStorage
-        document.getElementById('quizButton').addEventListener('click', function() {
-            localStorage.setItem('activeSection', 'quizSection');
-            showSection('quizSection');
+        // Tambah event listener untuk tombol di Navbar
+        quizButton.addEventListener("click", () => {
+            quizSection.style.display = "block";
+            forumSection.style.display = "none";
+            silvaSection.style.display = "none";
         });
 
-        document.getElementById('forumButton').addEventListener('click', function() {
-            localStorage.setItem('activeSection', 'forumSection');
-            showSection('forumSection');
+        forumButtonMain.addEventListener("click", () => {
+            quizSection.style.display = "none";
+            forumSection.style.display = "block";
+            silvaSection.style.display = "none";
         });
 
-        document.getElementById('silvaButton').addEventListener('click', function() {
-            localStorage.setItem('activeSection', 'silvaSection');
-            showSection('silvaSection');
+        silvaButtonMain.addEventListener("click", () => {
+            quizSection.style.display = "none";
+            forumSection.style.display = "none";
+            silvaSection.style.display = "block";
+        });
+
+        // Tambah event listener untuk tombol di Toast
+        silvaButtonToast.addEventListener("click", () => {
+            quizSection.style.display = "none";
+            forumSection.style.display = "none";
+            silvaSection.style.display = "block";
+        });
+
+        forumButtonToast.addEventListener("click", () => {
+            quizSection.style.display = "none";
+            forumSection.style.display = "block";
+            silvaSection.style.display = "none";
         });
     });
 
@@ -466,4 +477,40 @@
             silvaChatModal.classList.toggle("hidden");
         });
     });
+</script>
+<script>
+    // Initialize variables
+    let typingTimer;
+    const typingDelay = 10000; // 10 seconds delay
+    const codeEditor = document.getElementById('codeEditor');
+    const toast = document.getElementById('toast-bottom-right');
+    const closeToastButton = toast.querySelector('[data-dismiss-target="#toast-interactive"]');
+
+    // Function to show the toast notification
+    function showToast() {
+        toast.classList.remove('hidden');
+        // Hide the toast after 10 seconds if not closed
+        setTimeout(() => {
+            toast.classList.add('hidden');
+        }, 10000); // Adjust this timeout if you want the toast to stay visible longer
+    }
+
+    // Function to reset the timer
+    function resetTypingTimer() {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(showToast, typingDelay);
+    }
+
+    // Event listener for user input
+    codeEditor.addEventListener('input', resetTypingTimer);
+
+    // Event listener for closing the toast
+    closeToastButton.addEventListener('click', () => {
+        clearTimeout(typingTimer); // Clear the timer when toast is closed
+        toast.classList.add('hidden'); // Hide the toast immediately
+        resetTypingTimer(); // Restart the timer to show the toast again after 10 seconds of inactivity
+    });
+
+    // Initialize the timer when the page loads
+    resetTypingTimer();
 </script>
