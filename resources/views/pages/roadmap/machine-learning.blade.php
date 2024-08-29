@@ -142,7 +142,7 @@
                                     </div>
                                     <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Detail Course</a>
                                         </button>
                                     </div>
                                     </div> 
@@ -193,8 +193,11 @@
                                         <p class="text-gray-900 dark:text-white text-2xl font-semibold">Rp 400.000</p>
                                         </div>
                                         <div class="flex justify-end">
-                                            <button id="checkout-button" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                <a href="/course/belajar-bahasa-pemrograman-python" id="button-text" class="text-md">Gabung Kelas</a>
+                                            {{-- <button id="detail-button" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                <a href="/course/belajar-bahasa-pemrograman-python" id="button-text" class="text-md">Detail Course</a>
+                                            </button> --}}
+                                            <button id="detail-button" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                <a href="/course/belajar-bahasa-pemrograman-python" class="text-md">Detail Course</a>
                                             </button>
                                         </div>
                                         <div class="flex justify-end">
@@ -251,7 +254,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Detail Course</a>
                                         </button>
                                         </div>
                                     </div>                             
@@ -304,7 +307,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Detail Course</a>
                                         </button>
                                         </div>
                                     </div>                          
@@ -356,7 +359,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Detail Course</a>
                                         </button>
                                         </div>
                                     </div>                          
@@ -409,7 +412,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Detail Course</a>
                                         </button>
                                         </div>
                                     </div>                          
@@ -461,7 +464,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Detail Course</a>
                                         </button>
                                         </div>
                                     </div>                                                                                                                            
@@ -509,7 +512,7 @@
                                         </div>
                                         <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            <a href="javascript:void(0)" class="text-md">Gabung Kelas</a>
+                                            <a href="javascript:void(0)" class="text-md">Detail Course</a>
                                         </button>
                                         </div>
                                     </div>                          
@@ -609,7 +612,7 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const checkoutButton = document.getElementById('checkout-button');
+                const checkoutButton = document.getElementById('detail-button');
                 const continueButton = document.getElementById('continue-button');
 
                 // Periksa status pembayaran dari database

@@ -98,11 +98,19 @@
                 </ul>
             </div>
             <!-- Tombol Gabung Kelas -->
-            <a href="{{ route('checkout', ['id' => 1]) }}" class="">
-              <button id="checkout-button" type="submit" class="w-full mt-6 py-6 font-medium text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px; font-size:22px">
-                Gabung Kelas
-              </button>
-            </a>
+            @auth
+                <a href="{{ route('checkout', ['id' => 1]) }}">
+                    <button id="checkout-button" type="submit" class="w-full mt-6 py-6 font-medium text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px; font-size:22px">
+                        Gabung Kelas
+                    </button>
+                </a>
+            @else
+                <a href="/login">
+                    <button id="login-button" type="button" class="w-full mt-6 py-6 font-medium text-white bg-blue-700 rounded" style="border-radius: 0px 0px 20px 20px; font-size:22px">
+                        Gabung Kelas
+                    </button>
+                </a>
+            @endauth
             <!-- Tombol Lanjut Kelas -->
             <a href="/course/belajar-bahasa-pemrograman-python/persiapan" class="">
               <button id="continue-button" type="button" class="w-full mt-6 py-6 font-medium text-white bg-green-500 rounded hidden" style="border-radius: 0px 0px 20px 20px; font-size:22px">
