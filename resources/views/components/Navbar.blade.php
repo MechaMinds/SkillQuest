@@ -108,7 +108,7 @@
                     </a>
                   </li>
                   <li class="mb-7">
-                    <a href="/kelas/machine-learning" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
+                    <a href="/roadmap/machine-learning" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 text-lg">
                       Machine Learning
                     </a>
                   </li>
@@ -311,7 +311,7 @@
 								class="flex items-center w-full px-4 py-4 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Android Developer</a>
 						</li>
 						<li>
-							<a href="/kelas/machine-learning"
+							<a href="/roadmap/machine-learning"
 								class="flex items-center w-full px-4 py-4 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Machine Learning</a>
 						</li>
 						<li>

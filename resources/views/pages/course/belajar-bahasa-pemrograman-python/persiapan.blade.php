@@ -354,7 +354,7 @@
             </div>
         </div>        
         <div class="items-center justify-center ms-auto md:flex gap-2" id="nextMateri" style="cursor: pointer;">
-            <p class="dark:text-white text-gray-900 font-semibold sm:hidden lg:block hidden">Selanjutnya</p>
+            <p class="dark:text-white text-gray-900 font-semibold">Selanjutnya</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5" style="margin-top: 2px">
                 <path class="dark:fill-white" fill="rgb(55 65 81)" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/>
             </svg>
@@ -365,10 +365,10 @@
     <div class="fixed bottom-0 left-0 z-50 w-full h-20 bg-white dark:bg-black text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-600 lg:hidden">
         <div class="flex justify-between items-center h-full px-4 md:px-8">
             <div class="flex items-center text-gray-500 dark:text-gray-400 gap-2" id="prevMateriMobile" style="cursor:pointer">
+                <p class="dark:text-white text-gray-900 font-semibold hidden sm:block">Sebelum</p>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5" style="margin-top: 2px">
                     <path class="dark:fill-white" fill="rgb(55 65 81)" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/>
                 </svg>
-                <p class="dark:text-white text-gray-900 font-semibold hidden sm:block">Sebelum</p>
             </div>
             <div class="flex items-center space-x-4">
                 <button data-modal-target="pop-chat-mobile" data-modal-toggle="pop-chat-mobile" data-tooltip-target="tooltip-microphone" type="button">

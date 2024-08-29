@@ -142,7 +142,7 @@
                 </p>
                 <!-- Key Points -->
                 <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg mt-10" style="font-size: 25px;">Tujuan Course Ini</h2>
-                <div class="grid grid-cols-2 gap-6">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-6">
                   <!-- Kiri -->
                   <div>
                     <li class="checklist-item">
@@ -222,7 +222,7 @@
                 </p>
                 <!-- Key Points -->
                 <h2 class="text-black dark:text-white text-xl font-bold mb-7 lg:marg-lg mt-5" style="font-size: 25px;">Online - Self Learning</h2>
-                <div class="grid grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 gap-6">
                   <!-- Kiri -->
                   <div>
                     <li class="checklist-item">
@@ -770,7 +770,7 @@
               <div class="testimoni-1">
                 <div class="w-full p-4 text-left bg-white border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" style="border-radius: 20px">
                   <div class="informationUser flex flex-row gap-4">
-                    <img src="{{{asset('./images/user/user1.png')}}}" alt="Reviewer 1" class="w-10 h-10 rounded-full object-cover flex-shrink-0" style="margin-top: 3px" />
+                    <img src="{{asset("./images/testimoni/testimoni1.png")}}" alt="Reviewer 1" class="w-10 h-10 rounded-full object-cover flex-shrink-0" style="margin-top: 3px" />
                     <div class="nameAsalCourse">
                       <h5 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Muhammad Farhan Abdullah</h5>
                       <div class="mb-1 asalUniversitas flex flex-row space-x-2 items-center hidden lg:flex">
@@ -812,7 +812,7 @@
               <div class="testimoni-2">
                 <div class="w-full p-4 text-left bg-white border border-gray-200 shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" style="border-radius: 20px">
                   <div class="informationUser flex flex-row gap-4">
-                    <img src="{{{asset('./images/user/user2.png')}}}" alt="Reviewer 1" class="w-10 h-10 rounded-full object-cover flex-shrink-0" style="margin-top: 3px" />
+                    <img src="{{asset("./images/testimoni/testimoni2.png")}}" alt="Reviewer 1" class="w-10 h-10 rounded-full object-cover flex-shrink-0" style="margin-top: 3px" />
                     <div class="nameAsalCourse">
                       <h5 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Gilang Ramadhan Saputra</h5>
                       <div class="mb-1 asalUniversitas flex flex-row space-x-2 items-center hidden lg:flex">
@@ -912,15 +912,17 @@
     <!-- Mode Mobile -->
     <div class="z-50 fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 bottom-bar" style="height: 80px">
       <div class="flex items-center justify-between px-4 py-3 mt-2">
-          <span class="text-lg font-bold text-black dark:text-white ml-4">Rp. 800.000</span>
+          <span class="text-lg font-bold text-black dark:text-white ml-4">Rp. 400.000</span>
           <a href="{{ route('checkout', ['id' => 1]) }}" class="">
             <button id="checkout-buttonMobile" class="px-4 py-2 font-semibold text-md text-white bg-blue-700 rounded mr-4" style="border-radius:50px; flex-shrink: 0;">
                 Gabung Kelas
             </button>
           </a>
-          <button id="continue-button" type="button" class="w-full mt-6 py-6 font-medium text-white bg-green-500 rounded hidden" style="border-radius: 0px 0px 20px 20px; font-size:22px">
-            Lanjut Belajar
-          </button>
+          <a href="/course/belajar-bahasa-pemrograman-python/persiapan" class="">
+            <button id="continue-buttonMobile" type="button" class="px-4 py-2 font-semibold text-md text-white bg-green-500 rounded mr-4 hidden" style="border-radius:50px; flex-shrink: 0;">
+              Lanjut Belajar
+            </button>
+          </a>
       </div>
     </div>
     <div data-dial-init class="z-50 fixed start-6 group" style="bottom: 100px">
@@ -944,6 +946,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const checkoutButton = document.getElementById('checkout-buttonMobile');
+          const continueButton = document.getElementById('continue-buttonMobile');
+  
+          // Periksa status pembayaran dari database
+          axios.get('/order/status')
+              .then(response => {
+                  console.log(response.data); // Tambahkan ini untuk memeriksa respons API
+                  const paymentStatus = response.data.status; // Misalnya, 'success' atau 'pending'
+                  if (paymentStatus === 'success') {
+                      checkoutButton.classList.add('hidden');
+                      continueButton.classList.remove('hidden');
+                  }
+              })
+              .catch(error => {
+                  console.error('Error fetching payment status:', error);
+              });
+  
+          // Tangani klik tombol "Lanjut Belajar"
+          continueButton.addEventListener('click', function() {
+              fetch('/api/start-course', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                  },
+                  body: JSON.stringify({
+                      course_id: 1  // Ganti dengan ID kursus yang sesuai jika diperlukan
+                  })
+              }).then(response => response.json())
+              .then(data => {
+                  if (data.success) {
+                      console.log('Kursus dimulai');
+                  } else {
+                      console.log('Gagal memulai kursus');
+                  }
+              });
+          });
+      });
+    </script>      
     <script>
       document.addEventListener('DOMContentLoaded', function () {
           const checkoutButton = document.getElementById('checkout-button');

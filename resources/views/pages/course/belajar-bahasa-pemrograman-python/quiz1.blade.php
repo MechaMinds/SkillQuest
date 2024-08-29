@@ -28,7 +28,7 @@
                     <button id="silvaButtonMain" type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-xl hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 border-active relative whitespace-nowrap">
                         Tanya Silva
                     </button>
-                    <div id="toast-bottom-right" class="fixed flex items-center w-full max-w-xs space-x-4 divide-x rtl:divide-x-reverse right-5 bottom-5 hidden" role="alert">
+                    <div id="toast-bottom-right" class="fixed flex items-center w-full max-w-xs space-x-4 divide-x rtl:divide-x-reverse right-5 bottom-5 hidden z-50" role="alert">
                         <div id="toast-interactive" class="w-full max-w-xs p-4 rounded-lg bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 dark:text-gray-500 text-gray-400" role="alert">
                             <div class="flex">
                                 <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-blue-500 bg-blue-100 rounded-md">

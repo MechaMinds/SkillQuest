@@ -152,7 +152,7 @@
             });
         });          
     </script>
-    {{-- <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const materi = ["pengenalanKelas", "mekanismeBelajar", "forumDiskusi", "forumDiskusi", "helloWorld", "quiz1"];
             let currentIndex = 0;
@@ -242,7 +242,7 @@
 
             updateMateri(); // Initial update
         });
-    </script> --}}
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const asideButton = document.getElementById('asideButton');
