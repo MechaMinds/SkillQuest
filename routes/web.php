@@ -9,8 +9,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\ProfileUpdateController;
+use App\Http\Controllers\PersonalUserController;
 use App\Http\Controllers\DataPribadiController;
-use App\Http\Controllers\PersonalDataController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CodeController;
@@ -67,7 +67,7 @@ Route::get('/daftar', function () {
 })->name('daftar');
 Route::post('/daftar', [RegisterController::class, 'daftar'])->name('daftar');
 Route::get('/verify-email/{token}', [RegisterController::class, 'verifyEmail'])->name('verify.email');
-Route::get('/data-pribadi', [PersonalDataController::class, 'show'])->middleware('auth');
+Route::post('/data-pribadi', [PersonalUserController::class, 'store'])->name('personal-users.store');
 Route::get('/data-pribadi', function(){
     return view('pages.profile.dataPribadi');
 });

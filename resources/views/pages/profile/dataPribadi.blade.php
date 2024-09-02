@@ -31,7 +31,7 @@
                         <div class="dark:bg-gray-700 bg-gray-100 dark:text-white text-gray-900 text-md p-5 rounded-lg font-medium mb-5">
                             Kami perlu data pribadi kamu untuk layanan yang lebih baik. Dengan mengisi formulir ini, kamu setuju data akan digunakan sesuai <a href="" class="text-blue-600 dark:text-blue-500 underline font-medium">kebijakan privasi</a> kami.
                         </div>
-                        {{-- <form method="POST" action="{{ route('personalData.store') }}"> --}}
+                        <form method="POST" action="{{ route('personal-users.store') }}">
                             @csrf
                             <div class="dataDiri">
                                 <div class="lg:grid lg:grid-cols-2 sm:flex gap-4">
@@ -147,30 +147,21 @@
                                 </div> 
                                 <div class="lg:grid lg:grid-cols-2 sm:flex gap-4 mt-5">
                                     <div class="sm:mt-5 lg:mt-0 mt-5 pendidikanTerakhir">
-                                        <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Pendidikan Terakhir<span class="text-red-500">*</span></h1>                    
+                                        <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Pendidikan Terakhir</h1>                    
                                         <div class="relative max-w-sm">
                                             <input type="text" name="pendidikan_terakhir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"placeholder="Ketik Pendidikan Terakhir" >
                                         </div>  
                                     </div>
                                     <div class="sm:mt-5 lg:mt-0 mt-5 pekerjaanSaatIni">
-                                        <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Pekerjaan Saat Ini<span class="text-red-500">*</span></h1>                    
+                                        <h1 class="mb-3 font-medium dark:text-white text-gray-900 text-lg">Pekerjaan Saat Ini</h1>                    
                                         <div class="relative max-w-sm">
                                             <input type="text" name="pekerjaan_saat_ini" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"placeholder="Ketik Pekerjaan Saat Ini" >
                                         </div>  
                                     </div>
                                 </div> 
                                 <button type="submit" class="mt-4 bg-blue-700 text-white px-5 py-3 text-1xl rounded-lg">Simpan Perubahan</button>    
-                            </div>
-                            @if (session('status') == 'success')
-                                <script>
-                                    alert('{{ session('message') }}');
-                                </script>
-                            @elseif (session('status') == 'error')
-                                <script>
-                                    alert('{{ session('message') }}');
-                                </script>
-                            @endif    
-                        {{-- </form>                               --}}
+                            </div>  
+                        </form>                              
                     </div>
                 </div>
             </div>

@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <br><br>
                     Ada lagi yang ingin ditanyakan? Saya harap jawaban di atas sudah membantu Anda mengetahui sejarah python<br>
                 `;
-            } else if (userMessage.toLowerCase() === "selamat siang silva") {
+            } else if (userMessage.toLowerCase() === "halo bang") {
                 responseMessage = `
                     Selamat siang! Bagaimana kabar Anda hari ini? Jika ada yang bisa saya bantu, silakan beri tahu saya. <br>
                     <br>
