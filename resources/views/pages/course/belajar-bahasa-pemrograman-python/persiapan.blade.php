@@ -427,6 +427,7 @@
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="{{ asset('./js/main.js') }}"></script>
     <script src="{{ asset('./js/chat.js')}}"></script>
+    <script src="{{ asset('./js/chatMobile.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/ScrollTrigger.min.js"></script>   
 </body>
