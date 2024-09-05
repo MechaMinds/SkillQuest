@@ -27,8 +27,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('terbaru', 'components.terbaru');
             $view->with('benefit', 'components.benefit');
         });
-        if(config('app.env') === 'local'){
-            URL::forceScheme('https');
-        }
+        // if(config('app.env') === 'local'){
+        //     URL::forceScheme('https');
+        // }
     }
 }
