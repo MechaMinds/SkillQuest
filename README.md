@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co.com/DwLx7p2/skillquest-logo.png" height="76px">
+<img src="https://i.postimg.cc/YCHy9zg1/skillquest-logo.png" height="76px">
 <br>
 <br>
 
