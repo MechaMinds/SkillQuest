@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
-        setTimeout(streamNextWord, 3000); // Wait 3 seconds before starting
+        setTimeout(streamNextWord, 3000); // Tunggu 3 detik sebelum mulai
     };
 
     // Handle form submit
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const userMessage = chatInput.value.trim();
         if (userMessage !== "") {
-            // Add user's message to chat
+            // Tambahkan pesan pengguna ke chat
             const userChatDiv = document.createElement("div");
             userChatDiv.className = "flex flex-col items-end";
             userChatDiv.id = generateUniqueId();
@@ -124,35 +124,32 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             chatBox.appendChild(userChatDiv);
 
-            // Determine response based on user message
+            // Tentukan respons berdasarkan pesan pengguna
             let responseMessage;
             if (
                 userMessage.toLowerCase() ===
                 "berikan saya penjelasan tentang sejarah bahasa python"
             ) {
-                responseMessage = `
-                    Python adalah bahasa pemrograman tingkat tinggi yang terkenal karena sintaksnya yang jelas dan keterbacaan kode yang baik. Berikut adalah gambaran singkat tentang sejarah Python: Penciptaan dan Awal Mula, Python Saat Ini, Pengaruh dan Populeritas.
-                `;
+                responseMessage =
+                    "Python adalah bahasa pemrograman tingkat tinggi yang terkenal karena sintaksnya yang jelas dan keterbacaan kode yang baik. Berikut adalah gambaran singkat tentang sejarah Python: Penciptaan dan Awal Mula, Python Saat Ini, Pengaruh dan Populeritas.";
             } else if (userMessage.toLowerCase() === "selamat siang silva") {
-                responseMessage = `
-                    Selamat siang! Bagaimana kabar Anda hari ini? Jika ada yang bisa saya bantu, silakan beri tahu saya. 
-                `;
+                responseMessage =
+                    "Selamat siang! Bagaimana kabar Anda hari ini? Jika ada yang bisa saya bantu, silakan beri tahu saya.";
             } else if (userMessage.toLowerCase() === "terima kasih silva") {
-                responseMessage = `
-                    Sama-sama beri tahu lagi jika anda butuh bantuan.
-                `;
+                responseMessage =
+                    "Sama-sama beri tahu lagi jika anda butuh bantuan.";
             } else {
                 responseMessage = "Pesan otomatis";
             }
 
-            // Stream response with delay
+            // Streaming respons dengan penundaan
             streamWords(responseMessage, chatBox);
 
-            // Clear the input field
+            // Kosongkan input
             chatInput.value = "";
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // Save chat history
+            // Simpan riwayat chat
             saveChatHistory();
         }
     });

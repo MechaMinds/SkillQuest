@@ -54,17 +54,18 @@
                 </div>
                 <div id="content" class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 rounded-xl flex-1 overflow-auto">
                     <div id="quizSection" class="p-6">
-                        <p class="text-black dark:text-white mb-4">Buatlah sebuah fungsi bernama <span class="font-medium underline text-blue-600">karakter terbanyak</span> yang menerima sebuah string sebagai input. Fungsi ini harus mengembalikan karakter yang paling sering muncul dalam string tersebut. Jika ada lebih dari satu karakter dengan jumlah kemunculan yang sama, kembalikan karakter yang muncul lebih dahulu.</p>
+                        <p class="text-black dark:text-white mb-4">Buatlah sebuah program Python yang menghasilkan output sebagai berikut:</p>
                         <div class="dark:text-white text-gray-900 bg-gray-100 dark:bg-gray-700 p-4 rounded-xl overflow-x-auto">
-                            <code>
-                                teks = "belajar bahasa python"
-                            </code>
+                            <p id="copyText">
+                                Output = Aku Cinta SkillQuest
+                            </p>
                         </div>
-                        <p class="text-black dark:text-white mt-4 font-medium">Hint: Gunakan struktur data seperti dictionary untuk menyimpan jumlah kemunculan setiap karakter dalam string.</p>
+                        <p class="text-black dark:text-white mt-4 font-medium">Hint: Gunakan Print</p>
                         <div class="mt-6 flex gap-2">
                             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
                             <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Algorithms</span>
                         </div>
+                        <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="copyToClipboard()">Salin Soal</button>
                     </div>
                     <!-- Forum Chat -->
                     <div class="flex flex-col flex-1 p-4 md:p-5 overflow-hidden hidden" id="forumSection" data-forum-chat="8347215563">
@@ -210,5 +211,15 @@
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
         <script src="{{ asset('./js/main.js') }}"></script>
         {{-- <script src="{{ asset('./js/chat.js')}}"></script> --}}
+        <script>
+            function copyToClipboard() {
+                const textToCopy = "buatlah sebuah program python yang menghasilkan output sebagai berikut: output = aku cinta skillquest hint: gunakan print";
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    alert('Teks berhasil disalin!');
+                }).catch(err => {
+                    console.error('Gagal menyalin teks: ', err);
+                });
+            }
+        </script>
     </body>
 </html>

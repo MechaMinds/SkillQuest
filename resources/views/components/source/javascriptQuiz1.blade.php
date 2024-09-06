@@ -229,7 +229,7 @@
     });
     // CodeMirror setup
     var editor = CodeMirror(document.getElementById("codeEditor"), {
-        value: "def karakter_terbanyak(teks):\n    #Menghitung frekuensi setiap karakter dalam teks\n    frekuensi = {}\n    for char in teks:",
+        value: "#tulis program kamu disini",
         mode: "python",
         lineNumbers: true,
         theme: "eclipse",
@@ -366,12 +366,45 @@
             `silva_chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
         // Handle form submit
+        const streamWords = (responseMessage, chatBox) => {
+            const words = responseMessage.split(" ");
+            let wordIndex = 0;
+            const responseChatDiv = document.createElement("div");
+
+            responseChatDiv.className = "flex flex-col items-start";
+            responseChatDiv.id = silvaGenerateUniqueId();
+            responseChatDiv.innerHTML = `
+                <p class="text-gray-900 dark:text-white self-end mt-1 mb-2 font-semibold text-md">Silva</p>
+                <div class="bg-gray-50 dark:bg-gray-600 text-gray-900 dark:text-white px-3 py-3 max-w-xs chat-ai">
+                    <p class="chat-text"></p> <!-- ini untuk teks respons -->
+                </div>
+                <p class="text-gray-900 dark:text-white self-end mt-1">${new Date().toLocaleTimeString(
+                    [],
+                    { hour: "2-digit", minute: "2-digit" }
+                )}</p>
+            `;
+            chatBox.appendChild(responseChatDiv);
+            const chatParagraph = responseChatDiv.querySelector(".chat-text"); // Temukan elemen <p> yang akan diisi dengan teks
+
+            const streamNextWord = () => {
+                if (wordIndex < words.length) {
+                    chatParagraph.textContent += `${words[wordIndex]} `; // Tambahkan kata ke elemen <p>
+                    wordIndex++;
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                    setTimeout(streamNextWord, 500); // Delay 0.5 detik antar kata
+                }
+            };
+
+            setTimeout(streamNextWord, 3000); // Tunggu 3 detik sebelum mulai
+        };
+
+        // Handle form submit
         silvaChatForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
             const userMessage = silvaChatInput.value.trim();
             if (userMessage !== "") {
-                // Add user's message to chat
+                // Tambahkan pesan pengguna ke chat
                 const userChatDiv = document.createElement("div");
                 userChatDiv.className = "flex flex-col items-end";
                 userChatDiv.id = silvaGenerateUniqueId();
@@ -386,74 +419,36 @@
                 `;
                 silvaChatBox.appendChild(userChatDiv);
 
-                // Determine response based on user message
+                // Tentukan respons berdasarkan pesan pengguna
                 let responseMessage;
-                if (
-                    userMessage.toLowerCase() ===
-                    "berikan saya penjelasan tentang sejarah bahasa python"
-                ) {
+                if (userMessage.toLowerCase() === "berikan saya penjelasan tentang sejarah bahasa python") {
                     responseMessage = `
-                        Python adalah bahasa pemrograman tingkat tinggi yang terkenal karena sintaksnya yang jelas dan keterbacaan kode yang baik. Berikut adalah gambaran singkat tentang sejarah Python: <br><br>
-                        1. Penciptaan dan Awal Mula (1980-an)<br>
-                        1980-an: Python dikembangkan oleh Guido van Rossum, seorang programmer asal Belanda. Dia mulai mengerjakan Python pada akhir 1980-an sebagai proyek sampingan ketika dia bekerja di Centrum Wiskunde & Informatica (CWI) di Amsterdam. Tujuan awal van Rossum adalah untuk membuat bahasa pemrograman yang mudah digunakan dan didukung dengan sistem pengelolaan memori otomatis.<br><br>
-                        2. Versi Pertama (1991)<br>
-                        Pada Februari 1991, Guido van Rossum merilis versi pertama Python (versi 0.9.0) ke Usenet. Versi ini sudah memiliki beberapa fitur utama Python yang kita kenal hari ini, termasuk tipe data seperti string, list, dan dictionary, serta konsep-konsep seperti fungsi dan pengecualian (exceptions).<br><br>
-                        3. Python 2.0 (2000)<br>
-                        Python 2.0 dirilis pada Oktober 2000. Versi ini memperkenalkan fitur-fitur baru, termasuk pemrograman berbasis generator dan dukungan untuk Unicode. Namun, Python 2.0 juga terkenal karena memulai perdebatan tentang masa depan kompatibilitas Python.<br><br>
-                        4. Python 3.0 (2008)<br>
-                        Python 3.0, dirilis pada Desember 2008, adalah upaya untuk memperbaiki beberapa kekurangan di Python 2.x dan membersihkan sintaks serta struktur bahasa. Namun, Python 3 tidak kompatibel dengan Python 2, yang menyebabkan periode transisi yang panjang dan terkadang menantang bagi komunitas Python.<br><br>
-                        5. Perkembangan Modern dan Popularitas<br>
-                        Sejak peluncuran Python 3, bahasa ini terus berkembang dengan menambahkan fitur-fitur baru dan memperbaiki bug. Python menjadi sangat populer di berbagai bidang, termasuk pengembangan web, data science, kecerdasan buatan, pemrosesan teks, dan banyak lagi. Python juga dikenal karena komunitas penggunanya yang besar dan bersemangat, yang berkontribusi pada banyaknya perpustakaan dan kerangka kerja (framework) yang tersedia.<br><br>
-                        Python telah menjadi salah satu bahasa pemrograman paling populer dan banyak digunakan di dunia saat ini. Sintaks yang sederhana dan kemudahan penggunaannya menjadikan Python bahasa yang ideal bagi pemula dan pengembang berpengalaman yang ingin membangun berbagai macam aplikasi.
+                        Python adalah bahasa pemrograman tingkat tinggi yang terkenal karena sintaksnya yang jelas dan keterbacaan kode yang baik. Berikut adalah gambaran singkat tentang sejarah Python: 
+                        1. Penciptaan dan Awal Mula
+                        2. Versi Pertama
+                        3. Python 2.0
+                        4. Python 3.0
+                        5. Perkembangan Modern.
                     `;
                 } else if (
                     userMessage.toLowerCase() ===
-                    "jelaskan tentang framework laravel"
+                    "buatlah sebuah program python yang menghasilkan output sebagai berikut: output = aku cinta skillquest hint: gunakan print"
                 ) {
                     responseMessage = `
-                        Laravel adalah salah satu framework PHP yang paling populer dan banyak digunakan untuk membangun aplikasi web. Berikut adalah beberapa poin penting tentang Laravel:<br><br>
-                        1. Keunggulan dan Fitur Utama:<br>
-                        Laravel menyediakan berbagai fitur seperti routing, middleware, session, validasi, dan lain-lain, yang membantu pengembang membangun aplikasi web dengan cepat dan efisien. Laravel juga terkenal karena sintaksnya yang elegan dan dapat diprediksi, yang membuat pengembangan aplikasi menjadi lebih mudah dan menyenangkan.<br><br>
-                        2. Artisan CLI:<br>
-                        Laravel memiliki command-line interface (CLI) yang disebut Artisan, yang memudahkan pengembang untuk melakukan berbagai tugas seperti migrasi database, pembuatan kontroler, dan lainnya secara otomatis melalui perintah terminal.<br><br>
-                        3. ORM (Eloquent):<br>
-                        Laravel menggunakan ORM (Object-Relational Mapping) yang disebut Eloquent. Eloquent memungkinkan pengembang untuk berinteraksi dengan database menggunakan model-model yang mewakili tabel di database. Hal ini membuat query database menjadi lebih intuitif dan mudah dipahami.<br><br>
-                        4. Blade Templating Engine:<br>
-                        Laravel menyediakan Blade, sebuah templating engine yang powerful, yang memungkinkan pengembang untuk membuat layout yang dinamis dengan menggunakan direktif yang simpel dan efisien.<br><br>
-                        5. Sistem Middleware:<br>
-                        Laravel menggunakan middleware untuk memfilter HTTP request yang masuk ke aplikasi. Ini membantu dalam memisahkan logika dari routing dan mempermudah dalam penerapan kebijakan keamanan seperti autentikasi.<br><br>
-                        6. Pengelolaan Proyek yang Mudah:<br>
-                        Laravel memiliki ekosistem yang luas, termasuk Laravel Forge dan Laravel Envoyer untuk deployment, serta layanan Laravel Nova untuk pembuatan dashboard admin. Laravel juga memiliki integrasi yang baik dengan berbagai layanan pihak ketiga seperti AWS, Google Cloud, dan lainnya.<br><br>
-                        7. Dokumentasi dan Komunitas:<br>
-                        Laravel dikenal dengan dokumentasinya yang sangat lengkap dan mudah dipahami, serta komunitas yang aktif yang selalu siap membantu. Hal ini membuat Laravel menjadi framework yang sangat direkomendasikan bagi pengembang PHP, baik pemula maupun yang sudah berpengalaman.<br><br>
-                        Dengan fitur-fitur dan keunggulannya, Laravel menjadi pilihan utama bagi banyak pengembang dalam membangun aplikasi web modern yang scalable dan maintainable.
+                        Berikut adalah contoh program Python yang menghasilkan output sesuai permintaan: aku cinta skillquest, kamu bisa menggunakan perintah berikut print(output) Penjelasan: - Variabel output berisi string "Aku Cinta SkillQuest" - Fungsi print(output) digunakan untuk menampilkan isi dari variabel output yang akan ditampilkan: Aku Cinta SkillQuest
                     `;
                 } else {
-                    responseMessage =
-                        "Maaf, saya belum memiliki jawaban yang sesuai dengan pertanyaan Anda. Silakan tanyakan sesuatu yang lain.";
+                    responseMessage = "Maaf, saya belum memiliki jawaban yang sesuai dengan pertanyaan Anda. Silakan tanyakan sesuatu yang lain.";
                 }
 
-                // Add AI's response to chat
-                const aiChatDiv = document.createElement("div");
-                aiChatDiv.className = "flex flex-col items-start";
-                aiChatDiv.id = silvaGenerateUniqueId();
-                aiChatDiv.innerHTML = `
-                    <div class="bg-gray-50 dark:bg-gray-600 text-gray-900 dark:text-white px-3 py-3 max-w-xs chat-ai">
-                        <p>${responseMessage}</p>
-                    </div>
-                    <p class="text-gray-900 dark:text-white self-end mt-1">${new Date().toLocaleTimeString(
-                        [],
-                        { hour: "2-digit", minute: "2-digit" }
-                    )}</p>
-                `;
-                silvaChatBox.appendChild(aiChatDiv);
+                // Streaming respons dengan penundaan
+                streamWords(responseMessage, silvaChatBox);
 
-                // Clear input
+                // Kosongkan input
                 silvaChatInput.value = "";
-                // Scroll to the bottom
                 silvaChatBox.scrollTop = silvaChatBox.scrollHeight;
 
-                // Save chat history
+                // Simpan riwayat chat
                 silvaSaveChatHistory();
             }
         });

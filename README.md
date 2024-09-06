@@ -1,6 +1,5 @@
 <img src="https://i.postimg.cc/YCHy9zg1/skillquest-logo.png" height="76px">
 <br>
-<br>
 
 # ☝🏽 About the SkillQuest Project
 
