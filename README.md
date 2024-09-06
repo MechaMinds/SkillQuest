@@ -21,21 +21,21 @@ The platform aims to be accessible from various locations across Indonesia, incl
 
 ### Front-End
 
-<img src="https://static-00.iconduck.com/assets.00/laravel-icon-1990x2048-xawylrh0.png" height="20px"> **Laravel**
+**Laravel**
 
-<img src="https://static-00.iconduck.com/assets.00/tailwind-css-icon-2048x1229-u8dzt4uh.png" height="15px"> **Tailwind CSS**
+**Tailwind CSS**
 
-<img src="https://i.ibb.co/7vYQ6XG/flowbite.png" height="20px"> **Flowbite UI**
+**Flowbite UI**
 
 ### Back-End
 
-<img src="https://static-00.iconduck.com/assets.00/laravel-icon-1990x2048-xawylrh0.png" height="20px"> **Laravel**
+**Laravel**
 
-<img src="https://i.ibb.co/x8vXWCx/midtrans.png" height="20px"> **MidTrans**
+**MidTrans**
 
-<img src="https://i.ibb.co/7vYQ6XG/flowbite.png" height="20px"> **MySQL**
+**MySQL**
 
-<img src="https://i.ibb.co/7vYQ6XG/flowbite.png" height="20px"> **WebSocket**
+**WebSocket**
 
 ## How to login
 
