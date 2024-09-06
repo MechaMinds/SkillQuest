@@ -65,27 +65,11 @@ competitive advantage in the job market.
     </div>
 </div>
 
-## Points of contact
+## How to login
 
-If you encounter problems or have questions when contributing to the documentation, these people can help:
-
--   [kolchfa-aws](https://github.com/kolchfa-aws)
--   [Naarcha-AWS](https://github.com/Naarcha-AWS)
--   [vagimeli](https://github.com/vagimeli)
-
-## Code of conduct
-
-This project has adopted an [Open Source Code of Conduct](https://opensearch.org/codeofconduct.html).
-
-## Security
-
-If you discover a potential security issue in this project, notify OpenSearch Security directly by emailing security@opensearch.org. To prevent any additional risk caused by the potential issue, do **not** create a public GitHub issue.
-
-## License
-
-This project is licensed under the [Apache 2.0 License](LICENSE).
+Email : budi@gmail.com<br>
+Kata Sandi : budibudi123
 
 ## Copyright
 
-Copyright OpenSearch contributors.
-V
+Copyright MechaMinds
