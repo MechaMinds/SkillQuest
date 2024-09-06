@@ -1,3 +1,6 @@
+<img src="https://i.postimg.cc/YCHy9zg1/skillquest-logo.png" height="76px">
+<br>
+
 # ☝🏽 About the SkillQuest Project
 
 SkillQuest employs `artificial intelligence` to power personalized learning. The intelligence to customize learning materials to the unique requirements of each user. The system monitors the progress of each user and provides relevant content. This is consistent with their learning objectives and skill level. SkillQuest's curriculum is consistently industry-aligned. The document has been revised to align with the latest developments in the IT sector. Users get the chance to learn about a wide range of topics, including fundamental programming and advanced technologies like AI, cybersecurity, to ensure that they stay up to date with the industry advancements.
