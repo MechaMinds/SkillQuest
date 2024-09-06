@@ -1,66 +1,92 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<img src="https://i.ibb.co.com/DwLx7p2/skillquest-logo.png" height="76px">
+<br>
+<br>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# ☝🏽 About the SkillQuest Project
 
-## About Laravel
+SkillQuest employs `artificial intelligence` to power personalized learning.
+The intelligence to customize learning materials to the unique requirements of
+each user.  The system monitors the progress of each user and provides relevant content.
+This is consistent with their learning objectives and skill level.
+SkillQuest's curriculum is consistently industry-aligned.
+The document has been revised to align with the latest developments in the IT sector. Users
+get the chance to learn about a wide range of topics,
+This includes fundamental programming and advanced technologies like AI.
+cybersecurity, to ensure that they stay up to date with the industry
+advancements.
+<br><br>
+Project-Based Learning involves users participating in real-world projects.
+Replicate the obstacles faced in the workplace. This method not only
+This not only solidifies their comprehension of fundamental concepts but also enables
+They create portfolios to showcase to potential employers.
+Community and Collaboration: SkillQuest cultivates a community
+Users can interact with peers, share knowledge, and collaborate on projects.
+thereby promoting collaborative learning. This method aids in the
+The cultivation of critical soft skills, including communication, problem-solving, and teamwork, is crucial.
+<br><br>
+Wide Accessibility: The platform aims to be reachable from a range of
+The company has locations throughout Indonesia, including remote areas. SkillQuest
+This ensures that all individuals, regardless of their geographic location
+Have the same opportunity to acquire a high-quality IT education.
+SkillQuest provides ongoing support and guidance for continuous skill development.
+Resources to help users stay informed about the constantly changing
+evolving technological landscape, thereby ensuring that they maintain
+competitive advantage in the job market.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Technology Used
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Front-End
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<div style="display:flex; gap:20px">
+    <div style="display: flex; gap:5px;">
+        <img src="https://static-00.iconduck.com/assets.00/laravel-icon-1990x2048-xawylrh0.png" height="24px"> <p style="font-size:15px; font-weight:bold;">Laravel</p>
+    </div>
+    <div style="display: flex; gap:5px;">
+        <img src="https://static-00.iconduck.com/assets.00/tailwind-css-icon-2048x1229-u8dzt4uh.png" height="20px"> <p style="font-size:15px; font-weight:bold;">Tailwind CSS</p>
+    </div>
+    <div style="display: flex; gap:5px;">
+        <img src="https://i.ibb.co.com/7vYQ6XG/flowbite.png" height="24px"> <p style="font-size:15px; font-weight:bold;">Flowbite UI </p>
+    </div>
+</div>
 
-## Learning Laravel
+### Back-End
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<div style="display:flex; gap:20px">
+    <div style="display: flex; gap:5px;">
+        <img src="https://static-00.iconduck.com/assets.00/laravel-icon-1990x2048-xawylrh0.png" height="24px"> <p style="font-size:15px; font-weight:bold;">Laravel</p>
+    </div>
+    <div style="display: flex; gap:5px;">
+        <img src="https://i.ibb.co.com/x8vXWCx/midtrans.png" height="20px"> <p style="font-size:15px; font-weight:bold;">MidTrans</p>
+    </div>
+    <div style="display: flex; gap:5px;">
+        <img src="https://i.ibb.co.com/7vYQ6XG/flowbite.png" height="24px"> <p style="font-size:15px; font-weight:bold;">MySQL</p>
+    </div>
+    <div style="display: flex; gap:5px;">
+        <img src="https://i.ibb.co.com/7vYQ6XG/flowbite.png" height="24px"> <p style="font-size:15px; font-weight:bold;">WebSocket</p>
+    </div>
+</div>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Points of contact
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+If you encounter problems or have questions when contributing to the documentation, these people can help:
 
-## Laravel Sponsors
+-   [kolchfa-aws](https://github.com/kolchfa-aws)
+-   [Naarcha-AWS](https://github.com/Naarcha-AWS)
+-   [vagimeli](https://github.com/vagimeli)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Code of conduct
 
-### Premium Partners
+This project has adopted an [Open Source Code of Conduct](https://opensearch.org/codeofconduct.html).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Security
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a potential security issue in this project, notify OpenSearch Security directly by emailing security@opensearch.org. To prevent any additional risk caused by the potential issue, do **not** create a public GitHub issue.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the [Apache 2.0 License](LICENSE).
+
+## Copyright
+
+Copyright OpenSearch contributors.
+V
