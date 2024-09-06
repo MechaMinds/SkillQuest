@@ -19,7 +19,7 @@ The platform aims to be accessible from various locations across Indonesia, incl
 
 ## Technology Used
 
-### Front-End
+### `Front-End`
 
 **Laravel**
 
@@ -27,7 +27,7 @@ The platform aims to be accessible from various locations across Indonesia, incl
 
 **Flowbite UI**
 
-### Back-End
+### `Back-End`
 
 **Laravel**
 
