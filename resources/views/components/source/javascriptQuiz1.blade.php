@@ -432,7 +432,7 @@
                     `;
                 } else if (
                     userMessage.toLowerCase() ===
-                    "buatlah sebuah program python yang menghasilkan output sebagai berikut: output = aku cinta skillquest hint: gunakan print"
+                    "bantu aku memecahkan soal ini buatlah sebuah program python yang menghasilkan output sebagai berikut: output = aku cinta skillquest"
                 ) {
                     responseMessage = `
                         Berikut adalah contoh program Python yang menghasilkan output sesuai permintaan: aku cinta skillquest, kamu bisa menggunakan perintah berikut print(output) Penjelasan: - Variabel output berisi string "Aku Cinta SkillQuest" - Fungsi print(output) digunakan untuk menampilkan isi dari variabel output yang akan ditampilkan: Aku Cinta SkillQuest
