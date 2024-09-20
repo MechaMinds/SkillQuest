@@ -1,5 +1,3 @@
-const API_URL = "https://api.gemini.com/v1/endpoint"; // Ganti dengan URL endpoint API Gemini
-const API_KEY = "AIzaSyCHPJbYIqXC7urVsJ31bKgdhG_jEiYJ9jI"; // Ganti dengan kunci API yang Anda dapatkan
 document.getElementById("chat-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
